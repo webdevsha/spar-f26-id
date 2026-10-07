@@ -1,0 +1,15 @@
+# repo-local artifacts (never commit a local token file)
+.env
+.env.*
+!.env.example
+
+# generated dashboard output is committed on purpose (nightly snapshot);
+# local scratch is not
+scratch/
+*.log
+.DS_Store
+
+# never commit credentials
+*.pem
+*.key
+service-account*.json

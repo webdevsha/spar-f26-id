@@ -1,0 +1,84 @@
+# spar-f26-id
+
+Technical spine of the SPAR Fall 2026 **Indonesia** lane — the *Access* line of
+the deck's logistics table (Drive, slide repo, tracker, Observatory).
+
+Read-only dashboard over a versioned, diffable repo. **Nothing writes back to
+Google Drive or Google Sheets.**
+
+```
+GSheets (team edits) ──sync──▶ repo /data/*.csv ──build──▶ dist/index.html ──▶ Cloudflare Pages
+Google Drive         ──walk──▶ spar-f26-drive-index.md ──▶ repo (audit trail)
+```
+
+| Layer | Where | Who edits |
+|---|---|---|
+| Source of truth | Google Drive — folder `1WW-Af6uO5_k9MQeHpnbIqjqvyeHo0-el` | the team |
+| Tracker | Google Sheets (see `data/sheets.json`) | the team |
+| Audit trail | this repo, `data/*.csv` | the sync job |
+| View | Cloudflare Pages `spar-f26-id` | nobody — read-only, gated |
+
+## Layout
+
+```
+data/       synced CSVs (tracked, diffable) + sheets.json tab map
+build/      build_dashboard.py (CSV → dist), sync_sheets.py (GSheets → CSV)
+dist/       generated index.html — never hand-edit
+functions/  _middleware.js — Basic Auth access gate (password = SITE_PASSWORD secret)
+.github/    sync.yml (hourly), deploy.yml (build + Pages deploy)
+```
+
+## The sheets
+
+`data/sheets.json` maps a **tab name** to an output CSV. Tabs use the Sheets
+API by name, so the "CSV export only returns the first tab" gotcha does not
+apply here.
+
+Tab `inventory` header row 1:
+
+```
+id	document	short_name	type	owner_agency	covers	sectors	budget	budget_source	monitoring	monitoring_detail	effective_date	status	link	source_type	last_checked	verified_by	notes
+```
+
+Tab `readiness` (joined to `inventory` by `id`):
+
+```
+id	document	q1	q2	q3	q4	q5	q6	score	blind_spot	notes
+```
+
+`id` is the upsert/join key — never rename or reorder it.
+
+**Edit rules:** no merged cells · no blank/spacer rows · header only on row 1 ·
+one document per row · dates `YYYY-MM-DD` · never rename a header without
+telling CTO.
+
+## Running it
+
+```bash
+python3 build/build_dashboard.py          # data/*.csv -> dist/index.html
+./deploy.sh                               # build + wrangler pages deploy
+python3 build/sync_sheets.py              # GSheets -> data/*.csv (needs creds)
+```
+
+## Secrets (never in this repo)
+
+| Secret | Where | What |
+|---|---|---|
+| `SITE_PASSWORD` | Cloudflare Pages project secret | access-gate password |
+| `SHEET_ID` | GitHub repo secret | the Google Sheet's ID |
+| `GOOGLE_SERVICE_ACCOUNT` | GitHub repo secret | read-only service-account JSON |
+| `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` | GitHub repo secrets | Pages deploy |
+
+Set the gate password with:
+
+```bash
+wrangler pages secret put SITE_PASSWORD --project-name spar-f26-id
+```
+
+## Non-negotiables
+
+- **Consent gate.** Anything shown outside the team needs AISA consent first.
+  Default private; the Pages URL is behind the access gate until then.
+- **No personal data.** See `data/PERSONAL-DATA-STOP.md`.
+- **Framing.** This grades *documents*, never a government. No ranking, no scoring.
+- **Not a CMS.** No write-back to Drive or Sheets.

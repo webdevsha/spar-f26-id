@@ -1,0 +1,8 @@
+{
+  "inventory": "id-policy-inventory.csv",
+  "readiness": "id-readiness.csv",
+  "signals": "id-signals.csv",
+  "triggers": "id-triggers.csv",
+  "who-can-act": "id-who-can-act.csv",
+  "instruments": "id-instruments.csv"
+}

@@ -1,0 +1,40 @@
+name: sync-sheets
+# GSheets -> data/*.csv -> commit. Runs hourly; commits only when content changes.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install --quiet google-api-python-client google-auth
+
+      - name: Sync tabs to CSV
+        env:
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+          GOOGLE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
+        run: python build/sync_sheets.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "spar-sync-bot"
+          git config user.email "spar-sync-bot@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain data/)" ]]; then
+            git add data/
+            git commit -m "sync: GSheets -> data/ ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git push
+          else
+            echo "no changes"
+          fi
