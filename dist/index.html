@@ -120,6 +120,16 @@
   .para { margin-bottom:9px; line-height:1; }
   .callout { border-left:3px solid var(--accent-tint); background:var(--bg-alt); padding:11px 13px;
               margin-top:12px; }
+  .chg { border-bottom:1px solid var(--line); padding:12px 0; }
+  .chg:last-child { border-bottom:0; }
+  .chg-head { display:flex; align-items:baseline; justify-content:space-between; gap:14px; }
+  .chg-when { font-size:13.5px; font-weight:600; }
+  .chg-meta { font-size:12px; color:var(--muted); }
+  .chg-list { margin:7px 0 0; padding-left:18px; }
+  .chg-list li { font-size:13px; margin-bottom:3px; }
+  .chg-list code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px;
+                    background:var(--bg-alt); border:1px solid var(--line); border-radius:3px;
+                    padding:0 4px; }
   ul { margin:0; padding-left:20px; }
   li { margin-bottom:7px; font-size:14px; }
   footer { border-top:1px solid var(--line); background:var(--bg-alt); }
@@ -139,6 +149,7 @@
   <a href="#results">End results</a>
   <a href="#inventory">Inventory</a>
   <a href="#readiness">Readiness grid</a>
+  <a href="#changes">Recent changes</a>
   <a href="#blindspots">Blind spots</a>
 </div></nav>
 
@@ -168,13 +179,19 @@
     <p class="muted" style="font-size:12.5px;margin-top:12px;">This grid grades <em>documents</em>, not the country.
     The project does not rank or score any government.</p>
   </section>
+  <section id="changes">
+    <h2>Recent changes</h2>
+    <p class="lede">What the Google Sheet has sent us, newest first — written automatically by the sync.
+    When the real-time trigger is wired, the editor’s name appears with each entry.</p>
+    <div class="chg"><div class="chg-head"><span class="chg-when">2026-10-07 — sheet reconciled with the repo</span><span class="chg-meta">by: CTO (one-off, not an edit)</span></div><ul class="chg-list"><li>Sheet was carrying the original 8 demo rows while the repo held the real rows curated from</li><li><code>Indonesia policy inventory</code>: 8 demo rows -&gt; 3 real rows</li><li><code>readiness</code>: 8 -&gt; 3</li><li><code>signals</code>: 0 -&gt; 9 · <code>triggers</code>: 0 -&gt; 1 · <code>who-can-act</code>: 0 -&gt; 6 · <code>instruments</code>: 0 -&gt; 1</li></ul></div>
+  </section>
   <section id="blindspots">
     <h2>Blind spots</h2>
     <p class="muted">No rows yet.</p>
   </section>
 </div></main>
 <footer><div class="wrap">
-  Built 2026-10-07 01:53 UTC · source: private repo <code>spar-f26-id</code> · internal until AISA consent ·
+  Built 2026-10-07 02:11 UTC · source: private repo <code>spar-f26-id</code> · internal until AISA consent ·
   grades documents, not governments.
 </div></footer>
 </body>

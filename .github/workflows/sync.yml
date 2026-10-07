@@ -9,6 +9,10 @@ on:
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch: {}
+  # Fired by the Google Apps Script bound to the sheet (see docs/apps-script-trigger.gs)
+  # so an edit reaches the repo within seconds instead of waiting for the hour.
+  repository_dispatch:
+    types: [sheet-change]
 
 permissions:
   contents: write
@@ -30,6 +34,8 @@ jobs:
         env:
           SHEET_ID: ${{ secrets.SHEET_ID }}
           GOOGLE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
+          SYNC_ACTOR: ${{ github.event.client_payload.editor || '' }}
+          SYNC_SOURCE: ${{ github.event.client_payload.source || '' }}
         run: python build/sync_sheets.py
 
       - name: Commit if changed
@@ -37,8 +43,9 @@ jobs:
           git config user.name  "spar-sync-bot"
           git config user.email "spar-sync-bot@users.noreply.github.com"
           if [[ -n "$(git status --porcelain data/)" ]]; then
+            WHO="${{ github.event.client_payload.editor }}"
             git add data/
-            git commit -m "sync: GSheets -> data/ ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git commit -m "sync: GSheets -> data/${WHO:+ (edited by $WHO)} [$(date -u +%Y-%m-%dT%H:%MZ)]"
             git push
           else
             echo "no changes"

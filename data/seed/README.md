@@ -10,6 +10,22 @@ The hourly `sync.yml` action reads the Google Sheet and **overwrites `data/*.csv
 with whatever the Sheet contains**. So the Sheet must be seeded with the current
 CSVs first — otherwise the next sync reverts the repo to the older Sheet contents.
 
+## Check parity before you seed
+
+Ask "are the seeding rows already there?" and get a diff, not a guess:
+
+```bash
+SHEET_ID=<the sheet id> python3 build/check_parity.py
+```
+
+Read-only. Prints `MATCH` per tab and exits 0 when every tab already agrees with
+the repo CSVs; prints the differing rows and exits 1 otherwise. **If it says
+MATCH, there is nothing to seed.**
+
+Current state (verified): all six tabs MATCH. The Sheet is already seeded —
+`Indonesia policy inventory` 3 real rows, `readiness` 3, `signals` 9,
+`who-can-act` 6, and the 2 DEMO placeholders in `triggers` / `instruments`.
+
 ## How to seed (once, per tab)
 
 1. Open the tracker Sheet (the one whose ID is in the `SHEET_ID` repo secret).

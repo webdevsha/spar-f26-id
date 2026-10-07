@@ -196,6 +196,55 @@ def end_result_cards():
     return "".join(out)
 
 
+def render_recent_changes(limit=8):
+    """Render the newest entries of data/SYNC-LOG.md."""
+    path = os.path.join(DATA, "SYNC-LOG.md")
+    if not os.path.exists(path):
+        return '<p class="muted">No sync history yet.</p>'
+    with open(path, encoding="utf-8") as fh:
+        text = fh.read()
+
+    entries = []
+    current = None
+    for line in text.splitlines():
+        if line.startswith("## "):
+            if current:
+                entries.append(current)
+            current = {"head": line[3:].strip(), "meta": "", "items": []}
+        elif current is not None:
+            stripped = line.strip()
+            if stripped.startswith("_by:"):
+                current["meta"] = stripped.strip("_")
+            elif stripped.startswith("- "):
+                current["items"].append(stripped[2:])
+    if current:
+        entries.append(current)
+
+    if not entries:
+        return '<p class="muted">No sync history yet.</p>'
+
+    out = []
+    for e in entries[:limit]:
+        items = "".join(f"<li>{inline_code(esc(i))}</li>" for i in e["items"]) or '<li class="muted">no data changed</li>'
+        meta = f'<span class="chg-meta">{esc(e["meta"])}</span>' if e["meta"] else ""
+        out.append(
+            '<div class="chg">'
+            f'<div class="chg-head"><span class="chg-when">{esc(e["head"])}</span>{meta}</div>'
+            f'<ul class="chg-list">{items}</ul>'
+            "</div>"
+        )
+    return "".join(out)
+
+
+def inline_code(s):
+    """Wrap `backticked` spans in <code> after escaping."""
+    parts = s.split("`")
+    out = []
+    for i, part in enumerate(parts):
+        out.append(f"<code>{part}</code>" if i % 2 else part)
+    return "".join(out)
+
+
 def read_csv(name):
     path = os.path.join(DATA, name)
     if not os.path.exists(path):
@@ -268,6 +317,7 @@ def main():
     inv_html = "".join(inv_rows) or '<tr><td colspan="12" class="muted">No rows yet — add documents to the inventory sheet.</td></tr>'
     grid_html = "".join(grid_rows) or f'<tr><td colspan="9" class="muted">No rows yet.</td></tr>'
     results_html = end_result_cards()
+    changes_html = render_recent_changes()
 
     banner_html = (
         f'<div class="banner"><div class="wrap"><strong>Demo data.</strong> {len(demo_rows)} of {len(inventory)} '
@@ -400,6 +450,16 @@ def main():
   .para {{ margin-bottom:9px; line-height:1; }}
   .callout {{ border-left:3px solid var(--accent-tint); background:var(--bg-alt); padding:11px 13px;
               margin-top:12px; }}
+  .chg {{ border-bottom:1px solid var(--line); padding:12px 0; }}
+  .chg:last-child {{ border-bottom:0; }}
+  .chg-head {{ display:flex; align-items:baseline; justify-content:space-between; gap:14px; }}
+  .chg-when {{ font-size:13.5px; font-weight:600; }}
+  .chg-meta {{ font-size:12px; color:var(--muted); }}
+  .chg-list {{ margin:7px 0 0; padding-left:18px; }}
+  .chg-list li {{ font-size:13px; margin-bottom:3px; }}
+  .chg-list code {{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px;
+                    background:var(--bg-alt); border:1px solid var(--line); border-radius:3px;
+                    padding:0 4px; }}
   ul {{ margin:0; padding-left:20px; }}
   li {{ margin-bottom:7px; font-size:14px; }}
   footer {{ border-top:1px solid var(--line); background:var(--bg-alt); }}
@@ -419,6 +479,7 @@ def main():
   <a href="#results">End results</a>
   <a href="#inventory">Inventory</a>
   <a href="#readiness">Readiness grid</a>
+  <a href="#changes">Recent changes</a>
   <a href="#blindspots">Blind spots</a>
 </div></nav>
 {banner_html}
@@ -447,6 +508,12 @@ def main():
     </table>
     <p class="muted" style="font-size:12.5px;margin-top:12px;">This grid grades <em>documents</em>, not the country.
     The project does not rank or score any government.</p>
+  </section>
+  <section id="changes">
+    <h2>Recent changes</h2>
+    <p class="lede">What the Google Sheet has sent us, newest first — written automatically by the sync.
+    When the real-time trigger is wired, the editor\u2019s name appears with each entry.</p>
+    {changes_html}
   </section>
   <section id="blindspots">
     <h2>Blind spots</h2>
