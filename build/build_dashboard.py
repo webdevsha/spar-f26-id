@@ -25,6 +25,61 @@ QUESTIONS = [
 ]
 
 
+# The three named end results. Content is deliberately EMPTY — placeholders so
+# the shape of the finished deliverables is visible early.
+END_RESULTS = [
+    {
+        "title": "Country reports",
+        "note": "The project's country write-up: what is at stake, moves to start now, triggers for when signals move.",
+        "items": [
+            {"country": "Indonesia", "owner": "Shafira (ours)", "due": "Drafts 29 Nov · full 4 Dec", "ours": True},
+            {"country": "Philippines", "owner": "BG · Danielle · Joshua", "due": "Drafts 29 Nov · full 4 Dec", "ours": False},
+        ],
+    },
+    {
+        "title": "Ecosystem & policy map",
+        "note": "The six-layer ecosystem map, becoming an annex on AISA's SEA Observatory. Co-owned with BG and Rachel.",
+        "items": [
+            {"country": "Indonesia", "owner": "Shafira (ours)", "due": "Rows added by 22 Nov", "ours": True},
+            {"country": "Philippines", "owner": "BG (Cebu)", "due": "Rows added by 22 Nov", "ours": False},
+        ],
+    },
+    {
+        "title": "Notes for officials",
+        "note": "The two-page brief an official can read: what is at stake, moves to start now, triggers for when signals move.",
+        "items": [
+            {"country": "Indonesia", "owner": "Shafira · Akbar (ours)", "due": "By 13 Dec", "ours": True},
+            {"country": "Philippines", "owner": "BG · Danielle", "due": "By 13 Dec", "ours": False},
+        ],
+    },
+]
+
+
+def end_result_cards():
+    out = []
+    for block in END_RESULTS:
+        cards = []
+        for item in block["items"]:
+            cls = "card ours" if item["ours"] else "card"
+            tag = '<span class="tag tag-ours">our lane</span>' if item["ours"] else '<span class="tag">partner</span>'
+            cards.append(
+                f'<article class="{cls}">'
+                f'<div class="card-head"><h4>{esc(item["country"])}</h4>{tag}</div>'
+                f'<p class="card-owner">{esc(item["owner"])}</p>'
+                f'<p class="card-due">{esc(item["due"])}</p>'
+                f'<p class="card-body placeholder">Placeholder — no content yet.</p>'
+                "</article>"
+            )
+        out.append(
+            '<div class="result-block">'
+            f'<h3 class="result-title">{esc(block["title"])}</h3>'
+            f'<p class="result-note">{esc(block["note"])}</p>'
+            f'<div class="cards">{"".join(cards)}</div>'
+            "</div>"
+        )
+    return "".join(out)
+
+
 def read_csv(name):
     path = os.path.join(DATA, name)
     if not os.path.exists(path):
@@ -96,10 +151,12 @@ def main():
     )
     inv_html = "".join(inv_rows) or '<tr><td colspan="12" class="muted">No rows yet — add documents to the inventory sheet.</td></tr>'
     grid_html = "".join(grid_rows) or f'<tr><td colspan="9" class="muted">No rows yet.</td></tr>'
+    results_html = end_result_cards()
 
     banner_html = (
-        f'<div class="banner">&#9888; {len(demo_rows)} of {len(inventory)} inventory rows are <strong>DEMO placeholders</strong> '
-        f"(verified_by = DEMO) — illustrative only, replace with verified v0 rows.</div>"
+        f'<div class="banner"><div class="wrap"><strong>Demo data.</strong> {len(demo_rows)} of {len(inventory)} '
+        f"inventory rows are placeholders (verified_by = DEMO) — illustrative only, replace with verified v0 rows. "
+        f"The end-result cards are empty placeholders.</div></div>"
         if demo_rows
         else ""
     )
@@ -113,49 +170,94 @@ def main():
 <meta name="robots" content="noindex, nofollow">
 <title>SPAR F26 · Indonesia — policy readiness</title>
 <style>
-  :root {{ --cream:#faf7f0; --moss:#4a5d3a; --moss-l:#6b7f4e; --wood:#8b6f47; --ink:#2c2c2c; --line:#e3ddcf; }}
+  :root {{ --ink:#212A2A; --ink-soft:#3A4848; --muted:#8B9999; --line:#E4E8E8;
+           --bg:#FFFFFF; --bg-alt:#F7F9F9;
+           --accent:#C41E3A; --accent-deep:#9E152C; --accent-deeper:#7A1022; --accent-tint:#FBEDEF; }}
   * {{ box-sizing:border-box; }}
-  body {{ margin:0; background:var(--cream); color:var(--ink);
-         font:15px/1.5 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }}
-  header {{ background:var(--moss); color:#f6f2e8; padding:22px 28px; }}
-  header h1 {{ margin:0 0 4px; font-size:19px; letter-spacing:.2px; }}
-  header p {{ margin:0; font-size:13px; opacity:.85; }}
-  nav {{ background:#f2ede1; border-bottom:1px solid var(--line); padding:9px 28px; font-size:13px; }}
-  nav a {{ color:var(--wood); margin-right:16px; text-decoration:none; font-weight:600; }}
-  main {{ padding:22px 28px 60px; max-width:1400px; }}
-  section {{ margin-bottom:38px; }}
-  h2 {{ font-size:15px; text-transform:uppercase; letter-spacing:.08em; color:var(--moss); border-bottom:2px solid var(--line); padding-bottom:6px; }}
-  table {{ border-collapse:collapse; width:100%; font-size:13px; background:#fffdf8; }}
-  th,td {{ border:1px solid var(--line); padding:7px 9px; text-align:left; vertical-align:top; }}
-  th {{ background:#f2ede1; color:var(--moss); font-weight:600; }}
-  tr:nth-child(even) td {{ background:#fbf8f1; }}
-  .mono {{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; color:var(--wood); }}
-  .muted {{ color:#8a8578; }}
-  .pill {{ display:inline-block; min-width:38px; text-align:center; padding:1px 6px; border-radius:9px;
+  body {{ margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.6 -apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }}
+  a {{ color:var(--accent-deep); text-decoration:none; border-bottom:1px solid var(--accent-tint); }}
+  a:hover {{ border-bottom-color:var(--accent); }}
+  .wrap {{ max-width:1180px; margin:0 auto; padding:0 32px; }}
+  header.site {{ border-bottom:1px solid var(--line); }}
+  header.site .wrap {{ padding-top:32px; padding-bottom:26px; }}
+  .eyebrow {{ font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--accent);
+              font-weight:600; margin:0 0 10px; }}
+  header.site h1 {{ margin:0; font-size:31px; line-height:1.22; font-weight:600; letter-spacing:-.015em; }}
+  header.site p.sub {{ margin:10px 0 0; color:var(--ink-soft); font-size:15px; max-width:64ch; }}
+  .accent-rule {{ height:3px; background:var(--accent); width:56px; margin:18px 0 0; }}
+  nav.site {{ border-bottom:1px solid var(--line); background:var(--bg-alt); }}
+  nav.site a {{ display:inline-block; padding:12px 0; margin-right:26px; font-size:13.5px; font-weight:500;
+                color:var(--ink-soft); border-bottom:2px solid transparent; }}
+  nav.site a:hover {{ color:var(--accent); border-bottom-color:var(--accent); }}
+  .banner {{ background:var(--accent-tint); border-bottom:1px solid var(--line);
+             color:var(--accent-deeper); font-size:13.5px; }}
+  .banner .wrap {{ padding-top:11px; padding-bottom:11px; }}
+  main {{ padding:4px 0 72px; }}
+  section {{ padding:40px 0 8px; border-top:1px solid var(--line); }}
+  section:first-of-type {{ border-top:0; }}
+  h2 {{ font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted);
+        font-weight:600; margin:0 0 8px; }}
+  .lede {{ margin:0 0 24px; color:var(--ink-soft); font-size:14.5px; max-width:78ch; }}
+  .result-block {{ margin-bottom:34px; }}
+  .result-title {{ margin:0 0 4px; font-size:19px; font-weight:600; letter-spacing:-.01em; }}
+  .result-note {{ margin:0 0 16px; color:var(--muted); font-size:13.5px; max-width:80ch; }}
+  .cards {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }}
+  .card {{ border:1px solid var(--line); border-radius:6px; padding:18px 20px; background:var(--bg); }}
+  .card.ours {{ border-left:3px solid var(--accent); }}
+  .card-head {{ display:flex; align-items:center; justify-content:space-between; gap:12px; }}
+  .card-head h4 {{ margin:0; font-size:16px; font-weight:600; }}
+  .tag {{ font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; font-weight:600;
+          color:var(--muted); border:1px solid var(--line); border-radius:3px; padding:2px 7px; white-space:nowrap; }}
+  .tag-ours {{ color:var(--accent-deep); border-color:var(--accent-tint); background:var(--accent-tint); }}
+  .card-owner {{ margin:12px 0 2px; font-size:13.5px; color:var(--ink-soft); }}
+  .card-due {{ margin:0; font-size:12.5px; color:var(--muted); }}
+  .card-body {{ margin:14px 0 0; padding-top:12px; border-top:1px dashed var(--line); font-size:13.5px; }}
+  .placeholder {{ color:var(--muted); font-style:italic; }}
+  table {{ border-collapse:collapse; width:100%; font-size:13px; }}
+  th,td {{ padding:9px 11px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }}
+  thead th {{ border-bottom:1px solid var(--ink-soft); font-size:11.5px; letter-spacing:.07em;
+              text-transform:uppercase; color:var(--ink-soft); font-weight:600; white-space:nowrap; }}
+  tbody tr:hover td {{ background:var(--bg-alt); }}
+  .mono {{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; color:var(--muted); }}
+  .muted {{ color:var(--muted); }}
+  .pill {{ display:inline-block; min-width:40px; text-align:center; padding:1px 6px; border-radius:3px;
            font-size:11px; font-weight:600; border:1px solid var(--line); }}
-  .pill.yes {{ background:#e3efd9; color:#33501f; border-color:#bcd4a8; }}
-  .pill.partly {{ background:#f6ecd2; color:#6b5313; border-color:#e3d3a4; }}
-  .pill.no {{ background:#f6ded9; color:#7a2f22; border-color:#e5bdb5; }}
-  .pill.demo {{ background:#efe2c4; color:#6b4a13; border-color:#d8c295; font-size:10px; letter-spacing:.04em; }}
-  .banner {{ background:#f6ecd2; border:1px solid #e3d3a4; color:#6b5313; padding:9px 28px; font-size:13px; }}
+  .pill.yes {{ background:#EAF3EC; color:#2C5A38; border-color:#CBE0D1; }}
+  .pill.partly {{ background:#FBF3E2; color:#7A5A18; border-color:#EADFC2; }}
+  .pill.no {{ background:var(--accent-tint); color:var(--accent-deeper); border-color:#F0D3D9; }}
+  .pill.demo {{ background:#F2F4F4; color:var(--muted); border-color:var(--line); font-size:10px;
+                letter-spacing:.05em; }}
   .answers {{ white-space:nowrap; }}
-  a {{ color:var(--wood); }}
-  footer {{ padding:16px 28px; border-top:1px solid var(--line); font-size:12px; color:#8a8578; }}
-  .empty {{ color:#8a8578; font-style:italic; }}
+  ul {{ margin:0; padding-left:20px; }}
+  li {{ margin-bottom:7px; font-size:14px; }}
+  footer {{ border-top:1px solid var(--line); background:var(--bg-alt); }}
+  footer .wrap {{ padding-top:18px; padding-bottom:22px; font-size:12.5px; color:var(--muted); }}
 </style>
 </head>
 <body>
-<header>
-  <h1>SPAR Fall 2026 · Indonesia — policy inventory &amp; readiness</h1>
-  <p>From AI Exposure to Economic Shock — early-warning triggers for Southeast Asia. Read-only view.</p>
+<header class="site">
+  <div class="wrap">
+    <p class="eyebrow">SPAR Fall 2026 · Indonesia</p>
+    <h1>Policy inventory &amp; readiness</h1>
+    <p class="sub">From AI Exposure to Economic Shock — early-warning triggers for Southeast Asia. Read-only view.</p>
+    <div class="accent-rule"></div>
+  </div>
 </header>
-<nav>
+<nav class="site"><div class="wrap">
+  <a href="#results">End results</a>
   <a href="#inventory">Inventory</a>
   <a href="#readiness">Readiness grid</a>
   <a href="#blindspots">Blind spots</a>
-</nav>
+</div></nav>
 {banner_html}
-<main>
+<main><div class="wrap">
+  <section id="results">
+    <h2>End results</h2>
+    <p class="lede">The three named deliverables, both countries. Placeholders for now — the shape is here so we can
+    see where each one lands before there is content to put in it.</p>
+    {results_html}
+  </section>
   <section id="inventory">
     <h2>Policy inventory ({len(inventory)} document{'s' if len(inventory) != 1 else ''})</h2>
     <table>
@@ -172,17 +274,18 @@ def main():
       <thead><tr><th>id</th><th>document</th>{grid_head}<th>score</th></tr></thead>
       <tbody>{grid_html}</tbody>
     </table>
-    <p class="muted" style="font-size:12px;margin-top:8px;">This grid grades <em>documents</em>, not the country. The project does not rank or score any government.</p>
+    <p class="muted" style="font-size:12.5px;margin-top:12px;">This grid grades <em>documents</em>, not the country.
+    The project does not rank or score any government.</p>
   </section>
   <section id="blindspots">
     <h2>Blind spots</h2>
     {blind_html}
   </section>
-</main>
-<footer>
+</div></main>
+<footer><div class="wrap">
   Built {built} · source: private repo <code>spar-f26-id</code> · internal until AISA consent ·
   grades documents, not governments.
-</footer>
+</div></footer>
 </body>
 </html>
 """
