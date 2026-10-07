@@ -1,12 +1,4 @@
 id,document,q1,q2,q3,q4,q5,q6,score,blind_spot,notes
-id-nas-ai-2020,National AI Strategy,no,partly,no,no,partly,no,1.0,yes,DEMO
-id-ai-roadmap-2020,AI Roadmap,no,partly,no,no,partly,no,1.0,yes,DEMO
-id-ai-ethics-2023,AI Ethics Circular,no,no,no,no,no,partly,0.5,yes,DEMO
-id-ojk-ai-2025,OJK AI Guide,partly,yes,yes,partly,no,yes,4.0,no,DEMO
-id-jkp-2022,JKP,no,yes,yes,yes,partly,no,3.5,no,DEMO
-id-prakerja-2020,Prakerja,no,yes,yes,partly,yes,no,3.5,no,DEMO
-id-kemnaker-portals,Kemnaker portals,no,partly,partly,no,yes,no,2.0,yes,DEMO
-id-rpjmn-2025,RPJMN,partly,partly,partly,no,partly,no,2.0,yes,DEMO
 ind-ojk-ai-guide-2025,OJK AI Guide,tbc,tbc,tbc,tbc,tbc,tbc,,tbc,Not yet scored - scoring all six questions is the 26 Oct deliverable.
 ind-jkp-2022,JKP,tbc,tbc,tbc,tbc,tbc,tbc,,tbc,Not yet scored - scoring all six questions is the 26 Oct deliverable.
 ind-paskerid-kemnaker,Pasker ID / Karirhub,tbc,tbc,tbc,tbc,tbc,tbc,,tbc,Not yet scored - scoring all six questions is the 26 Oct deliverable.

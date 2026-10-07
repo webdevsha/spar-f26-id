@@ -22,6 +22,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 CONFIG = os.path.join(DATA, "sheets.json")
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
+ALLOW_SHRINK = False
 
 
 def creds():
@@ -36,6 +37,8 @@ def creds():
 
 
 def main():
+    global ALLOW_SHRINK
+    ALLOW_SHRINK = "--allow-shrink" in sys.argv[1:]
     sheet_id = os.environ.get("SHEET_ID")
     if not sheet_id:
         sys.exit("SHEET_ID is not set (the Google Sheet's ID from its URL).")
@@ -52,6 +55,7 @@ def main():
     service = build("sheets", "v4", credentials=credentials, cache_discovery=False)
 
     changed = 0
+    refused = 0
     for tab, out_name in mapping.items():
         try:
             result = (
@@ -71,6 +75,22 @@ def main():
         content = buf.getvalue()
         out = os.path.join(DATA, out_name)
         old = open(out, encoding="utf-8").read() if os.path.exists(out) else None
+
+        # SAFETY GUARD: never silently drop rows. The sheet is the source of
+        # truth, but if the incoming tab is SMALLER than what the repo already
+        # has, something is out of sync (rows added to the repo directly, or a
+        # tab renamed/emptied). Refuse and shout, unless --allow-shrink.
+        if old and not ALLOW_SHRINK:
+            old_rows = max(0, len([ln for ln in old.splitlines() if ln.strip()]) - 1)
+            new_rows = max(0, len([ln for ln in content.splitlines() if ln.strip()]) - 1)
+            if new_rows < old_rows:
+                print(
+                    f"[sync] REFUSED {tab}: sheet has {new_rows} data rows but {out_name} has "
+                    f"{old_rows}. Not overwriting. Re-run with --allow-shrink if this is intended."
+                )
+                refused += 1
+                continue
+
         if content != old:
             with open(out, "w", encoding="utf-8") as fh:
                 fh.write(content)
@@ -78,7 +98,7 @@ def main():
             print(f"[sync] {tab} -> {out_name} ({len(rows)} rows)")
         else:
             print(f"[sync] {tab} unchanged")
-    print(f"done. {changed} file(s) updated.")
+    print(f"done. {changed} file(s) updated, {refused} refused.")
 
 
 if __name__ == "__main__":

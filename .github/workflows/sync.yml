@@ -1,8 +1,13 @@
 name: sync-sheets
-# GSheets -> data/*.csv -> commit. Runs hourly; commits only when content changes.
+# GSheets -> data/*.csv -> commit. Commits only when content changes.
+#
+# SCHEDULE DISABLED 2026-10-07 (CTO): the sheet and the repo have diverged —
+# the repo holds curated real rows, the sheet still holds older demo rows, so a
+# sheet->repo sync would clobber real work. Re-enable the cron only once the
+# sheet is the agreed source of truth and matches the repo.
 on:
-  schedule:
-    - cron: "17 * * * *"
+  # schedule:
+  #   - cron: "17 * * * *"
   workflow_dispatch: {}
 
 permissions:
