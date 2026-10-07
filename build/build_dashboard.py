@@ -196,6 +196,29 @@ def end_result_cards():
     return "".join(out)
 
 
+def read_text(rel_path):
+    path = os.path.join(ROOT, rel_path)
+    if not os.path.exists(path):
+        return ""
+    with open(path, encoding="utf-8") as fh:
+        return fh.read()
+
+
+def render_model():
+    """The interactive signal -> trigger -> shock model, kept in its own files so
+    the JS is not embedded in a Python f-string."""
+    data = load_json("model-id-demo.json")
+    markup = read_text("build/model_section.html")
+    if not data or not markup:
+        return ""
+    return (
+        "<script>window.SPAR_MODEL = "
+        + json.dumps(data, ensure_ascii=False)
+        + ";</script>\n"
+        + markup
+    )
+
+
 def render_recent_changes(limit=8):
     """Render the newest entries of data/SYNC-LOG.md."""
     path = os.path.join(DATA, "SYNC-LOG.md")
@@ -318,6 +341,7 @@ def main():
     grid_html = "".join(grid_rows) or f'<tr><td colspan="9" class="muted">No rows yet.</td></tr>'
     results_html = end_result_cards()
     changes_html = render_recent_changes()
+    model_html = render_model()
 
     banner_html = (
         f'<div class="banner"><div class="wrap"><strong>Demo data.</strong> {len(demo_rows)} of {len(inventory)} '
@@ -477,6 +501,7 @@ def main():
 </header>
 <nav class="site"><div class="wrap">
   <a href="#results">End results</a>
+  <a href="#model">Model</a>
   <a href="#inventory">Inventory</a>
   <a href="#readiness">Readiness grid</a>
   <a href="#changes">Recent changes</a>
@@ -490,6 +515,7 @@ def main():
     see where each one lands before there is content to put in it.</p>
     {results_html}
   </section>
+  {model_html}
   <section id="inventory">
     <h2>Policy inventory ({len(inventory)} document{'s' if len(inventory) != 1 else ''})</h2>
     <table>

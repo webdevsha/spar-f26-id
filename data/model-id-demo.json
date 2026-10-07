@@ -1,0 +1,93 @@
+{
+  "_note": "DEMO MODEL — illustrative numbers only. Nothing here is a finding, a forecast, or verified data. It exists to show the shape of the signal -> trigger -> shock chain and how the finished tool would behave. Replace every number before anyone treats it as real.",
+  "country": "Indonesia",
+  "lens": "AI exposure in the IT-BPM / BPO workforce",
+  "assumptions": {
+    "bpo_employment": 1900000,
+    "avg_monthly_wage_idr": 5000000,
+    "jkp_replacement_rate": 0.6,
+    "jkp_months": 6,
+    "note": "Dummy anchors. Employment and wage figures are placeholders, not sourced statistics."
+  },
+  "signals": [
+    {
+      "id": "sig-layoff",
+      "name": "AI-linked layoff announcements",
+      "detail": "Large BPO employers publicly attributing cuts to automation, per quarter.",
+      "unit": "announcements / quarter",
+      "min": 0, "max": 8, "step": 1, "value": 1, "threshold": 2,
+      "threshold_label": "2 in one city, same quarter"
+    },
+    {
+      "id": "sig-postings",
+      "name": "Entry-level vacancy decline",
+      "detail": "Year-on-year fall in advertised entry-level BPO roles.",
+      "unit": "% YoY decline",
+      "min": 0, "max": 30, "step": 1, "value": 2, "threshold": 10,
+      "threshold_label": "10% decline"
+    },
+    {
+      "id": "sig-exposure",
+      "name": "GenAI task exposure",
+      "detail": "Share of BPO task content technically exposed to generative AI.",
+      "unit": "% of tasks",
+      "min": 0, "max": 100, "step": 1, "value": 32, "threshold": 45,
+      "threshold_label": "45% of tasks"
+    },
+    {
+      "id": "sig-jkp",
+      "name": "JKP claim volume",
+      "detail": "Job-loss insurance claims against the 12-month average.",
+      "unit": "index (100 = normal)",
+      "min": 80, "max": 200, "step": 1, "value": 102, "threshold": 130,
+      "threshold_label": "130 index"
+    }
+  ],
+  "triggers": [
+    {
+      "id": "trg-jobs",
+      "name": "Joint job fair within 30 days",
+      "condition": "Two or more AI-linked layoff announcements land in the same city in one quarter.",
+      "when": ["sig-layoff"],
+      "agency": "Kemnaker · Disnaker · Prakerja",
+      "action": "Labour dept, skills agency and city hall run a joint job fair; affected workers are matched before benefits lapse.",
+      "lead_time_days": 30,
+      "jobs_weight": 9000
+    },
+    {
+      "id": "trg-entry",
+      "name": "Expand training vouchers",
+      "condition": "Entry-level vacancy decline passes 10% YoY for two consecutive quarters.",
+      "when": ["sig-postings"],
+      "agency": "Prakerja PMO · Kemnaker",
+      "action": "Prakerja voucher allocation is expanded and BLK vocational centres open extra intake for displaced entry-level staff.",
+      "lead_time_days": 60,
+      "jobs_weight": 24000
+    },
+    {
+      "id": "trg-benefit",
+      "name": "JKP surge processing",
+      "condition": "JKP claim volume runs 30% above its 12-month average.",
+      "when": ["sig-jkp"],
+      "agency": "BPJS Ketenagakerjaan",
+      "action": "Surge processing is activated and wage-replacement adequacy is reviewed against actual claim durations.",
+      "lead_time_days": 14,
+      "jobs_weight": 15000
+    },
+    {
+      "id": "trg-exposure",
+      "name": "Sector reskilling roadmap",
+      "condition": "GenAI exposure passes 45% of BPO tasks with no reskilling pathway published.",
+      "when": ["sig-exposure"],
+      "agency": "Kominfo · Kemnaker · industry body",
+      "action": "A sector reskilling roadmap is commissioned with the industry association and a published timeline.",
+      "lead_time_days": 90,
+      "jobs_weight": 30000
+    }
+  ],
+  "presets": [
+    { "id": "baseline", "label": "Baseline", "values": { "sig-layoff": 1, "sig-postings": 2, "sig-exposure": 32, "sig-jkp": 102 } },
+    { "id": "warning", "label": "Warning", "values": { "sig-layoff": 2, "sig-postings": 11, "sig-exposure": 46, "sig-jkp": 118 } },
+    { "id": "shock", "label": "Shock", "values": { "sig-layoff": 4, "sig-postings": 19, "sig-exposure": 58, "sig-jkp": 141 } }
+  ]
+}

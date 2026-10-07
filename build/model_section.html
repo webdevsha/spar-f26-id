@@ -1,0 +1,240 @@
+<section id="model">
+  <h2>Signal &rarr; trigger &rarr; shock</h2>
+  <p class="lede">Move the sliders and watch the chain react. A <strong>signal</strong> is a number someone
+  watches; a <strong>trigger</strong> is the threshold at which a named agency is supposed to act; the
+  <strong>shock</strong> is what the workforce absorbs if the trigger is late or never pulled. This is the
+  logic the project is trying to get right &mdash; the numbers are placeholders.</p>
+
+  <div class="md-warn">
+    <strong>Demo model.</strong> Every figure below is illustrative &mdash; not a finding, not a forecast,
+    not sourced. It exists so the shape of the chain is visible before real data lands.
+  </div>
+
+  <div class="md-presets" role="group" aria-label="Scenario presets">
+    <span class="md-presets-label">Scenario</span>
+    <div class="md-preset-btns" id="md-presets"></div>
+    <button class="md-reset" id="md-reset" type="button">Reset</button>
+  </div>
+
+  <div class="md-grid">
+    <div class="md-col">
+      <h5>1 &middot; Signals <span class="md-hint">leading indicators</span></h5>
+      <div id="md-signals"></div>
+    </div>
+    <div class="md-col">
+      <h5>2 &middot; Triggers <span class="md-hint">who acts, and when</span></h5>
+      <div id="md-triggers"></div>
+    </div>
+    <div class="md-col">
+      <h5>3 &middot; Economic shock <span class="md-hint">if the trigger is missed</span></h5>
+      <div id="md-shock"></div>
+    </div>
+  </div>
+
+  <p class="md-foot">Model logic is a placeholder: exposure &times; demand shock applied to a dummy BPO
+  employment anchor, with JKP paying 60% of wages for 6 months. Nothing here has been validated.</p>
+</section>
+
+<style>
+  #model .md-warn { background:#FBEDEF; border:1px solid #F0D3D9; color:#7A1022; border-radius:5px;
+                    padding:11px 14px; font-size:13px; margin:0 0 20px; }
+  #model .md-presets { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:20px; }
+  #model .md-presets-label { font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+                             color:#8B9999; font-weight:600; }
+  #model .md-preset-btns { display:flex; gap:6px; }
+  #model button { font:inherit; font-size:12.5px; padding:5px 12px; border-radius:4px;
+                  border:1px solid #E4E8E8; background:#fff; color:#3A4848; cursor:pointer; }
+  #model button:hover { border-color:#C41E3A; color:#9E152C; }
+  #model button.on { background:#C41E3A; border-color:#C41E3A; color:#fff; font-weight:600; }
+  #model .md-reset { margin-left:auto; }
+  #model .md-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:22px; align-items:start; }
+  @media (max-width:980px) { #model .md-grid { grid-template-columns:1fr; } }
+  #model .md-col h5 { margin:0 0 12px; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+                      color:#3A4848; font-weight:600; padding-bottom:6px; border-bottom:1px solid #E4E8E8; }
+  #model .md-hint { text-transform:none; letter-spacing:0; color:#8B9999; font-weight:400; font-size:11px; }
+
+  /* signal card */
+  #model .sig { border:1px solid #E4E8E8; border-radius:5px; padding:12px 13px; margin-bottom:11px;
+                background:#fff; transition:border-color .15s, box-shadow .15s; }
+  #model .sig.over { border-color:#C41E3A; box-shadow:inset 3px 0 0 #C41E3A; }
+  #model .sig-top { display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+  #model .sig-name { font-size:13.5px; font-weight:600; }
+  #model .sig-val { font-size:13px; font-variant-numeric:tabular-nums; font-weight:600; }
+  #model .sig.over .sig-val { color:#C41E3A; }
+  #model .sig-detail { font-size:11.5px; color:#8B9999; margin:3px 0 9px; }
+  #model .sig-bar { position:relative; height:7px; background:#F2F4F4; border-radius:4px; overflow:visible; }
+  #model .sig-fill { height:7px; border-radius:4px; background:#B9C4C4; transition:width .12s, background .12s; }
+  #model .sig.over .sig-fill { background:#C41E3A; }
+  #model .sig-thr { position:absolute; top:-3px; width:2px; height:13px; background:#3A4848; }
+  #model .sig-thr-lbl { font-size:10.5px; color:#8B9999; margin-top:6px; display:flex;
+                        justify-content:space-between; gap:8px; }
+  #model input[type=range] { width:100%; margin:9px 0 0; accent-color:#C41E3A; }
+
+  /* trigger card */
+  #model .trg { border:1px solid #E4E8E8; border-radius:5px; padding:12px 13px; margin-bottom:11px;
+                background:#fff; opacity:.55; transition:opacity .15s, border-color .15s, background .15s; }
+  #model .trg.fired { opacity:1; border-color:#C41E3A; background:#FBEDEF; }
+  #model .trg-top { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+  #model .trg-name { font-size:13.5px; font-weight:600; }
+  #model .trg-state { font-size:10px; letter-spacing:.08em; text-transform:uppercase; font-weight:600;
+                      color:#8B9999; border:1px solid #E4E8E8; border-radius:3px; padding:1px 6px;
+                      white-space:nowrap; }
+  #model .trg.fired .trg-state { color:#9E152C; border-color:#F0D3D9; background:#fff; }
+  #model .trg-cond { font-size:11.5px; color:#8B9999; margin:4px 0 8px; }
+  #model .trg-body { font-size:12.5px; color:#3A4848; margin:0 0 8px; display:none; }
+  #model .trg.fired .trg-body { display:block; }
+  #model .trg-meta { font-size:11.5px; color:#8B9999; display:flex; justify-content:space-between;
+                     gap:10px; flex-wrap:wrap; }
+
+  /* shock panel */
+  #model .shock-sev { border-radius:5px; padding:13px 15px; margin-bottom:14px; border:1px solid #E4E8E8;
+                      background:#F7F9F9; }
+  #model .shock-sev .lbl { font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+                           color:#8B9999; font-weight:600; }
+  #model .shock-sev .val { font-size:22px; font-weight:600; margin-top:3px; }
+  #model .sev-calm .val { color:#2C5A38; }
+  #model .sev-watch .val { color:#7A5A18; }
+  #model .sev-warning .val { color:#9E152C; }
+  #model .sev-shock { border-color:#C41E3A; background:#FBEDEF; }
+  #model .sev-shock .val { color:#C41E3A; }
+  #model .shock-num { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+                      padding:9px 0; border-bottom:1px solid #E4E8E8; }
+  #model .shock-num:last-of-type { border-bottom:0; }
+  #model .shock-num .k { font-size:12.5px; color:#3A4848; }
+  #model .shock-num .v { font-size:15px; font-weight:600; font-variant-numeric:tabular-nums; }
+  #model .shock-num .v.zero { color:#8B9999; font-weight:400; }
+  #model .shock-num .v.hot { color:#C41E3A; }
+  #model .md-foot { font-size:11.5px; color:#8B9999; margin-top:18px; }
+</style>
+
+<script>
+(function () {
+  var M = window.SPAR_MODEL;
+  if (!M) { return; }
+  var A = M.assumptions;
+  var state = {};
+  M.signals.forEach(function (s) { state[s.id] = s.value; });
+
+  var fmtInt = function (n) { return new Intl.NumberFormat('en-US').format(Math.round(n)); };
+  var fmtIDR = function (n) {
+    if (n >= 1e12) { return 'Rp ' + (n / 1e12).toFixed(1) + ' tn'; }
+    if (n >= 1e9) { return 'Rp ' + (n / 1e9).toFixed(1) + ' bn'; }
+    return 'Rp ' + fmtInt(n);
+  };
+
+  function fired() {
+    return M.triggers.filter(function (t) {
+      return t.when.every(function (sid) {
+        var sig = M.signals.filter(function (s) { return s.id === sid; })[0];
+        return sig && state[sid] >= sig.threshold;
+      });
+    });
+  }
+
+  function compute() {
+    var f = fired();
+    var exposure = state['sig-exposure'] / 100;
+    var demand = state['sig-postings'] / 30;
+    var affected = A.bpo_employment * exposure * demand;
+    var wageLoss = affected * A.avg_monthly_wage_idr;
+    var jkpCost = affected * A.avg_monthly_wage_idr * A.jkp_replacement_rate * A.jkp_months;
+    var lead = f.length ? Math.min.apply(null, f.map(function (t) { return t.lead_time_days; })) : null;
+    var sev = ['calm', 'watch', 'warning', 'shock'][Math.min(f.length, 3)];
+    return { f: f, affected: affected, wageLoss: wageLoss, jkpCost: jkpCost, lead: lead, sev: sev };
+  }
+
+  function renderSignals() {
+    var host = document.getElementById('md-signals');
+    host.innerHTML = M.signals.map(function (s) {
+      var v = state[s.id];
+      var over = v >= s.threshold;
+      var pct = ((v - s.min) / (s.max - s.min)) * 100;
+      var thrPct = ((s.threshold - s.min) / (s.max - s.min)) * 100;
+      return '<div class="sig' + (over ? ' over' : '') + '">' +
+        '<div class="sig-top"><span class="sig-name">' + s.name + '</span>' +
+        '<span class="sig-val">' + v + '</span></div>' +
+        '<div class="sig-detail">' + s.detail + '</div>' +
+        '<div class="sig-bar"><div class="sig-fill" style="width:' + pct + '%"></div>' +
+        '<div class="sig-thr" style="left:' + thrPct + '%"></div></div>' +
+        '<div class="sig-thr-lbl"><span>' + s.unit + '</span><span>trigger at ' + s.threshold_label + '</span></div>' +
+        '<input type="range" min="' + s.min + '" max="' + s.max + '" step="' + s.step + '" value="' + v +
+        '" data-sig="' + s.id + '" aria-label="' + s.name + '">' +
+        '</div>';
+    }).join('');
+  }
+
+  function renderTriggers(f) {
+    var host = document.getElementById('md-triggers');
+    var ids = f.map(function (t) { return t.id; });
+    host.innerHTML = M.triggers.map(function (t) {
+      var on = ids.indexOf(t.id) >= 0;
+      return '<div class="trg' + (on ? ' fired' : '') + '">' +
+        '<div class="trg-top"><span class="trg-name">' + t.name + '</span>' +
+        '<span class="trg-state">' + (on ? 'fired' : 'armed') + '</span></div>' +
+        '<div class="trg-cond">' + t.condition + '</div>' +
+        '<p class="trg-body">' + t.action + '</p>' +
+        '<div class="trg-meta"><span>' + t.agency + '</span>' +
+        '<span>lead time ' + t.lead_time_days + ' days</span></div>' +
+        '</div>';
+    }).join('');
+  }
+
+  function renderShock(c) {
+    var host = document.getElementById('md-shock');
+    var sevLabel = { calm: 'Calm', watch: 'Watch', warning: 'Warning', shock: 'Shock' }[c.sev];
+    var n = c.f.length;
+    var zero = function (v) { return v < 1 ? ' zero' : ''; };
+    host.innerHTML =
+      '<div class="shock-sev sev-' + c.sev + '">' +
+      '<div class="lbl">Severity &mdash; ' + n + ' of ' + M.triggers.length + ' triggers fired</div>' +
+      '<div class="val">' + sevLabel + '</div></div>' +
+      '<div class="shock-num"><span class="k">Workers exposed to displacement</span>' +
+      '<span class="v' + zero(c.affected) + '">' + fmtInt(c.affected) + '</span></div>' +
+      '<div class="shock-num"><span class="k">Monthly wage income at risk</span>' +
+      '<span class="v' + zero(c.wageLoss) + '">' + fmtIDR(c.wageLoss) + '</span></div>' +
+      '<div class="shock-num"><span class="k">JKP cost, 6 months at 60%</span>' +
+      '<span class="v' + zero(c.jkpCost) + '">' + fmtIDR(c.jkpCost) + '</span></div>' +
+      '<div class="shock-num"><span class="k">Response window</span>' +
+      '<span class="v' + (c.lead === null ? ' zero' : ' hot') + '">' +
+      (c.lead === null ? 'no trigger fired' : c.lead + ' days') + '</span></div>';
+  }
+
+  function renderPresets() {
+    var host = document.getElementById('md-presets');
+    host.innerHTML = M.presets.map(function (p) {
+      return '<button type="button" data-preset="' + p.id + '">' + p.label + '</button>';
+    }).join('');
+  }
+
+  function update() {
+    var c = compute();
+    renderSignals();
+    renderTriggers(c.f);
+    renderShock(c);
+  }
+
+  document.addEventListener('input', function (ev) {
+    var id = ev.target.getAttribute && ev.target.getAttribute('data-sig');
+    if (!id) { return; }
+    state[id] = Number(ev.target.value);
+    update();
+  });
+
+  document.addEventListener('click', function (ev) {
+    var pid = ev.target.getAttribute && ev.target.getAttribute('data-preset');
+    if (pid) {
+      var p = M.presets.filter(function (x) { return x.id === pid; })[0];
+      Object.keys(p.values).forEach(function (k) { state[k] = p.values[k]; });
+      update();
+      return;
+    }
+    if (ev.target.id === 'md-reset') {
+      M.signals.forEach(function (s) { state[s.id] = s.value; });
+      update();
+    }
+  });
+
+  renderPresets();
+  update();
+})();
+</script>
