@@ -55,26 +55,142 @@ END_RESULTS = [
 ]
 
 
+def load_json(name):
+    path = os.path.join(DATA, name)
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def ghost_bars(widths):
+    return "".join(f'<span class="ghost-bar" style="width:{w}%"></span>' for w in widths)
+
+
+def render_ecosystem(cfg, ghost=False):
+    """Two-panel map: Actors and Programs | Data and Reports.
+    ghost=True renders the same shape as inert skeleton bars."""
+    if ghost:
+        cats = "".join(
+            '<div class="cat"><div class="cat-name">' + ghost_bars([52]) + "</div>"
+            '<div class="chips">' + ghost_bars([46, 58, 40, 52]) + "</div></div>"
+            for _ in range(4)
+        )
+        ds = "".join("<li>" + ghost_bars([70, 30]) + "</li>" for _ in range(6))
+        rp = "".join("<li>" + ghost_bars([64, 34]) + "</li>" for _ in range(6))
+    else:
+        cats = "".join(
+            '<div class="cat"><div class="cat-name">' + esc(c["name"]) + "</div>"
+            '<div class="chips">'
+            + "".join(f'<span class="chip chip-{esc(c["tone"])}">{esc(a)}</span>' for a in c["actors"])
+            + "</div></div>"
+            for c in cfg.get("categories", [])
+        )
+        ds = "".join(
+            '<li class="' + ("strong" if d.get("strong") else "") + '">' + esc(d["name"])
+            + (f'<span class="ds-note">{esc(d["note"])}</span>' if d.get("note") else "")
+            + "</li>"
+            for d in cfg.get("datasets", [])
+        )
+        rp = "".join(
+            "<li>" + esc(r["name"]) + f'<span class="rp-src">&#8592; {esc(r["source"])}</span></li>'
+            for r in cfg.get("reports", [])
+        )
+    extra = ""
+    if not ghost:
+        overlaps = "".join(f"<li>{esc(o)}</li>" for o in cfg.get("overlaps", []))
+        extra = f'<ul class="overlaps">{overlaps}</ul>'
+    src = cfg.get("source", {})
+    attrib = ""
+    if not ghost and src:
+        attrib = (
+            f'<p class="attrib">Source: {esc(src.get("title"))}, p.{esc(str(src.get("page")))} '
+            f"&mdash; {esc(src.get('author'))}. Transcribed as v0; not yet verified.</p>"
+        )
+    return (
+        '<div class="panels">'
+        f'<div class="panel"><h5>Actors and Programs</h5><div class="cats">{cats}</div>{extra}</div>'
+        '<div class="panel"><h5>Data and Reports</h5><div class="two-col">'
+        f'<div><div class="col-head">Datasets</div><ul class="flow">{ds}</ul></div>'
+        f'<div><div class="col-head">Reports</div><ul class="flow">{rp}</ul></div>'
+        f"</div></div></div>{attrib}"
+    )
+
+
+def ghost_paper(eyebrow, paragraphs, callout=False, narrow=False):
+    body = "".join(f'<div class="para">{ghost_bars([100, 97, 92, 99, 46])}</div>' for _ in range(paragraphs))
+    tail = ""
+    if callout:
+        tail = '<div class="callout">' + ghost_bars([30]) + f'<div class="para">{ghost_bars([96, 88])}</div></div>'
+    return (
+        f'<div class="paper{" narrow" if narrow else ""}">'
+        f'<div class="paper-eyebrow">{esc(eyebrow)}</div>'
+        f'<div class="paper-title">{ghost_bars([72])}</div>'
+        f'<div class="paper-meta">{ghost_bars([38, 26])}</div>'
+        '<div class="paper-rule"></div>'
+        f"{body}{tail}</div>"
+    )
+
+
 def end_result_cards():
+    eco = load_json("ecosystem-ph-v0.json")
     out = []
     for block in END_RESULTS:
+        slug = block["title"].lower().replace(" & ", "-").replace(" ", "-")
         cards = []
         for item in block["items"]:
             cls = "card ours" if item["ours"] else "card"
             tag = '<span class="tag tag-ours">our lane</span>' if item["ours"] else '<span class="tag">partner</span>'
+            if block["title"] == "Ecosystem & policy map":
+                status = (
+                    '<span class="status-dot dot-ghost"></span>Ghosted — shape only, not filled yet.'
+                    if item["ours"]
+                    else '<span class="status-dot dot-real"></span>v0 loaded — from the team\u2019s own page 5.'
+                )
+            else:
+                status = '<span class="placeholder">Placeholder — no content yet.</span>'
             cards.append(
                 f'<article class="{cls}">'
                 f'<div class="card-head"><h4>{esc(item["country"])}</h4>{tag}</div>'
                 f'<p class="card-owner">{esc(item["owner"])}</p>'
                 f'<p class="card-due">{esc(item["due"])}</p>'
-                f'<p class="card-body placeholder">Placeholder — no content yet.</p>'
+                f'<p class="card-body">{status}</p>'
+                f'<a class="card-cta" href="#mock-{slug}">View demo visual &#8594;</a>'
                 "</article>"
             )
+        if block["title"] == "Ecosystem & policy map":
+            stage = (
+                '<div class="panel-group"><div class="panel-group-head">'
+                '<span class="flag flag-real">Philippines</span> v0 &mdash; transcribed from the team\u2019s page 5</div>'
+                + render_ecosystem(eco, ghost=False)
+                + '</div><div class="panel-group"><div class="panel-group-head">'
+                '<span class="flag flag-ghost">Indonesia</span> ghosted &mdash; shape only, awaiting our rows</div>'
+                + render_ecosystem(eco, ghost=True)
+                + "</div>"
+            )
+        elif block["title"] == "Notes for officials":
+            stage = (
+                '<div class="mock-row">'
+                + ghost_paper("Officials\u2019 note \u2014 Indonesia", 4, callout=True, narrow=True)
+                + ghost_paper("Officials\u2019 note \u2014 Philippines", 4, callout=True, narrow=True)
+                + "</div>"
+            )
+        else:
+            stage = (
+                '<div class="mock-row">'
+                + ghost_paper("Country report \u2014 Indonesia", 3)
+                + ghost_paper("Country report \u2014 Philippines", 3)
+                + "</div>"
+            )
         out.append(
-            '<div class="result-block">'
+            f'<div class="result-block" id="result-{slug}">'
             f'<h3 class="result-title">{esc(block["title"])}</h3>'
             f'<p class="result-note">{esc(block["note"])}</p>'
             f'<div class="cards">{"".join(cards)}</div>'
+            f'<div class="mock" id="mock-{slug}">'
+            f'<p class="mock-label">Demo visual &mdash; the shape of the finished {esc(block["title"].lower())}. '
+            f"Ghosted bars are placeholders, not content.</p>"
+            f'<div class="mock-stage">{stage}</div></div>'
             "</div>"
         )
     return "".join(out)
@@ -229,6 +345,61 @@ def main():
   .pill.demo {{ background:#F2F4F4; color:var(--muted); border-color:var(--line); font-size:10px;
                 letter-spacing:.05em; }}
   .answers {{ white-space:nowrap; }}
+
+  /* --- demo visuals / ghost mode --- */
+  .card-cta {{ display:inline-block; margin-top:14px; font-size:12.5px; font-weight:600; }}
+  .status-dot {{ display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:7px;
+                 vertical-align:middle; }}
+  .dot-real {{ background:var(--accent); }}
+  .dot-ghost {{ background:var(--line); border:1px solid var(--muted); }}
+  .mock {{ margin-top:18px; border:1px solid var(--line); border-radius:6px; background:var(--bg-alt);
+           padding:16px 18px 18px; }}
+  .mock-label {{ margin:0 0 14px; font-size:12.5px; color:var(--muted); }}
+  .mock-stage {{ display:flex; flex-direction:column; gap:18px; }}
+  .mock-row {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }}
+  .panel-group {{ background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:14px 16px; }}
+  .panel-group-head {{ font-size:12px; color:var(--muted); margin-bottom:12px; }}
+  .flag {{ display:inline-block; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+           font-weight:600; border-radius:3px; padding:2px 7px; margin-right:8px; }}
+  .flag-real {{ background:var(--accent-tint); color:var(--accent-deep); }}
+  .flag-ghost {{ background:#F2F4F4; color:var(--muted); }}
+  .panels {{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }}
+  @media (max-width:900px) {{ .panels {{ grid-template-columns:1fr; }} }}
+  .panel h5 {{ margin:0 0 12px; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+               color:var(--ink-soft); font-weight:600; padding-bottom:6px; border-bottom:1px solid var(--line); }}
+  .cat {{ margin-bottom:10px; }}
+  .cat-name {{ font-size:11.5px; font-weight:600; color:var(--ink-soft); margin-bottom:5px; }}
+  .chips {{ display:flex; flex-wrap:wrap; gap:5px; }}
+  .chip {{ font-size:11.5px; padding:2px 8px; border-radius:3px; border:1px solid var(--line);
+           background:var(--bg-alt); color:var(--ink-soft); }}
+  .chip-gov {{ background:#F2F4F4; }}
+  .chip-industry {{ background:#FBF3E2; border-color:#EADFC2; }}
+  .chip-multi {{ background:#EEF4F7; border-color:#D3E2EA; }}
+  .chip-strategy {{ background:var(--accent-tint); border-color:#F0D3D9; color:var(--accent-deep); }}
+  .overlaps {{ margin:10px 0 0; padding-left:18px; }}
+  .overlaps li {{ font-size:12px; color:var(--muted); margin-bottom:4px; }}
+  .two-col {{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }}
+  .col-head {{ font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+               font-weight:600; margin-bottom:7px; }}
+  .flow {{ list-style:none; margin:0; padding:0; }}
+  .flow li {{ font-size:12.5px; padding:6px 9px; border:1px solid var(--line); border-radius:3px;
+              margin-bottom:6px; background:var(--bg-alt); }}
+  .flow li.strong {{ border-left:3px solid var(--accent); }}
+  .ds-note {{ display:block; font-size:10.5px; color:var(--accent-deep); margin-top:2px; }}
+  .rp-src {{ display:block; font-size:10.5px; color:var(--muted); margin-top:2px; }}
+  .attrib {{ margin:12px 0 0; font-size:11.5px; color:var(--muted); font-style:italic; }}
+  .ghost-bar {{ display:inline-block; height:9px; border-radius:3px; background:#E9EDED;
+                margin:0 3px 3px 0; vertical-align:middle; }}
+  .paper {{ background:var(--bg); border:1px solid var(--line); border-radius:4px; padding:20px 22px; }}
+  .paper.narrow {{ max-width:100%; }}
+  .paper-eyebrow {{ font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+                    font-weight:600; }}
+  .paper-title {{ margin:10px 0 8px; }}
+  .paper-meta {{ margin-bottom:12px; }}
+  .paper-rule {{ height:2px; background:var(--accent-tint); width:40px; margin-bottom:16px; }}
+  .para {{ margin-bottom:9px; line-height:1; }}
+  .callout {{ border-left:3px solid var(--accent-tint); background:var(--bg-alt); padding:11px 13px;
+              margin-top:12px; }}
   ul {{ margin:0; padding-left:20px; }}
   li {{ margin-bottom:7px; font-size:14px; }}
   footer {{ border-top:1px solid var(--line); background:var(--bg-alt); }}

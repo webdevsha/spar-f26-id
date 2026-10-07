@@ -1,0 +1,46 @@
+{
+  "_note": "v0 content for the Ecosystem & policy map, Philippines lane. Transcribed from the team's own document (page 5). Demo/v0 — attribute to the author, do not present as verified.",
+  "source": {
+    "title": "Dalisay - BPO Philippines",
+    "page": 5,
+    "drive_id": "1CsJl1O6JBLXbPWzq0X9PeJdeHsnZS6e7",
+    "author": "Danielle Dalisay (Philippines lane)",
+    "fetched": "2026-10-07"
+  },
+  "actors_caption": "Actors and Programs — grouped by category. In the source these sit in overlapping regions; the overlaps are the interesting part.",
+  "categories": [
+    { "name": "Government", "tone": "gov", "actors": ["DOST", "BSP", "DTI", "DepEd", "DICT", "DOLE", "TESDA", "Congress"] },
+    { "name": "Industry", "tone": "industry", "actors": ["IBPAP", "PEZA", "StackTrek"] },
+    { "name": "Multilateral", "tone": "multi", "actors": ["ADB", "UNESCO"] },
+    { "name": "Strategy / infra", "tone": "strategy", "actors": ["Econ Dev Council"] }
+  ],
+  "overlaps": [
+    "IBPAP (industry) sits inside the workforce-programme space.",
+    "Congress links to IBPAP with a pending AI bill.",
+    "DICT sits in the central overlap; DOLE in the left overlap.",
+    "DOST and BSP are linked (line 6); UNESCO links to DOST (line 7).",
+    "DTI and DepEd fall in the strategy / infra region."
+  ],
+  "datasets": [
+    { "name": "PSA Labor Force Survey", "note": "3+ reports", "strong": true },
+    { "name": "PSA SICT + PIDS SIA (2021)", "note": "" },
+    { "name": "BSP BOP Data", "note": "" },
+    { "name": "IBPAP Member Survey", "note": "" },
+    { "name": "Felden AIOE Scores (US SOC)", "note": "" },
+    { "name": "WB STEP Survey (PH)", "note": "" },
+    { "name": "WB Enterprise Survey", "note": "" },
+    { "name": "ILO Gmyrek Exposure Index", "note": "3+ reports", "strong": true }
+  ],
+  "reports": [
+    { "name": "IMF (Cucio & Hennig 2025)", "source": "PSA Labor Force Survey" },
+    { "name": "WB WDR2026 (Kruse & Yu)", "source": "PSA Labor Force Survey" },
+    { "name": "WB \"Running Uphill\" 2025", "source": "PSA Labor Force Survey" },
+    { "name": "PIDS DP 2024-35 (Quimba et al.)", "source": "PSA SICT + PIDS SIA (2021)" },
+    { "name": "BSP Balance of Payments Outlook", "source": "BSP BOP Data" },
+    { "name": "IBPAP Industry Overview 2026", "source": "IBPAP Member Survey" },
+    { "name": "ADB WP836: AI Exposure of Workers", "source": "Felden AIOE Scores (US SOC)" },
+    { "name": "ADB: Fate of Job Creation", "source": "WB STEP Survey (PH)" },
+    { "name": "ILO: GenAI and Jobs in PH", "source": "ILO Gmyrek Exposure Index" },
+    { "name": "ILO ASEAN GenAI Brief", "source": "ILO Gmyrek Exposure Index" }
+  ]
+}
