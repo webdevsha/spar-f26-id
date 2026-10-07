@@ -1,5 +1,5 @@
 {
-  "inventory": "id-policy-inventory.csv",
+  "Indonesia policy inventory": "id-policy-inventory.csv",
   "readiness": "id-readiness.csv",
   "signals": "id-signals.csv",
   "triggers": "id-triggers.csv",

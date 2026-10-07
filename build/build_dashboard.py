@@ -49,6 +49,8 @@ def main():
         if (row.get("q3") or "").strip().lower() == "no" or (row.get("q4") or "").strip().lower() == "no":
             blind_spots.append({"doc": (row.get("document") or row.get("id") or "").strip(), "misses": misses})
 
+    demo_rows = [r for r in inventory if (r.get("verified_by") or "").strip().upper() == "DEMO"]
+
     inv_rows = []
     for row in inventory:
         rid = (row.get("id") or "").strip()
@@ -59,10 +61,12 @@ def main():
         )
         link = (row.get("link") or "").strip()
         link_cell = '<a href="' + esc(link) + '">link</a>' if link else ""
+        verified = (row.get("verified_by") or "").strip()
+        badge = f' <span class="pill demo">{esc(verified)}</span>' if verified.upper() == "DEMO" else ""
         inv_rows.append(
             "<tr>"
             f'<td class="mono">{esc(rid)}</td>'
-            f"<td><strong>{esc(row.get('document'))}</strong><br><span class=\"muted\">{esc(row.get('short_name'))}</span></td>"
+            f"<td><strong>{esc(row.get('document'))}</strong>{badge}<br><span class=\"muted\">{esc(row.get('short_name'))}</span></td>"
             f"<td>{esc(row.get('type'))}</td>"
             f"<td>{esc(row.get('owner_agency'))}</td>"
             f"<td>{esc(row.get('covers'))}</td>"
@@ -71,6 +75,7 @@ def main():
             f"<td>{esc(row.get('status'))}</td>"
             f"<td>{link_cell}</td>"
             f'<td class="mono">{esc(row.get("last_checked"))}</td>'
+            f'<td class="mono">{esc(verified)}</td>'
             f'<td class="answers">{answers}</td>'
             "</tr>"
         )
@@ -89,8 +94,15 @@ def main():
         if blind_spots
         else '<p class="muted">No rows yet.</p>'
     )
-    inv_html = "".join(inv_rows) or '<tr><td colspan="11" class="muted">No rows yet — add documents to the inventory sheet.</td></tr>'
+    inv_html = "".join(inv_rows) or '<tr><td colspan="12" class="muted">No rows yet — add documents to the inventory sheet.</td></tr>'
     grid_html = "".join(grid_rows) or f'<tr><td colspan="9" class="muted">No rows yet.</td></tr>'
+
+    banner_html = (
+        f'<div class="banner">&#9888; {len(demo_rows)} of {len(inventory)} inventory rows are <strong>DEMO placeholders</strong> '
+        f"(verified_by = DEMO) — illustrative only, replace with verified v0 rows.</div>"
+        if demo_rows
+        else ""
+    )
 
     built = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     doc = f"""<!doctype html>
@@ -124,6 +136,8 @@ def main():
   .pill.yes {{ background:#e3efd9; color:#33501f; border-color:#bcd4a8; }}
   .pill.partly {{ background:#f6ecd2; color:#6b5313; border-color:#e3d3a4; }}
   .pill.no {{ background:#f6ded9; color:#7a2f22; border-color:#e5bdb5; }}
+  .pill.demo {{ background:#efe2c4; color:#6b4a13; border-color:#d8c295; font-size:10px; letter-spacing:.04em; }}
+  .banner {{ background:#f6ecd2; border:1px solid #e3d3a4; color:#6b5313; padding:9px 28px; font-size:13px; }}
   .answers {{ white-space:nowrap; }}
   a {{ color:var(--wood); }}
   footer {{ padding:16px 28px; border-top:1px solid var(--line); font-size:12px; color:#8a8578; }}
@@ -140,13 +154,14 @@ def main():
   <a href="#readiness">Readiness grid</a>
   <a href="#blindspots">Blind spots</a>
 </nav>
+{banner_html}
 <main>
   <section id="inventory">
     <h2>Policy inventory ({len(inventory)} document{'s' if len(inventory) != 1 else ''})</h2>
     <table>
       <thead><tr>
         <th>id</th><th>document</th><th>type</th><th>owner / agency</th><th>covers</th>
-        <th>monitoring</th><th>effective</th><th>status</th><th>link</th><th>last checked</th><th>readiness</th>
+        <th>monitoring</th><th>effective</th><th>status</th><th>link</th><th>last checked</th><th>verified</th><th>readiness</th>
       </tr></thead>
       <tbody>{inv_html}</tbody>
     </table>
