@@ -52,6 +52,27 @@ id	document	q1	q2	q3	q4	q5	q6	score	blind_spot	notes
 one document per row · dates `YYYY-MM-DD` · never rename a header without
 telling CTO.
 
+## Sync visibility — who changed what
+
+Every sync run appends to **`data/SYNC-LOG.md`** (newest first): timestamp, source, the editor when
+known, and per tab the `+added / −removed` counts with the actual changed `id`s. The dashboard renders
+the newest entries in its **Recent changes** panel, and the commit message carries the editor.
+
+Two ways a change reaches the repo:
+
+| Trigger | Latency | Cost |
+|---|---|---|
+| Hourly cron (`17 * * * *`) | up to 60 min | negligible |
+| Google Apps Script `onChange` -> `repository_dispatch` | seconds | none (fires only on real edits) |
+
+To wire the real-time half, follow the setup block at the top of
+**`docs/apps-script-trigger.gs`** — paste it into Extensions -> Apps Script, add a fine-grained
+GitHub token (Actions: write, this repo only) to Script Properties, and add an `On change` trigger.
+
+**Honest limit:** the service account can only read cell *values*, not authorship. So "who edited" is
+only knowable via the Apps Script trigger (or the paid Drive Activity API). Scheduled runs log the
+editor as unknown — that is expected, not a bug.
+
 ## Running it
 
 ```bash
