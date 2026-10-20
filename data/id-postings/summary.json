@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20 14:27 UTC",
+ "generated": "2026-10-20 14:31 UTC",
  "window": [
   "2025-10-20",
   "2026-10-20"
@@ -82,35 +82,34 @@
   "PT Asuransi BRI Life": 6
  },
  "ai": {
-  "flagged": 4,
+  "flagged": 1,
   "of": 290,
   "tier": {
-   "none": 266,
-   "digital_basic": 15,
-   "ai_skill_tag": 4,
-   "ai_explicit": 3,
-   "ai_adjacent": 2
+   "none": 248,
+   "digital_basic": 31,
+   "data_skill": 10,
+   "ai_explicit": 1
   },
-  "data_flag": 6
+  "data_flag": 11
  },
  "by_sector_ai": {
   "Banking & Financial Services": {
    "n": 144,
-   "ai": 3,
-   "data": 2,
-   "digital": 11
+   "ai": 0,
+   "data": 3,
+   "digital": 23
   },
   "Business Process Outsourcing (BPO)": {
    "n": 118,
-   "ai": 0,
-   "data": 3,
+   "ai": 1,
+   "data": 6,
    "digital": 8
   },
   "Insurance": {
    "n": 19,
-   "ai": 1,
-   "data": 0,
-   "digital": 0
+   "ai": 0,
+   "data": 1,
+   "digital": 1
   }
  },
  "education": {

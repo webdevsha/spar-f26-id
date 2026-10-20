@@ -15,6 +15,42 @@ SRC = os.path.join(ROOT, "scratch", "feas", "out_postings.csv")
 OUTDIR = os.path.join(ROOT, "data", "id-postings")
 SNIPPET = 240
 
+# --- strict skill definitions (the previous run used a loose "ai" substring that
+# --- matched Indonesian words and company names -- e.g. "komputer" flagged as AI)
+AI_TERMS = [
+    r"artificial intelligence", r"kecerdasan buatan",
+    r"machine learning", r"deep learning", r"\bgenerative\s+ai\b", r"\bgen\s?ai\b",
+    r"large language model", r"\bllm\b", r"chatgpt", r"\bcopilot\b",
+    r"\brpa\b", r"robotic process automation", r"\botomasi\b", r"\bautomation\b",
+    r"\bchatbot\b", r"computer vision", r"\bnlp\b", r"prompt engineering",
+    r"\bdata scien(ce|tist)\b",
+]
+DATA_TERMS = [
+    r"analisis data", r"data analy(st|sis)", r"\bsql\b", r"\bpython\b", r"\br\b(?= programming)",
+    r"power bi", r"\btableau\b", r"data science", r"big data", r"data visuali[sz]ation",
+    r"\bstatistik\b", r"\bstatistics\b", r"data management", r"manajemen data",
+    r"\bdatabase\b", r"\bpandas\b", r"\bsas\b", r"\bspss\b",
+]
+DIGITAL_TERMS = [
+    r"\bkomputer\b", r"microsoft office", r"\bexcel\b", r"\bword\b", r"\bdigital\b",
+    r"\baplikasi\b", r"\bsoftware\b", r"\bms office\b",
+]
+AI_RE = re.compile("|".join(AI_TERMS), re.I)
+# standalone uppercase "AI" only: a case-insensitive \bai\b would fire on Indonesian
+# words and on "genai" inside "mengenai"
+AI_TOKEN = re.compile(r"(?<![A-Za-z])AI(?![A-Za-z])")
+DATA_RE = re.compile("|".join(DATA_TERMS), re.I)
+DIGITAL_RE = re.compile("|".join(DIGITAL_TERMS), re.I)
+
+
+def skill_class(text):
+    """Return (ai_hit, data_hit, digital_hit) as matched strings or ''."""
+    a = AI_RE.search(text or "") or AI_TOKEN.search(text or "")
+    d = DATA_RE.search(text or "")
+    g = DIGITAL_RE.search(text or "")
+    return (a.group(0) if a else "", d.group(0) if d else "", g.group(0) if g else "")
+
+
 FIN_WORDS = re.compile(
     r"bank|financ|asuransi|insurance|kredit|credit|pembiayaan|leasing|multifinance|"
     r"fintech|pegadaian|dana|investasi|investment|sekuritas|reksa|paylater|pinjaman|"
@@ -27,13 +63,6 @@ def clean(s):
 
 
 def main():
-    if not os.path.exists(SRC):
-        raise SystemExit(
-            "raw crawl not found: " + SRC + "\n"
-            "The raw detail-page harvest is deliberately NOT committed (it holds full ad text).\n"
-            "The canonical artifact is data/id-postings/karirhub-id-postings-sample.csv;\n"
-            "re-running the crawl is what regenerates it. build/build_postings_report.py\n"
-            "rebuilds the HTML from the committed CSV without the raw file.")
     rows = list(csv.DictReader(open(SRC)))
     out, i = [], 0
     for r in rows:
@@ -45,6 +74,15 @@ def main():
         if not sector:
             sector = "Finance & insurance (keyword-matched)" if fin_hit else "Outside finance scope"
         in_fin = live or (fin_hit and sector.startswith("Finance"))
+        ai_hit, data_hit, dig_hit = skill_class(blob)
+        if ai_hit:
+            tier = "ai_explicit"
+        elif data_hit:
+            tier = "data_skill"
+        elif dig_hit:
+            tier = "digital_basic"
+        else:
+            tier = "none"
         i += 1
         out.append({
             "rec_id": f"IN-P-{i:03d}",
@@ -67,10 +105,12 @@ def main():
             "skills": clean(r["skills"]),
             "content": clean(r["desc"])[:SNIPPET],
             "content_chars_full": r["desc_chars"],
-            "ai_skill_required": "Yes" if r["ai_skill_tag"] == "yes" else "No",
-            "ai_tier": r["ai_tier"],
-            "ai_evidence": clean(r["ai_hits"]),
-            "data_skill_flag": "Yes" if r["data_skill_tag"] == "yes" else "No",
+            "ai_skill_required": "Yes" if ai_hit else "No",
+            "ai_tier": tier,
+            "ai_evidence": ai_hit or ("" if not data_hit else ""),
+            "data_skill_flag": "Yes" if data_hit else "No",
+            "data_evidence": data_hit,
+            "digital_basic_flag": "Yes" if dig_hit else "No",
             "min_education": clean(r["min_education"]),
             "salary_shown": clean(r["salary_shown"]),
             "deadline": clean(r["deadline"]),
