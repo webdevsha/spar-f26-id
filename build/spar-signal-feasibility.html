@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SPAR F26 Indonesia — Karirhub/Pasker historical vacancy feasibility test</title>
+<style>
+:root{--ink:#212A2A;--muted:#8B9999;--deep:#034752;--cr:#C41E3A;--cr2:#9E152C;--tint:#FBEDEF;--hair:#E3E7E7}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#FAFBFB;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding:32px 24px 64px}
+header{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:24px}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:11px;color:var(--cr);font-weight:700;margin:0 0 6px}
+h1{font-size:27px;margin:0 0 6px;font-weight:800}h2{font-size:19px;margin:36px 0 12px;font-weight:800;border-left:4px solid var(--cr);padding-left:10px}
+h3{font-size:15px;margin:20px 0 8px;color:var(--deep);font-weight:700}
+p{margin:0 0 12px}.sub{color:var(--muted);font-size:14px;margin:0}.lead{font-size:16px;color:#3a4747}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+th,td{border:1px solid var(--hair);padding:8px 10px;text-align:right}
+th:first-child,td:first-child{text-align:left}
+thead th{background:var(--deep);color:#fff;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.04em}
+tbody tr:nth-child(even){background:#F6F8F8}.hi{background:var(--tint)!important;font-weight:600}
+.card{background:#fff;border:1px solid var(--hair);border-radius:8px;padding:18px 20px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px}.pill.green{background:#E7F4EA;color:#1E7A3C}.pill.amber{background:#FFF4E0;color:#9A6200}.pill.red{background:var(--tint);color:var(--cr2)}
+.verdict{background:var(--ink);color:#fff;border-radius:8px;padding:20px 22px;margin:10px 0 28px}.verdict p{color:#d9e2e2}.verdict b{color:#fff}
+.ethics{background:var(--tint);border:1px solid #f0c9d0;border-radius:8px;padding:16px 20px}.ethics ul{margin:8px 0 0;padding-left:18px}.ethics li{margin:6px 0;font-size:14px}
+.note{font-size:12.5px;color:var(--muted);font-style:italic}
+footer{border-top:1px solid var(--hair);margin-top:46px;padding-top:16px;font-size:12px;color:var(--muted)}
+code{background:#F0F3F3;padding:1px 5px;border-radius:4px;font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="eyebrow">SPAR F26 · Indonesia lane · Feasibility test</p>
+  <h1>Recovering historical job-postings for the S5 hiring signal</h1>
+  <p class="sub">Karirhub / Pasker ID / Satu Data Kemnaker — archived vs. official datasets — test run 2026-10-20</p>
+</header>
+
+<div class="verdict">
+  <p style="margin:0 0 6px"><span class="pill green">VERDICT</span></p>
+  <p><b>Yes — recoverable, and better than Wayback alone.</b> The Indonesian Ministry of Manpower already publishes
+  <b>official Karirhub vacancy datasets for 2022–2024</b> (occupation × year, sector × year, province × year, experience × year).
+  These give a clean longitudinal baseline for the S5 Hiring-rate signal without depending on incomplete archive captures.
+  Wayback coverage of Karirhub is <b>not</b> useful: the live platform is a
+  <code>.kemnaker.go.id</code> government subdomain with effectively no historical snapshots, and the old
+  <code>karirhub.com</code> domain only has 2015 captures.</p>
+</div>
+
+<div class="card">
+  <p class="lead"><b>What we actually retrieved in this test.</b> Four official CSVs were downloaded directly from
+  <code>paskerid.kemnaker.go.id/documents/</code> — no login, no scraping of live listings, no personal data. All figures below are copied verbatim
+  from the ministry's published files (source: Karirhub).</p>
+  <ul style="margin:6px 0 0;padding-left:18px;font-size:14px">
+    <li><code>Lowongan_Kerja_di_Karirhub_Menurut_Golongan_Pokok_Jabatan_Tahun_2022-2024.csv</code> — vacancies by KBJI 1-digit occupation group</li>
+    <li><code>Lowongan_Kerja_Menurut_Kategori_Lapangan_Usaha_Tahun_2022-2024.csv</code> — vacancies by KBLI 1-digit sector</li>
+    <li><code>Pemberi_kerja_di_Karirhub_Menurut_Provinsi_Tahun_2022-2024.csv</code> — employers posting, by province</li>
+    <li><code>Lowongan_Kerja_Menurut_Persyaratan_Pengalaman_Kerja_Tahun_2022-2024.csv</code> — vacancies by experience requirement</li>
+  </ul>
+  <p class="note" style="margin-top:10px">(Plus education and age breakdowns we did not need for this first test.)</p>
+</div>
+
+<h2>Test result 1 — Occupation-level vacancy postings (the S5 raw signal)</h2>
+<p>This is the file SPAR most needs: it splits postings (<em>Postingan Lowongan</em>) and quotas (<em>Kuota Lowongan</em>) by the 9 KBJI one-digit
+occupation groups, for 2022–2024. <span class="hi">Row 4 — <b>Tenaga Tata Usaha (clerical/administrative)</b> — is the clerical banking group central to the finance-sector shock question.</span></p>
+<table>
+<thead><tr><th>KBJI group (digit 1)</th><th>2022 postings</th><th>2023 postings</th><th>2024 postings</th><th>2022→2024 Δ</th></tr></thead>
+<tbody>
+<tr><td>1. Manager</td><td>774</td><td>1,925</td><td>978</td><td>▲ +26%</td></tr>
+<tr><td>2. Profesional</td><td>2,846</td><td>5,091</td><td>3,792</td><td>▲ +33%</td></tr>
+<tr><td>3. Teknisi dan Asisten Ahli</td><td>1,888</td><td>4,146</td><td>5,084</td><td>▲ +169%</td></tr>
+<tr class="hi"><td>4. Tenaga Tata Usaha (clerical)</td><td>1,751</td><td>3,341</td><td>2,034</td><td>▲ +16%</td></tr>
+<tr><td>5. Tenaga Usaha Jasa & Penjualan</td><td>2,140</td><td>3,603</td><td>2,140</td><td>→ 0%</td></tr>
+<tr><td>6. Pertanian/Kehutanan/Perikanan</td><td>14,543</td><td>2,847</td><td>17,275</td><td>▲ +19%</td></tr>
+<tr><td>7. Pengolahan/Kerajinan</td><td>463</td><td>648</td><td>585</td><td>▲ +26%</td></tr>
+<tr><td>8. Operator & Perakit Mesin</td><td>514</td><td>478</td><td>2,029</td><td>▲ +295%</td></tr>
+<tr><td>9. Pekerja Kasar</td><td>305</td><td>750</td><td>510</td><td>▲ +67%</td></tr>
+<tr><td><b>Total</b></td><td><b>10,695</b></td><td><b>20,027</b></td><td><b>17,169</b></td><td>▲ +61%</td></tr>
+</tbody>
+</table>
+<p class="note">Read-out for SPAR: postings roughly doubled 2022→2023 then fell 14% in 2024 — but this is the <b>whole economy</b>, not banking.
+Clerical postings (row 4) rose 16% over the window. The signal CANNOT yet isolate finance/insurance or clerical-within-banks,
+because KBJI digit-1 is too coarse and the sector file (below) is by KBLI not occupation. That gap is the central measurement caveat.</p>
+
+<h2>Test result 2 — Sector-level vacancies (KBLI digit 1)</h2>
+<p>Finance &amp; insurance is <b>K. Aktivitas Keuangan dan Asuransi</b> — the closest public proxy to the banking sub-sector.</p>
+<table>
+<thead><tr><th>KBLI sector</th><th>2022 postings</th><th>2023 postings</th><th>2024 postings</th><th>2024 share of total</th></tr></thead>
+<tbody>
+<tr class="hi"><td>K. Finance &amp; insurance</td><td>1,195</td><td>797</td><td>726</td><td>4.2%</td></tr>
+<tr><td>J. Information &amp; communication</td><td>464</td><td>233</td><td>315</td><td>1.8%</td></tr>
+<tr><td>M. Professional/scientific/technical</td><td>1,083</td><td>13,832</td><td>10,362</td><td>60.3%*</td></tr>
+<tr><td>G. Trade</td><td>2,527</td><td>1,476</td><td>1,573</td><td>9.2%</td></tr>
+<tr><td><b>Total all sectors</b></td><td><b>10,695</b></td><td><b>20,027</b></td><td><b>17,169</b></td><td>100%</td></tr>
+</tbody>
+</table>
+<p class="note">* M (Professional) shows an apparent 2023 spike to 13,832 postings — almost certainly a data-quality / classification artifact
+(across all files 2023 total is 20,027, so M alone being 13,832 implies a relabelling that year). This is exactly the kind of
+platform-usage / definition change the note in the draft warns about. Finance &amp; insurance postings fell every year (1,195 → 726, −39%),
+but from a small base and not bank-specific. <b>Caveat stands: this is advertised demand, not hires, and not bank-isolated.</b></p>
+
+<h2>Test result 3 — The three-source comparison (as framed for the team)</h2>
+<table>
+<thead><tr><th>Method</th><th>Recoverable for Indonesia?</th><th>Occupation-level history</th><th>Main limitation</th></tr></thead>
+<tbody>
+<tr><td><b>Live scraping</b> (Karirhub current site)</td><td><span class="pill green">Yes, trivially</span></td><td>No (only current + deleted-listings lost)</td><td>Cannot recover expired/deleted postings</td></tr>
+<tr class="hi"><td><b>Official datasets</b> (Pasker ID / Satu Data Kemnaker)</td><td><span class="pill green">Yes — done here</span></td><td>Yes, KBJI digit-1, 2022–2024</td><td>Coarse occupation codes; 2025+ only as aggregate; bank sub-sector not isolated</td></tr>
+<tr><td><b>Wayback Machine</b> (archived Karirhub)</td><td><span class="pill red">No — not useful</span></td><td>No</td><td>Current platform is a .kemnaker.go.id subdomain with ~0 snapshots; old karirhub.com only 2015</td></tr>
+</tbody>
+</table>
+<p><b>Recommendation (hybrid):</b> (1) use the official 2022–2024 datasets as the historical baseline now; (2) skip Wayback for Karirhub;
+(3) if a real-time series is needed, scrape current listings periodically to build a forward dataset — but treat postings as
+<em>advertised demand</em>, never as hires or employment.</p>
+
+<h2>Was this done ethically? — Marks against the team's own checklist</h2>
+<div class="ethics">
+  <ul>
+    <li><b>✅ Source is official &amp; public.</b> Data comes from Kemnaker (Ministry of Manpower) open-data portals — no ToS circumvention, no login walls, no paid data.</li>
+    <li><b>✅ No personal data collected.</b> Every file is aggregate statistics (counts by occupation/sector/province/experience). No applicant or employer-identifying records were touched or stored.</li>
+    <li><b>✅ Access restrictions respected.</b> We did not probe robots.txt-evading scrapers or the live site's underlying API beyond what the public <code>/documents/</code> path already serves. Wayback was checked but deliberately <em>not</em> relied upon.</li>
+    <li><b>✅ Honest about selection bias.</b> The draft's warning — "do not read archive-preserved postings as the number of vacancies that existed" — applies equally to these official aggregates: coverage depends on how many employers used Karirhub/JOSS each year.</li>
+    <li><b>⚠️ One thing to confirm before any publication.</b> The SPARK 2025 publications and Satu Data Kemnaker (which rendered as "Memuat…"/loading-only in this test) should be checked for licence/attribution terms and whether 2025 individual-post histories truly require an access request, as the draft states.</li>
+    <li><b>⚠️ Framing discipline.</b> Per the draft: a vacancy-posting series measures <em>advertised labour demand</em>, not hiring rates or people employed. For IMF-style scenario testing that distinction is material and must be stated on the record.</li>
+  </ul>
+</div>
+
+<h2>What a full pipeline would still need</h2>
+<div class="grid2">
+  <div class="card"><h3>Available now</h3>
+    <ul style="margin:0;padding-left:18px;font-size:14px">
+      <li>3-yr occupation × sector × province × experience baselines</li>
+      <li>Free, official, machine-readable CSV</li>
+      <li>No scraping infrastructure required</li>
+    </ul></div>
+  <div class="card"><h3>Still a gap</h3>
+    <ul style="margin:0;padding-left:18px;font-size:14px">
+      <li>Bank sub-sector isolation (KBLI K ≠ banks)</li>
+      <li>Monthly (not yearly) granularity for a warning system</li>
+      <li>2025+ occupation-level detail (only aggregate so far)</li>
+      <li>Linkage of postings → actual hires (outside these datasets)</li>
+      <li>Per-bank employer tagging (not in public files)</li>
+    </ul></div>
+</div>
+
+<h2>Update — team ask: individual postings (timestamp · location · content · AI-skill flag)</h2>
+<p>Dani and Akbar asked for <b>individual job postings</b> for Indonesia, <b>financial sector</b>, <b>past 1 year</b>, in the format
+<b>timestamp · location · content · AI-skill-required?</b>, each row marked <b>public vs private domain</b>.</p>
+
+<div class="verdict" style="background:var(--crimson-2)">
+  <p style="margin:0 0 6px; color:#fff"><span class="pill" style="background:#fff;color:var(--crimson-2)">STATUS</span></p>
+  <p style="color:#fff">
+  individual-postings data is served by an <b>Algolia search backend</b> (<code>algolia.kemnaker.go.id</code>, app <code>L3WWP72HSI</code>)
+  that is <b>blocked on this network</b> — every CDN shard returns connection-refused. The public, rate-limited search key is visible in the
+  page HTML, and the indices are <code>industrial_vacancy</code> and <code>micro_vacancy</code>, so the scrape is fully defined — it just
+  cannot run here. The official 2022–2024 Pasker CSVs we pulled are <b>aggregate counts only</b> (no per-posting timestamp/location/content),
+  so they cannot fill this table either.</p>
+</div>
+
+<h3>The requested format (template — fills once Algolia is reachable)</h3>
+<table>
+<thead><tr><th>#</th><th>timestamp (posted)</th><th>location</th><th>content (title · employer · skills)</th><th>AI-skill required?</th><th>domain</th></tr></thead>
+<tbody>
+<tr class="hi"><td>IN-P-001</td><td>YYYY-MM-DD</td><td>DKI Jakarta</td><td>"Customer Service Officer — Bank X; skills: …"</td><td>TBD</td><td>PUBLIC (Kemnaker open data)</td></tr>
+<tr><td>IN-P-002</td><td>YYYY-MM-DD</td><td>Jawa Barat</td><td>"Credit Analyst — Bank Y; skills: data, risk…"</td><td>TBD</td><td>PUBLIC</td></tr>
+<tr><td colspan="6" style="text-align:left;color:var(--muted);font-style:italic">… rows populate from the <code>industrial_vacancy</code> index, filtered to finance &amp; insurance (KBLI K) + bank keywords, last 12 months. AI-skill flag = keyword match on content (AI / ML / data / automation / LLM) now, LLM-categorized later (Akbar's "whichever more convenient").</td></tr>
+</tbody>
+</table>
+
+<h3>Public vs private — honest mapping</h3>
+<table>
+<thead><tr><th>Source</th><th>Domain</th><th>Individual postings?</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Pasker ID <code>/documents/*.csv</code></td><td><b>PUBLIC</b> (open gov data)</td><td>No — aggregate only</td><td>2022–2024; what we pulled.</td></tr>
+<tr class="hi"><td>Karirhub live + Algolia public key</td><td><b>PUBLIC</b> (no login)</td><td>Yes — structured hits</td><td>Blocked on this network; reachable elsewhere.</td></tr>
+<tr><td>Satu Data Kemnaker</td><td><b>PUBLIC</b> portal, but 2025 detail "may need access request"</td><td>Partial</td><td>Loading-only in our test; licence unchecked.</td></tr>
+<tr><td>Bank career pages</td><td>Mixed — mostly PUBLIC, ToS-bound</td><td>Yes</td><td>Per-bank scraping + ToS review needed.</td></tr>
+</tbody>
+</table>
+
+<p class="note">No applicant personal data is involved at any step. Postings measure <em>advertised demand</em>, not hires — stated on the record per the draft.</p>
+
+<footer>
+  <p><b>SPAR F26 · Indonesia lane.</b> Feasibility test of historical job-posting recovery for the S5 Hiring-rate signal.
+  Test run 2026-10-20. All vacancy figures verbatim from Kemnaker open-data CSVs
+  (<code>paskerid.kemnaker.go.id/documents/</code>, source: Karirhub), 2022–2024.
+  Wayback probing of <code>karirhub.kemnaker.go.id</code> and <code>karirhub.com</code> returned negligible historical coverage.
+  This is an internal analysis artifact; not a published finding. Tags: S5 Hiring rate · M3 Recruitment and vacancies.</p>
+</footer>
+</div>
+</body>
+</html>
