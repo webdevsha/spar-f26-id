@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20 14:31 UTC",
+ "generated": "2026-10-20 14:51 UTC",
  "window": [
   "2025-10-20",
   "2026-10-20"
@@ -111,6 +111,14 @@
    "data": 1,
    "digital": 1
   }
+ },
+ "archive_quality": {
+  "rows": 50,
+  "missing_employer": 2,
+  "missing_skills": 32,
+  "missing_url": 0,
+  "sector_keyword_matched": 9,
+  "date_derived": 50
  },
  "education": {
   "SMA atau Sederajat": 99,

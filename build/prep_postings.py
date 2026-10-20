@@ -62,8 +62,29 @@ def clean(s):
     return re.sub(r"\s+", " ", (s or "")).strip()
 
 
+def wayback_urls():
+    """The raw crawl keeps the capture filename (ts_slug-uuid); rebuild the archive URL
+    from it so every archived row is traceable. Without this the archive arm ships with
+    a blank url column."""
+    meta = os.path.join(ROOT, "scratch", "feas", "wb_details.json")
+    if not os.path.exists(meta):
+        return {}
+    out = {}
+    for r in json.load(open(meta)):
+        f = os.path.basename(r.get("file", "")).replace(".html", "")
+        if "_" not in f:
+            continue
+        ts, rest = f.split("_", 1)
+        if len(ts) == 14 and ts.isdigit():
+            out[(r.get("title") or "", r.get("captured") or "")] = (
+                f"https://web.archive.org/web/{ts}/"
+                f"https://karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan/{rest}")
+    return out
+
+
 def main():
     rows = list(csv.DictReader(open(SRC)))
+    wb = wayback_urls()
     out, i = [], 0
     for r in rows:
         live = r["arm"] == "live"
@@ -115,7 +136,7 @@ def main():
             "salary_shown": clean(r["salary_shown"]),
             "deadline": clean(r["deadline"]),
             "quota": clean(r["quota"]),
-            "url": r["url"],
+            "url": r["url"] or wb.get((r["title"], r["captured"] or ""), ""),
             "_in_fin": in_fin,
         })
 
@@ -154,6 +175,14 @@ def main():
             "data_flag": sum(1 for r in fin if r["data_skill_flag"] == "Yes"),
         },
         "by_sector_ai": {},
+        "archive_quality": {
+            "rows": len(arch),
+            "missing_employer": sum(1 for r in arch if not r["employer"]),
+            "missing_skills": sum(1 for r in arch if not r["skills"]),
+            "missing_url": sum(1 for r in arch if not r["url"]),
+            "sector_keyword_matched": sum(1 for r in arch if r["sector"].startswith("Finance")),
+            "date_derived": sum(1 for r in arch if r["posted_basis"].startswith("derived")),
+        },
         "education": tally(fin, "min_education"),
         "salary_shown": tally(fin, "salary_shown"),
     }

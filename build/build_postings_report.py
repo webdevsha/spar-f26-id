@@ -14,6 +14,7 @@ S = json.load(open(os.path.join(D, "summary.json")))
 for r in rows:
     r["fin"] = 1 if r.get("in_scope") == "finance_bpo" else 0
 FIN = [r for r in rows if r["fin"]]
+AQ = S["archive_quality"]
 
 MONTHS = ["2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03",
           "2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10"]
@@ -351,6 +352,7 @@ Download: <a href="../data/id-postings/karirhub-id-postings-sample.csv">karirhub
   <th data-k="dom" style="width:86px">domain</th>
 </tr></thead><tbody id="tb"></tbody></table></div>
 <p class="note" id="count"></p>
+<p class="note"><b>How real is each row?</b> The {n_live} live rows were re-fetched at random after the build — every one returned 200 with the same title, posting date and employer. The {n_arch} archive rows all link to their Wayback capture, but their dates are derived from the relative label on the captured page ("3 days ago"), {AQ['missing_employer']} lack an employer name, {AQ['missing_skills']} lack a skills list, and their sector is keyword-matched because the archived page did not expose the industry field.</p>
 <p class="note">The CSV also carries <code>ai_evidence</code> / <code>data_evidence</code> — the exact matched term behind each flag, so any row can be audited.</p>
 <p class="note">Timestamps: live rows use the platform's own <code>publishedAt</code> (exact). Archive rows are derived from the relative label on the captured page ("2 days ago") and are marked as such in the CSV's <code>posted_basis</code>.</p>
 </section>
