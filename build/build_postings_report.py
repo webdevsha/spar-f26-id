@@ -314,9 +314,17 @@ The AI-skill question is answerable in principle ({ai_n} explicit hits, {data_n}
 
 <section>
 <h2>AI-skill signal — the team's question, first cut</h2>
-<p class="lede">Two independent flags per posting: <b>AI-skill</b> (text names AI/ML/automation/GenAI/RPA) and <b>data-skill</b> (data analysis, SQL, Python, BI). "Digital-basic" counts postings whose text shows ordinary digital literacy only.</p>
+<p class="lede">Two independent flags per posting: <b>AI-skill</b> (text names AI/ML/automation/GenAI/RPA) and <b>data-skill</b> (data analysis, SQL, Python, BI). "Digital-basic" counts postings whose text shows ordinary digital literacy only (Excel, Office, "komputer").</p>
 <table><thead><tr><th>Sector</th><th class="n">postings</th><th class="n">AI-skill flag</th><th class="n">data-skill flag</th><th class="n">digital-basic</th><th class="n">AI rate</th></tr></thead>
 <tbody>{AI_ROWS}</tbody></table>
+<div class="card acc"><h3 style="margin-top:0">How the flag was computed — and the bug we caught</h3>
+<p style="margin:0 0 8px;font-size:14px;color:var(--soft)">The first pass used a loose substring match (any "ai", "genai", "otomasi"). It flagged <b>5</b> postings as AI-required. Spot-checking them showed most were artefacts:</p>
+<ul class="tight">
+<li><code>komputer</code> — computer literacy in a Teller BRILink ad, counted as AI.</li>
+<li><code>AIA</code> — the insurer's name, matched by the letters "ai".</li>
+<li><code>mengenai</code> — the ordinary Indonesian word "regarding"; it contains <code>g-e-n-a-i</code>.</li>
+</ul>
+<p style="margin:8px 0 0;font-size:14px;color:var(--soft)">Re-run with word-boundary rules on a fixed term list, the honest count is <b>{ai_n} of {ai_of}</b> — one posting, titled "Finance Automation", which is a genuine but narrow hit (the role automates finance workflows; it does not ask for ML skills). <b>Lesson for Akbar's categorisation plan:</b> keyword flags need word boundaries plus a manual spot-check, and the deferred LLM pass is the right call — a naive keyword count would have overstated AI demand by 5×.</p></div>
 <p class="note">Interpretation: in this sample AI requirements are near-absent from advertised BPO and banking postings. That is a finding about <i>advertised entry-level demand</i> — Indonesian bank/BPO ads for frontline and collections roles rarely list tooling. It does not show that AI skills are not used on the job. Widen the sample before drawing an S5 conclusion.</p>
 </section>
 
@@ -343,6 +351,7 @@ Download: <a href="../data/id-postings/karirhub-id-postings-sample.csv">karirhub
   <th data-k="dom" style="width:86px">domain</th>
 </tr></thead><tbody id="tb"></tbody></table></div>
 <p class="note" id="count"></p>
+<p class="note">The CSV also carries <code>ai_evidence</code> / <code>data_evidence</code> — the exact matched term behind each flag, so any row can be audited.</p>
 <p class="note">Timestamps: live rows use the platform's own <code>publishedAt</code> (exact). Archive rows are derived from the relative label on the captured page ("2 days ago") and are marked as such in the CSV's <code>posted_basis</code>.</p>
 </section>
 

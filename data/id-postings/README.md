@@ -42,12 +42,26 @@ simply absent — see the "What worked, what refused us" table in the HTML repor
 | `skills` | skills list as printed on the ad |
 | `content` | **content** — first 240 chars of the ad body (truncated on purpose) |
 | `content_chars_full` | length of the full description before truncation |
-| `ai_skill_required` | **Yes/No** — AI/ML/automation/GenAI/RPA named in text |
-| `ai_tier` | `none` · `digital_basic` · `ai_adjacent` · `ai_explicit` · `ai_skill_tag` |
-| `ai_evidence` | the matched term(s) that produced a flag |
+| `ai_skill_required` | **Yes/No** — AI/ML/automation/GenAI/RPA named in text (word-boundary rules) |
+| `ai_tier` | `none` · `digital_basic` · `data_skill` · `ai_explicit` |
+| `ai_evidence` | the exact term that produced the flag — auditable, never a bare boolean |
 | `data_skill_flag` | data analysis / SQL / Python / BI named |
+| `data_evidence` | the matched data term |
+| `digital_basic_flag` | ordinary digital literacy only (Excel, Office, "komputer") |
 | `min_education`, `salary_shown`, `deadline`, `quota` | extra attributes kept for later analysis |
 | `in_scope` | `finance_bpo` (290 rows) or `outside_scope` |
+
+## Flag method — and the false positives it caught
+
+The first keyword pass used a loose substring match (`ai`, `genai`, `otomasi`) and flagged **5**
+postings as AI-required. Three of those were artefacts: `komputer` (computer literacy), `AIA`
+(the insurer's name), and `mengenai` — the ordinary Indonesian word "regarding", which contains
+the letters `g-e-n-a-i`. With word-boundary rules on a fixed term list the honest count is
+**1 of 290** ("Finance Automation").
+
+Consequence for the team's plan: naive keyword counting overstated AI demand 5×. Store the raw
+content, flag conservatively, and let the deferred LLM/manual pass do the categorisation —
+that is Akbar's "whichever is more convenient", and it is also the more accurate one.
 
 ## Ethics
 
