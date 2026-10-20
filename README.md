@@ -113,6 +113,13 @@ All rows are **PUBLIC** (Karirhub posting pages + Internet Archive captures); no
 key, no circumvention. The Algolia search backend is still unreachable from the build network —
 the workaround is harvesting detail-page URLs and reading server-rendered posting pages.
 
+### How to do it yourself
+
+**[`docs/SCRAPING-WITH-BOXCOMPUTE.md`](docs/SCRAPING-WITH-BOXCOMPUTE.md)** — a plain-English guide to
+scraping with BoxCompute, using this Indonesia run as the worked example: the five-step recipe, what
+"blocked" looks like, the team's row format, the ethics checklist, troubleshooting and a glossary.
+Runnable companion: `tools/scrape_karirhub.py` (stdlib only, robots-aware, writes the team schema).
+
 ## Non-negotiables
 
 - **Consent gate.** Anything shown outside the team needs AISA consent first.
