@@ -75,6 +75,16 @@ that is Akbar's "whichever is more convenient", and it is also the more accurate
   of the platform. Full text stays in local scratch and is not committed.
 - **No circumvention** — refusals were recorded, not defeated.
 
+## Provenance per arm — how real is each row?
+
+| `arm` | Rows | Verification | Weak spots |
+|---|---|---|---|
+| `live` | 281 | Random re-fetch after the build: **6 of 6** returned HTTP 200 with the same title, `publishedAt` date and employer as the stored row | Closed listings disappear later; this arm is a snapshot of what was open on 2026-10-20 |
+| `archive` | 50 | Every row links to its `web.archive.org` capture (URL in the `url` column); 3 spot-checked captures returned 200 and contained the title | Dates are **derived** from the relative label on the captured page ("3 days ago"), 2 rows lack an employer name, 32 lack a skills list, and the sector is keyword-matched (the archived page did not expose the industry field) |
+
+So: no row is invented. The live arm is directly verifiable against the platform today; the
+archive arm is real but reconstructed from rendered text, and its dates carry ±1 day of slack.
+
 ## Limits — do not read these numbers as a trend
 
 1. **Recency skew.** 187 of the 290 in-scope rows were posted in Oct 2026, because open listings
