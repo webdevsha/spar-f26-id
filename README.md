@@ -96,6 +96,23 @@ Set the gate password with:
 wrangler pages secret put SITE_PASSWORD --project-name spar-f26-id
 ```
 
+## Individual postings test (S5 hiring signal)
+
+The aggregate Kemnaker data answers "how many vacancies by occupation"; the team also asked for
+**individual postings** with timestamps, locations, content and an AI-skill flag. First successful
+pass, 2026-10-20:
+
+| Artifact | What |
+|---|---|
+| `build/spar-id-postings.html` | visual report — method, refusals, coverage, AI-skill table, ethics marks, filterable posting table |
+| `data/id-postings/karirhub-id-postings-sample.csv` | 331 rows (281 live + 50 archived), finance/BPO, 2025-10-20 → 2026-10-20 |
+| `data/id-postings/README.md` | schema, provenance, ethics, limits |
+| `build/prep_postings.py`, `build/build_postings_report.py` | CSV normaliser + report builder (stdlib only) |
+
+All rows are **PUBLIC** (Karirhub posting pages + Internet Archive captures); no login, no API
+key, no circumvention. The Algolia search backend is still unreachable from the build network —
+the workaround is harvesting detail-page URLs and reading server-rendered posting pages.
+
 ## Non-negotiables
 
 - **Consent gate.** Anything shown outside the team needs AISA consent first.

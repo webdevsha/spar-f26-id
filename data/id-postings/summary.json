@@ -1,0 +1,134 @@
+{
+ "generated": "2026-10-20 14:27 UTC",
+ "window": [
+  "2025-10-20",
+  "2026-10-20"
+ ],
+ "totals": {
+  "rows": 331,
+  "live": 281,
+  "archive": 50,
+  "finance_scope": 290,
+  "archive_finance": 9
+ },
+ "sector": {
+  "Banking & Financial Services": 144,
+  "Business Process Outsourcing (BPO)": 118,
+  "Insurance": 19
+ },
+ "month": {
+  "2025-10": 5,
+  "2025-11": 2,
+  "2025-12": 2,
+  "2026-03": 1,
+  "2026-04": 2,
+  "2026-05": 2,
+  "2026-06": 2,
+  "2026-07": 3,
+  "2026-08": 30,
+  "2026-09": 54,
+  "2026-10": 187
+ },
+ "month_archive": {
+  "2025-10": 25,
+  "2025-11": 12,
+  "2025-12": 10,
+  "2026-01": 1,
+  "2026-04": 2
+ },
+ "province": {
+  "Jawa Tengah": 45,
+  "Dki Jakarta": 44,
+  "Kepulauan Riau": 34,
+  "Jawa Timur": 24,
+  "Bali": 23,
+  "Riau": 15,
+  "Jawa Barat": 14,
+  "Daerah Istimewa Yogyakarta": 10,
+  "Sumatera Barat": 10,
+  "Banten": 10,
+  "Indonesia": 9,
+  "Sumatera Selatan": 6,
+  "Sumatera Utara": 5,
+  "Kalimantan Barat": 5,
+  "Kalimantan Timur": 4,
+  "Sulawesi Selatan": 4,
+  "Sulawesi Tenggara": 4,
+  "Kalimantan Tengah": 3,
+  "Lampung": 3,
+  "Papua Selatan": 2,
+  "Sulawesi Tengah": 2,
+  "Kalimantan Selatan": 2,
+  "Jambi": 2,
+  "Sulawesi Utara": 2,
+  "Nusa Tenggara Barat": 2,
+  "Papua Pegunungan": 1,
+  "Papua Barat": 1,
+  "Gorontalo": 1,
+  "Bengkulu": 1,
+  "Nusa Tenggara Timur": 1,
+  "Kalimantan Utara": 1
+ },
+ "employer_top": {
+  "PT Kasih Anugrah Lestari": 32,
+  "PT Sumberdaya Dian Mandiri": 26,
+  "PT Home Credit Indonesia": 23,
+  "PT Indomobil Finance Indonesia": 17,
+  "BPTN SYARIAH": 15,
+  "PT Personel Alih Daya Tbk": 10,
+  "Amartha": 8,
+  "PT. Asuransi Central Asia": 7,
+  "PT Elang Cakra Securindo": 6,
+  "PT Asuransi BRI Life": 6
+ },
+ "ai": {
+  "flagged": 4,
+  "of": 290,
+  "tier": {
+   "none": 266,
+   "digital_basic": 15,
+   "ai_skill_tag": 4,
+   "ai_explicit": 3,
+   "ai_adjacent": 2
+  },
+  "data_flag": 6
+ },
+ "by_sector_ai": {
+  "Banking & Financial Services": {
+   "n": 144,
+   "ai": 3,
+   "data": 2,
+   "digital": 11
+  },
+  "Business Process Outsourcing (BPO)": {
+   "n": 118,
+   "ai": 0,
+   "data": 3,
+   "digital": 8
+  },
+  "Insurance": {
+   "n": 19,
+   "ai": 1,
+   "data": 0,
+   "digital": 0
+  }
+ },
+ "education": {
+  "SMA atau Sederajat": 99,
+  "Sarjana": 76,
+  "Diploma": 61,
+  "SMK": 37,
+  "": 7,
+  "SMP atau Sederajat": 6,
+  "SD atau Sederajat": 3,
+  "D3 / S1 • Memiliki kemampuan mengoperasikan Ms Excel (hlookup, vlookup, pivot dan rumus excel lain) • Memiliki kemampuan dalam berkomunikasi • Berpenampilan menarik • Good looking • Belum Menikah • Diutamakan sesuai domisili Benefit • Gaji Pokok (Gaji 4 juta Up untuk posisi tertentu) • Jenjang karir di bank BUMN • BPJS Kesehatan • BPJS Ketenagakerjaan • Insentif dan Tunjangan (untuk posisi tertentu) \"Pihak HiredToday.com dan Perusahaan tidak akan meminta biaya dalam bentuk apapun pada saat melakukan proses recruitment. Mohon segera melaporkan kepada kami, apabila Anda jika pada saat diundang untuk interview dan diminta untuk melakukan pembayaran dengan sejumlah uang.\" \"HiredToday.com and the Company will not ask for any form of payment during the recruitment process. Please report to us immediately, if you are invited for an interview and asked to make a payment with a sum of money.\" Persyaratan Umum Minimal pendidikan Diploma": 1
+ },
+ "salary_shown": {
+  "yes": 278,
+  "Dirahasiakan": 6,
+  "no": 3,
+  "Rp3jt - Rp7,50jt": 1,
+  "Rp2,10jt - Rp3,50jt": 1,
+  "Rp6jt - Rp7jt": 1
+ }
+}
