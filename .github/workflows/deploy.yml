@@ -23,6 +23,17 @@ jobs:
       - name: Build dashboard
         run: python build/build_dashboard.py
 
+      # Persist standalone reports that live outside index.html into the
+      # deploy folder so their exact URLs (e.g. /build/spar-id-postings.html)
+      # survive on the live site. Mirrors the local deploy.sh step.
+      - name: Stage standalone reports
+        run: |
+          mkdir -p dist/build
+          for f in build/*.html; do
+            [ -f "$f" ] || continue
+            cp "$f" "dist/build/$(basename "$f")"
+          done
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
