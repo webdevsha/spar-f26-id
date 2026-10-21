@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20 14:51 UTC",
+ "generated": "2026-10-20 15:40 UTC",
  "window": [
   "2025-10-20",
   "2026-10-20"
@@ -8,8 +8,8 @@
   "rows": 331,
   "live": 281,
   "archive": 50,
-  "finance_scope": 290,
-  "archive_finance": 9
+  "finance_scope": 288,
+  "archive_finance": 7
  },
  "sector": {
   "Banking & Financial Services": 144,
@@ -17,9 +17,8 @@
   "Insurance": 19
  },
  "month": {
-  "2025-10": 5,
-  "2025-11": 2,
-  "2025-12": 2,
+  "2025-10": 6,
+  "2025-11": 1,
   "2026-03": 1,
   "2026-04": 2,
   "2026-05": 2,
@@ -37,8 +36,8 @@
   "2026-04": 2
  },
  "province": {
-  "Jawa Tengah": 45,
-  "Dki Jakarta": 44,
+  "Jawa Tengah": 52,
+  "DKI Jakarta": 44,
   "Kepulauan Riau": 34,
   "Jawa Timur": 24,
   "Bali": 23,
@@ -47,7 +46,6 @@
   "Daerah Istimewa Yogyakarta": 10,
   "Sumatera Barat": 10,
   "Banten": 10,
-  "Indonesia": 9,
   "Sumatera Selatan": 6,
   "Sumatera Utara": 5,
   "Kalimantan Barat": 5,
@@ -83,14 +81,14 @@
  },
  "ai": {
   "flagged": 1,
-  "of": 290,
+  "of": 288,
   "tier": {
-   "none": 248,
+   "none": 247,
    "digital_basic": 31,
-   "data_skill": 10,
+   "data_skill": 9,
    "ai_explicit": 1
   },
-  "data_flag": 11
+  "data_flag": 10
  },
  "by_sector_ai": {
   "Banking & Financial Services": {
@@ -117,12 +115,14 @@
   "missing_employer": 2,
   "missing_skills": 32,
   "missing_url": 0,
-  "sector_keyword_matched": 9,
+  "sector_keyword_matched": 7,
+  "province_missing": 0,
+  "province_is_country": 0,
   "date_derived": 50
  },
  "education": {
-  "SMA atau Sederajat": 99,
-  "Sarjana": 76,
+  "SMA atau Sederajat": 98,
+  "Sarjana": 75,
   "Diploma": 61,
   "SMK": 37,
   "": 7,
@@ -134,8 +134,6 @@
   "yes": 278,
   "Dirahasiakan": 6,
   "no": 3,
-  "Rp3jt - Rp7,50jt": 1,
-  "Rp2,10jt - Rp3,50jt": 1,
-  "Rp6jt - Rp7jt": 1
+  "Rp3jt - Rp7,50jt": 1
  }
 }

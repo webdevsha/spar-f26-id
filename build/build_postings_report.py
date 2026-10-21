@@ -33,7 +33,7 @@ ai_n = S["ai"]["flagged"]
 ai_of = S["ai"]["of"]
 data_n = S["ai"]["data_flag"]
 uniq_emp = len({r["employer"] for r in FIN if r["employer"]})
-uniq_prov = len({r["location_province"] for r in FIN if r["location_province"] and r["location_province"] != "Indonesia"})
+uniq_prov = len({r["location_province"] for r in FIN if r["location_province"]})
 
 
 def esc(s):
@@ -306,10 +306,11 @@ The AI-skill question is answerable in principle ({ai_n} explicit hits, {data_n}
 <p class="note">187 of the {n_fin} in-scope rows were posted in Oct 2026 because open listings are the ones still online. The archive arm covers Oct–Dec 2025 and then thins out. A real monthly series needs the same crawl repeated every month.</p></div>
 
 <div class="grid2">
-  <div class="card tl"><h3 style="margin-top:0">Sector split ({n_fin})</h3>{sector_bars}
+  <div class="card tl"><h3 style="margin-top:0">Sector split — live rows ({n_live})</h3>{sector_bars}
+  <p class="note">Sector is the portal's own industry field, so it is only shown for live rows. The {AQ['rows']} archive rows have no industry field; their finance/not-finance label is a keyword guess on title and employer and is marked unverified in the CSV.</p>
   <p class="note">BPO is well represented (118) — relevant to Dani's question about AI skills in BPO roles.</p></div>
   <div class="card tl"><h3 style="margin-top:0">Top provinces</h3>{prov_bars}
-  <p class="note">"Indonesia" = nationwide posting with no single province; kept, not dropped.</p></div>
+  <p class="note">Province is the province printed on the posting. An earlier build showed "Indonesia" for 40 archived rows because it read the trailing country in "CITY, PROVINCE, Indonesia" as the province; that is fixed, and no row now has "Indonesia" as a province.</p></div>
 </div>
 </section>
 
@@ -352,7 +353,7 @@ Download: <a href="../data/id-postings/karirhub-id-postings-sample.csv">karirhub
   <th data-k="dom" style="width:86px">domain</th>
 </tr></thead><tbody id="tb"></tbody></table></div>
 <p class="note" id="count"></p>
-<p class="note"><b>How real is each row?</b> The {n_live} live rows were re-fetched at random after the build — every one returned 200 with the same title, posting date and employer. The {n_arch} archive rows all link to their Wayback capture, but their dates are derived from the relative label on the captured page ("3 days ago"), {AQ['missing_employer']} lack an employer name, {AQ['missing_skills']} lack a skills list, and their sector is keyword-matched because the archived page did not expose the industry field.</p>
+<p class="note"><b>How real is each row?</b> Checked on 2026-10-20 with <code>build/verify_postings.py</code>, which re-fetches every source URL. <b>Live:</b> all {n_live} rows returned 200 and matched the portal's own title, posting date, deadline and employer. <b>Archive:</b> all {n_arch} Wayback captures load and contain the title (and the employer, where one is recorded). The archive rows are weaker: their dates are derived from the relative label on the captured page ("3 days ago"), so they can be a day or so off; {AQ['missing_employer']} have no employer name (the capture does not show one); {AQ['missing_skills']} have no skills list; and their finance / not-finance label is a keyword guess on title and employer, because the captured page has no industry field. That guess is marked unverified in the CSV.</p>
 <p class="note">The CSV also carries <code>ai_evidence</code> / <code>data_evidence</code> — the exact matched term behind each flag, so any row can be audited.</p>
 <p class="note">Timestamps: live rows use the platform's own <code>publishedAt</code> (exact). Archive rows are derived from the relative label on the captured page ("2 days ago") and are marked as such in the CSV's <code>posted_basis</code>.</p>
 </section>
