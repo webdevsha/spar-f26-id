@@ -153,7 +153,7 @@ GET https://karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan/<slug>-<uuid>
 # 5. build the HTML report + CSV, share the files
 ```
 
-Result of that run: **331 postings** (281 live + 50 archived), **290 in finance/BPO
+Result of that run: **331 postings** (281 live + 50 archived), **288 in finance/BPO
 scope**, 144 banking / 118 BPO / 19 insurance, across 30 provinces, 20 Oct 2025 →
 20 Oct 2026. Artefacts: `build/spar-id-postings.html` and
 `data/id-postings/karirhub-id-postings-sample.csv`.
@@ -223,9 +223,9 @@ per line, and pass them with `--urls`.
    - `AIA` — an insurer's name, matched by the letters "ai";
    - `mengenai` — Indonesian for "regarding", which contains `g-e-n-a-i`.
 
-   With word boundaries the honest count was **1 of 290**, not 5. A keyword count without
+   With word boundaries the honest count was **1 of 288**, not 5. A keyword count without
    evidence is a claim you cannot defend in a meeting.
-3. **Chart by month before you believe anything.** In Indonesia, 187 of 290 rows were
+3. **Chart by month before you believe anything.** In Indonesia, 187 of 288 rows were
    October 2026 — because open listings are the ones still online. That is a collection
    artefact, not a hiring boom.
 4. **Check duplicates.** One employer advertising the same role in 32 cities is one job

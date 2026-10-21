@@ -49,7 +49,7 @@ simply absent — see the "What worked, what refused us" table in the HTML repor
 | `data_evidence` | the matched data term |
 | `digital_basic_flag` | ordinary digital literacy only (Excel, Office, "komputer") |
 | `min_education`, `salary_shown`, `deadline`, `quota` | extra attributes kept for later analysis |
-| `in_scope` | `finance_bpo` (290 rows) or `outside_scope` |
+| `in_scope` | `finance_bpo` (288 rows) or `outside_scope` |
 
 ## Flag method — and the false positives it caught
 
@@ -57,7 +57,7 @@ The first keyword pass used a loose substring match (`ai`, `genai`, `otomasi`) a
 postings as AI-required. Three of those were artefacts: `komputer` (computer literacy), `AIA`
 (the insurer's name), and `mengenai` — the ordinary Indonesian word "regarding", which contains
 the letters `g-e-n-a-i`. With word-boundary rules on a fixed term list the honest count is
-**1 of 290** ("Finance Automation").
+**1 of 288** ("Finance Automation").
 
 Consequence for the team's plan: naive keyword counting overstated AI demand 5×. Store the raw
 content, flag conservatively, and let the deferred LLM/manual pass do the categorisation —
@@ -79,15 +79,36 @@ that is Akbar's "whichever is more convenient", and it is also the more accurate
 
 | `arm` | Rows | Verification | Weak spots |
 |---|---|---|---|
-| `live` | 281 | Random re-fetch after the build: **6 of 6** returned HTTP 200 with the same title, `publishedAt` date and employer as the stored row | Closed listings disappear later; this arm is a snapshot of what was open on 2026-10-20 |
-| `archive` | 50 | Every row links to its `web.archive.org` capture (URL in the `url` column); 3 spot-checked captures returned 200 and contained the title | Dates are **derived** from the relative label on the captured page ("3 days ago"), 2 rows lack an employer name, 32 lack a skills list, and the sector is keyword-matched (the archived page did not expose the industry field) |
+| `live` | 281 | Full re-fetch on 2026-10-20 with `build/verify_postings.py`: **281 of 281** returned HTTP 200 with the same title, `publishedAt` date, deadline and employer as the stored row | Closed listings disappear later; this arm is a snapshot of what was open on 2026-10-20 |
+| `archive` | 50 | Every row links to its `web.archive.org` capture (URL in the `url` column); all 50 captures returned 200 and contained the title (employer too, where recorded) | Dates are **derived** from the relative label on the captured page ("3 days ago"), 2 rows lack an employer name, 32 lack a skills list, and the sector is a keyword guess on title + employer, labelled `(guessed … unverified)` in the `sector` column (the archived page has no industry field) |
 
 So: no row is invented. The live arm is directly verifiable against the platform today; the
 archive arm is real but reconstructed from rendered text, and its dates carry ±1 day of slack.
 
+## Corrections (2026-10-20 audit)
+
+An audit re-fetched all 331 source pages and found four defects in the first build. All are
+fixed in `build/prep_postings.py` and the CSV regenerated from the raw crawl:
+
+| Defect | Rows | Cause | Fix |
+|---|---|---|---|
+| `location_province = "Indonesia"` | 40 archive | Locations print as `CITY, PROVINCE, Indonesia`; the parser took the last part as the province. The report wrongly called these "nationwide" postings | Drop the trailing country, then province = last part, city = the part before it. 0 rows now have `Indonesia` as a province |
+| Site slogan inside the title | IN-P-330, IN-P-331 | Parser used the page `<title>` ("Dapatkan pekerjaan dari seluruh dunia : Karirhub - …") | Slogan stripped; titles now `Guru Bahasa Inggris` and `Operator Perakitan Komponen Plastik Injection` |
+| Blank location | IN-P-331 | Longer `kelurahan, kecamatan, kabupaten, province` format was not parsed | Recovered from the capture: Kabupaten Bekasi, Jawa Barat |
+| Over-broad archive sector guess | 4 rows flip scope | Keywords were searched in the ad body and included loose tokens (`cs `, `dana`, `outsourc`), so an HR Officer at a ceramics firm counted as finance; FIFGROUP (a multifinance company) did not | Match title + employer + job function only; generic tokens removed; `financ` counts on the employer name only; FIFGROUP and a few known lenders added. IN-P-283 now in scope; IN-P-305, -321, -325 now out. In-scope total 290 → 288 |
+
+Also cosmetic: `Dki Jakarta` (from `str.title()`) is now `DKI Jakarta` on 44 live rows.
+
+Not fixable from the data, and now stated rather than implied: the two slogan-title captures show
+no employer name, 32 archive rows have no skills list, archive dates are derived from relative labels,
+and the archive finance/not-finance label is still a guess.
+
+`build/verify_postings.py` re-checks every row against its source (live: title, date, deadline,
+employer; archive: capture loads and contains the title). Run it before trusting a rebuilt CSV.
+
 ## Limits — do not read these numbers as a trend
 
-1. **Recency skew.** 187 of the 290 in-scope rows were posted in Oct 2026, because open listings
+1. **Recency skew.** 187 of the 288 in-scope rows were posted in Oct 2026, because open listings
    are the ones still online. The archive arm covers Oct–Dec 2025 and then thins out.
 2. **One keyword sweep.** The 281 live rows came from a single harvest pass, not an exhaustive
    month-by-month crawl. Volumes are a floor, not a total.
