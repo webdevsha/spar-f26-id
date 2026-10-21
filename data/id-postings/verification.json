@@ -1,0 +1,6626 @@
+{
+ "checked_at": "2026-10-21",
+ "method": "build/verify_postings.py",
+ "rows": {
+  "IN-P-001": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-002": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-003": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-004": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-005": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-006": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-007": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-008": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-009": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-010": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-011": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-012": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-013": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-014": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-015": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-016": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-017": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-018": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-019": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-020": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-021": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-022": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-023": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-024": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-025": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-026": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-027": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-028": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-029": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-030": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-031": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-032": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-033": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-034": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-035": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-036": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-037": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-038": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-039": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-040": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-041": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-042": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-043": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-044": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-045": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-046": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-047": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-048": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-049": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-050": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-051": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-052": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-053": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-054": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-055": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-056": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-057": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-058": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-059": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-060": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-061": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-062": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-063": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-064": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-065": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-066": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-067": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-068": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-069": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-070": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-071": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-072": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-073": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-074": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-075": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-076": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-077": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-078": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-079": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-080": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-081": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-082": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-083": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-084": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-085": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-086": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-087": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-088": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-089": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-090": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-091": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-092": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-093": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-094": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-095": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-096": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-097": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-098": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-099": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-100": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-101": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-102": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-103": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-104": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-105": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-106": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-107": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-108": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-109": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-110": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-111": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-112": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-113": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-114": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-115": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-116": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-117": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-118": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-119": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-120": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-121": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-122": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-123": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-124": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-125": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-126": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-127": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-128": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-129": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-130": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-131": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-132": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-133": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-134": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-135": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-136": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-137": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-138": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-139": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-140": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-141": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-142": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-143": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-144": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-145": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-146": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-147": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-148": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-149": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-150": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-151": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-152": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-153": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-154": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-155": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-156": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-157": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-158": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-159": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-160": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-161": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-162": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-163": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-164": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-165": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-166": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-167": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-168": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-169": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-170": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-171": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-172": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-173": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-174": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-175": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-176": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-177": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-178": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-179": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-180": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-181": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-182": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-183": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-184": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-185": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-186": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-187": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-188": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-189": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-190": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-191": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-192": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-193": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-194": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-195": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-196": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-197": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-198": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-199": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-200": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-201": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-202": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-203": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-204": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-205": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-206": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-207": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-208": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-209": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-210": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-211": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-212": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-213": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-214": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-215": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-216": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-217": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-218": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-219": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-220": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-221": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-222": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-223": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-224": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-225": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-226": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-227": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-228": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-229": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-230": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-231": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-232": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-233": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-234": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-235": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-236": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-237": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-238": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-239": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-240": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-241": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-242": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-243": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-244": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-245": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-246": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-247": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-248": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-249": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-250": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-251": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-252": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-253": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-254": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-255": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-256": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-257": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-258": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-259": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-260": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-261": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-262": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-263": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-264": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-265": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-266": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-267": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-268": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-269": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-270": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-271": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-272": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-273": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-274": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-275": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-276": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-277": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-278": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-279": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-280": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-281": {
+   "status": "verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "title",
+    "posted_at",
+    "deadline",
+    "employer",
+    "location",
+    "listing status"
+   ],
+   "unverified": [
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-282": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-283": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-284": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-285": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-286": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-287": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-288": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-289": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-290": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-291": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-292": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-293": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-294": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-295": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-296": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-297": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-298": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-299": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-300": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-301": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-302": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-303": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-304": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-305": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-306": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-307": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-308": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-309": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-310": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-311": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-312": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-313": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-314": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-315": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-316": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-317": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-318": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-319": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-320": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-321": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-322": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-323": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-324": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-325": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-326": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-327": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-328": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-329": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-330": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-331": {
+   "status": "partly verified",
+   "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  }
+ }
+}

@@ -142,7 +142,21 @@ def capture_location(path):
     return clean(m.group(1)) if m else ""
 
 
+def load_verification():
+    """data/id-postings/verification.json is written by build/verify_postings.py --write
+    (a network re-check of every source URL). Missing file -> rows ship as 'not checked'."""
+    path = os.path.join(OUTDIR, "verification.json")
+    return json.load(open(path))["rows"] if os.path.exists(path) else {}
+
+
+def original_url(url):
+    """A Wayback capture URL wraps the original posting URL; return the original."""
+    m = re.match(r"https://web\.archive\.org/web/\d+/(https?://.+)$", url or "")
+    return m.group(1) if m else (url or "")
+
+
 def main():
+    ver = load_verification()
     rows = list(csv.DictReader(open(SRC)))
     wb = wayback_meta()
     out, i = [], 0
@@ -211,6 +225,14 @@ def main():
             "_in_fin": in_fin,
         })
 
+    for r in out:
+        v = ver.get(r["rec_id"], {})
+        r["original_url"] = original_url(r["url"])
+        r["verified_status"] = v.get("status", "not checked")
+        r["verified_at"] = v.get("checked_at", "")
+        r["verified_fields"] = "; ".join(v.get("checked", []))
+        r["unverified_fields"] = "; ".join(v.get("problems") or v.get("unverified", []))
+
     os.makedirs(OUTDIR, exist_ok=True)
     cols = [k for k in out[0] if not k.startswith("_")]
     with open(os.path.join(OUTDIR, "karirhub-id-postings-sample.csv"), "w", newline="") as fh:
@@ -256,6 +278,7 @@ def main():
             "province_is_country": sum(1 for r in out if r["location_province"] == "Indonesia"),
             "date_derived": sum(1 for r in arch if r["posted_basis"].startswith("derived")),
         },
+        "verification": tally(out, "verified_status"),
         "education": tally(fin, "min_education"),
         "salary_shown": tally(fin, "salary_shown"),
     }
