@@ -14,6 +14,7 @@ demand**, not a census of vacancies, and not a measure of hiring.
 |---|---|---|
 | `karirhub-id-postings-sample.csv` | 331 | 281 live + 50 archived postings, one row each |
 | `summary.json` | — | counts used by the report builder |
+| `verification.json` | 331 | per-row result of re-fetching the source (written by `build/verify_postings.py --write`) |
 
 ## Sources — every row is PUBLIC
 
@@ -49,6 +50,10 @@ simply absent — see the "What worked, what refused us" table in the HTML repor
 | `data_evidence` | the matched data term |
 | `digital_basic_flag` | ordinary digital literacy only (Excel, Office, "komputer") |
 | `min_education`, `salary_shown`, `deadline`, `quota` | extra attributes kept for later analysis |
+| `original_url` | the original Karirhub posting URL (same as `url` for live rows; for archive rows, the page the capture was taken of) |
+| `verified_status` | `verified` (live; every checked field matched the source) · `partly verified` (archive; capture loads and title/employer/location match, but date is derived and sector is a guess) · `unverified` (source failed or a field mismatched) · `not checked` |
+| `verified_at` | date the source was re-fetched |
+| `verified_fields`, `unverified_fields` | what was compared against the source, and what could not be (or the mismatch, if `unverified`) |
 | `in_scope` | `finance_bpo` (288 rows) or `outside_scope` |
 
 ## Flag method — and the false positives it caught
@@ -104,7 +109,9 @@ no employer name, 32 archive rows have no skills list, archive dates are derived
 and the archive finance/not-finance label is still a guess.
 
 `build/verify_postings.py` re-checks every row against its source (live: title, date, deadline,
-employer; archive: capture loads and contains the title). Run it before trusting a rebuilt CSV.
+employer, location; archive: capture loads and contains the title, location and employer). The result is
+stored per row (`verified_status` in the CSV, `verification.json`) and shown on the page.
+Workflow: `verify_postings.py --write` → `prep_postings.py` → `build_postings_report.py`. Run it before trusting a rebuilt CSV.
 
 ## Limits — do not read these numbers as a trend
 

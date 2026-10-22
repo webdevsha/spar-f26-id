@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20 15:40 UTC",
+ "generated": "2026-10-21 05:04 UTC",
  "window": [
   "2025-10-20",
   "2026-10-20"
@@ -119,6 +119,10 @@
   "province_missing": 0,
   "province_is_country": 0,
   "date_derived": 50
+ },
+ "verification": {
+  "verified": 281,
+  "partly verified": 50
  },
  "education": {
   "SMA atau Sederajat": 98,
