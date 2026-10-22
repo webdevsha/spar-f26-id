@@ -4,7 +4,7 @@
 Self-contained: no CDN, no fonts, no analytics. The posting table is client-side
 sortable/filterable from an embedded JSON array.
 """
-import json, os, html, csv
+import collections, json, os, html, csv
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(ROOT, "data", "id-postings")
@@ -38,6 +38,12 @@ uniq_prov = len({r["location_province"] for r in FIN if r["location_province"]})
 
 def esc(s):
     return html.escape(str(s or ""))
+
+
+VC = collections.Counter(r.get("verified_status", "not checked") for r in rows)
+n_ver, n_part = VC.get("verified", 0), VC.get("partly verified", 0)
+n_unver = VC.get("unverified", 0) + VC.get("not checked", 0)
+VER_DATE = next((r["verified_at"] for r in rows if r.get("verified_at")), "")
 
 
 def bars_month():
@@ -134,10 +140,22 @@ METHOD = [
 ]
 
 
+# Pages we actually tried, so a reader can open them. (Algolia has no web page: DNS did not resolve.)
+METHOD_LINKS = {
+    "Karirhub individual posting pages (live)": "https://karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan",
+    "Internet Archive (CDX + snapshots)": "https://web.archive.org/web/*/karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan/*",
+    "Kalibrr / BNI recruitment career page": "https://recruitment.bni.co.id",
+    "BCA career portal": "https://karir.bca.co.id",
+    "Pasker ID / Satu Data Kemnaker aggregates": "https://paskerid.kemnaker.go.id",
+}
+
+
 def method_rows():
     out = []
     for name, url, status, cls, note in METHOD:
-        out.append(f'<tr><td><b>{name}</b><br><code>{url}</code></td>'
+        link = METHOD_LINKS.get(name)
+        shown = f'<code>{url}</code>' + (f' · <a href="{link}" target="_blank" rel="noopener">open ↗</a>' if link else '')
+        out.append(f'<tr><td><b>{name}</b><br>{shown}</td>'
                    f'<td class="c"><span class="pill {cls}">{status}</span></td>'
                    f'<td>{note}</td></tr>')
     return "".join(out)
@@ -166,6 +184,10 @@ def domain_rows():
     return "".join(out)
 
 
+VC_LIVE = collections.Counter(r["verified_status"] for r in rows if r["arm"] == "live")
+VC_ARCH = collections.Counter(r["verified_status"] for r in rows if r["arm"] == "archive")
+
+
 sector_bars = hbars({k: v for k, v in sector.items()}, color="#C41E3A")
 prov_bars = hbars(prov, color="#0F6E7A", topn=10)
 
@@ -175,6 +197,7 @@ AI_ROWS = "".join(
     f'<td class="n">{(v["ai"]/v["n"]*100 if v["n"] else 0):.1f}%</td></tr>'
     for k, v in bai.items())
 
+VTXT = {}  # distinct (checked, not-verified) texts, stored once and referenced by index
 TABLE_JSON = json.dumps([{
     "id": r["rec_id"], "posted": r["posted_at"], "basis": r["posted_basis"],
     "loc": r["location_city"] or r["location_province"],
@@ -184,6 +207,9 @@ TABLE_JSON = json.dumps([{
     "data": r["data_skill_flag"], "edu": r["min_education"], "arm": r["arm"],
     "fin": r["fin"], "url": r["url"], "src": r["source"], "dom": r["domain"],
     "cap": r["captured_at"],
+    "orig": r.get("original_url", "") if r["arm"] == "archive" else "",
+    "vs": r.get("verified_status", "not checked"), "vat": r.get("verified_at", ""),
+    "vk": VTXT.setdefault((r.get("verified_fields", ""), r.get("unverified_fields", "")), len(VTXT)),
 } for r in rows], ensure_ascii=False)
 
 HTML = f"""<!doctype html>
@@ -280,6 +306,7 @@ Every row is traceable to a public URL. This is a <b>sample</b>, not a census.</
   <div class="kpi acc"><div class="v">{n_all}</div><div class="l">postings recovered</div></div>
   <div class="kpi acc"><div class="v">{n_fin}</div><div class="l">finance / BPO scope</div></div>
   <div class="kpi"><div class="v">{n_live} <span style="font-size:15px;color:var(--muted)">live</span></div><div class="l">+ {n_arch} from Web Archive</div></div>
+  <div class="kpi tl"><div class="v">{n_ver}<span style="font-size:15px;color:var(--muted)"> + {n_part} partly</span></div><div class="l">rows re-checked against source</div></div>
   <div class="kpi"><div class="v">{uniq_emp}</div><div class="l">distinct employers</div></div>
   <div class="kpi"><div class="v">{uniq_prov}</div><div class="l">provinces represented</div></div>
   <div class="kpi tl"><div class="v">{ai_n}<span style="font-size:15px;color:var(--muted)"> / {ai_of}</span></div><div class="l">AI-skill flagged</div></div>
@@ -331,6 +358,22 @@ The AI-skill question is answerable in principle ({ai_n} explicit hits, {data_n}
 </section>
 
 <section>
+<h2>Where the postings come from — and how far each is verified</h2>
+<p class="lede">Every row links to the page it was read from. <b>Source of the postings:</b> employers publish them on Karirhub, the Ministry of Manpower's (Kemnaker) job portal; we read the public detail page. Archive rows are the same page as saved by the Internet Archive (Wayback Machine), so they carry two links: the capture and the original posting.</p>
+<table><thead><tr><th>Source</th><th class="n">rows</th><th>Link</th><th>Verification (re-fetched {VER_DATE})</th></tr></thead><tbody>
+<tr><td><b>Karirhub live detail page</b><br><span class="te">karirhub.kemnaker.go.id · government portal · PUBLIC</span></td><td class="n">{n_live}</td>
+<td><a href="https://karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan" target="_blank" rel="noopener">portal ↗</a></td>
+<td><span class="pill green">VERIFIED</span> {VC_LIVE.get("verified",0)} of {n_live}: title, posting date, deadline, employer, location and listing status matched the page.</td></tr>
+<tr><td><b>Web Archive capture of Karirhub</b><br><span class="te">web.archive.org · public archive · PUBLIC</span></td><td class="n">{n_arch}</td>
+<td><a href="https://web.archive.org/web/*/karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan/*" target="_blank" rel="noopener">archive index ↗</a></td>
+<td><span class="pill amber">PARTLY VERIFIED</span> {VC_ARCH.get("partly verified",0)} of {n_arch}: capture loads and title, employer (where recorded) and location match. <b>Not verifiable:</b> the posting date (derived from a relative label), and the finance/not-finance label (a keyword guess).</td></tr>
+</tbody></table>
+<p class="note"><b>Verified</b> = we re-fetched the source and compared those fields. <b>Partly verified</b> = the source exists and matches, but some fields cannot be confirmed from it. <b>Unverified</b> = the source did not load or a field did not match ({n_unver} rows). Fields never compared against the source on any row: skills, minimum education, the 240-character snippet and the AI/data flags derived from it. Re-run <code>python3 build/verify_postings.py --write</code> to refresh.</p>
+<p class="note">Routes that were tried but refused (not sources of any row) are listed, with links, under "What worked, what refused us" above.</p>
+<p class="note">All {n_all} source links are in the table below (column “source links”, filterable by verification status) and in the CSV columns <code>url</code> and <code>original_url</code>.</p>
+</section>
+
+<section>
 <h2>The detailed data — {n_all} rows in the requested format</h2>
 <p class="lede">Sortable and filterable. <code>AI-skill required?</code> is the keyword flag; <code>domain</code> is PUBLIC for every row (source URLs included).
 Download: <a href="../data/id-postings/karirhub-id-postings-sample.csv">karirhub-id-postings-sample.csv</a>.</p>
@@ -341,6 +384,7 @@ Download: <a href="../data/id-postings/karirhub-id-postings-sample.csv">karirhub
   <button class="chip" data-f="arch">Archive ({n_arch})</button>
   <select id="fsector"><option value="">all sectors</option><option>Banking &amp; Financial Services</option><option>Business Process Outsourcing (BPO)</option><option>Insurance</option></select>
   <select id="fai"><option value="">AI flag: any</option><option value="Yes">AI-skill: yes</option><option value="No">AI-skill: no</option></select>
+  <select id="fver"><option value="">verification: any</option><option value="verified">verified</option><option value="partly verified">partly verified</option><option value="unverified">unverified / not checked</option></select>
   <input type="search" id="q" placeholder="search title, employer, content, skills, province…">
 </div>
 <div class="tblwrap"><table id="tbl">
@@ -350,10 +394,12 @@ Download: <a href="../data/id-postings/karirhub-id-postings-sample.csv">karirhub
   <th data-k="loc" style="width:150px">location</th>
   <th data-k="title">content — title / employer / snippet / skills</th>
   <th data-k="ai" style="width:86px">AI-skill?</th>
+  <th data-k="vs" style="width:120px">verified?</th>
+  <th data-k="url" style="width:150px">source links</th>
   <th data-k="dom" style="width:86px">domain</th>
 </tr></thead><tbody id="tb"></tbody></table></div>
 <p class="note" id="count"></p>
-<p class="note"><b>How real is each row?</b> Checked on 2026-10-20 with <code>build/verify_postings.py</code>, which re-fetches every source URL. <b>Live:</b> all {n_live} rows returned 200 and matched the portal's own title, posting date, deadline and employer. <b>Archive:</b> all {n_arch} Wayback captures load and contain the title (and the employer, where one is recorded). The archive rows are weaker: their dates are derived from the relative label on the captured page ("3 days ago"), so they can be a day or so off; {AQ['missing_employer']} have no employer name (the capture does not show one); {AQ['missing_skills']} have no skills list; and their finance / not-finance label is a keyword guess on title and employer, because the captured page has no industry field. That guess is marked unverified in the CSV.</p>
+<p class="note"><b>How real is each row?</b> See the “verified?” column and the sources section above. Checked on {VER_DATE} with <code>build/verify_postings.py</code>, which re-fetches every source URL. <b>Live ({n_live}) — verified:</b> all returned 200 and matched the portal's own title, posting date, deadline, employer and location. <b>Archive ({n_arch}) — partly verified:</b> every Wayback capture loads and contains the title, location and (where recorded) employer. They are weaker: dates are derived from the relative label on the captured page ("3 days ago"), so they can be a day or so off; {AQ['missing_employer']} have no employer name (the capture does not show one); {AQ['missing_skills']} have no skills list; and their finance / not-finance label is a keyword guess on title and employer, marked unverified in the CSV.</p>
 <p class="note">The CSV also carries <code>ai_evidence</code> / <code>data_evidence</code> — the exact matched term behind each flag, so any row can be audited.</p>
 <p class="note">Timestamps: live rows use the platform's own <code>publishedAt</code> (exact). Archive rows are derived from the relative label on the captured page ("2 days ago") and are marked as such in the CSV's <code>posted_basis</code>.</p>
 </section>
@@ -397,7 +443,8 @@ dataset <code>data/id-postings/karirhub-id-postings-sample.csv</code> · interna
 
 <script>
 const ROWS = {TABLE_JSON};
-let state = {{f:"all", sector:"", ai:"", q:"", sort:"posted", dir:-1}};
+const VTXT = {json.dumps([list(k) for k in VTXT], ensure_ascii=False)};
+let state = {{f:"all", sector:"", ai:"", ver:"", q:"", sort:"posted", dir:-1}};
 const $ = s => document.querySelector(s);
 function match(r){{
   if(state.f==="fin" && !r.fin) return false;
@@ -405,6 +452,8 @@ function match(r){{
   if(state.f==="arch" && r.arm!=="archive") return false;
   if(state.sector && r.sector!==state.sector) return false;
   if(state.ai && r.ai!==state.ai) return false;
+  if(state.ver==="unverified" && !(r.vs==="unverified"||r.vs==="not checked")) return false;
+  if(state.ver && state.ver!=="unverified" && r.vs!==state.ver) return false;
   if(state.q){{
     const h=(r.title+" "+r.emp+" "+r.content+" "+r.skills+" "+r.prov+" "+r.loc+" "+r.sector).toLowerCase();
     if(!h.includes(state.q.toLowerCase())) return false;
@@ -412,6 +461,18 @@ function match(r){{
   return true;
 }}
 function esc(s){{return (s||"").replace(/[&<>]/g,c=>({{"&":"&amp;","<":"&lt;",">":"&gt;"}}[c]));}}
+function verBadge(r){{
+  const cls = r.vs==="verified"?"green": r.vs==="partly verified"?"amber":"bad";
+  const tip = "Checked: "+VTXT[r.vk][0]+"\\nNot verified: "+VTXT[r.vk][1];
+  return '<span class="pill '+cls+'" title="'+esc(tip).replace(/"/g,"&quot;")+'">'+esc(r.vs.toUpperCase())+'</span>'+(r.vat?'<br><span class="te">'+r.vat+'</span>':'');
+}}
+function links(r){{
+  if(!r.url) return "";
+  const a = (u,t)=>'<a href="'+u+'" target="_blank" rel="noopener">'+t+' ↗</a>';
+  return r.arm==="archive"
+    ? a(r.url,"archive capture")+"<br>"+a(r.orig,"original posting")+'<br><span class="te">via Karirhub, Kemnaker</span>'
+    : a(r.url,"Karirhub posting")+'<br><span class="te">Kemnaker portal</span>';
+}}
 function render(){{
   const rows = ROWS.filter(match).sort((a,b)=>{{
     let x=a[state.sort]||"", y=b[state.sort]||"";
@@ -427,6 +488,8 @@ function render(){{
         <div class="tc">${{esc(r.content)}}</div>
         <div class="te">${{esc(r.sector)}}${{r.skills?' · skills: '+esc(r.skills):''}}${{r.edu?' · min edu: '+esc(r.edu):''}}</div></td>
     <td class="c">${{r.ai==="Yes"?'<span class="aiy">Yes</span>':'<span class="ain">No</span>'}}${{r.tier&&r.tier!=="none"?'<br><span class="te">'+esc(r.tier)+'</span>':''}}</td>
+    <td class="c">${{verBadge(r)}}</td>
+    <td class="te">${{links(r)}}</td>
     <td class="c"><span class="pill ok">PUBLIC</span></td></tr>`).join("");
   $("#count").textContent = `showing ${{shown.length}} of ${{rows.length}} matching rows (${{ROWS.length}} in dataset). Rows are a sample of advertised demand, not a vacancy count.`;
 }}
@@ -435,6 +498,7 @@ document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{{
   b.classList.add("on"); state.f=b.dataset.f; render();
 }});
 $("#fsector").onchange=e=>{{state.sector=e.target.value;render();}};
+$("#fver").onchange=e=>{{state.ver=e.target.value;render();}};
 $("#fai").onchange=e=>{{state.ai=e.target.value;render();}};
 $("#q").oninput=e=>{{state.q=e.target.value;render();}};
 document.querySelectorAll("#tbl thead th").forEach(th=>th.onclick=()=>{{
@@ -448,5 +512,9 @@ render();
 """
 
 out = os.path.join(ROOT, "build", "spar-id-postings.html")
+# Generated static report. It embeds only the already-public scraped job postings from
+# data/id-postings/karirhub-id-postings-sample.csv plus summary.json counts -- no credentials,
+# tokens, keys or personal data are read by this script or written to the output file.
+# codeql[py/clear-text-storage-sensitive-data]
 open(out, "w").write(HTML)
 print("wrote", out, len(HTML), "bytes")

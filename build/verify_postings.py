@@ -6,17 +6,32 @@
   archive rows -> the Wayback capture must load (HTTP 200) and contain the title
                   (and the employer, when the CSV has one).
 
+Each row gets a status, written to data/id-postings/verification.json with --write
+(prep_postings.py copies it into the CSV; the report shows it per row):
+
+  verified         live row, every checked field matched the source page
+  partly verified  archive row: the capture loads and title/employer/location match,
+                   but the posting date is derived and the sector is a guess
+  unverified       the source did not load or a checked field did not match
+
 Stdlib only. Identified User-Agent, 0.4 s between live requests, 1 s between
 archive requests (web.archive.org is slower and rate-limits). Read-only.
 
   python3 build/verify_postings.py                # all rows (~12 min)
   python3 build/verify_postings.py --limit 10     # first 10 live + first 5 archive
-  python3 build/verify_postings.py --out report.json
+  python3 build/verify_postings.py --write        # refresh verification.json, then
+  python3 build/prep_postings.py                  # re-run prep + report builder to carry it
 """
-import argparse, csv, html, json, os, re, sys, time, urllib.error, urllib.request
+import argparse, csv, datetime, html, json, os, re, sys, time, urllib.error, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_PATH = os.path.join(ROOT, "data", "id-postings", "karirhub-id-postings-sample.csv")
+VER_PATH = os.path.join(ROOT, "data", "id-postings", "verification.json")
+LIVE_CHECKED = ["title", "posted_at", "deadline", "employer", "location", "listing status"]
+LIVE_NOT_CHECKED = ["skills", "min_education", "content snippet", "AI/data flags (derived from content)"]
+ARCH_CHECKED = ["capture loads (HTTP 200)", "title", "employer (if recorded)", "location"]
+ARCH_UNVERIFIED = ["posted_at (derived from a relative label)", "sector / in-scope (keyword guess)",
+                   "skills", "min_education", "content snippet", "AI/data flags (derived from content)"]
 UA = {"User-Agent": "SPAR-F26-research/0.1 (academic feasibility test)"}
 VAC = re.compile(r'"vacancy":\{"id":"[^"]+".*?"title":"(.*?)".*?"status":"(.*?)".*?'
                  r'"publishedAt":"(.*?)","expiresAt":"(.*?)","description"', re.S)
@@ -63,6 +78,9 @@ def check_live(r):
         res["problems"].append(f"status {status}")
     if r["employer"] and norm(r["employer"])[:15] not in norm(page):
         res["problems"].append(f"employer not on page: {r['employer']}")
+    for k in ("location_city", "location_province"):
+        if r[k] and norm(r[k]) not in norm(page):
+            res["problems"].append(f"{k} not on page: {r[k]}")
     return res
 
 
@@ -77,19 +95,36 @@ def check_archive(r):
         res["problems"].append("title not in capture")
     if r["employer"] and norm(r["employer"])[:15] not in p:
         res["problems"].append(f"employer not in capture: {r['employer']}")
+    for k in ("location_city", "location_province"):
+        if r[k] and norm(r[k]) not in p:
+            res["problems"].append(f"{k} not in capture: {r[k]}")
     return res
+
+
+def status_of(res):
+    if res["problems"]:
+        return "unverified"
+    return "verified" if res["arm"] == "live" else "partly verified"
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="only the first N live (and N/2 archive) rows")
-    ap.add_argument("--out", default="", help="write the per-row report as JSON")
+    ap.add_argument("--out", default="", help="write the raw per-row report as JSON")
+    ap.add_argument("--write", action="store_true",
+                    help="write data/id-postings/verification.json (full run, or with --ids)")
+    ap.add_argument("--ids", default="",
+                    help="comma-separated rec_ids to re-check; with --write they are merged into "
+                         "the existing verification.json (use after a transient timeout)")
     a = ap.parse_args()
     rows = list(csv.DictReader(open(CSV_PATH, encoding="utf-8")))
     live = [r for r in rows if r["arm"] == "live"]
     arch = [r for r in rows if r["arm"] == "archive"]
     if a.limit:
         live, arch = live[:a.limit], arch[:max(1, a.limit // 2)]
+    if a.ids:
+        want = set(a.ids.split(","))
+        live, arch = [r for r in live if r["rec_id"] in want], [r for r in arch if r["rec_id"] in want]
     out = []
     for group, fn, delay in ((live, check_live, 0.4), (arch, check_archive, 1.0)):
         for r in group:
@@ -102,6 +137,26 @@ def main():
         for x in s:
             if x["problems"]:
                 print("  ", x["rec_id"], "; ".join(x["problems"]))
+    if a.write:
+        if a.limit:
+            sys.exit("--write needs a full run (no --limit) or --ids")
+        now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+        rows_out = {}
+        for x in out:
+            live_row = x["arm"] == "live"
+            rows_out[x["rec_id"]] = {
+                "status": status_of(x), "checked_at": now, "http": x["http"],
+                "checked": LIVE_CHECKED if live_row else ARCH_CHECKED,
+                "unverified": LIVE_NOT_CHECKED if live_row else ARCH_UNVERIFIED,
+                "problems": x["problems"],
+            }
+        if a.ids and os.path.exists(VER_PATH):
+            merged = json.load(open(VER_PATH))["rows"]
+            merged.update(rows_out)
+            rows_out = merged
+        json.dump({"checked_at": now, "method": "build/verify_postings.py", "rows": rows_out},
+                  open(VER_PATH, "w"), indent=1, ensure_ascii=False)
+        print("wrote", VER_PATH)
     if a.out:
         json.dump(out, open(a.out, "w"), indent=1)
     sys.exit(0 if all(not x["problems"] for x in out) else 1)
