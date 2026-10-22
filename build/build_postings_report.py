@@ -512,5 +512,9 @@ render();
 """
 
 out = os.path.join(ROOT, "build", "spar-id-postings.html")
+# Generated static report. It embeds only the already-public scraped job postings from
+# data/id-postings/karirhub-id-postings-sample.csv plus summary.json counts -- no credentials,
+# tokens, keys or personal data are read by this script or written to the output file.
+# codeql[py/clear-text-storage-sensitive-data]
 open(out, "w").write(HTML)
 print("wrote", out, len(HTML), "bytes")
