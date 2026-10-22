@@ -376,7 +376,7 @@ The AI-skill question is answerable in principle ({ai_n} explicit hits, {data_n}
 <section>
 <h2>The detailed data — {n_all} rows in the requested format</h2>
 <p class="lede">Sortable and filterable. <code>AI-skill required?</code> is the keyword flag; <code>domain</code> is PUBLIC for every row (source URLs included).
-Download: <a href="../data/id-postings/karirhub-id-postings-sample.csv">karirhub-id-postings-sample.csv</a>.</p>
+Download: <a href="https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit?usp=sharing#gid=84937776">karirhub-id-postings-sample.csv</a>.</p>
 <div class="controls">
   <button class="chip on" data-f="all">All ({n_all})</button>
   <button class="chip" data-f="fin">Finance/BPO ({n_fin})</button>
