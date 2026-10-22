@@ -1,0 +1,3 @@
+# Canonical author names for this repo.
+# Keeps commit attribution stable when an agent's local git identity changes.
+cto-chan <cto-chan@users.noreply.github.com> cto-bot <cto-bot@users.noreply.github.com>
