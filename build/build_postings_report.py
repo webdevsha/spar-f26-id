@@ -283,6 +283,11 @@ footer{{border-top:1px solid var(--line);margin-top:40px;padding:18px 0 40px;fon
 code{{background:#F0F3F3;padding:1px 5px;border-radius:4px;font-size:12px}}
 ul.tight{{margin:8px 0 0;padding-left:20px}} ul.tight li{{margin:5px 0;font-size:14px;color:var(--soft)}}
 .note{{font-size:12.5px;color:var(--muted);font-style:italic}}
+details.sec>summary.sh2{{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 8px}}
+details.sec>summary.sh2{{cursor:pointer}}
+details.sec>summary.sh2::marker{{color:var(--muted)}}
+details.sec{{border-top:1px solid var(--line);margin:26px 0 0;padding-top:6px}}
+details.sec[open]>summary.sh2{{margin-bottom:6px}}
 </style></head><body>
 
 <header class="site"><div class="wrap">
@@ -318,15 +323,8 @@ The AI-skill question is answerable in principle ({ai_n} explicit hits, {data_n}
 </section>
 
 <section>
-<h2>What worked, what refused us</h2>
-<p class="lede">Six routes were tried in this session. Only two produced postings. The refusals are recorded as evidence, not worked around.</p>
-<table><thead><tr><th style="width:34%">Route</th><th style="width:12%">Status</th><th>Evidence / why</th></tr></thead>
-<tbody>{method_rows()}</tbody></table>
-<p class="note">Blocked ≠ absent: JobStreet, Indeed, LinkedIn, Kalibrr and the banks all hold finance postings. They are simply gated, and the gate is the finding for the public/private split.</p>
-</section>
-
-<section>
-<h2>Coverage — read this before trusting any trend</h2>
+<details class="sec" open>
+<summary class="sh2">Coverage — read this before trusting any trend</summary>
 <p class="lede">Postings per month in the window. Red = live portal, teal = archived capture. The shape is a collection artefact, not a hiring trend.</p>
 <div class="card">{bars_month()}
 <p class="legend"><i style="background:var(--cr)"></i>live portal &nbsp;<i style="background:var(--teal)"></i>Web Archive</p>
@@ -339,38 +337,7 @@ The AI-skill question is answerable in principle ({ai_n} explicit hits, {data_n}
   <div class="card tl"><h3 style="margin-top:0">Top provinces</h3>{prov_bars}
   <p class="note">Province is the province printed on the posting. An earlier build showed "Indonesia" for 40 archived rows because it read the trailing country in "CITY, PROVINCE, Indonesia" as the province; that is fixed, and no row now has "Indonesia" as a province.</p></div>
 </div>
-</section>
-
-<section>
-<h2>AI-skill signal — the team's question, first cut</h2>
-<p class="lede">Two independent flags per posting: <b>AI-skill</b> (text names AI/ML/automation/GenAI/RPA) and <b>data-skill</b> (data analysis, SQL, Python, BI). "Digital-basic" counts postings whose text shows ordinary digital literacy only (Excel, Office, "komputer").</p>
-<table><thead><tr><th>Sector</th><th class="n">postings</th><th class="n">AI-skill flag</th><th class="n">data-skill flag</th><th class="n">digital-basic</th><th class="n">AI rate</th></tr></thead>
-<tbody>{AI_ROWS}</tbody></table>
-<div class="card acc"><h3 style="margin-top:0">How the flag was computed — and the bug we caught</h3>
-<p style="margin:0 0 8px;font-size:14px;color:var(--soft)">The first pass used a loose substring match (any "ai", "genai", "otomasi"). It flagged <b>5</b> postings as AI-required. Spot-checking them showed most were artefacts:</p>
-<ul class="tight">
-<li><code>komputer</code> — computer literacy in a Teller BRILink ad, counted as AI.</li>
-<li><code>AIA</code> — the insurer's name, matched by the letters "ai".</li>
-<li><code>mengenai</code> — the ordinary Indonesian word "regarding"; it contains <code>g-e-n-a-i</code>.</li>
-</ul>
-<p style="margin:8px 0 0;font-size:14px;color:var(--soft)">Re-run with word-boundary rules on a fixed term list, the honest count is <b>{ai_n} of {ai_of}</b> — one posting, titled "Finance Automation", which is a genuine but narrow hit (the role automates finance workflows; it does not ask for ML skills). <b>Lesson for Akbar's categorisation plan:</b> keyword flags need word boundaries plus a manual spot-check, and the deferred LLM pass is the right call — a naive keyword count would have overstated AI demand by 5×.</p></div>
-<p class="note">Interpretation: in this sample AI requirements are near-absent from advertised BPO and banking postings. That is a finding about <i>advertised entry-level demand</i> — Indonesian bank/BPO ads for frontline and collections roles rarely list tooling. It does not show that AI skills are not used on the job. Widen the sample before drawing an S5 conclusion.</p>
-</section>
-
-<section>
-<h2>Where the postings come from — and how far each is verified</h2>
-<p class="lede">Every row links to the page it was read from. <b>Source of the postings:</b> employers publish them on Karirhub, the Ministry of Manpower's (Kemnaker) job portal; we read the public detail page. Archive rows are the same page as saved by the Internet Archive (Wayback Machine), so they carry two links: the capture and the original posting.</p>
-<table><thead><tr><th>Source</th><th class="n">rows</th><th>Link</th><th>Verification (re-fetched {VER_DATE})</th></tr></thead><tbody>
-<tr><td><b>Karirhub live detail page</b><br><span class="te">karirhub.kemnaker.go.id · government portal · PUBLIC</span></td><td class="n">{n_live}</td>
-<td><a href="https://karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan" target="_blank" rel="noopener">portal ↗</a></td>
-<td><span class="pill green">VERIFIED</span> {VC_LIVE.get("verified",0)} of {n_live}: title, posting date, deadline, employer, location and listing status matched the page.</td></tr>
-<tr><td><b>Web Archive capture of Karirhub</b><br><span class="te">web.archive.org · public archive · PUBLIC</span></td><td class="n">{n_arch}</td>
-<td><a href="https://web.archive.org/web/*/karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan/*" target="_blank" rel="noopener">archive index ↗</a></td>
-<td><span class="pill amber">PARTLY VERIFIED</span> {VC_ARCH.get("partly verified",0)} of {n_arch}: capture loads and title, employer (where recorded) and location match. <b>Not verifiable:</b> the posting date (derived from a relative label), and the finance/not-finance label (a keyword guess).</td></tr>
-</tbody></table>
-<p class="note"><b>Verified</b> = we re-fetched the source and compared those fields. <b>Partly verified</b> = the source exists and matches, but some fields cannot be confirmed from it. <b>Unverified</b> = the source did not load or a field did not match ({n_unver} rows). Fields never compared against the source on any row: skills, minimum education, the 240-character snippet and the AI/data flags derived from it. Re-run <code>python3 build/verify_postings.py --write</code> to refresh.</p>
-<p class="note">Routes that were tried but refused (not sources of any row) are listed, with links, under "What worked, what refused us" above.</p>
-<p class="note">All {n_all} source links are in the table below (column “source links”, filterable by verification status) and in the CSV columns <code>url</code> and <code>original_url</code>.</p>
+</details>
 </section>
 
 <section>
@@ -405,20 +372,69 @@ Download: <a href="https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_
 </section>
 
 <section>
-<h2>Was this done ethically?</h2>
+<h2>AI-skill signal — the team's question, first cut</h2>
+<p class="lede">Two independent flags per posting: <b>AI-skill</b> (text names AI/ML/automation/GenAI/RPA) and <b>data-skill</b> (data analysis, SQL, Python, BI). "Digital-basic" counts postings whose text shows ordinary digital literacy only (Excel, Office, "komputer").</p>
+<table><thead><tr><th>Sector</th><th class="n">postings</th><th class="n">AI-skill flag</th><th class="n">data-skill flag</th><th class="n">digital-basic</th><th class="n">AI rate</th></tr></thead>
+<tbody>{AI_ROWS}</tbody></table>
+<div class="card acc"><h3 style="margin-top:0">How the flag was computed — and the bug we caught</h3>
+<p style="margin:0 0 8px;font-size:14px;color:var(--soft)">The first pass used a loose substring match (any "ai", "genai", "otomasi"). It flagged <b>5</b> postings as AI-required. Spot-checking them showed most were artefacts:</p>
+<ul class="tight">
+<li><code>komputer</code> — computer literacy in a Teller BRILink ad, counted as AI.</li>
+<li><code>AIA</code> — the insurer's name, matched by the letters "ai".</li>
+<li><code>mengenai</code> — the ordinary Indonesian word "regarding"; it contains <code>g-e-n-a-i</code>.</li>
+</ul>
+<p style="margin:8px 0 0;font-size:14px;color:var(--soft)">Re-run with word-boundary rules on a fixed term list, the honest count is <b>{ai_n} of {ai_of}</b> — one posting, titled "Finance Automation", which is a genuine but narrow hit (the role automates finance workflows; it does not ask for ML skills). <b>Lesson for Akbar's categorisation plan:</b> keyword flags need word boundaries plus a manual spot-check, and the deferred LLM pass is the right call — a naive keyword count would have overstated AI demand by 5×.</p></div>
+<p class="note">Interpretation: in this sample AI requirements are near-absent from advertised BPO and banking postings. That is a finding about <i>advertised entry-level demand</i> — Indonesian bank/BPO ads for frontline and collections roles rarely list tooling. It does not show that AI skills are not used on the job. Widen the sample before drawing an S5 conclusion.</p>
+</section>
+
+<section>
+<details class="sec">
+<summary class="sh2">Where the postings come from — and how far each is verified</summary>
+<p class="lede">Every row links to the page it was read from. <b>Source of the postings:</b> employers publish them on Karirhub, the Ministry of Manpower's (Kemnaker) job portal; we read the public detail page. Archive rows are the same page as saved by the Internet Archive (Wayback Machine), so they carry two links: the capture and the original posting.</p>
+<table><thead><tr><th>Source</th><th class="n">rows</th><th>Link</th><th>Verification (re-fetched {VER_DATE})</th></tr></thead><tbody>
+<tr><td><b>Karirhub live detail page</b><br><span class="te">karirhub.kemnaker.go.id · government portal · PUBLIC</span></td><td class="n">{n_live}</td>
+<td><a href="https://karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan" target="_blank" rel="noopener">portal ↗</a></td>
+<td><span class="pill green">VERIFIED</span> {VC_LIVE.get("verified",0)} of {n_live}: title, posting date, deadline, employer, location and listing status matched the page.</td></tr>
+<tr><td><b>Web Archive capture of Karirhub</b><br><span class="te">web.archive.org · public archive · PUBLIC</span></td><td class="n">{n_arch}</td>
+<td><a href="https://web.archive.org/web/*/karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan/*" target="_blank" rel="noopener">archive index ↗</a></td>
+<td><span class="pill amber">PARTLY VERIFIED</span> {VC_ARCH.get("partly verified",0)} of {n_arch}: capture loads and title, employer (where recorded) and location match. <b>Not verifiable:</b> the posting date (derived from a relative label), and the finance/not-finance label (a keyword guess).</td></tr>
+</tbody></table>
+<p class="note"><b>Verified</b> = we re-fetched the source and compared those fields. <b>Partly verified</b> = the source exists and matches, but some fields cannot be confirmed from it. <b>Unverified</b> = the source did not load or a field did not match ({n_unver} rows). Fields never compared against the source on any row: skills, minimum education, the 240-character snippet and the AI/data flags derived from it. Re-run <code>python3 build/verify_postings.py --write</code> to refresh.</p>
+<p class="note">Routes that were tried but refused (not sources of any row) are listed, with links, under "What worked, what refused us" above.</p>
+<p class="note">All {n_all} source links are in the table below (column “source links”, filterable by verification status) and in the CSV columns <code>url</code> and <code>original_url</code>.</p>
+</details>
+</section>
+
+<section>
+<details class="sec">
+<summary class="sh2">What worked, what refused us</summary>
+<p class="lede">Six routes were tried in this session. Only two produced postings. The refusals are recorded as evidence, not worked around.</p>
+<table><thead><tr><th style="width:34%">Route</th><th style="width:12%">Status</th><th>Evidence / why</th></tr></thead>
+<tbody>{method_rows()}</tbody></table>
+<p class="note">Blocked ≠ absent: JobStreet, Indeed, LinkedIn, Kalibrr and the banks all hold finance postings. They are simply gated, and the gate is the finding for the public/private split.</p>
+</details>
+</section>
+
+<section>
+<details class="sec">
+<summary class="sh2">Was this done ethically?</summary>
 <p class="lede">Marks against the checklist the team agreed: robots/ToS, personal data, access gating, re-publication, and honesty about coverage.</p>
 <table><tbody>{eth_rows()}</tbody></table>
 <div class="card acc"><b>Short answer:</b> yes — this slice is public-domain, robots-permitted, rate-limited, contains no personal data, and did not bypass any access control. The two caveats are deliberate: we truncated ad text rather than mirroring the platform, and we refuse to present the sample size as a vacancy count.</div>
+</details>
 </section>
 
 <section>
-<h2>Public vs private — what each source is</h2>
+<details class="sec">
+<summary class="sh2">Public vs private — what each source is</summary>
 <table><thead><tr><th style="width:32%">Source</th><th style="width:16%">Domain</th><th>Note</th></tr></thead><tbody>{domain_rows()}</tbody></table>
 <p class="note">Every row shipped in the CSV is <b>PUBLIC</b>. Nothing here is licensed, purchased or access-granted.</p>
+</details>
 </section>
 
 <section>
-<h2>What to refine next (and what would change the answer)</h2>
+<details class="sec">
+<summary class="sh2">What to refine next (and what would change the answer)</summary>
 <div class="grid2">
 <div class="card tl"><h3 style="margin-top:0">Cheap wins</h3><ul class="tight">
 <li>Re-run the live crawl monthly; the same script keeps the panel current and turns the sample into a series.</li>
@@ -433,7 +449,9 @@ Download: <a href="https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_
 <li>Postings ≠ hires. For a hiring-rate signal we need a second data source (employment statistics, or job-board fill indicators).</li>
 </ul></div>
 </div>
+</details>
 </section>
+
 
 <footer>
 Generated {S["generated"]} · window {S["window"][0]} → {S["window"][1]} · source: karirhub.kemnaker.go.id public posting pages + web.archive.org captures ·
