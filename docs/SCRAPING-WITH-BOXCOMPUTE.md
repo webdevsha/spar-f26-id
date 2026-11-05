@@ -156,7 +156,7 @@ GET https://karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan/<slug>-<uuid>
 Result of that run: **331 postings** (281 live + 50 archived), **288 in finance/BPO
 scope**, 144 banking / 118 BPO / 19 insurance, across 30 provinces, 20 Oct 2025 →
 20 Oct 2026. Artefacts: `build/spar-id-postings.html` and
-`data/id-postings/karirhub-id-postings-sample.csv`.
+`data/id-postings/postings-<year>.csv` (one file per year).
 
 ---
 
@@ -276,7 +276,7 @@ per line, and pass them with `--urls`.
 | Path | What |
 |---|---|
 | `tools/scrape_karirhub.py` | the runnable detail-stage scraper (this guide's example) |
-| `data/id-postings/karirhub-id-postings-sample.csv` | the 331-row Indonesia dataset |
+| `data/id-postings/postings-<year>.csv` | the Indonesia dataset, one CSV per year (2,618 rows) |
 | `data/id-postings/README.md` | schema, provenance, ethics, limits, takedown |
 | `build/spar-id-postings.html` | the visual report for that dataset |
 | `build/spar-signal-feasibility.html` | the earlier aggregate (Pasker ID 2022–2024) feasibility test |

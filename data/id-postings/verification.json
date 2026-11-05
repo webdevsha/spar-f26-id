@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-10-21",
+ "checked_at": "2026-11-04",
  "method": "build/verify_postings.py",
  "rows": {
   "IN-P-001": {
@@ -5884,7 +5884,7 @@
   },
   "IN-P-295": {
    "status": "partly verified",
-   "checked_at": "2026-10-21",
+   "checked_at": "2026-11-04",
    "http": 200,
    "checked": [
     "capture loads (HTTP 200)",
@@ -6444,7 +6444,7 @@
   },
   "IN-P-323": {
    "status": "partly verified",
-   "checked_at": "2026-10-21",
+   "checked_at": "2026-11-04",
    "http": 200,
    "checked": [
     "capture loads (HTTP 200)",
@@ -6605,6 +6605,2546 @@
   "IN-P-331": {
    "status": "partly verified",
    "checked_at": "2026-10-21",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-337": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-352": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-358": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-380": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-382": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-410": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-414": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-448": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-461": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-480": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-495": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-591": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-633": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-657": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-687": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-704": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-717": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-749": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-760": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-771": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-773": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-787": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-804": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-820": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-842": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-906": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-960": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-988": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1009": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1012": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1014": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1039": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1075": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1126": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1157": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1166": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1188": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1196": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1203": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1234": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1236": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1243": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1244": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1266": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1299": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1312": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1317": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1343": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1371": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1388": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1502": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1524": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1530": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1571": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1572": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1601": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1607": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1608": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1614": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1622": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1624": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1640": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1654": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1737": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1771": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1837": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1850": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1852": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1870": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1891": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1892": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1911": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1913": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1918": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2003": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2026": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2036": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2109": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2123": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2158": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2168": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2182": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2205": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2215": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2246": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2262": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2324": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2348": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2352": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2354": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2371": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2374": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2395": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2411": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2427": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2450": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2461": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2463": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2485": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2490": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-406": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-838": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1028": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1128": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1167": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1361": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1459": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1469": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1493": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1618": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1636": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1665": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1721": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1809": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1820": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1900": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1968": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-1993": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2029": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2099": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2119": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2216": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2369": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2464": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2465": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2480": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
+   "http": 200,
+   "checked": [
+    "capture loads (HTTP 200)",
+    "title",
+    "employer (if recorded)",
+    "location"
+   ],
+   "unverified": [
+    "posted_at (derived from a relative label)",
+    "sector / in-scope (keyword guess)",
+    "skills",
+    "min_education",
+    "content snippet",
+    "AI/data flags (derived from content)"
+   ],
+   "problems": []
+  },
+  "IN-P-2494": {
+   "status": "partly verified",
+   "checked_at": "2026-11-04",
    "http": 200,
    "checked": [
     "capture loads (HTTP 200)",
