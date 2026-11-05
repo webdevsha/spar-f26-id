@@ -25,7 +25,7 @@ archive requests (web.archive.org is slower and rate-limits). Read-only.
 import argparse, csv, datetime, html, json, os, re, sys, time, urllib.error, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CSV_PATH = os.path.join(ROOT, "data", "id-postings", "karirhub-id-postings-sample.csv")
+CSV_GLOB = os.path.join(ROOT, "data", "id-postings", "postings-*.csv")
 VER_PATH = os.path.join(ROOT, "data", "id-postings", "verification.json")
 LIVE_CHECKED = ["title", "posted_at", "deadline", "employer", "location", "listing status"]
 LIVE_NOT_CHECKED = ["skills", "min_education", "content snippet", "AI/data flags (derived from content)"]

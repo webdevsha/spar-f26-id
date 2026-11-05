@@ -1,6 +1,10 @@
 # id-postings — Karirhub individual postings, preliminary scrape
 
-**Window:** 2025-10-20 → 2026-10-20 (past 12 months from collection).
+**Window:** 2024-01-01 → 2026-10-20. The live portal only lists current postings (2025-10-20 → 2026-10-20); everything earlier is Web Archive.
+
+**Archive arms:** Jan 2024 – 19 Oct 2025 backfill: 2,159 postings from 2,189 Wayback captures. 20 Oct 2025 – 20 Oct 2026: 128 more from the only 88 captures that exist for that period (the archive barely crawled Karirhub then). One request every 2 s, one worker.
+
+**Persyaratan Khusus** (the portal's "special requirements" section) is captured for every row: 195 of 281 live and 2262 of 2337 archive (2457 of 2618 overall). Where it is missing the portal renders no such section for that posting — not a parse failure. Full text sits in the CSV column `requirements`.
 **Collected:** 2026-10-20 (UTC) from this VM.
 **Scope:** Indonesian **finance & insurance** plus **BPO** postings (the two sectors SPAR's S5
 hiring signal cares about), tagged with timestamps, locations, content and an AI-skill flag.
@@ -12,9 +16,11 @@ demand**, not a census of vacancies, and not a measure of hiring.
 
 | File | Rows | What |
 |---|---|---|
-| `karirhub-id-postings-sample.csv` | 331 | 281 live + 50 archived postings, one row each |
+| `postings-<year>.csv` | 2,618 | one row per posting: 281 live + 2,337 archived, 2024-02 → 2026-10. Sharded by posting year (`postings-2024.csv`, `-2025.csv`, `-2026.csv`) because a single file passed 3.5 MB at this size, over the 2 MB per-file limit the publishing tool enforces |
 | `summary.json` | — | counts used by the report builder |
-| `verification.json` | 331 | per-row result of re-fetching the source (written by `build/verify_postings.py --write`) |
+| `verification.json` | 411 checked of 2,618 | per-row result of re-fetching the source: 281 live + 50 originals + 130 sampled archive rows (written by `build/verify_postings.py --write`) |
+
+Read the shards with a CSV parser, not `cat`: concatenating them repeats each file's header. The `postings-*.csv` glob is what the build scripts use, so a future split into half-years (`postings-2025-h1.csv`, …) needs no code change.
 
 ## Sources — every row is PUBLIC
 
@@ -43,9 +49,11 @@ simply absent — see the "What worked, what refused us" table in the HTML repor
 | `skills` | skills list as printed on the ad |
 | `content` | **content** — first 240 chars of the ad body (truncated on purpose) |
 | `content_chars_full` | length of the full description before truncation |
-| `ai_skill_required` | **Yes/No** — AI/ML/automation/GenAI/RPA named in text (word-boundary rules) |
+| `requirements` | the portal's *Persyaratan Khusus* (special requirements) text, up to 2,000 chars; empty when the posting has none |
+| `ai_skill_required` | **Yes/No** — Yes only when the posting's `requirements` (Persyaratan Khusus) names an AI skill or tool. 3 rows qualify |
 | `ai_tier` | `none` · `digital_basic` · `data_skill` · `ai_explicit` |
-| `ai_evidence` | the exact term that produced the flag — auditable, never a bare boolean |
+| `ai_evidence` | the matched term plus a snippet of the sentence — auditable, never a bare boolean |
+| `ai_source` | where the match came from (`requirements` when the flag is Yes) |
 | `data_skill_flag` | data analysis / SQL / Python / BI named |
 | `data_evidence` | the matched data term |
 | `digital_basic_flag` | ordinary digital literacy only (Excel, Office, "komputer") |
@@ -54,19 +62,34 @@ simply absent — see the "What worked, what refused us" table in the HTML repor
 | `verified_status` | `verified` (live; every checked field matched the source) · `partly verified` (archive; capture loads and title/employer/location match, but date is derived and sector is a guess) · `unverified` (source failed or a field mismatched) · `not checked` |
 | `verified_at` | date the source was re-fetched |
 | `verified_fields`, `unverified_fields` | what was compared against the source, and what could not be (or the mismatch, if `unverified`) |
-| `in_scope` | `finance_bpo` (288 rows) or `outside_scope` |
+| `in_scope` | `finance_bpo` (498 rows; 217 are archive rows classified by keyword guess) or `outside_scope` |
 
-## Flag method — and the false positives it caught
+## Flag method — the AI flag now comes from Persyaratan Khusus
 
-The first keyword pass used a loose substring match (`ai`, `genai`, `otomasi`) and flagged **5**
-postings as AI-required. Three of those were artefacts: `komputer` (computer literacy), `AIA`
-(the insurer's name), and `mengenai` — the ordinary Indonesian word "regarding", which contains
-the letters `g-e-n-a-i`. With word-boundary rules on a fixed term list the honest count is
-**1 of 288** ("Finance Automation").
+`ai_skill_required` is **Yes only when the posting's own Persyaratan Khusus names an AI skill or
+tool** — the rule the team asked for. The term list is explicit (kecerdasan buatan, machine
+learning, ChatGPT, prompt engineering, computer vision, named tools and libraries) and
+word-bounded, because the earlier loose pass was wrong in both directions:
 
-Consequence for the team's plan: naive keyword counting overstated AI demand 5×. Store the raw
-content, flag conservatively, and let the deferred LLM/manual pass do the categorisation —
-that is Akbar's "whichever is more convenient", and it is also the more accurate one.
+| mistake | effect |
+| --- | --- |
+| `keras` | matched the everyday word *pekerja keras* ("diligent worker") — 66 rows |
+| `genai` | matched inside *mengenai* ("regarding") |
+| `ai tools` | matched inside *Menguasai tools* |
+| `llm` | matched inside *fulfillment* |
+| "AI" in a design ad | usually means Adobe Illustrator, not artificial intelligence |
+| never reading the requirements section | the section that actually states the skills wanted |
+
+Automation-only wording (RPA, *otomasi*, big data, predictive analytics) is deliberately **not**
+counted. A mention that appears only in the ad description stays **No** and is kept in
+`ai_evidence` prefixed `context only` (5 rows), so a reader sees it without the flag claiming
+more than it knows. **161 rows have no Persyaratan Khusus section at all**, so nothing can be
+concluded about their requirements.
+
+Result: **3 of 2,618 rows are Yes** — *Artificial Intelligence Staff*, *Data Analyst* (degree in
+data science), and a live *Data Entry & Administrative Support* ad that asks for willingness to
+use AI tools. That near-absence is a finding about **advertised** demand, not about AI use on
+the job. Widen the sample and re-run before drawing an S5 conclusion.
 
 ## Ethics
 
@@ -85,7 +108,8 @@ that is Akbar's "whichever is more convenient", and it is also the more accurate
 | `arm` | Rows | Verification | Weak spots |
 |---|---|---|---|
 | `live` | 281 | Full re-fetch on 2026-10-20 with `build/verify_postings.py`: **281 of 281** returned HTTP 200 with the same title, `publishedAt` date, deadline and employer as the stored row | Closed listings disappear later; this arm is a snapshot of what was open on 2026-10-20 |
-| `archive` | 50 | Every row links to its `web.archive.org` capture (URL in the `url` column); all 50 captures returned 200 and contained the title (employer too, where recorded) | Dates are **derived** from the relative label on the captured page ("3 days ago"), 2 rows lack an employer name, 32 lack a skills list, and the sector is a keyword guess on title + employer, labelled `(guessed … unverified)` in the `sector` column (the archived page has no industry field) |
+| `archive` (Oct 2025 onward) | 50 | Every row links to its `web.archive.org` capture (URL in the `url` column); all 50 captures returned 200 and contained the title (employer too, where recorded) | Dates are **derived** from the relative label on the captured page ("3 days ago"), 2 rows lack an employer name, 32 lack a skills list, and the sector is a keyword guess on title + employer, labelled `(guessed … unverified)` in the `sector` column (the archived page has no industry field) |
+| `archive` (backfill, Feb 2024 – Oct 2025) | 2,159 | Parsed once from the capture when downloaded. A **random sample of 100** (seed 20261104) was re-fetched: **100 of 100** loaded and matched title, location and employer. The other 2,059 are `not checked` | Same weak spots as the archive arm, **and worse dates**: 1,512 of 2,159 carry a month-level label ("3 months ago"), so their `posted_at` is only good to about ±15 days (`posted_basis` says which). Coverage is whatever the Internet Archive crawled: Aug 2024, Dec 2024 and Jul 2025 are heavy, Jan–Jul 2024 nearly empty. 26 captures had no date label and 2 could not be fetched, so they are excluded, not guessed |
 
 So: no row is invented. The live arm is directly verifiable against the platform today; the
 archive arm is real but reconstructed from rendered text, and its dates carry ±1 day of slack.
@@ -116,7 +140,7 @@ Workflow: `verify_postings.py --write` → `prep_postings.py` → `build_posting
 ## Limits — do not read these numbers as a trend
 
 1. **Recency skew.** 187 of the 288 in-scope rows were posted in Oct 2026, because open listings
-   are the ones still online. The archive arm covers Oct–Dec 2025 and then thins out.
+   are the ones still online. The archive arm now reaches back to Feb 2024 but is lumpy (see above). Nov–Dec 2025 is partly covered by the archive; **Jan–Jul 2026 stays nearly empty (about 17 rows)** because neither source has it: the portal only lists open postings and the Internet Archive barely captured Karirhub detail pages then. No amount of re-crawling today recovers those months.
 2. **One keyword sweep.** The 281 live rows came from a single harvest pass, not an exhaustive
    month-by-month crawl. Volumes are a floor, not a total.
 3. **Employer aliases.** `PT X` and `X` are not merged; one employer can appear as many
@@ -138,5 +162,5 @@ builder runs anywhere, straight from the committed CSV.
 ## Takedown
 
 If Karirhub or the Internet Archive objects to this slice, delete
-`karirhub-id-postings-sample.csv`, `summary.json` and `build/spar-id-postings.html`, and say so
+`postings-<year>.csv`, `summary.json` and `build/spar-id-postings.html`, and say so
 in the commit message. Nothing else in the repo depends on them.

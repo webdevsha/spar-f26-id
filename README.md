@@ -155,7 +155,7 @@ pass, 2026-10-20:
 | Artifact | What |
 |---|---|
 | `build/spar-id-postings.html` | visual report — method, refusals, coverage, AI-skill table, ethics marks, filterable posting table (**public** at `/build/spar-id-postings.html`) |
-| `data/id-postings/karirhub-id-postings-sample.csv` | 331 rows (281 live + 50 archived), finance/BPO, 2025-10-20 → 2026-10-20 |
+| `data/id-postings/postings-<year>.csv` | 2,618 rows (281 live + 2,337 archived), finance/BPO, 2024-02 → 2026-10, one CSV per year |
 | `data/id-postings/README.md` | schema, provenance, ethics, limits |
 | `build/prep_postings.py`, `build/build_postings_report.py` | CSV normaliser + report builder (stdlib only) |
 

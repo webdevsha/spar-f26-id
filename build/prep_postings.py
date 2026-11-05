@@ -2,17 +2,18 @@
 """Normalise the raw Karirhub scrape (scratch/feas/out_postings.csv) into the
 team-facing schema: timestamp | location | content | AI-skill flag | domain.
 
-Writes  data/id-postings/karirhub-id-postings-sample.csv
+Writes  data/id-postings/postings-<year>.csv (one file per year)
 and     data/id-postings/summary.json   (stats used by build_postings_report.py)
 
 Ethics: descriptions are truncated to SNIPPET chars on purpose -- we keep enough
 text to judge the AI-skill question without republishing whole platform pages.
 """
-import csv, json, os, re, collections, datetime
+import collections, csv, json, os, re, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "scratch", "feas", "out_postings.csv")
 OUTDIR = os.path.join(ROOT, "data", "id-postings")
+REQ_MAX = None   # Persyaratan Khusus is stored whole; only the page trims for display
 SNIPPET = 240
 
 # --- strict skill definitions (the previous run used a loose "ai" substring that
@@ -142,6 +143,22 @@ def capture_location(path):
     return clean(m.group(1)) if m else ""
 
 
+from ai_classify import classify as ai_classify  # noqa: E402  (same directory)
+
+
+def load_requirements():
+    """Persyaratan Khusus per job_id. Archive rows come from the local captures
+    (requirements_archive.json), live rows from a re-fetch (requirements_live.json)."""
+    out = {}
+    for name, key in (("requirements_archive.json", None), ("requirements_live.json", "ok")):
+        p = os.path.join(ROOT, "scratch", "feas", name)
+        if not os.path.exists(p):
+            continue
+        d = json.load(open(p))
+        out.update(d[key] if key else d)
+    return out
+
+
 def load_verification():
     """data/id-postings/verification.json is written by build/verify_postings.py --write
     (a network re-check of every source URL). Missing file -> rows ship as 'not checked'."""
@@ -157,6 +174,8 @@ def original_url(url):
 
 def main():
     ver = load_verification()
+    reqs = load_requirements()
+    ai_sources = collections.Counter()
     rows = list(csv.DictReader(open(SRC)))
     wb = wayback_meta()
     out, i = [], 0
@@ -172,8 +191,25 @@ def main():
             sector = ("Finance/BPO (guessed from title/employer, unverified)" if fin_hit
                       else "Outside finance scope (guessed, unverified)")
         in_fin = live or (fin_hit and sector.startswith("Finance"))
-        ai_hit, data_hit, dig_hit = skill_class(blob)
-        if ai_hit:
+        req_text = clean(reqs.get(r["job_id"], ""))
+        # AI flag: the posting's own Persyaratan Khusus decides; title/description are a
+        # documented fallback for postings whose requirements name no AI skill.
+        ai_res = ai_classify(req_text, clean(r["title"]), clean(r["desc"]))
+        data_hit = DATA_RE.search(blob).group(0) if DATA_RE.search(blob) else ""
+        dig_hit = DIGITAL_RE.search(blob).group(0) if DIGITAL_RE.search(blob) else ""
+        ai_sources[ai_res["source"] or "none"] += 1
+        # The team's rule: Yes only when the posting's own Persyaratan Khusus names an AI
+        # skill. A mention that appears only in the description stays No and is kept as
+        # context in ai_evidence, so the call can still be audited.
+        if ai_res["source"] == "requirements":
+            ai_flag, ai_ev = "Yes", ai_res["evidence"]
+        elif ai_res["flag"] == "Yes":
+            ai_flag = "No"
+            ai_ev = "context only, description not requirements: " + ai_res["evidence"]
+            ai_sources["context_only"] += 1
+        else:
+            ai_flag, ai_ev = "No", ""
+        if ai_flag == "Yes":
             tier = "ai_explicit"
         elif data_hit:
             tier = "data_skill"
@@ -211,9 +247,11 @@ def main():
             "skills": clean(r["skills"]),
             "content": clean(r["desc"])[:SNIPPET],
             "content_chars_full": r["desc_chars"],
-            "ai_skill_required": "Yes" if ai_hit else "No",
+            "requirements": req_text,
+            "ai_skill_required": ai_flag,
             "ai_tier": tier,
-            "ai_evidence": ai_hit or ("" if not data_hit else ""),
+            "ai_evidence": ai_ev,
+            "ai_source": ai_res["source"] if ai_flag == "Yes" else "",
             "data_skill_flag": "Yes" if data_hit else "No",
             "data_evidence": data_hit,
             "digital_basic_flag": "Yes" if dig_hit else "No",
@@ -232,14 +270,28 @@ def main():
         r["verified_at"] = v.get("checked_at", "")
         r["verified_fields"] = "; ".join(v.get("checked", []))
         r["unverified_fields"] = "; ".join(v.get("problems") or v.get("unverified", []))
+        if not r["verified_fields"] and not r["unverified_fields"]:
+            # never give a row an empty tooltip: say plainly why there is nothing to show
+            r["unverified_fields"] = ("every field — this row has not been re-fetched"
+                                      if r["verified_status"] == "not checked" else "none")
 
     os.makedirs(OUTDIR, exist_ok=True)
     cols = [k for k in out[0] if not k.startswith("_")]
-    with open(os.path.join(OUTDIR, "karirhub-id-postings-sample.csv"), "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=cols)
-        w.writeheader()
-        for r in out:
-            w.writerow({k: r[k] for k in cols})
+    # The dataset ships as one CSV per year: a single file passed 3.5 MB at 2,618 rows,
+    # which is over the 2 MB per-file limit for publishing and awkward to diff.
+    by_year = collections.OrderedDict()
+    for r in out:
+        by_year.setdefault(r["posted_at"][:4], []).append(r)
+    for y, rs in sorted(by_year.items()):
+        with open(os.path.join(OUTDIR, "postings-%s.csv" % y), "w", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=cols)
+            w.writeheader()
+            for r in rs:
+                w.writerow({k: r[k] for k in cols})
+        print("  postings-%s.csv  %d rows" % (y, len(rs)))
+    stale = os.path.join(OUTDIR, "karirhub-id-postings-sample.csv")
+    if os.path.exists(stale):
+        os.remove(stale)
 
     fin = [r for r in out if r["_in_fin"]]
     live = [r for r in out if r["arm"] == "live"]
@@ -251,10 +303,16 @@ def main():
 
     summary = {
         "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
-        "window": ["2025-10-20", "2026-10-20"],
+        "window": ["2024-01-01", "2026-10-20"],
         "totals": {
             "rows": len(out), "live": len(live), "archive": len(arch),
             "finance_scope": len(fin), "archive_finance": len(arch_fin),
+        },
+        "requirements": {
+            "rows_with_text": sum(1 for r in out if r["requirements"]),
+            "live_with_text": sum(1 for r in live if r["requirements"]),
+            "archive_with_text": sum(1 for r in arch if r["requirements"]),
+            "chars_total": sum(len(r["requirements"]) for r in out),
         },
         "sector": tally(live, "sector"),
         "month": dict(sorted(collections.Counter(r["posted_at"][:7] for r in fin).items())),
@@ -266,6 +324,12 @@ def main():
             "of": len(fin),
             "tier": tally(fin, "ai_tier"),
             "data_flag": sum(1 for r in fin if r["data_skill_flag"] == "Yes"),
+            "total_flagged": sum(1 for r in out if r["ai_skill_required"] == "Yes"),
+            "of_all": len(out),
+            "flag_source": dict(ai_sources),
+            "context_only": ai_sources.get("context_only", 0),
+            "no_requirements_text": sum(1 for r in out if not r["requirements"]),
+            "requirements_checked": sum(1 for r in out if r["requirements"]),
         },
         "by_sector_ai": {},
         "archive_quality": {
