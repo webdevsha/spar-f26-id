@@ -170,6 +170,31 @@ scraping with BoxCompute, using this Indonesia run as the worked example: the fi
 "blocked" looks like, the team's row format, the ethics checklist, troubleshooting and a glossary.
 Runnable companion: `tools/scrape_karirhub.py` (stdlib only, robots-aware, writes the team schema).
 
+## Shafira's task progress (SPAR Fall 2026)
+
+> Tallied from repo state + `SPAR_Fall2026_Shafira_Tasks.md`. Updated 2026-11-10.
+
+```
+Data spine        ████████████████████░░░░  85%  signals·policy·readiness·who-can-act·Karirhub (2,621 postings)
+Data list (lead)  ██████████████████░░░░░░  70%  seed CSVs present; signal-fit + licence check pending (due Sat 14 Nov)
+Part 3 (signals)  ████░░░░░░░░░░░░░░░░░░░░░░  20%  data gathered; 700w narrative pending (due Sun 22 Nov)
+Part 4 (policy)   ███░░░░░░░░░░░░░░░░░░░░░░░  15%  inventory seed only; 600w with Ian pending (due Sun 22 Nov)
+Shared sheet/repo ████████████████████░░░░  80%  CSVs tracked; AISA repo freeze pending (due Sun 29 Nov)
+§5 SPAR report    ██░░░░░░░░░░░░░░░░░░░░░░░░  10%  data underpinning ready; 2,500w pending (→ Rachel Wed 2 Dec)
+§8 Limits         █�░░░░░░░░░░░░░░░░░░░░░░░░░░   5%  not started (with Napat, Wed 2 Dec)
+Interview (BPS)   █░░░░░░░░░░░░░░░░░░░░░░░░░░   5%  data-gap question pending (by Fri 27 Nov)
+Atlas site        █░░░░░░░░░░░░░░░░░░░░░░░░░░   5%  publish Jan 2027 (AISA consent)
+```
+
+**Repo evidence behind the bars:**
+- `data/id-signals.csv` — 9 rows · `id-policy-inventory.csv` — 3 · `id-readiness.csv` — 3 · `id-who-can-act.csv` — 6 · `id-instruments.csv` — 1 · `id-triggers.csv` — 1
+- `data/id-postings/` — 2,621 Karirhub postings (2024–2026), S5 hiring signal, public report at `/build/spar-id-postings.html`
+- `tools/scrape_karirhub.py` — runnable scraper (stdlib, robots-aware)
+
+**Next due from Shafira:** Fri 13 Nov (data list) → Sat 14 Nov (signal fit + licence check) → Sun 22 Nov (Part 3 + Part 4) → Sun 29 Nov (repo freeze) → Wed 2 Dec (§5 + §8 → Rachel).
+
+---
+
 ## Non-negotiables
 
 - **Consent gate.** Anything shown *publicly* (the `/build/*` Observatory reports) needs AISA
