@@ -6,6 +6,7 @@ on:
     paths:
       - "data/**"
       - "build/build_dashboard.py"
+      - "build/*.html"
       - "functions/**"
       - ".github/workflows/deploy.yml"
   workflow_dispatch: {}
