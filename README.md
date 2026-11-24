@@ -312,6 +312,48 @@ frozen into the repo) → Wed 2 Dec (§5 + §8 to Rachel). SPAR submission 14 De
 | 4 | Regulator-facing requests: 15 routes surfaced to BPJS, OJK, Kemnaker, BPS, DPR Commission IX, plus a scope question on platform data obtained via web archives | **@clo before anything is sent** | Nothing sent to date |
 | 5 | `data/id-signals.csv` etc. mirror stale vs the sheets | sync job (#1) | Dashboard accuracy |
 
+## BoxCompute collection (24 Nov 2026)
+
+**Why BoxCompute.** The lane's posting evidence currently rests on one government portal plus a
+sampled archive (2,618 rows). The v2 brief (`docs/PROMPTS-BOXCOMPUTE-V2.md`) moves to an
+**archive-first** design across 13 platforms, because that is both the ToS-clean route to volume and
+the only route that reaches a platform's own published scale.
+
+**Target (v2 brief, Step 1).** Per platform: `distinct posting URLs` by year, plus a coverage probe —
+*counts first, no fetching until the counts exist*. Q1, honestly asked: **how much is actually
+archived?** Until that is answered, any collection number is a guess.
+
+**Collection runs in a BoxCompute sandbox, driven by the CLI** (`bxc sandbox exec`), not through the
+web chat: the chat surface is not exposed by the CLI, SDK or REST API, and a scripted sandbox puts
+results in the repo as artefacts instead of chat prose.
+
+Artefacts produced by the run live under `data/boxcompute/`:
+
+| File | What |
+|---|---|
+| `census.json` | per platform: CDX page probe, distinct URLs per year, and the scoped CDX target |
+| `url_shapes/<host>.txt` | sampled distinct URLs — used to **derive** posting-pattern filters from evidence rather than guessing them |
+| `census.log` | full request log, including every backoff |
+
+**Method, and its limits.** Wayback CDX only: `collapsed=urlkey`, `statuscode:200`, one request every
+3 s, backoff on 429/503/504, and a User-Agent that identifies the crawler as an academic study.
+Three cautions are part of the result, not footnotes:
+
+- **Distinct URLs ≠ postings ≠ hires.** A URL can be one ad or one search page; CDX volume is a
+  property of the crawl, not of hiring. No figure from this run may be read as a level of demand.
+- **CDX page counts are a volume probe only.** An assumed page size would be an invented figure, so
+  the raw page count is reported and nothing is extrapolated from it.
+- **Some hosts are too large for a single CDX response.** Piercing `jobstreet.co.id` and
+  `linkedin.com` needs monthly pagination; where a host is skipped or throttled the table says so.
+
+**Access is not the constraint.** From the sandbox: Wayback CDX **200**, Common Crawl index **200**,
+Karirhub live **200**, Pasker ID **200**. By contrast Algolia (`algolia.kemnaker.go.id`, the
+`L3WWP72HSI` shard) is **unreachable from both the sandbox and the agent network**, and Glints /
+LinkedIn / JobStreet direct requests return **403/403/308**. The archive-first design is therefore
+not a preference — it is the only route that works and the only one that respects the platforms.
+
+---
+
 ## Non-negotiables
 
 - **Consent gate.** Anything shown *publicly* needs AISA's consent first. Default private; the
