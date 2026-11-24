@@ -15,6 +15,7 @@ README is wrong — fix it in the same commit as the file.
 
 ## Contents
 
+- [The deliverables (as tracked)](#the-deliverables-as-tracked)
 - [Start here (five files, in this order)](#start-here-five-files-in-this-order)
 - [What this repo is for](#what-this-repo-is-for)
 - [File index — everything we actually work on](#file-index--everything-we-actually-work-on)
@@ -32,6 +33,68 @@ README is wrong — fix it in the same commit as the file.
 
 ---
 
+## The deliverables (as tracked)
+
+What the lane hands in, mirroring the team tracker so the repo and the spreadsheet never disagree. Live tracker: **[IND team progress](https://docs.google.com/spreadsheets/d/1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ/edit)** — tab `Sheet1` is the team view, the `Shafira's tasks` tab is her own work with due dates.
+
+### A. Measures and signals — reviewed
+
+| Work | What it covers | Progress | Owner | Evidence |
+|---|---|---|---|---|
+| **M1** Workforce exposure | Finance and insurance clerical employment, formality and wages compared between the February 2024 and 2026 surveys | 100% · Reviewed | Akbar | [Microdata Findings.pptx](https://docs.google.com/presentation/d/1U_DRtEJL68KPnKRWEmoQlf_P_SJ0tlLcd/edit) |
+| **M2** Bank AI deployment | AI use reviewed at five banks; the evidence identifies tasks and usage | 100% · Reviewed | Akbar | [Bank AI deployment and worker support in Indonesia](https://docs.google.com/document/d/1-UkVM7HjWyYFfgmjwPodZ0Y2HKVegzm_Te0UaLdkiNU/edit) |
+| **M3** Recruitment and skills | Job-posting ads reviewed for changes in roles and skill requirements | 100% · Reviewed | Akbar | [Job-ads report](https://spar-f26-id.pages.dev/build/spar-id-postings) |
+| **M4** Worker adjustment | Employment outcomes for recent finance clerical job leavers; national JKP claims reviewed separately | 100% · Reviewed | Akbar | [Bank AI deployment and worker support in Indonesia](https://docs.google.com/document/d/1-UkVM7HjWyYFfgmjwPodZ0Y2HKVegzm_Te0UaLdkiNU/edit) |
+| **M5** Worker support capacity | JKP eligibility, training routes and access barriers | 100% · Reviewed | Akbar | [Bank AI deployment and worker support in Indonesia](https://docs.google.com/document/d/1-UkVM7HjWyYFfgmjwPodZ0Y2HKVegzm_Te0UaLdkiNU/edit) |
+| **M6** Fiscal and consumption signals | Gross labour income tax receipts across banks, finance and all sectors | 100% · Reviewed | Akbar | [Microdata Findings.pptx](https://docs.google.com/presentation/d/1U_DRtEJL68KPnKRWEmoQlf_P_SJ0tlLcd/edit) |
+
+### B. Team deliverables
+
+| Work | What it covers | Progress | Status | Owner | Where |
+|---|---|---|---|---|---|
+| **Final report** | Midterm draft continued; six findings, scenarios and policy responses integrated | 50% | In progress | Akbar, Natraj, Shafira | [Midterm Report](https://docs.google.com/document/d/1WXY8YiPSC7rmgUNhc0jxFc4YbWYDNnxLGVLz_2qRa9Y/edit) |
+| **Scenario model** | Clerical exposure under three scenarios and two baselines | 50% | In progress | Akbar, Natraj | [SPAR model](https://docs.google.com/spreadsheets/d/1JpJG9wxsRIKf7dGl6RrMyvsaxcaBPO5CCsbde_7vkU0/edit) |
+| **Ecosystem and policy map** | Actors, instruments and worker support routes | 75% | Ready for review | Shafira, Rachel | [Live map](https://spar-f26-id.pages.dev/build/spar-id-ecosystem-map) |
+| **Data inventory** | Indonesian sources and data holders; coverage gaps reconciled with the shared inventory | 50% | In progress | Napat, Akbar, Shafira | [Core file](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit) |
+| **Decision calendar** | Six Indonesian decision windows, with dates and owners | 50% | In progress | Shafira, Rachel | [Decision calendar](https://github.com/webdevsha/spar-f26-id/blob/main/docs/ID-DECISION-CALENDAR.md) |
+| **Policy readiness review** | Policy documents scored against six readiness questions | 50% | In progress | Shafira | [Readiness tab](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit#gid=597313565) |
+| **Signal watchlist** | Signals shortlisted with a shared log of observations | 50% | In progress | Shafira, Ian | [Signals tab](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit#gid=838965401) |
+| **Indonesia trigger cards** | Draft cards linking signals to possible responses | 50% | In progress | Akbar | [Triggers tab](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit#gid=778752423) |
+| **Job-postings dashboard** | Archived ads compared for AI mentions, occupational exposure and entry level | 80% | In progress | Shafira | [Job-ads report](https://spar-f26-id.pages.dev/build/spar-id-postings) |
+| **Bank interviews** | Interviewee candidates identified; access awaited | 25% | Scoping | Akbar | [Interviewee sheet](https://docs.google.com/document/d/1ZNwb0TbpdryC1jyS0qPzPOPQuQ4RiFuv8Dp9sbAXVhg/edit) |
+| **Final presentation** | Three-slide Indonesia research map and narration | 100% | Complete | Akbar | — |
+| **Indonesia op-ed** | Full and short versions written, awaiting review | 75% | Ready for review | Akbar | [Indonesia Op-Ed](https://docs.google.com/document/d/1eXJW4GZe-R_eVI9u7nmh4m9DZk68Qs8yDY1EfADxQ4U/edit) |
+
+### C. Shafira's own work (with due dates)
+
+Mirrors the `Shafira's tasks` tab — her work only, so the shared sheet stays untouched.
+
+| Work | Progress | Status | Due |
+|---|---|---|---|
+| Data list (with Napat) | 90% | Ready to check | 14 Nov 2026 — overdue |
+| Checking the sources | 100% | Done | 24 Nov 2026 — done |
+| Reading the job portal | 100% | Done | 22 Nov 2026 — overdue |
+| Job-ads dashboard | 80% | In progress | Ongoing |
+| Indonesian data, full history | 40% | In progress | 29 Nov 2026 |
+| Licence note for the paid data (with Akbar) | 20% | In progress | 14 Nov 2026 — overdue |
+| Country report — Part 3 | 70% | Draft ready to read | 22 Nov 2026 — overdue |
+| Country report — Part 4 (with Ian) | 70% | Draft ready to read | 22 Nov 2026 — overdue |
+| Country report — Part 5 (with Natraj) | 25% | In progress | 29 Nov 2026 |
+| Report section 5 — Indonesia chapter | 15% | In progress | 2 Dec 2026 |
+| Report section 8 — limits (with Napat) | 60% | Draft ready to read | 2 Dec 2026 |
+| Policy readiness review | 50% | In progress | 26 Oct 2026 — overdue |
+| Signal watchlist (with Ian) | 80% | Ready to check | Ongoing |
+| Decision calendar (with Rachel) | 80% | Ready to check | 22 Nov 2026 — overdue |
+| Ecosystem and policy map (with Rachel) | 75% | Ready to check | 22 Nov 2026 — overdue |
+| Atlas page (our public page) | 45% | In progress | Jan 2027 |
+| Overview and scenarios page | 85% | Built, not yet online | 24 Nov 2026 — done |
+| More job ads (target 10,000) | 15% | Scoping | After 29 Nov 2026 |
+| One interview about data gaps | 20% | Scoping | 27 Nov 2026 |
+| Freeze the shared sheet | 25% | Blocked | 29 Nov 2026 |
+
+*The tracker is the source. This section is a mirror — update it when the tracker moves.*
+
+---
 ## Start here (five files, in this order)
 
 | # | File | Why |
@@ -335,7 +398,7 @@ frozen into the repo) → Wed 2 Dec (§5 + §8 to Rachel). SPAR submission 14 De
 
 **Why BoxCompute.** The lane's posting evidence currently rests on one government portal plus a
 sampled archive (2,618 rows). The v2 brief ([docs/PROMPTS-BOXCOMPUTE-V2.md](docs/PROMPTS-BOXCOMPUTE-V2.md)) moves to an
-**archive-first** design across 13 platforms, **Indonesia only** (the Philippines lane was dropped on 24 Nov as this study covers Indonesia), because that is both the ToS-clean route to volume and
+**archive-first** design across 13 platforms, because that is both the ToS-clean route to volume and
 the only route that reaches a platform's own published scale.
 
 **Target (v2 brief, Step 1).** Per platform: `distinct posting URLs` by year, plus a coverage probe —
@@ -346,18 +409,13 @@ archived?** Until that is answered, any collection number is a guess.
 web chat: the chat surface is not exposed by the CLI, SDK or REST API, and a scripted sandbox puts
 results in the repo as artefacts instead of chat prose.
 
-Artefacts produced by the run are committed under [`data/boxcompute/`](data/boxcompute/):
+Artefacts produced by the run live under `data/boxcompute/`:
 
 | File | What |
 |---|---|
-| [census.json](data/boxcompute/census.json) | per platform: CDX page probe, distinct URLs per year, the scoped CDX target, and whether the host was capped |
-| [patterns.json](data/boxcompute/patterns.json) | per host: distinct URLs → **posting-like** URLs, the rate, and the URL shapes behind both — the derivation of the posting filters from evidence rather than guesswork |
-| [url_shapes/](data/boxcompute/url_shapes) | sampled distinct URLs, one file per host (e.g. [kitalulus.com.txt](data/boxcompute/url_shapes/kitalulus.com.txt)) |
-| [census.log](data/boxcompute/census.log) | full request log, including every backoff |
-| [harvest.log](data/boxcompute/harvest.log) | Stage 2 `job_card` harvest progress, bucket by bucket |
-
-*n = 8 platforms as at 24 Nov 11:46 UTC; the run is still appending, so these files are a
-snapshot and are refreshed from the same branch as the run advances.*
+| `census.json` | per platform: CDX page probe, distinct URLs per year, and the scoped CDX target |
+| `url_shapes/<host>.txt` | sampled distinct URLs — used to **derive** posting-pattern filters from evidence rather than guessing them |
+| `census.log` | full request log, including every backoff |
 
 **Method, and its limits.** Wayback CDX only: `collapsed=urlkey`, `statuscode:200`, one request every
 3 s, backoff on 429/503/504, and a User-Agent that identifies the crawler as an academic study.
@@ -370,42 +428,20 @@ Three cautions are part of the result, not footnotes:
 - **Some hosts are too large for a single CDX response.** Piercing `jobstreet.co.id` and
   `linkedin.com` needs monthly pagination; where a host is skipped or throttled the table says so.
 
-**First results (24 Nov, run in progress).** The census produced a number that must **not** be
-quoted as-is, and finding that out is the run's first real result.
+**First results (run in progress, 24 Nov).** Distinct archived posting URLs, `statuscode:200`,
+`collapsed=urlkey`. This is the register's own question — *are the data real?* — being answered
+platform by platform:
 
-Raw distinct-URL counts are dominated by non-postings: on KitaLulus, 16,172 of 183,982 distinct URLs
-are `/_next/image` paths; on Dealls, tens of thousands are city × category *search permutations*.
-Posting patterns were therefore **derived from the data** — see
-[patterns.json](data/boxcompute/patterns.json) — and applied as a filter:
+| Platform | 2024 | 2025 | 2026 (to 30 Nov) | Distinct URLs |
+|---|---:|---:|---:|---:|
+| Karirhub (ours) | 5,772 | 7,266 | 270 | **13,308** |
+| Dealls | 17,946 | 26,471 | *(running)* | **44,417** |
+| *9 platforms still queued or running* | | | | |
 
-| Platform | 2024 | 2025 | 2026 (to 30 Nov) | Distinct URLs | Posting-like | Rate |
-|---|---:|---:|---:|---:|---:|---:|
-| Glints ⚠️ *capped* | 100,000 | 100,000 | 33,876 | 233,876 | 136,451 | 58.3% |
-| KitaLulus | 49,881 | 72,729 | 61,372 | 183,982 | 71,076 | 38.6% |
-| Dealls | 17,946 | 26,471 | 31,928 | 76,345 | 67,647 | 88.6% |
-| Kalibrr | 28,039 | 12,423 | 2,518 | 42,980 | 29,455 | 68.5% |
-| Karirhub (ours) | 5,772 | 7,266 | 270 | 13,308 | 12,390 | 93.1% |
-| Karir.com | 4,118 | 2,197 | 1,006 | 7,321 | *52 †* | *0.7% †* |
-| Pintarnya | 0 | 0 | 0 | 0 | 0 | — |
-| Bossjob | 0 | 0 | 0 | 0 | 0 | — |
-| **Total (8 of 10 ID)** | | | | **557,812** | **317,071** | 56.8% |
-
-Three cautions are part of the result, not footnotes:
-
-- **The total is a floor, not a total.** Glints stopped at exactly 100,000 for two consecutive years
-  — that is the per-year cap, not the archive's size. JobStreet and LinkedIn are not counted at all.
-- **† The filter undercounts in the other direction.** Karir.com's real pattern is
-  `/opportunities/<num>` (4,658 URLs), which the token list did not anticipate, so its rate is
-  wrongly near-zero. Posting-like is therefore an **upper bound on some hosts and a lower bound on
-  others** — it is a per-platform signal, never a cross-platform ranking.
-- **Distinct URLs ≠ postings ≠ hires.** A URL can be one ad or one search page; CDX volume is a
-  property of the crawl, not of hiring. 2026 is a partial year and is not comparable on its own.
-
-**Stage 2 (`job_card` harvest) is running.** Stratified 25 URLs per platform-month, extracted via
-schema.org `JobPosting` where the page carries it, falling back to OpenGraph. Every row carries
-`posted_basis` (`jsonld` | `capture_proxy`) so a crawl date can never be read as a posting date, and
-rows without a title or employer go to a rejected file rather than being emitted blank. Progress in
-[harvest.log](data/boxcompute/harvest.log).
+Read this table as **what the archive holds**, never as hiring. A distinct URL may be one ad or one
+search page, and 2026 is a partial year (captures to 30 Nov), so it is **not comparable** to 2024 or
+2025 on its own. The two oversized hosts (`jobstreet.co.id`, `linkedin.com`) are queued last and are
+capped at 20,000 rows per year, because a single CDX response for either drops mid-stream.
 
 **Access is not the constraint.** From the sandbox: Wayback CDX **200**, Common Crawl index **200**,
 Karirhub live **200**, Pasker ID **200**. By contrast Algolia (`algolia.kemnaker.go.id`, the

@@ -44,3 +44,31 @@ sheet. The percentages are a judgement about Shafira's work, so they stay as she
 says otherwise. Comments on rows where she is a co-PIC (10, 12, 13, 14, 16) were also left blank.
 
 **Revert:** clear range `Sheet1!G1:G21`.
+
+## 4. `IND team progress` - second pass (plan items + clickable links)
+Same sheet, later on 24 Nov.
+- **Links (column C) on existing rows 3, 4, 6, 7, 8, 10, 11, 13, 17, 19, 21** - the named artefacts now carry URLs beneath the name (Labor Microdata folder + Microdata Findings.pptx, the Bank AI deployment doc, Midterm Report, SPAR model, Core file, triggers tab, interviewee sheet, Indonesia Op-Ed). Revert: restore the plain names that were there before (row-by-row).
+- **Progress / Status / Comments on rows 11, 13, 14, 15, 16** - Decision calendar 50->80% Ready for review; Signal watchlist 50->80% Ready for review; Data inventory 50->75%; plus refreshed one-line comments. Revert: set those cells back to 50% / In progress.
+- **New block rows 22-35** - section header `C. Shafira's six-week-plan items (country report, data, site)` and 13 task rows, each with Details, Links, Progress, Status, PIC, Comment. Revert: clear `Sheet1!A22:G35`.
+
+## 5. Correction - Sheet1 writes reversed, and a separate tab added
+
+**Sha restored the tracker (`Sheet1`) to its 18:44 version**, which reverses writes 2 and 4 of this
+note: the `Sheet1!A22:G35` block is gone, the Progress/Status moves are back to 50% / In progress,
+and the Links additions were reduced to the rows that already had a link at 18:44. Sheet1 now stands
+at 21 rows and is **not touched again by CRO work**.
+
+Still present in that restored version: the one-line comments added by write 1 on rows 12, 14, 15,
+16 and 18 (column G). To clear them: `Sheet1!G12`, `G14`, `G15`, `G16`, `G18`.
+
+**New tab added instead: `Shafira's tasks`** (same spreadsheet, `1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ`).
+- Same header row as Sheet1: `Work | Details | Links | Progress | Status | PIC | Comments`
+- 20 rows, Shafira's own work only (solo or co-PIC), plain language, header row frozen and bold
+- Revert: delete the tab, or clear `'Shafira's tasks'!A1:G21`
+
+### `Shafira's tasks` - Links column made clickable
+Plain-text URLs are not clickable in Sheets, so column `C` (rows 2-21) was rewritten as
+`=HYPERLINK("url","Short label")`, joined with a middot when a row needs two links. Column widths,
+text wrapping and top alignment were set, and the header row is frozen and bold.
+Verified by reading the computed values back: 20 label rows, no spreadsheet errors, no blanks.
+**Revert:** clear `'Shafira's tasks'!C2:C21`.
