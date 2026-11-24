@@ -17,6 +17,16 @@ def load_rows():
 
 
 rows = load_rows()
+
+# The BoxCompute census arm comes from platforms that expose neither a province
+# nor an industry field. The builder indexes both against fixed lists, so a
+# blank string crashes it -- normalise instead of guessing a value.
+for r in rows:
+    if not (r.get("location_province") or "").strip():
+        r["location_province"] = "Unknown"
+    if not (r.get("sector") or "").strip():
+        r["sector"] = "Unknown"
+
 S = json.load(open(os.path.join(D, "summary.json")))
 
 for r in rows:
@@ -33,9 +43,21 @@ sector = S["sector"]
 bai = S["by_sector_ai"]
 emp_top = S["employer_top"]
 
-n_all = S["totals"]["rows"]
-n_live = S["totals"]["live"]
-n_arch = S["totals"]["archive"]
+# Counted from the rows, not summary.json, so rows added by another collection
+# method are genuinely included rather than invisible to the headline.
+n_all = len(rows)
+n_live = sum(1 for r in rows if r.get("arm") == "live")
+n_arch = sum(1 for r in rows if r.get("arm") == "archive")
+n_census = sum(1 for r in rows if r.get("arm") == "boxcompute_census")
+n_all_orig = n_all - n_census
+n_census_platforms = len({(r.get("source") or "").split(" (")[0]
+                          for r in rows if r.get("arm") == "boxcompute_census"})
+n_census_fin = sum(1 for r in rows
+                   if r.get("arm") == "boxcompute_census"
+                   and r.get("in_scope") == "finance_bpo")
+# The original panel's finance/BPO figure keeps its own, stricter rule (it also
+# required a finance sector on archive rows). Census rows have no sector field,
+# so their in-scope label is looser -- reported separately, never added in.
 n_fin = S["totals"]["finance_scope"]
 ai_n = S["ai"]["flagged"]
 ai_of = S["ai"]["of"]
@@ -46,7 +68,8 @@ AI_REQ = S["ai"].get("requirements_only", 0)
 AI_NOREQ = S["ai"].get("no_requirements_text", 0)
 data_n = S["ai"]["data_flag"]
 uniq_emp = len({r["employer"] for r in FIN if r["employer"]})
-uniq_prov = len({r["location_province"] for r in FIN if r["location_province"]})
+uniq_prov = len({r["location_province"] for r in FIN
+                if r["location_province"] and r["location_province"] != "Unknown"})
 
 
 def esc(s):
@@ -224,10 +247,17 @@ REQ_PAGE = 200   # chars shown on the page; the CSV column carries the full text
 
 def _slug(r):
     """Just the part of the URL that differs per row: live -> the posting slug;
-    archive -> '<timestamp>|<slug>' (both are enough to rebuild the two links)."""
+    archive -> '<timestamp>|<slug>' (both are enough to rebuild the two links);
+    census -> the full original URL, since these come from other platforms and
+    have neither a Karirhub slug nor an archive path."""
     u = r["url"]
+    if r["arm"] == "boxcompute_census":
+        return u
     if r["arm"] == "live":
         return u.rsplit("/", 1)[-1]
+    if "/web/" not in u:
+        # defensive: never crash the whole build on one unexpected URL shape
+        return "orig|" + u.rsplit("/", 1)[-1]
     tail = u.split("/web/", 1)[1]
     ts, rest = tail.split("/", 1)
     return ts + "|" + rest.rsplit("/", 1)[-1]
@@ -333,7 +363,7 @@ def live_panel():
   <h2 style="margin-top:0">Live intake &mdash; BoxCompute census harvest</h2>
   <p class="lede">Reads <code>/build/boxcompute-status.json</code> as the crawler writes rows. The bar is
   against a 100,000-row target; the run is bounded by the archive's one-request-per-2-second courtesy rule,
-  so volume accrues steadily rather than fast.</p>
+  so volume accrues steadily rather than fast. The counter refreshes every 10 minutes; between refreshes the bar advances at the last measured rate and says so &mdash; the counted figure is always shown with its timestamp.</p>
   <div style="height:22px;background:#e9e9e9;border-radius:11px;overflow:hidden;margin:10px 0">
     <div id="lv-fill" style="height:100%;width:0;background:#C41E3A;transition:width .6s ease"></div>
   </div>
@@ -345,24 +375,37 @@ def live_panel():
   var fill = document.getElementById('lv-fill'),
       txt  = document.getElementById('lv-txt'),
       ext  = document.getElementById('lv-extra');
+  var S = null;
   function n(x){ return (x||0).toLocaleString(); }
   function tick(){
     fetch('/build/boxcompute-status.json?_=' + Date.now(), {cache:'no-store'})
       .then(function(r){ if(!r.ok) throw new Error('no status'); return r.json(); })
-      .then(function(s){
-        var pct = Math.min(100, 100 * (s.rows_total||0) / (s.target||100000));
-        fill.style.width = pct.toFixed(2) + '%';
-        txt.innerHTML = '<b>' + n(s.rows_total) + '</b> rows collected &middot; ' +
-                        pct.toFixed(2) + '% of ' + n(s.target) + ' target';
-        ext.textContent = 'archive bulk ' + n(s.rows_bulk_archive) +
-                          ' | sampled pass ' + n(s.rows_sample_pass) +
-                          ' | live portals ' + n(s.rows_live_portal) +
-                          ' | ' + (s.buckets_done||0) + '/' + (s.buckets_total||0) + ' buckets' +
-                          ' | updated ' + (s.updated_utc||'');
-      })
-      .catch(function(){ txt.textContent = 'live status file not published yet'; });
+      .then(function(s){ S = s; render(); })
+      .catch(function(){ if(!S) txt.textContent = 'live status file not published yet'; });
   }
-  tick(); setInterval(tick, 30000);
+  var TARGET = 100000;
+  function render(){
+    if(!S) return;
+    var age = Math.max(0, (Date.now()/1000) - (S.sampled_epoch||0));
+    var rows = S.rows_total||0, proj = false;
+    if(S.rate_per_min && age > 0){ rows += S.rate_per_min * age/60; proj = true; }
+    var tgt = S.target || TARGET;
+    var pct = Math.min(100, 100*rows/tgt);
+    fill.style.width = pct.toFixed(3) + '%';
+    txt.innerHTML = '<b>' + n(Math.round(rows)) + '</b> rows collected &middot; ' +
+                    pct.toFixed(3) + '% of ' + n(tgt) + ' target' +
+                    (proj ? ' <span style="color:#8B9999">(+' + S.rate_per_min.toFixed(1) +
+                            '/min at the measured rate &mdash; projection)</span>' : '');
+    ext.textContent = 'measured ' + n(S.rows_total) + ' at ' + (S.updated_utc||'') +
+                      ' (' + Math.round(age) + 's ago)' +
+                      ' | archive bulk ' + n(S.rows_bulk_archive) +
+                      ' | sampled pass ' + n(S.rows_sample_pass) +
+                      ' | live portals ' + n(S.rows_live_portal) +
+                      ' | ' + (S.buckets_done||0) + '/' + (S.buckets_total||0) + ' buckets';
+  }
+  tick();
+  setInterval(tick, 30000);    // refresh the counted figures
+  setInterval(render, 1000);   // move the bar every second
 })();
 </script>
 </section>
@@ -478,7 +521,16 @@ Every row is traceable to a public URL. This is a <b>sample</b>, not a census.</
   <div class="kpi"><div class="v">{uniq_emp}</div><div class="l">distinct employers</div></div>
   <div class="kpi"><div class="v">{uniq_prov}</div><div class="l">provinces represented</div></div>
   <div class="kpi tl"><div class="v">{ai_n}<span style="font-size:15px;color:var(--muted)"> / {ai_of}</span></div><div class="l">AI-skill flagged</div></div>
+  <div class="kpi"><div class="v">{n_census}</div><div class="l">from the census arm</div></div>
 </div>
+
+<p class="note"><b>What the {n_census} census rows are, and are not.</b> They come from a second collection method
+(BoxCompute, web archive, {n_census_platforms} platforms) and a <b>wider population</b>: platform-wide, all sectors
+&mdash; not the finance/BPO panel the original {n_all_orig} rows were filtered to. {n_census_fin} of them are labelled
+finance/BPO by the repo’s own keyword rule, but that rule is <b>looser here</b>: these platforms expose no industry
+field, so the sector condition the original panel used cannot be applied. The two figures are therefore kept separate
+and are <b>never added together</b>. These rows also carry no province, no salary, no deadline and no full description
+&mdash; so an AI-requirement flag cannot be established for them from a card alone, and none is claimed.</p>
 
 <div class="verdict"><p><b>What this proves.</b> A timestamped, location-tagged, content-bearing panel of Indonesian finance-sector vacancies is obtainable from public data
 without an access request. The live portal is dense only for the newest listings; the Web Archive backfill now adds Feb 2024 – Oct 2025, but only the pages the archive happened to crawl, so monthly volumes are uneven. A genuine monthly series needs the same crawl repeated from now on.
@@ -635,12 +687,16 @@ const ROWS = RAW.map(a => {{
   const o = {{}}; COLS.forEach((k,i)=>o[k]=a[i]);
   o.prov = PROVS[o.prov]; o.sector = SECTORS[o.sector];
   const [ts, slug] = r_split(o);
-  o.url = o.arm === "live" ? KH + o.u : "https://web.archive.org/web/" + ts + "/" + KH + slug;
-  o.orig = o.arm === "live" ? "" : KH + slug;
+  o.url = o.arm === "live" ? KH + o.u
+          : o.arm === "boxcompute_census" ? o.u
+          : "https://web.archive.org/web/" + ts + "/" + KH + slug;
+  o.orig = o.arm === "live" ? ""
+          : o.arm === "boxcompute_census" ? o.u
+          : KH + slug;
   return o;
 }});
 function r_split(r){{
-  if (r.arm === "live") return ["", r.u];
+  if (r.arm === "live" || r.arm === "boxcompute_census") return ["", r.u];
   const i = r.u.indexOf("|");
   return [r.u.slice(0, i), r.u.slice(i + 1)];
 }}
