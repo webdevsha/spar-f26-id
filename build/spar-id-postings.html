@@ -404,7 +404,8 @@ function render(){
     if(state.sort==="posted"){x=a.posted;y=b.posted;}
     return x<y? state.dir : x>y? -state.dir : 0;
   });
-  const shown = rows.slice(0,400);
+  const CAP = 5000;   // render cap only, not a data cap: the payload carries every row
+  const shown = rows.slice(0, CAP);
   $("#tb").innerHTML = shown.map(r=>`<tr>
     <td class="te">${r.id}</td>
     <td class="te">${r.posted}${r.arm==="archive"?'<br><span style="font-size:10px">~derived</span>':''}</td>
