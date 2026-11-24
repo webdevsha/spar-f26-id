@@ -604,7 +604,7 @@ if __name__ == "__main__":
         # incl. the employer breakdown). Same class as alert #1 on build_postings_report.py,
         # dismissed 2026-10-22 for the same reason.
         # codeql[py/clear-text-storage-sensitive-data]
-        fh.write(htmlout)
+        fh.write(htmlout)  # codeql[py/clear-text-storage-sensitive-data]
     print(f"wrote {OUT} ({len(htmlout):,} bytes) from {len(rows):,} rows")
     print(json.dumps({k: (dict(v) if isinstance(v, collections.Counter) else v)
                       for k, v in S.items() if k in ("n", "year", "ai", "edu")}, default=str)[:900])
