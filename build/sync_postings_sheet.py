@@ -49,6 +49,8 @@ def load_rows():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--update", action="store_true",
+                    help="rewrite rows whose values changed (append-only otherwise)")
     a = ap.parse_args()
 
     svc = service()
@@ -83,6 +85,36 @@ def main():
     print("already in sheet: %d" % len(existing))
 
     new = [r for r in rows if (r.get("rec_id") or "") not in existing]
+
+    # ---- update mode: refresh rows that are present but stale -----------
+    if a.update and existing:
+        vals = svc.spreadsheets().values().get(
+            spreadsheetId=SHEET_ID, range="%s!A2:BJ" % TAB).execute().get("values", [])
+        index = {}
+        for i, rowvals in enumerate(vals):
+            if rowvals:
+                index[rowvals[0]] = i
+        data = []
+        for r in rows:
+            rid = r.get("rec_id") or ""
+            i = index.get(rid)
+            if i is None:
+                continue
+            cur = vals[i] + [""] * (len(hdr) - len(vals[i]))
+            want = [(r.get(c) or "") for c in hdr]
+            if cur[:len(hdr)] != want:
+                data.append({"range": "%s!A%d" % (TAB, i + 2), "values": [want]})
+        print("changed rows: %d" % len(data))
+        if data and not a.dry_run:
+            for i in range(0, len(data), 200):
+                svc.spreadsheets().values().batchUpdate(
+                    spreadsheetId=SHEET_ID,
+                    body={"valueInputOption": "RAW", "data": data[i:i + 200]}).execute()
+                print("  updated %d-%d" % (i + 1, min(i + 200, len(data))))
+        if not new:
+            print("done (update only)")
+            return 0
+
     print("to append: %d" % len(new))
     if not new or a.dry_run:
         print("done (nothing written)")
