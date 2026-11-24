@@ -596,6 +596,14 @@ if __name__ == "__main__":
     S["kemnaker"] = load_kemnaker()
     htmlout = render(S)
     with open(OUT, "w", encoding="utf-8") as fh:
+        # Generated static report. It embeds only the already-public Karirhub postings from
+        # data/id-postings/postings-*.csv and Kemnaker's own published portal counts -- this
+        # script reads no credentials, tokens, keys or personal data, and writes none.
+        # CodeQL py/clear-text-storage-sensitive-data false positive: its "private data"
+        # heuristic matches 'employ(er|ee)' against report prose (14 occurrences in this file,
+        # incl. the employer breakdown). Same class as alert #1 on build_postings_report.py,
+        # dismissed 2026-10-22 for the same reason.
+        # codeql[py/clear-text-storage-sensitive-data]
         fh.write(htmlout)
     print(f"wrote {OUT} ({len(htmlout):,} bytes) from {len(rows):,} rows")
     print(json.dumps({k: (dict(v) if isinstance(v, collections.Counter) else v)
