@@ -172,26 +172,34 @@ Runnable companion: `tools/scrape_karirhub.py` (stdlib only, robots-aware, write
 
 ## Shafira's task progress (SPAR Fall 2026)
 
-> Tallied from repo state + `SPAR_Fall2026_Shafira_Tasks.md`. Updated 2026-11-10.
+> Tallied from repo state + the Core file (`signals` tab, 22 rows) + `IND team progress`.
+> Updated 2026-11-24 — **draft, not pushed**. Supersedes the 2026-11-10 tally.
 
 ```
-Data spine        ████████████████████░░░░  85%  signals·policy·readiness·who-can-act·Karirhub (2,621 postings)
-Data list (lead)  ██████████████████░░░░░░  70%  seed CSVs present; signal-fit + licence check pending (due Sat 14 Nov)
-Part 3 (signals)  ████░░░░░░░░░░░░░░░░░░░░░░  20%  data gathered; 700w narrative pending (due Sun 22 Nov)
-Part 4 (policy)   ███░░░░░░░░░░░░░░░░░░░░░░░  15%  inventory seed only; 600w with Ian pending (due Sun 22 Nov)
-Shared sheet/repo ████████████████████░░░░  80%  CSVs tracked; AISA repo freeze pending (due Sun 29 Nov)
-§5 SPAR report    ██░░░░░░░░░░░░░░░░░░░░░░░░  10%  data underpinning ready; 2,500w pending (→ Rachel Wed 2 Dec)
-§8 Limits         █�░░░░░░░░░░░░░░░░░░░░░░░░░░   5%  not started (with Napat, Wed 2 Dec)
-Interview (BPS)   █░░░░░░░░░░░░░░░░░░░░░░░░░░   5%  data-gap question pending (by Fri 27 Nov)
-Atlas site        █░░░░░░░░░░░░░░░░░░░░░░░░░░   5%  publish Jan 2027 (AISA consent)
+Data spine        ████████████████████░░░░  85%  22 signal rows in the sheet, ecosystem map live; repo mirror stale (see blocker)
+Data list (lead)  ████████████████░░░░░░░░  80%  signal->S1..S10 + M1..M6 columns filled on all 22 rows; public source URL per row still missing
+Part 3 (signals)  ██████░░░░░░░░░░░░░░░░░░  25%  700w narrative not drafted; evidence base now available (ID-SIGNAL-SOURCE-MATRIX.md)
+Part 4 (policy)   ████░░░░░░░░░░░░░░░░░░░░  20%  inventory 3 rows; readiness all tbc; instruments tab demo-only (due Sun 22 Nov - overdue)
+Shared sheet/repo ████████████████░░░░░░░░  75%  sheet ahead of repo; hourly sync failing, so the 29 Nov freeze is blocked
+Section 5 (SPAR)  ██░░░░░░░░░░░░░░░░░░░░░░  10%  2,500w Indonesia chapter; data underpinning ready
+Section 8 (Limits)█░░░░░░░░░░░░░░░░░░░░░░░   5%  not started (with Napat, Wed 2 Dec)
+Interview (BPS)   █░░░░░░░░░░░░░░░░░░░░░░░   5%  data-gap question pending (SPAR still confirming bank interviews)
+Atlas site        ████████░░░░░░░░░░░░░░░░  35%  ecosystem map published 18 Nov at /build/spar-id-ecosystem-map; deploy + data feed blocked
 ```
 
-**Repo evidence behind the bars:**
-- `data/id-signals.csv` — 9 rows · `id-policy-inventory.csv` — 3 · `id-readiness.csv` — 3 · `id-who-can-act.csv` — 6 · `id-instruments.csv` — 1 · `id-triggers.csv` — 1
-- `data/id-postings/` — 2,621 Karirhub postings (2024–2026), S5 hiring signal, public report at `/build/spar-id-postings.html`
-- `tools/scrape_karirhub.py` — runnable scraper (stdlib, robots-aware)
+**Repo evidence behind the bars (2026-11-24):**
+- Core file `signals` tab — **22 rows** (repo CSV holds 9: stale, sync broken) · `triggers` 1 · `who-can-act` 6 · policy inventory 3 · readiness 3 (all `tbc`) · instruments 1 (DEMO placeholder)
+- `data/id-postings/` — 2,618 Karirhub postings (2024→Oct 2026), public report at `/build/spar-id-postings.html`
+- `build/spar-id-ecosystem-map.html` — published 18 Nov (commit 30bcbb7)
+- `docs/ID-SIGNAL-SOURCE-MATRIX.md` — **new**, 24 Nov: source URL + why-it-tallies per Indonesia signal row
+- `docs/MODEL-INDONESIA.md`, `build/spar-id-model-demo.html` — model design + demo (untracked)
+- `IND team progress` sheet — final report 50% · scenario model 50% · ecosystem map 75% · data inventory 50% · decision calendar 50% · readiness 50% · signal watchlist 50% · trigger cards 50%
 
-**Next due from Shafira:** Fri 13 Nov (data list) → Sat 14 Nov (signal fit + licence check) → Sun 22 Nov (Part 3 + Part 4) → Sun 29 Nov (repo freeze) → Wed 2 Dec (§5 + §8 → Rachel).
+**Blockers (lanes: CTO / @misshanna_bot):**
+1. `sync-sheets` fails hourly at step *Commit if changed* (step 5 passes) — repo CSVs no longer mirror the sheet.
+2. Cloudflare Pages deploy fails auth (code 10000) since 5 Nov — nothing new reaches `spar-f26-id.pages.dev`.
+
+**Next due from Shafira:** Sun 22 Nov (Part 3 + Part 4 — **overdue**) -> Sun 29 Nov (sheet frozen into the repo) -> Wed 2 Dec (§5 + §8 to Rachel). SPAR team meeting tonight 22:00 MYT.
 
 ---
 
