@@ -1,0 +1,332 @@
+{
+  "glints.com": {
+    "distinct_urls": 233876,
+    "posting_like": 136451,
+    "posting_rate_pct": 58.3,
+    "top_shapes": [
+      [
+        "/id/en/opportunities/jobs/<long>/<uuid>",
+        3421
+      ],
+      [
+        "/companies/<long>/<uuid>",
+        2569
+      ],
+      [
+        "/id/en/find-jobs/<long>",
+        1652
+      ],
+      [
+        "/id/lowongan/tags",
+        1349
+      ],
+      [
+        "/id/find-jobs/<long>",
+        1077
+      ],
+      [
+        "/id/lowongan/wp-json/wp/v2/posts/<num>",
+        849
+      ],
+      [
+        "/id/en/opportunities/jobs/content-creator/<uuid>",
+        837
+      ],
+      [
+        "/id/opportunities/jobs/<long>/<uuid>",
+        655
+      ],
+      [
+        "/id/companies/<long>/<uuid>",
+        640
+      ],
+      [
+        "/id/en/companies/<long>/<uuid>",
+        623
+      ],
+      [
+        "/id/lowongan/wp-content/uploads/<num>/01/<long>",
+        563
+      ],
+      [
+        "/id/lowongan/wp-content/uploads/<num>/12/<long>",
+        509
+      ]
+    ]
+  },
+  "kitalulus.com": {
+    "distinct_urls": 183982,
+    "posting_like": 71076,
+    "posting_rate_pct": 38.6,
+    "top_shapes": [
+      [
+        "/_next/image",
+        16172
+      ],
+      [
+        "/lowongan/detail/<long>",
+        5478
+      ],
+      [
+        "/blog/wp-content/uploads/<num>/02/<num>/<long>",
+        3377
+      ],
+      [
+        "/id/lowongan/detail/<long>",
+        1075
+      ],
+      [
+        "/company/<long>",
+        884
+      ],
+      [
+        "/lowongan",
+        601
+      ],
+      [
+        "/blog/wp-content/uploads/<num>/03/<num>/<long>",
+        323
+      ],
+      [
+        "/blog/seputar-kerja/<long>",
+        298
+      ],
+      [
+        "/blog/info-cpns/<long>",
+        191
+      ],
+      [
+        "/",
+        116
+      ],
+      [
+        "/program-acara/<long>",
+        106
+      ],
+      [
+        "/graphql",
+        100
+      ]
+    ]
+  },
+  "dealls.com": {
+    "distinct_urls": 76345,
+    "posting_like": 67647,
+    "posting_rate_pct": 88.6,
+    "top_shapes": [
+      [
+        "/loker/<long>",
+        19160
+      ],
+      [
+        "/en/loker/<long>",
+        6532
+      ],
+      [
+        "/",
+        1774
+      ],
+      [
+        "/en",
+        802
+      ],
+      [
+        "/karir/<long>",
+        183
+      ],
+      [
+        "/track",
+        154
+      ],
+      [
+        "/sign-in",
+        146
+      ],
+      [
+        "/cv-reviewer",
+        106
+      ],
+      [
+        "/en/karir/<long>",
+        101
+      ],
+      [
+        "/mentoring",
+        101
+      ],
+      [
+        "/pengembangan-karir/<long>",
+        80
+      ],
+      [
+        "/sfl",
+        76
+      ]
+    ]
+  },
+  "kalibrr.com": {
+    "distinct_urls": 42980,
+    "posting_like": 29455,
+    "posting_rate_pct": 68.5,
+    "top_shapes": [
+      [
+        "/www.kalibrr.com/logos/<long>",
+        1112
+      ],
+      [
+        "/blog/<long>",
+        990
+      ],
+      [
+        "/c/aces-call-center-jobs-inc-/jobs/<num>/<long>",
+        569
+      ],
+      [
+        "/blog/wp-content/uploads/<num>/09/<long>",
+        445
+      ],
+      [
+        "/blog/id/<long>",
+        432
+      ],
+      [
+        "/id-id/c/aces-call-center-jobs-inc-/jobs/<num>/<long>",
+        353
+      ],
+      [
+        "/c/<long>/jobs",
+        263
+      ],
+      [
+        "/logos/<long>",
+        206
+      ],
+      [
+        "/home/sgt/<num>/si/monthly/1",
+        143
+      ],
+      [
+        "/c/kompas-gramedia/jobs/<num>/<long>",
+        131
+      ],
+      [
+        "/blog/wp-content/uploads/<num>/10/<long>",
+        124
+      ],
+      [
+        "/c/aboitiz-power-generation-group/jobs/<num>/<long>",
+        114
+      ]
+    ]
+  },
+  "karirhub.kemnaker.go.id": {
+    "distinct_urls": 13308,
+    "posting_like": 12390,
+    "posting_rate_pct": 93.1,
+    "top_shapes": [
+      [
+        "/vacancies/<uuid>",
+        9303
+      ],
+      [
+        "/lowongan-dalam-negeri/lowongan/<uuid>",
+        2471
+      ],
+      [
+        "/lowongan-dalam-negeri/lowongan/<long>",
+        184
+      ],
+      [
+        "/pemberi-kerja/perusahaan/<uuid>",
+        126
+      ],
+      [
+        "/_next/image",
+        99
+      ],
+      [
+        "/vacancies",
+        70
+      ],
+      [
+        "/vacancies/<num>",
+        46
+      ],
+      [
+        "/companies/<uuid>/vacancies",
+        38
+      ],
+      [
+        "/assets/karirhub/employer/<long>",
+        24
+      ],
+      [
+        "/companies/<uuid>/profile",
+        15
+      ],
+      [
+        "/lowongan-dalam-negeri/lowongan",
+        15
+      ],
+      [
+        "/vacancies/industrial",
+        8
+      ]
+    ]
+  },
+  "karir.com": {
+    "distinct_urls": 7321,
+    "posting_like": 52,
+    "posting_rate_pct": 0.7,
+    "top_shapes": [
+      [
+        "/opportunities/<num>",
+        4658
+      ],
+      [
+        "/users/sign_in",
+        1052
+      ],
+      [
+        "/companies/<num>",
+        608
+      ],
+      [
+        "/",
+        90
+      ],
+      [
+        "/sessions/new",
+        48
+      ],
+      [
+        "/users/reset_password",
+        35
+      ],
+      [
+        "/favicon.ico",
+        27
+      ],
+      [
+        "/robots.txt",
+        27
+      ],
+      [
+        "/company-detail/<num>",
+        21
+      ],
+      [
+        "/salary",
+        13
+      ],
+      [
+        "/search_ajax",
+        13
+      ],
+      [
+        "/interest-test",
+        10
+      ]
+    ]
+  }
+}
