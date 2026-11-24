@@ -1,11 +1,11 @@
 {
  "generated": "2026-11-04 04:56 UTC",
  "counts": {
-  "rows": 13706,
+  "rows": 13801,
   "archive": 2337,
   "live": 281,
-  "census": 11088,
-  "finance_bpo": 1737
+  "census": 11183,
+  "finance_bpo": 1745
  },
  "months": [
   [
@@ -102,31 +102,31 @@
    "2025-04",
    94,
    0,
-   384
+   385
   ],
   [
    "2025-05",
    105,
    0,
-   344
+   346
   ],
   [
    "2025-06",
    77,
    0,
-   347
+   350
   ],
   [
    "2025-07",
    378,
    0,
-   449
+   450
   ],
   [
    "2025-08",
    118,
    0,
-   421
+   422
   ],
   [
    "2025-09",
@@ -138,25 +138,25 @@
    "2025-10",
    74,
    0,
-   507
+   508
   ],
   [
    "2025-11",
    33,
    0,
-   567
+   569
   ],
   [
    "2025-12",
    23,
    0,
-   504
+   514
   ],
   [
    "2026-01",
    2,
    0,
-   274
+   348
   ],
   [
    "2026-02",
@@ -216,11 +216,11 @@
  "sector": [
   [
    "Outside finance scope (guessed, unverified)",
-   11969
+   12056
   ],
   [
    "Finance/BPO (guessed from title/employer, unverified)",
-   1456
+   1464
   ],
   [
    "Banking & Financial Services",
@@ -238,46 +238,46 @@
  "province": [
   [
    "DKI Jakarta",
-   5698
+   5748
   ],
   [
    "Banten",
-   1255
+   1270
   ],
   [
    "Jawa Barat",
-   1244
+   1255
   ],
   [
    "Jawa Tengah",
-   913
+   914
   ],
   [
    "Jawa Timur",
-   727
+   730
   ],
   [
    "Daerah Istimewa Yogyakarta",
-   283
+   284
   ],
   [
    "Bali",
-   259
+   260
   ],
   [
    "Sumatera Utara",
-   172
+   173
   ],
   [
    "Kalimantan Timur",
-   136
+   137
   ],
   [
    "Kepulauan Riau",
-   123
+   124
   ]
  ],
  "sector_unknown": 0,
- "province_unknown": 1710,
+ "province_unknown": 1714,
  "note": "Counts are advertised listings collected, not vacancies that existed. Archive and census dates come from the capture or the card, not a live page."
 }
