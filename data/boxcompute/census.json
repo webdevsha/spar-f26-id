@@ -110,5 +110,33 @@
     "distinct_urls_total": 233876,
     "capped": true,
     "shape_sample": 180
+  },
+  {
+    "platform": "JobStreet ID",
+    "host": "jobstreet.co.id",
+    "cdx_target": "jobstreet.co.id",
+    "cdx_pages": 635,
+    "years": {
+      "2024": 20000,
+      "2025": 0,
+      "2026": 0
+    },
+    "distinct_urls_total": 20000,
+    "capped": true,
+    "shape_sample": 60
+  },
+  {
+    "platform": "LinkedIn Jobs",
+    "host": "linkedin.com",
+    "cdx_target": "linkedin.com/jobs",
+    "cdx_pages": 5222,
+    "years": {
+      "2024": 0,
+      "2025": 0,
+      "2026": 20000
+    },
+    "distinct_urls_total": 20000,
+    "capped": true,
+    "shape_sample": 60
   }
 ]

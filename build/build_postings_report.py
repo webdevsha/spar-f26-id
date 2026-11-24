@@ -245,6 +245,88 @@ TABLE_JSON = json.dumps([[
     (r.get("ai_evidence") or "")[:170],
 ] for r in rows], ensure_ascii=False, separators=(",", ":"))
 
+# ---- archive census (BoxCompute, 24 Nov 2026) --------------------------
+# The census answers a different question from this page: not "what do the
+# postings say" but "how much of the public record is archived, and how much of
+# that is a real posting?" Numbers come from the run's own artefacts.
+CEN_DIR = os.path.join(ROOT, "data", "boxcompute")
+try:
+    CEN = json.load(open(os.path.join(CEN_DIR, "census.json")))
+except Exception:
+    CEN = []
+try:
+    CEN_PAT = json.load(open(os.path.join(CEN_DIR, "patterns.json")))
+except Exception:
+    CEN_PAT = {}
+
+
+def _com(n):
+    return "{:,}".format(int(n or 0))
+
+
+def census_section():
+    """Archive-census block. Empty string when the artefacts are absent."""
+    if not CEN:
+        return ""
+    rows_html, tot, tot_post, capped, hosts = [], 0, 0, 0, 0
+    for e in CEN:
+        host = e.get("host") or ""
+        n = e.get("distinct_urls_total") or 0
+        p = CEN_PAT.get(host, {}) or {}
+        pl, rate = p.get("posting_like"), p.get("posting_rate_pct")
+        is_cap = bool(e.get("capped"))
+        tot += n
+        hosts += 1
+        capped += 1 if is_cap else 0
+        tot_post += pl or 0
+        years = e.get("years") or {}
+        ytxt = " &middot; ".join("%s %s" % (k, _com(v)) for k, v in sorted(years.items()))
+        rows_html.append(
+            "<tr><td>%s%s</td><td class=\"n\">%s</td><td class=\"n\">%s</td>"
+            "<td class=\"n\">%s</td><td class=\"note\" style=\"border:0\">%s</td></tr>" % (
+                esc(e.get("platform") or host),
+                " <b>&#9888; capped</b>" if is_cap else "",
+                _com(n),
+                _com(pl) if pl is not None else "&mdash;",
+                (("%.1f%%&dagger;" % rate) if is_cap else ("%.1f%%" % rate))
+                if rate is not None else "&mdash;",
+                ytxt))
+    rate_all = (100.0 * tot_post / tot) if tot else 0.0
+    return """
+<section>
+<h2>How much is actually archived? &mdash; census, 24 Nov 2026</h2>
+<p class="lede">A separate run on BoxCompute asked the question underneath this page: for each Indonesian
+platform, how many postings does the public archive hold at all? It counted archived URLs only and read no
+page content, so it measures <b>crawl coverage</b>, never hiring. It exists because this page's own backfill
+is limited to whatever the archive happened to capture.</p>
+<div class="kpis">
+  <div class="kpi acc"><div class="v">%s</div><div class="l">archived URLs censused</div></div>
+  <div class="kpi"><div class="v">%s</div><div class="l">of them posting-like</div></div>
+  <div class="kpi"><div class="v">%s</div><div class="l">platforms censused</div></div>
+  <div class="kpi tl"><div class="v">%.1f%%</div><div class="l">posting-like share</div></div>
+</div>
+<div class="tblwrap"><table>
+<thead><tr><th>platform</th><th class="n">archived URLs</th><th class="n">posting-like</th><th class="n">rate</th><th>by year</th></tr></thead>
+<tbody>%s</tbody></table></div>
+<p class="note"><b>Read this as a floor, not a total.</b> %s of the %s platforms stopped at a per-request cap
+(&#9888;, and their rates carry a &dagger;)
+(&#9888;), so their counts are minimums; two returned nothing at all, which most likely means the host is
+unarchived rather than empty. Two hosts also returned a zero for a year whose neighbours are full &mdash; that is
+a failed query, not a year without vacancies, and those cells are not used.</p>
+<p class="note"><b>And the filter errs both ways.</b> Raw URL counts are dominated by non-postings: on KitaLulus
+16,172 of 183,982 are image paths, and on Dealls tens of thousands are city &times; category search
+permutations. Posting patterns were derived from the crawl's own URL shapes, so the &ldquo;posting-like&rdquo;
+column is an upper bound where the pattern was recognised and a lower bound where it was not &mdash; on Karir.com
+the real pattern (<code>/opportunities/&lt;n&gt;</code>) was not anticipated, so its rate reads near zero.
+It is a per-platform sanity signal, never a ranking across platforms.</p>
+<p class="note">Context, not a target: the Claude-artefact study this lane is measured against reported
+1,059,854 postings. This census counts <i>archived URLs</i>, a different thing, and is not offered as a
+comparison to it.</p>
+</section>
+""" % (_com(tot), _com(tot_post) if tot_post else "&mdash;", hosts, rate_all,
+       "".join(rows_html), capped, hosts)
+
+
 HTML = f"""<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -356,6 +438,8 @@ Every row is traceable to a public URL. This is a <b>sample</b>, not a census.</
 without an access request. The live portal is dense only for the newest listings; the Web Archive backfill now adds Feb 2024 – Oct 2025, but only the pages the archive happened to crawl, so monthly volumes are uneven. A genuine monthly series needs the same crawl repeated from now on.
 The AI-skill question is answerable in principle ({ai_n} explicit hits, {data_n} data-skill hits, {S["ai"]["tier"].get("digital_basic",0)} "digital-basic" postings), but the base rate is low enough that keyword flags alone will not carry Dani's and Akbar's classification — that needs the deferred LLM/human pass on the stored content.</p></div>
 </section>
+
+{census_section()}
 
 <section>
 <details class="sec" open>
