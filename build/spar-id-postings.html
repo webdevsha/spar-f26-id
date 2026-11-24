@@ -80,15 +80,17 @@ details.sec[open]>summary.sh2{margin-bottom:6px}
 
 <header class="site"><div class="wrap">
 <p class="eyebrow">SPAR F26 · Indonesia lane · S5 hiring signal · preliminary scrape test</p>
-<h1>Individual job postings, not just aggregates — Karirhub, Jan 2024 – Oct 2026, finance &amp; BPO</h1>
-<p class="sub">First successful pass on the team's row format (timestamp · location · content · AI-skill flag · public/private).
-5262 postings recovered for the window Jan 2024 – 20 Oct 2026 (the live portal covers only the newest year; older rows are Web Archive captures), of which 883 fall in the finance/BPO scope.
-Every row is traceable to a public URL. This is a <b>sample</b>, not a census.</p>
+<h1>Individual job postings, not just aggregates — four Indonesian job platforms, Jan 2024 – Oct 2026</h1>
+<p class="sub">The team's row format — when it was posted · where · what the advertisement says · whether it asks for AI skills · public or private —
+now holds <b>5262</b> individual job advertisements. 5258 fall inside Jan 2024 – 20 Oct 2026; 4 earlier ones are kept and flagged rather than dropped.
+<b>883</b> are in the finance &amp; BPO scope: 512 identified under the stricter rule used for the government portal, plus 371 matched on wording alone, because those platforms do not publish an industry field.
+Every row links to a public web page. Nothing here came from a login, a paid feed, or a bypass.</p>
 <div class="accent-rule"></div>
 </div></header>
 
 <div class="banner"><div class="wrap">
-<b>Headline:</b> the block that stopped the Hermes attempt was the Algolia search API — we routed around it by harvesting detail-page URLs and reading server-rendered posting pages. Algolia is still unreachable here; Kalibrr and bank-portal APIs still refuse us.
+<b>Where this stands.</b> The first attempt stalled on a commercial search service that blocks automated access. Rather than force it, we changed approach: instead of searching, we collected the web addresses of individual job pages and read the pages themselves. That worked for the government portal, and — through the public internet archive — for three commercial platforms as well.
+What is still closed to us: those platforms' own search and application systems, and any advertisement that was never archived. Those are limits on <i>reach</i>, not evidence that the work does not exist. Saying so plainly matters more than a bigger number.
 </div></div>
 
 <main class="wrap">
