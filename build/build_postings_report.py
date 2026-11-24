@@ -427,9 +427,10 @@ def live_panel():
     return """<section>
 <div class="card" id="livepanel">
   <h2 style="margin-top:0">Live intake &mdash; BoxCompute census harvest</h2>
-  <p class="lede">Reads <code>/build/boxcompute-status.json</code> as the crawler writes rows. The bar is
+  <p class="lede">Reads live figures as the crawler writes rows &mdash; published from the crawler's own
+  machine, so they keep updating while this laptop is closed. The bar is
   against a 100,000-row target; the run is bounded by the archive's one-request-per-2-second courtesy rule,
-  so volume accrues steadily rather than fast. The counter refreshes every 10 minutes; between refreshes the bar advances at the last measured rate and says so &mdash; the counted figure is always shown with its timestamp.</p>
+  so volume accrues steadily rather than fast. The counter refreshes every 5 minutes; between refreshes the bar advances at the last measured rate and says so &mdash; the counted figure is always shown with its timestamp.</p>
   <div style="height:22px;background:#e9e9e9;border-radius:11px;overflow:hidden;margin:10px 0">
     <div id="lv-fill" style="height:100%;width:0;background:#C41E3A;transition:width .6s ease"></div>
   </div>
@@ -442,12 +443,21 @@ def live_panel():
       txt  = document.getElementById('lv-txt'),
       ext  = document.getElementById('lv-extra');
   var S = null;
+  // Served by the always-on Worker, which the BoxCompute sandbox itself
+  // posts to -- so these figures keep moving with this laptop shut. Falls
+  // back to the committed file if the Worker is unreachable.
+  var LIVE_SRC = 'https://spar-f26-state.shalomshafa.workers.dev/status';
   function n(x){ return (x||0).toLocaleString(); }
   function tick(){
-    fetch('/build/boxcompute-status.json?_=' + Date.now(), {cache:'no-store'})
-      .then(function(r){ if(!r.ok) throw new Error('no status'); return r.json(); })
+    fetch(LIVE_SRC + '?_=' + Date.now(), {cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw new Error('no worker'); return r.json(); })
       .then(function(s){ S = s; render(); })
-      .catch(function(){ if(!S) txt.textContent = 'live status file not published yet'; });
+      .catch(function(){
+        return fetch('/build/boxcompute-status.json?_=' + Date.now(), {cache:'no-store'})
+          .then(function(r){ if(!r.ok) throw new Error('no status'); return r.json(); })
+          .then(function(s){ S = s; render(); })
+          .catch(function(){ if(!S) txt.textContent = 'live status file not published yet'; });
+      });
   }
   var TARGET = 100000;
   function render(){
