@@ -346,6 +346,21 @@ Three cautions are part of the result, not footnotes:
 - **Some hosts are too large for a single CDX response.** Piercing `jobstreet.co.id` and
   `linkedin.com` needs monthly pagination; where a host is skipped or throttled the table says so.
 
+**First results (run in progress, 24 Nov).** Distinct archived posting URLs, `statuscode:200`,
+`collapsed=urlkey`. This is the register's own question — *are the data real?* — being answered
+platform by platform:
+
+| Platform | 2024 | 2025 | 2026 (to 30 Nov) | Distinct URLs |
+|---|---:|---:|---:|---:|
+| Karirhub (ours) | 5,772 | 7,266 | 270 | **13,308** |
+| Dealls | 17,946 | 26,471 | *(running)* | **44,417** |
+| *9 platforms still queued or running* | | | | |
+
+Read this table as **what the archive holds**, never as hiring. A distinct URL may be one ad or one
+search page, and 2026 is a partial year (captures to 30 Nov), so it is **not comparable** to 2024 or
+2025 on its own. The two oversized hosts (`jobstreet.co.id`, `linkedin.com`) are queued last and are
+capped at 20,000 rows per year, because a single CDX response for either drops mid-stream.
+
 **Access is not the constraint.** From the sandbox: Wayback CDX **200**, Common Crawl index **200**,
 Karirhub live **200**, Pasker ID **200**. By contrast Algolia (`algolia.kemnaker.go.id`, the
 `L3WWP72HSI` shard) is **unreachable from both the sandbox and the agent network**, and Glints /
