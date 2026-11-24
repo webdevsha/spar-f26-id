@@ -172,34 +172,37 @@ Runnable companion: `tools/scrape_karirhub.py` (stdlib only, robots-aware, write
 
 ## Shafira's task progress (SPAR Fall 2026)
 
-> Tallied from repo state + the Core file (`signals` tab, 22 rows) + `IND team progress`.
-> Updated 2026-11-24 — branch `cro/id-signal-source-matrix`, PR #14. Supersedes the 2026-11-10 tally.
+> Tallied 2026-11-24 (evening) from the Core file `signals` tab (22 rows), the Perplexity
+> verification run, Kemnaker's own portal counts, `IND team progress` and repo state.
+> PR #15 (conflict-resolved against `main` after #14). Supersedes the 2026-11-10 and earlier-24-Nov tallies.
 
 ```
-Data spine        ████████████████████░░░░  85%  22 signal rows in the sheet, ecosystem map live; repo mirror stale (see blocker)
-Data list (lead)  ████████████████░░░░░░░░  80%  signal->S1..S10 + M1..M6 columns filled on all 22 rows; public source URL per row still missing
-Part 3 (signals)  ██████░░░░░░░░░░░░░░░░░░  25%  700w narrative not drafted; evidence base now available (ID-SIGNAL-SOURCE-MATRIX.md)
-Part 4 (policy)   ████░░░░░░░░░░░░░░░░░░░░  20%  inventory 3 rows; readiness all tbc; instruments tab demo-only (due Sun 22 Nov - overdue)
-Shared sheet/repo ████████████████░░░░░░░░  75%  sheet ahead of repo; hourly sync failing, so the 29 Nov freeze is blocked
+Data spine        ████████████████████░░░░  88%  22 signal rows; OJK/Kemnaker/Pasker sources located; portal counts downloaded
+Data list (lead)  ██████████████████████░░  92%  public source URL + verbatim + H/M/L on all 22 rows; 5 statuses corrected; unverified named
+Part 3 (signals)  ███████░░░░░░░░░░░░░░░░░  30%  evidence base complete and sourced; 700w narrative still to write (overdue since 22 Nov)
+Part 4 (policy)   ██████░░░░░░░░░░░░░░░░░░  25%  who-can-act map now carries request routes, not just names; 600w with Ian pending
+Shared sheet/repo ████████████████░░░░░░░░  75%  sheet ahead of repo; hourly sync still failing, so the 29 Nov freeze is blocked
 Section 5 (SPAR)  ██░░░░░░░░░░░░░░░░░░░░░░  10%  2,500w Indonesia chapter; data underpinning ready
 Section 8 (Limits)█░░░░░░░░░░░░░░░░░░░░░░░   5%  not started (with Napat, Wed 2 Dec)
-Interview (BPS)   █░░░░░░░░░░░░░░░░░░░░░░░   5%  data-gap question pending (SPAR still confirming bank interviews)
-Atlas site        ████████░░░░░░░░░░░░░░░░  35%  ecosystem map live at /build/spar-id-ecosystem-map (verified 200); nothing newer ships until this PR merges
+Interview (BPS)   ████░░░░░░░░░░░░░░░░░░░░  20%  question reframed as a data-availability enquiry (Perplexity Block E); SPAR still confirming access
+Atlas site        ██████████░░░░░░░░░░░░░░  45%  ecosystem map + postings report + new overview/scenarios page built; deployed 24 Nov and live (200)
 ```
 
-**Repo evidence behind the bars (2026-11-24):**
-- Core file `signals` tab — **22 rows** (repo CSV holds 9: stale, sync broken) · `triggers` 1 · `who-can-act` 6 · policy inventory 3 · readiness 3 (all `tbc`) · instruments 1 (DEMO placeholder)
-- `data/id-postings/` — 2,618 Karirhub postings (2024→Oct 2026), public report at `/build/spar-id-postings.html`
-- `build/spar-id-ecosystem-map.html` — published 18 Nov (commit 30bcbb7)
-- `docs/ID-SIGNAL-SOURCE-MATRIX.md` — **new**, 24 Nov: source URL + why-it-tallies per Indonesia signal row
-- `docs/ID-SIGNALS-PERPLEXITY-PACK.md` — **new**, 24 Nov: Perplexity verification pack for the signal rows
-- `docs/MODEL-INDONESIA.md`, `build/spar-id-model-demo.html` — model design + interactive demo
-- `build/build_ecosystem_map.py`, `build/eco_theme.css`, `build/spar-id-*.svg`, `data/ecosystem-id-*.json` — the ecosystem-map build + its source layers
-- `IND team progress` sheet — final report 50% · scenario model 50% · ecosystem map 75% · data inventory 50% · decision calendar 50% · readiness 50% · signal watchlist 50% · trigger cards 50%
+**New evidence and artefacts behind the bars (2026-11-24):**
+- Core file `signals` tab — **22 rows**, now with `link` · `source_verbatim` · `confidence` · `data_status` · `not_verified` (columns O–T, previously empty). Revert note: `docs/SHEET-WRITE-2026-11-24.md`.
+- `SPAR_signals_skeleton` → `SIGNALS` — Indonesian evidence column added for all of S1–S10 (columns H–K).
+- `data/id-postings/perplexity-id-data.md` — the verification run: 22 rows + 5-figure Block A + request routes + 8 contradictions/attribution traps.
+- `docs/ID-SIGNAL-SOURCE-MATRIX.md` — **v2, Perplexity-grounded**: 5 status corrections, 2 attribution traps, 4 denominator traps, and what remains unverified.
+- `data/kemnaker/*.csv` — Kemnaker's own portal counts, public downloads: finance & insurance **1,195 → 797 → 726** postings (2022–24); portal total 10,695 → 20,027 → 17,169.
+- **Coverage check:** our finance/BPO rows for 2024 = **66** against the portal's own **726** → ≈ **9.1%** of the year's finance postings.
+- `build/spar-id-overview.html` — overview + 7 highlights + 4 policy scenarios + portal counts + category exposure scores (285 of 512 in-scope rows scored, mean 0.541).
+- `docs/PROMPTS-BOXCOMPUTE-V2.md` — archive-first collection brief aligned to the 1,059,854-posting archive study.
+- `bright spot` — Part 3 is no longer blocked: the sourced evidence base it needs now exists.
 
-**Blockers (lanes: CTO / @misshanna_bot):**
-1. `sync-sheets` fails hourly at step *Commit if changed* (step 5 passes) — repo CSVs no longer mirror the sheet. **Verified 24 Nov: 19 consecutive failures over 5 days, latest 4h ago.**
-2. Nothing on this branch reaches `spar-f26-id.pages.dev` until it merges: `deploy.yml` fires **only on push to `main`**, and `dist/build/` is staged at deploy time (not committed). The 18 Nov deploy itself succeeded — `/build/spar-id-ecosystem-map` returns HTTP 200 and the dashboard gate returns 401 — so the earlier "deploy auth code 10000" note did **not** reproduce in CI and has been removed.
+**Blockers and flags (lanes: CTO / @misshanna_bot / @clo):**
+1. `sync-sheets` still fails hourly at *Commit if changed* — repo CSV holds 9 signal rows against the tab's 22, so the dashboard reads stale data.
+2. **Deploy is not broken** — verified 24 Nov: PR #14's merge fired `deploy-dashboard` (success, 21s) and `/build/spar-id-ecosystem-map`, `/build/spar-id-postings`, `/build/spar-id-model-demo` all return HTTP 200; the dashboard root correctly returns 401 (gate active). The earlier "auth code 10000 since 5 Nov" note did **not** reproduce (deploys also succeeded 18 Nov) and is removed. The real constraint: `deploy.yml` fires **only on push to `main`**, so this branch ships once it merges.
+3. **@clo:** the verification surfaced 15 formal information requests to **BPJS, OJK, Kemnaker, BPS and DPR Commission IX**, and a scope question on platform data obtained via web archives (LinkedIn/JobStreet-class). Regulator-facing requests in the study's name need a compliance pass before any are sent. None have been sent.
 
 **Next due from Shafira:** Sun 22 Nov (Part 3 + Part 4 — **overdue**) -> Sun 29 Nov (sheet frozen into the repo) -> Wed 2 Dec (§5 + §8 to Rachel). SPAR team meeting tonight 22:00 MYT.
 
