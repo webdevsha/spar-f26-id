@@ -335,7 +335,7 @@ frozen into the repo) → Wed 2 Dec (§5 + §8 to Rachel). SPAR submission 14 De
 
 **Why BoxCompute.** The lane's posting evidence currently rests on one government portal plus a
 sampled archive (2,618 rows). The v2 brief ([docs/PROMPTS-BOXCOMPUTE-V2.md](docs/PROMPTS-BOXCOMPUTE-V2.md)) moves to an
-**archive-first** design across 13 platforms, because that is both the ToS-clean route to volume and
+**archive-first** design across 13 platforms, **Indonesia only** (the Philippines lane was dropped on 24 Nov as this study covers Indonesia), because that is both the ToS-clean route to volume and
 the only route that reaches a platform's own published scale.
 
 **Target (v2 brief, Step 1).** Per platform: `distinct posting URLs` by year, plus a coverage probe —
@@ -388,7 +388,7 @@ Posting patterns were therefore **derived from the data** — see
 | Karir.com | 4,118 | 2,197 | 1,006 | 7,321 | *52 †* | *0.7% †* |
 | Pintarnya | 0 | 0 | 0 | 0 | 0 | — |
 | Bossjob | 0 | 0 | 0 | 0 | 0 | — |
-| **Total (8 of 13)** | | | | **557,812** | **317,071** | 56.8% |
+| **Total (8 of 10 ID)** | | | | **557,812** | **317,071** | 56.8% |
 
 Three cautions are part of the result, not footnotes:
 
