@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SPAR F26 &middot; Indonesia &mdash; labour-market scenario model (demo)</title>
+<style>
+:root{--ink:#212A2A;--ink-soft:#3A4848;--muted:#8B9999;--line:#E4E8E8;--bg:#FFFFFF;--bg-alt:#F7F9F9;
+--accent:#C41E3A;--accent-deep:#9E152C;--accent-tint:#FBEDEF;--ok:#2C5A38;--ok-bg:#EAF3EC;--ok-b:#CBE0D1;
+--warn:#7A5A18;--warn-bg:#FBF3E2;--warn-b:#EADFC2;--ph:#F2F4F4;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font:16px/1.6 -apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+header.site{border-bottom:1px solid var(--line)}
+header.site .wrap{padding:32px 32px 24px}
+.eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 10px}
+h1{margin:0;font-size:29px;font-weight:600;letter-spacing:-.015em;line-height:1.24}
+.sub{margin:10px 0 0;color:var(--ink-soft);font-size:15px;max-width:76ch}
+.rule{height:3px;background:var(--accent);width:56px;margin:18px 0 0}
+main{padding:8px 0 70px}
+section{padding:34px 0 6px;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0;padding-top:26px}
+h2{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 10px}
+h3{font-size:17px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
+.lede{margin:0 0 20px;color:var(--ink-soft);font-size:14.5px;max-width:86ch}
+.banner{border-left:3px solid var(--accent);background:var(--accent-tint);padding:13px 16px;border-radius:4px;margin:0 0 20px}
+.banner p{margin:0;font-size:13.5px;color:var(--accent-deep)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:940px){.grid2{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:6px;padding:18px 20px;background:var(--bg)}
+.ctl{margin:0 0 18px}
+.ctl:last-child{margin-bottom:0}
+.ctl label{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;font-weight:600;margin-bottom:6px}
+.ctl .val{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:var(--accent-deep);font-weight:600}
+.ctl .hint{display:block;font-weight:400;color:var(--muted);font-size:11.5px;margin-top:3px;letter-spacing:0}
+input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+.seg{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.seg button{border:1px solid var(--line);background:#fff;color:var(--ink-soft);font-size:11.5px;font-weight:600;
+ padding:4px 10px;border-radius:3px;cursor:pointer}
+.seg button:hover{border-color:var(--accent);color:var(--accent)}
+.seg button.on{background:var(--accent-tint);border-color:var(--accent);color:var(--accent-deep)}
+.out{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.kpi{border:1px solid var(--line);border-radius:5px;padding:12px 14px;background:var(--bg-alt)}
+.kpi .k{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.kpi .v{font-size:23px;font-weight:600;letter-spacing:-.02em;margin-top:4px;font-variant-numeric:tabular-nums}
+.kpi .n{font-size:11.5px;color:var(--muted)}
+.kpi.hi{border-left:3px solid var(--accent)}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--ink-soft)}
+.tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+ border-radius:3px;padding:2px 6px;white-space:nowrap}
+.t-real{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-b)}
+.t-derived{background:#EEF4F7;color:#2E4A57;border:1px solid #D3E2EA}
+.t-placeholder{background:var(--ph);color:var(--muted);border:1px solid var(--line)}
+.t-missing{background:var(--accent-tint);color:var(--accent-deep);border:1px solid #F0D3D9}
+.matrix{display:grid;grid-template-columns:auto repeat(3,1fr);gap:6px;align-items:stretch}
+.matrix .hx{font-size:11px;color:var(--muted);font-weight:600;display:flex;align-items:center;justify-content:center;text-align:center}
+.matrix .hy{font-size:11px;color:var(--muted);font-weight:600;display:flex;align-items:center;padding-right:4px}
+.cell{border:1px solid var(--line);border-radius:4px;padding:10px 6px;text-align:center;cursor:pointer;
+ transition:border-color .12s,transform .08s}
+.cell:hover{border-color:var(--accent);transform:translateY(-1px)}
+.cell.sel{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.cell .big{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.cell .small{font-size:10px;color:var(--muted)}
+footer{border-top:1px solid var(--line);background:var(--bg-alt)}
+footer .wrap{padding:18px 32px 24px;font-size:12.5px;color:var(--muted)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:var(--bg-alt);
+ border:1px solid var(--line);border-radius:3px;padding:0 4px}
+ul{margin:0;padding-left:20px}li{margin-bottom:6px;font-size:13.5px}
+.eq{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:var(--bg-alt);
+ border:1px solid var(--line);border-radius:4px;padding:10px 12px;margin:12px 0 0;color:var(--ink-soft);overflow-x:auto}
+</style></head><body>
+<header class="site"><div class="wrap">
+  <p class="eyebrow">SPAR Fall 2026 &middot; Indonesia lane &middot; demo model</p>
+  <h1>Labour-market scenario model &mdash; Indonesia</h1>
+  <p class="sub">The chain from <code>SPAR_Model_Proposal_V1.pdf</code> run on the Indonesian
+  anchor sector: finance &amp; insurance, clerical support. Three scenario parameters
+  (<code>s<sub>L</sub></code> labour share, <code>&micro;</code> occupational mobility,
+  <code>&#953;</code> matching curvature) on a 3&times;3 grid, with the two measured inputs
+  (<code>V</code> vacancies, <code>S</code> searchers) taken from this lane's own data.
+  Design notes: <code>docs/MODEL-INDONESIA.md</code>.</p>
+  <div class="rule"></div></div></header>
+<main><div class="wrap">
+
+<section id="what"><h2>What this is, and what it is not</h2>
+  <div class="banner"><p><strong>Demo, not a forecast.</strong> This is a live implementation of the
+  proposal's mechanism, not a claim about Indonesia. Two of the four model inputs are
+  <em>placeholders</em> in the current state &mdash; every number is tagged real / derived /
+  placeholder / missing below, and the tags change what the panel says.</p></div>
+  <p class="lede">The proposal's discipline is <em>estimate what the data can identify, calibrate
+  what must be assumed, stress-test the assumptions that matter</em>. So this page reports
+  <strong>paths under assumptions</strong> &mdash; never a single headline number.</p>
+  <div class="eq">effective search   S_C = U_C + &micro;&middot;U_N        S_N = &micro;&middot;U_C + U_N
+matching           H_j = &#967;&middot; S_j&middot;V_j / (S_j^&#953; + V_j^&#953;)^(1/&#953;)
+job-finding rate   f(&theta;) = &#967;&middot;&theta; / (1 + &theta;^&#953;)^(1/&#953;)      &theta; = V_j / S_j
+wage identity      w&#8321;/w&#8320; = (s_L&#8321; / s_L&#8320;) &middot; (Y&#8321;/L&#8321; &divide; Y&#8320;/L&#8320;)</div>
+</section>
+
+<section id="run"><h2>The experiment</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Assumptions</h3>
+      <p class="lede" style="font-size:13px;margin-bottom:16px">Move these. The result panel and the
+      grid both recompute.</p>
+      <div class="ctl"><label>Shock &mdash; share of exposed workers displaced <span class="val" id="v-shock"></span></label>
+        <input type="range" id="s-shock" min="0" max="40" step="1" value="28">
+        <span class="hint">Of the derived exposed population. The proposal's illustration uses a flat
+        100,000 displaced workers.</span></div>
+      <div class="ctl"><label>s<sub>L</sub> &mdash; labour share of income <span class="val" id="v-sl"></span></label>
+        <input type="range" id="s-sl" min="30" max="70" step="1" value="60">
+        <span class="hint"><span class="tag t-placeholder">placeholder</span> Indonesian baseline not yet
+        read off BPS national accounts. The proposal's 0.60 is illustrative.</span></div>
+      <div class="ctl"><label>Productivity change Y/L <span class="val" id="v-prod"></span></label>
+        <input type="range" id="s-prod" min="80" max="160" step="1" value="130">
+        <span class="hint"><span class="tag t-placeholder">placeholder</span> Scenario assumption.</span></div>
+      <div class="ctl"><label>&micro; &mdash; occupational mobility <span class="val" id="v-mu"></span></label>
+        <input type="range" id="s-mu" min="0" max="60" step="1" value="17">
+        <span class="hint"><span class="tag t-missing">uncalibrated</span> Needs observed occupational
+        transitions. Nothing in the repo measures them.</span></div>
+      <div class="ctl"><label>&#953; &mdash; matching curvature <span class="val" id="v-iota"></span></label>
+        <input type="range" id="s-iota" min="30" max="260" step="1" value="127">
+        <span class="hint"><span class="tag t-derived">literature benchmark</span> 0.5 / 1.27 / 2.0 as
+        in the source.</span></div>
+      <div class="ctl"><label>V &mdash; vacancies facing searchers <span class="val" id="v-vac"></span></label>
+        <input type="range" id="s-vac" min="2000" max="120000" step="1000" value="30000">
+        <span class="hint"><span class="tag t-placeholder">placeholder</span> Only a 331-row posting
+        <em>sample</em> exists, with no usable time series &mdash; see problem 2 in the design note.</span></div>
+    </div>
+    <div class="card" id="resultcard">
+      <h3>Result</h3>
+      <p class="lede" style="font-size:13px;margin-bottom:16px" id="res-lede"></p>
+      <div class="out">
+        <div class="kpi"><div class="k">Displaced, this shock</div><div class="v" id="k-disp"></div>
+          <div class="n">from the exposed population</div></div>
+        <div class="kpi hi"><div class="k">Still unemployed</div><div class="v" id="k-unemp"></div>
+          <div class="n" id="k-unemp-n"></div></div>
+        <div class="kpi"><div class="k">Re-employed elsewhere</div><div class="v" id="k-re"></div>
+          <div class="n">matched in the other occupation</div></div>
+        <div class="kpi"><div class="k">Wage change</div><div class="v" id="k-wage"></div>
+          <div class="n" id="k-wage-n"></div></div>
+      </div>
+      <p class="lede" style="font-size:12.5px;margin:16px 0 0" id="res-note"></p>
+    </div>
+  </div>
+</section>
+
+<section id="gridmap"><h2>The resilience map</h2>
+  <p class="lede">The proposal's 3&times;3 experiment. Each cell is share of displaced workers still
+  unemployed after matching &mdash; darker red is worse. Click a cell to load it into the controls.
+  The point is not any single cell: it is which <em>combinations</em> produce temporary reallocation
+  versus persistent unemployment.</p>
+  <div class="matrix" id="matrix"></div>
+  <p class="lede" style="font-size:12.5px;margin-top:14px" id="matrix-note"></p>
+</section>
+<section id="prov"><h2>Every input, tagged</h2>
+  <p class="lede">The tags are the honest part of this page. Real = cited from a source this repo
+  holds. Derived = arithmetic on real figures, no new data. Placeholder = a scenario number standing
+  in for a measurement we do not have. Missing = not measured anywhere, so the model assumes it.</p>
+  <table><thead><tr><th>Input</th><th>Value used</th><th>Status</th><th>Source or blocker</th></tr></thead>
+  <tbody>
+  <tr><td>Anchor sector employment</td><td>1,650,000</td><td><span class="tag t-real">real</span></td>
+    <td>BPS Sakernas, Aug 2025 &middot; finance &amp; insurance</td></tr>
+  <tr><td>Above-minimal exposure share</td><td>21.7%</td><td><span class="tag t-real">real</span></td>
+    <td>ILO method, via <code>id-signals.csv</code></td></tr>
+  <tr><td>Exposed population</td><td>358,050</td><td><span class="tag t-derived">derived</span></td>
+    <td>1,650,000 &times; 21.7% &mdash; arithmetic, not a measurement</td></tr>
+  <tr><td>Occupational mobility &micro;</td><td>slider</td><td><span class="tag t-missing">uncalibrated</span></td>
+    <td>Needs observed occupational transitions (Sakernas previous-job variables via SILASTIK)</td></tr>
+  <tr><td>Matching curvature &#953;</td><td>slider</td><td><span class="tag t-derived">benchmark</span></td>
+    <td>Literature values 0.5 / 1.27 / 2.0, as in the proposal</td></tr>
+  <tr><td>Vacancies V</td><td>slider</td><td><span class="tag t-placeholder">placeholder</span></td>
+    <td>331-row posting <em>sample</em> only; no trend (187 of 331 rows share one capture month)</td></tr>
+  <tr><td>Labour share s<sub>L</sub></td><td>slider</td><td><span class="tag t-placeholder">placeholder</span></td>
+    <td>Needs compensation of employees &divide; GVA for finance &amp; insurance (BPS national accounts)</td></tr>
+  <tr><td>Matching efficiency &#967;</td><td>1.0</td><td><span class="tag t-missing">not identified</span></td>
+    <td>Folded into the scenario range rather than estimated &mdash; state it on the record</td></tr>
+  <tr><td>Searchers S</td><td>from the shock</td><td><span class="tag t-derived">derived</span></td>
+    <td>JKP claims and distinct recipients exist (431,086 cases / 90,513 recipients, 2025) but by
+    province and industry only under request</td></tr>
+  <tr><td>Informal destination</td><td>not modelled</td><td><span class="tag t-missing">unmodelled</span></td>
+    <td>87.74m informal vs 59.93m formal (Feb 2026). The matching model cannot see them &mdash; the
+    single largest limitation</td></tr>
+  </tbody></table>
+</section>
+
+<section id="more"><h2>What it looks like with more data</h2>
+  <p class="lede">The same engine, three inputs promoted from assumed to measured. Nothing about the
+  mechanism changes &mdash; what changes is that the grid stops being illustration and starts being
+  calibration, and the output can be defended.</p>
+  <div class="grid2">
+    <div class="card"><h3>Today &mdash; illustration</h3>
+      <ul>
+        <li><code>V</code> is a slider over a number we invented.</li>
+        <li><code>&micro;</code> is assumed, so the model cannot say whether Indonesian mobility is low or high.</li>
+        <li><code>s<sub>L</sub></code> uses the proposal's 0.60, which is a Philippine illustration.</li>
+        <li>The exposure flag currently identifies 1 of 288 postings as AI-related &mdash; keyword matching
+          is not a measurement.</li>
+        <li>Result: a <em>mechanism demonstration</em>. Real, but not a finding about Indonesia.</li>
+      </ul></div>
+    <div class="card" style="border-left:3px solid var(--accent)"><h3>With items 1, 2, 4 and 10 of the design note</h3>
+      <ul>
+        <li><code>V</code> from a Karirhub back-series &rarr; a real vacancy trend, so <code>&#953;</code>
+          gets tested against Indonesian data instead of asserted.</li>
+        <li><code>&micro;</code> calibrated from Sakernas transitions &rarr; the model can say whether
+          displaced clerical workers actually search elsewhere. This is the parameter most likely to
+          differ from the Philippines.</li>
+        <li><code>s<sub>L</sub></code> read off national accounts for finance &amp; insurance &rarr; the
+          wage channel becomes an estimate, not a scenario.</li>
+        <li>Exposure from the ILO crosswalk onto KBJI occupation codes &rarr; the whole 331-row corpus
+          becomes an exposure-weighted panel.</li>
+        <li>Result: a <em>resilience map for Indonesia</em> &mdash; which combinations give temporary
+          reallocation and which give persistent unemployment.</li>
+      </ul></div>
+  </div>
+  <p class="lede" style="margin-top:20px">Full priority list, with what needs scraping versus what needs
+  an institutional request: <code>docs/MODEL-INDONESIA.md</code> &sect;3.</p>
+</section>
+</div></main>
+<footer><div class="wrap">Demo model, Indonesia lane &middot; mechanism from
+<code>SPAR_Model_Proposal_V1.pdf</code> &middot; <strong>not a forecast</strong> &middot; internal until
+AISA consent &middot; grades documents, never governments.</div></footer>
+<script>
+(function(){
+  var EMP=1650000, EXPSHARE=0.217, EXPOSED=EMP*EXPSHARE, CHI=1.0, SL0=0.60;
+  var MU=[0.05,0.17,0.40], IOTA=[0.5,1.27,2.0];
+  function el(id){return document.getElementById(id);}
+  function fmt(n,d){ d=(d===undefined?0:d);
+    return Number(n).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});}
+  function pct(x,d){ return (100*x).toFixed(d===undefined?1:d)+"%"; }
+
+  function read(){ return {
+    shock:+el("s-shock").value/100, sl:+el("s-sl").value/100, prod:+el("s-prod").value/100,
+    mu:+el("s-mu").value/100, iota:+el("s-iota").value/100, V:+el("s-vac").value }; }
+
+  function match(S,V,iota){
+    if(S<=0||V<=0) return 0;
+    var den=Math.pow(Math.pow(S,iota)+Math.pow(V,iota),1/iota);
+    return CHI*S*V/den; }
+
+  function solve(p){
+    var displaced=EXPOSED*p.shock;
+    var UC=displaced, UN=0;                       // the shock lands on exposed workers
+    var SC=UC+p.mu*UN, SN=p.mu*UC+UN;             // proposal's effective-search equations
+    var HN=match(SN,p.V,p.iota);
+    var re=Math.min(HN,displaced), unemp=Math.max(0,displaced-re);
+    var theta=(SN>0)? p.V/SN : 0;
+    var f=theta>0? CHI*theta/Math.pow(1+Math.pow(theta,p.iota),1/p.iota) : 0;
+    var wage=(p.sl/SL0)*p.prod;                   // w1/w0 = (sL1/sL0)*(productivity change)
+    return {displaced:displaced,re:re,unemp:unemp,theta:theta,f:f,wage:wage,SN:SN,SC:SC}; }
+
+  function render(){
+    var p=read(), r=solve(p);
+    el("v-shock").textContent=pct(p.shock,0);  el("v-sl").textContent=p.sl.toFixed(2);
+    el("v-prod").textContent=(p.prod).toFixed(2)+"\u00d7"; el("v-mu").textContent=p.mu.toFixed(2);
+    el("v-iota").textContent=p.iota.toFixed(2); el("v-vac").textContent=fmt(p.V);
+    el("k-disp").textContent=fmt(r.displaced);
+    el("k-unemp").textContent=fmt(r.unemp);
+    el("k-unemp-n").textContent=r.displaced>0? pct(r.unemp/r.displaced,0)+" of those displaced" : "no shock applied";
+    el("k-re").textContent=fmt(r.re);
+    el("k-wage").textContent=(r.wage>=1?"+":"")+(100*(r.wage-1)).toFixed(1)+"%";
+    el("k-wage-n").textContent="s\u2097 "+p.sl.toFixed(2)+" with productivity "+p.prod.toFixed(2)+"\u00d7";
+    el("res-lede").innerHTML="Shock of "+fmt(r.displaced)+" displaced clerical workers, of "
+      +pct(p.shock,0)+" of a derived exposed population of "+fmt(EXPOSED)+".";
+    var bits=[];
+    bits.push("Job-finding rate f(&theta;) = "+r.f.toFixed(3)+" at tightness &theta; = "
+      +(r.theta>0? r.theta.toFixed(2) : "0")+" (a vacancy in the other occupation per searcher).");
+    if(r.unemp/r.displaced>0.9 && r.displaced>0) bits.push("At this ratio of searchers to vacancies the "
+      +"vacancy side is the binding constraint, not mobility \u2014 raising &mu; barely moves the result.");
+    if(r.unemp/r.displaced<0.35 && r.displaced>0) bits.push("Here mobility and vacancies together absorb "
+      +"most of the shock; the constraint has moved to the matching side.");
+    bits.push("Inputs marked placeholder in the panel above are scenario numbers, not Indonesian measurements.");
+    el("res-note").textContent=bits.join(" ");
+    renderMatrix(p);
+  }
+
+  function cellColor(share){
+    var t=Math.max(0,Math.min(1,share/0.85));
+    var r=Math.round(255+(158-255)*t), g=Math.round(255+(21-255)*t), b=Math.round(255+(46-255)*t);
+    return "rgb("+r+","+g+","+b+")"; }
+
+  function renderMatrix(p){
+    var m=el("matrix"); m.innerHTML="";
+    m.appendChild(hx("")); IOTA.forEach(function(i){ m.appendChild(hx("\u03b9 = "+i.toFixed(2))); });
+    var worst=null;
+    MU.forEach(function(mu){
+      var lab=document.createElement("div"); lab.className="hy";
+      lab.innerHTML="&mu; = "+mu.toFixed(2); m.appendChild(lab);
+      IOTA.forEach(function(iota){
+        var q={shock:p.shock,sl:p.sl,prod:p.prod,mu:mu,iota:iota,V:p.V};
+        var r=solve(q), share=r.displaced>0? r.unemp/r.displaced : 0;
+        var c=document.createElement("div"); c.className="cell";
+        if(Math.abs(mu-p.mu)<1e-9 && Math.abs(iota-p.iota)<1e-9) c.className+=" sel";
+        c.style.background=cellColor(share);
+        c.style.color= share>0.55 ? "#fff" : "#212A2A";
+        c.innerHTML='<div class="big">'+pct(share,0)+'</div><div class="small">'
+          +fmt(r.unemp/1000,1)+'k still unemployed</div>';
+        c.title="\u00b5="+mu+"  \u03b9="+iota+"  \u2192 "+fmt(r.unemp)+" still unemployed";
+        c.onclick=function(){ el("s-mu").value=Math.round(mu*100); el("s-iota").value=Math.round(iota*100); render(); };
+        m.appendChild(c);
+        if(worst===null||share>worst.share) worst={share:share,mu:mu,iota:iota};
+      });
+    });
+    var best=null;
+    MU.forEach(function(mu){ IOTA.forEach(function(iota){
+      var r=solve({shock:p.shock,sl:p.sl,prod:p.prod,mu:mu,iota:iota,V:p.V});
+      var share=r.displaced>0? r.unemp/r.displaced : 0;
+      if(best===null||share<best.share) best={share:share,mu:mu,iota:iota};
+    });});
+    el("matrix-note").textContent="Range across the nine cells: "+pct(best.share,0)+" still unemployed at "
+      +"the best corner (&mu;="+best.mu+", \u03b9="+best.iota+") to "+pct(worst.share,0)+" at the worst (&mu;="
+      +worst.mu+", \u03b9="+worst.iota+"). The spread is the finding \u2014 it is how much the "
+      +"assumption about mobility and matching matters, holding the shock fixed.";
+  }
+
+  function hx(t){ var d=document.createElement("div"); d.className="hx"; d.textContent=t; return d; }
+
+  ["s-shock","s-sl","s-prod","s-mu","s-iota","s-vac"].forEach(function(id){
+    el(id).addEventListener("input",render); });
+  render();
+})();
+</script>
+</body></html>

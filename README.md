@@ -173,7 +173,7 @@ Runnable companion: `tools/scrape_karirhub.py` (stdlib only, robots-aware, write
 ## Shafira's task progress (SPAR Fall 2026)
 
 > Tallied from repo state + the Core file (`signals` tab, 22 rows) + `IND team progress`.
-> Updated 2026-11-24 — **draft, not pushed**. Supersedes the 2026-11-10 tally.
+> Updated 2026-11-24 — branch `cro/id-signal-source-matrix`, PR #14. Supersedes the 2026-11-10 tally.
 
 ```
 Data spine        ████████████████████░░░░  85%  22 signal rows in the sheet, ecosystem map live; repo mirror stale (see blocker)
@@ -184,7 +184,7 @@ Shared sheet/repo ████████████████░░░░�
 Section 5 (SPAR)  ██░░░░░░░░░░░░░░░░░░░░░░  10%  2,500w Indonesia chapter; data underpinning ready
 Section 8 (Limits)█░░░░░░░░░░░░░░░░░░░░░░░   5%  not started (with Napat, Wed 2 Dec)
 Interview (BPS)   █░░░░░░░░░░░░░░░░░░░░░░░   5%  data-gap question pending (SPAR still confirming bank interviews)
-Atlas site        ████████░░░░░░░░░░░░░░░░  35%  ecosystem map published 18 Nov at /build/spar-id-ecosystem-map; deploy + data feed blocked
+Atlas site        ████████░░░░░░░░░░░░░░░░  35%  ecosystem map live at /build/spar-id-ecosystem-map (verified 200); nothing newer ships until this PR merges
 ```
 
 **Repo evidence behind the bars (2026-11-24):**
@@ -192,12 +192,14 @@ Atlas site        ████████░░░░░░░░░░░░�
 - `data/id-postings/` — 2,618 Karirhub postings (2024→Oct 2026), public report at `/build/spar-id-postings.html`
 - `build/spar-id-ecosystem-map.html` — published 18 Nov (commit 30bcbb7)
 - `docs/ID-SIGNAL-SOURCE-MATRIX.md` — **new**, 24 Nov: source URL + why-it-tallies per Indonesia signal row
-- `docs/MODEL-INDONESIA.md`, `build/spar-id-model-demo.html` — model design + demo (untracked)
+- `docs/ID-SIGNALS-PERPLEXITY-PACK.md` — **new**, 24 Nov: Perplexity verification pack for the signal rows
+- `docs/MODEL-INDONESIA.md`, `build/spar-id-model-demo.html` — model design + interactive demo
+- `build/build_ecosystem_map.py`, `build/eco_theme.css`, `build/spar-id-*.svg`, `data/ecosystem-id-*.json` — the ecosystem-map build + its source layers
 - `IND team progress` sheet — final report 50% · scenario model 50% · ecosystem map 75% · data inventory 50% · decision calendar 50% · readiness 50% · signal watchlist 50% · trigger cards 50%
 
 **Blockers (lanes: CTO / @misshanna_bot):**
-1. `sync-sheets` fails hourly at step *Commit if changed* (step 5 passes) — repo CSVs no longer mirror the sheet.
-2. Cloudflare Pages deploy fails auth (code 10000) since 5 Nov — nothing new reaches `spar-f26-id.pages.dev`.
+1. `sync-sheets` fails hourly at step *Commit if changed* (step 5 passes) — repo CSVs no longer mirror the sheet. **Verified 24 Nov: 19 consecutive failures over 5 days, latest 4h ago.**
+2. Nothing on this branch reaches `spar-f26-id.pages.dev` until it merges: `deploy.yml` fires **only on push to `main`**, and `dist/build/` is staged at deploy time (not committed). The 18 Nov deploy itself succeeded — `/build/spar-id-ecosystem-map` returns HTTP 200 and the dashboard gate returns 401 — so the earlier "deploy auth code 10000" note did **not** reproduce in CI and has been removed.
 
 **Next due from Shafira:** Sun 22 Nov (Part 3 + Part 4 — **overdue**) -> Sun 29 Nov (sheet frozen into the repo) -> Wed 2 Dec (§5 + §8 to Rachel). SPAR team meeting tonight 22:00 MYT.
 

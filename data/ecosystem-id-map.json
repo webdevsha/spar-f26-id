@@ -1,0 +1,1271 @@
+{
+ "_note": "v1 INDONESIA LANE - THREE SEPARATE MAPS, NOT ONE. (1) ecosystem = actors by function and the relationships between them; (2) policy = documents, monitoring and levers on their own; (3) bridge = the ecosystem-to-policy join, as a responsibility map. Refined against outreach/aisafety-ea/spar26-ecosystem.md (2026-11-03), which is itself folded in from the Core-file workbook. Line types: solid = source-backed existing relationship; dashed = proposed data/coordination link; dotted = hypothesised economic transmission; gap = named missing series. Institutional responsibilities are source-backed; proposed requests, pain points and research roles are analytical recommendations, not claims that these entities already collect or will release the fields. No figure invented.",
+ "lane": {
+  "country": "Indonesia",
+  "anchor": "Finance & insurance (banking), clerical support",
+  "boundary": "Three nested populations",
+  "populations": [
+   {
+    "name": "Core financial-sector workforce",
+    "note": "Employees of banks, insurers, financing and securities firms - aligns with industry employment statistics."
+   },
+   {
+    "name": "Finance-serving workforce",
+    "note": "Outsourced customer service, collections, document processing, IT, cybersecurity, recruitment contractors - work changes with a bank's AI deployment while employment sits outside the finance industry."
+   },
+   {
+    "name": "Affected households & local economies",
+    "note": "Displaced workers, dependants, new entrants, informal destinations, concentrated finance-employment communities. Needed for M4 and M6."
+   }
+  ],
+  "first_case": "Banking as anchor, outsourced functions tracked explicitly; insurance and fintech as comparative subcases, not mixed into one sample."
+ },
+ "marks": [
+  {
+   "code": "M1",
+   "q": "Sector employment and exposure",
+   "sub": "Where is potentially affected work concentrated?"
+  },
+  {
+   "code": "M2",
+   "q": "AI deployment and workforce change",
+   "sub": "What has actually been deployed, and how has work changed?"
+  },
+  {
+   "code": "M3",
+   "q": "Recruitment and vacancies",
+   "sub": "Is access to jobs, or the content of recruitment, changing?"
+  },
+  {
+   "code": "M4",
+   "q": "Job loss and worker destinations",
+   "sub": "Who exits, and where do they go?"
+  },
+  {
+   "code": "M5",
+   "q": "Worker support capacity",
+   "sub": "Can support reach affected workers and restore employment or earnings?"
+  },
+  {
+   "code": "M6",
+   "q": "Consumption and fiscal effects",
+   "sub": "Is adjustment spreading into households, public finances or social-insurance financing?"
+  }
+ ],
+ "views": {
+  "ecosystem": {
+   "title": "Ecosystem (relationship) map",
+   "sub": "Actors organised by function - who observes, who decides, who delivers, who authorises - and the relationships between them.",
+   "note": "Organised around functions, not a flat list of organisations. No single stakeholder can establish an AI-related labour shock: banks document deployment, labour institutions observe separations and support uptake, BPS shows population outcomes, financial and fiscal authorities assess wider transmission. This map connects those partial views without assuming they are already linked.",
+   "bands": [
+    {
+     "id": "e1",
+     "title": "AI suppliers & adoption",
+     "sub": "who supplies, who buys"
+    },
+    {
+     "id": "e2",
+     "title": "Employer decisions",
+     "sub": "how work is allocated"
+    },
+    {
+     "id": "e3",
+     "title": "Workers & households",
+     "sub": "who carries the change"
+    },
+    {
+     "id": "e4",
+     "title": "Measurement",
+     "sub": "who observes which part"
+    },
+    {
+     "id": "e5",
+     "title": "Support delivery",
+     "sub": "who delivers the response"
+    },
+    {
+     "id": "e6",
+     "title": "Policy & escalation",
+     "sub": "who can authorise"
+    }
+   ],
+   "nodes": [
+    {
+     "id": "n-vendor",
+     "band": "e1",
+     "label": "AI vendors & system integrators",
+     "sub": "Implementation dates, licensed tools, usage logs - where disclosure is authorised",
+     "marks": [
+      "M2"
+     ],
+     "detail": "Commercial incentives; usage is not workforce impact; vendor metrics use inconsistent definitions. Corroborating M2 only - never a replacement for employer or worker evidence.",
+     "ev": "spar26-ecosystem.md s4"
+    },
+    {
+     "id": "n-banktech",
+     "band": "e1",
+     "label": "Bank technology, procurement & operations",
+     "sub": "What was piloted vs put into production, and when",
+     "marks": [
+      "M2",
+      "M1"
+     ],
+     "detail": "Where the actual deployment decision is made. Procurement records carry the dated tool footprint that nothing downstream can reconstruct.",
+     "ev": "spar26-ecosystem.md s4"
+    },
+    {
+     "id": "n-bankmgmt",
+     "band": "e2",
+     "label": "Bank management & HR",
+     "sub": "Recruitment, task redesign, redeployment, outsourcing, compensation",
+     "marks": [
+      "M2",
+      "M1",
+      "M3"
+     ],
+     "detail": "M2 is central here. Evidence is split across departments, reputational sensitivity is high, restructuring has multiple causes, and 'AI' may include older automation.",
+     "ev": "spar26-ecosystem.md s4"
+    },
+    {
+     "id": "n-bpo",
+     "band": "e2",
+     "label": "Outsourcing / BPO & staffing providers",
+     "sub": "Client-linked staffing, vacancies, contract renewals, redeployment, wage changes",
+     "marks": [
+      "M1",
+      "M2",
+      "M3",
+      "M5"
+     ],
+     "detail": "The bank can reduce outsourced work without its own headcount falling. Their employment changes are attributed to the staffing industry, not to finance - which is exactly why they must be in scope.",
+     "ev": "spar26-ecosystem.md s4, s5"
+    },
+    {
+     "id": "n-academy",
+     "band": "e2",
+     "label": "Employer academies & certification providers",
+     "sub": "Course places, completion, assessment, placement follow-up",
+     "marks": [
+      "M5",
+      "M2"
+     ],
+     "detail": "Completion can substitute for meaningful outcome reporting. Courses may not match actual vacancies.",
+     "ev": "spar26-ecosystem.md s4"
+    },
+    {
+     "id": "n-staff",
+     "band": "e3",
+     "label": "Direct bank staff",
+     "sub": "Lived task change, workload, targets, involuntary moves",
+     "marks": [
+      "M2",
+      "M4"
+     ],
+     "detail": "What counts as displacement is contested: a worker retained into a different function, or a nominally voluntary exit preceded by unwanted reassignment, does not appear in any headcount series.",
+     "ev": "spar26-ecosystem.md s4 lead"
+    },
+    {
+     "id": "n-contract",
+     "band": "e3",
+     "label": "Outsourced / contract staff",
+     "sub": "Same lived change, from outside the finance industry's own headcount",
+     "marks": [
+      "M1",
+      "M4"
+     ],
+     "detail": "Legal employer differs from the bank whose AI reshaped the task. The gap between them is the outsourcing blind spot.",
+     "ev": "spar26-ecosystem.md s8"
+    },
+    {
+     "id": "n-entrant",
+     "band": "e3",
+     "label": "New entrants",
+     "sub": "Entry-level access to finance-sector work",
+     "marks": [
+      "M3"
+     ],
+     "detail": "Hiring freezes need not produce layoffs: payroll stays stable while entry-level access deteriorates. This population is the reason M3 exists separately from M4.",
+     "ev": "spar26-ecosystem.md s8"
+    },
+    {
+     "id": "n-displaced",
+     "band": "e3",
+     "label": "Displaced workers",
+     "sub": "Where they actually go next - employer, occupation, formality, hours, wage",
+     "marks": [
+      "M4"
+     ],
+     "detail": "No public series follows them. JHT withdrawals are not a substitute (they also cover resignation and retirement).",
+     "ev": "spar26-ecosystem.md s8; id-signals.csv ind-sig-worker-destinations"
+    },
+    {
+     "id": "n-household",
+     "band": "e3",
+     "label": "Affected households & local economies",
+     "sub": "Spending, income and support pressure; geographically concentrated finance employment",
+     "marks": [
+      "M4",
+      "M6"
+     ],
+     "detail": "Necessary for M4 destinations and M6 consumption effects. National averages hide concentrated local disruption.",
+     "ev": "spar26-ecosystem.md s1, s3"
+    },
+    {
+     "id": "n-union",
+     "band": "e3",
+     "label": "Unions - ASPEK Indonesia; UNI Asia & Pacific / ASEAN Bank Unions Council",
+     "sub": "Lived task changes, workload, sales-target shifts, involuntary moves, training access, disputed 'voluntary' exits",
+     "marks": [
+      "M2",
+      "M4",
+      "M5"
+     ],
+     "detail": "Legitimate node at the centre of the map, not a decorative periphery. Fear of retaliation, uneven coverage, contract workers often excluded - accounts need corroboration. The Oct 2026 Jakarta dialogue describes a 5-bank qualitative study, explicitly non-representative.",
+     "ev": "spar26-ecosystem.md s4, uniglobalunion.org"
+    },
+    {
+     "id": "n-bps",
+     "band": "e4",
+     "label": "BPS-Statistics Indonesia (incl. provincial)",
+     "sub": "Sakernas employment, occupation, hours, wages, status, previous job; Susenas consumption; sectoral accounts",
+     "marks": [
+      "M1",
+      "M4",
+      "M6"
+     ],
+     "detail": "Population-level baseline. Pain points: small finance x occupation x province cells, survey timing, classification changes, and inability to infer individual trajectories from unrelated cross-sections - a survey respondent is not automatically a claimant.",
+     "ev": "spar26-ecosystem.md s2 (SILASTIK)"
+    },
+    {
+     "id": "n-kemnaker",
+     "band": "e4",
+     "label": "Kemnaker - Ministry of Manpower",
+     "sub": "SIAPkerja / Pasker / Karirhub vacancies and jobseeker records; training records; reported layoffs",
+     "marks": [
+      "M3",
+      "M4",
+      "M5"
+     ],
+     "detail": "Kemnaker explicitly describes integrating Sakernas evidence with SIAPkerja for diagnosis and planning. Pain points: reported vacancies vs actual hires, platform coverage, multiple administrative systems, and reporting changes masquerading as labour-demand change.",
+     "ev": "spar26-ecosystem.md s2"
+    },
+    {
+     "id": "n-bpjs",
+     "band": "e4",
+     "label": "BPJS Ketenagakerjaan",
+     "sub": "JKP applications, distinct recipients, payment events, rejections, timing, coverage and contribution histories",
+     "marks": [
+      "M4",
+      "M5",
+      "M6"
+     ],
+     "detail": "The insured job-loss signal. Covered-worker claims are NOT population-wide separations; repeat payments recur; documentation barriers and rule changes confound year-on-year reads. JKP is one component of a wider transition service, not a labour census.",
+     "ev": "spar26-ecosystem.md s2"
+    },
+    {
+     "id": "n-platform",
+     "band": "e4",
+     "label": "Recruitment platforms (Karirhub and commercial)",
+     "sub": "Posting histories, requirements, advertised wages, employer identifiers; possibly applications and placements by agreement",
+     "marks": [
+      "M3"
+     ],
+     "detail": "M3, with limited M4-M5 if placement follow-up exists. Watch for duplicates, missing salaries, changing coverage, and the fact that applications are not hires.",
+     "ev": "spar26-ecosystem.md s4"
+    },
+    {
+     "id": "n-research",
+     "band": "e4",
+     "label": "Universities & independent research groups",
+     "sub": "Survey design, classification crosswalks, causal and longitudinal methods, independent validation",
+     "marks": [
+      "M1",
+      "M2",
+      "M3",
+      "M4",
+      "M5",
+      "M6"
+     ],
+     "detail": "Methods across all six measures. Constraints: data access, small samples, limited follow-up funding, conflicts of interest.",
+     "ev": "spar26-ecosystem.md s4"
+    },
+    {
+     "id": "n-ilo",
+     "band": "e4",
+     "label": "ILO & tripartite partners",
+     "sub": "Exposure methodology, decent-work framing, worker/employer dialogue, comparative policy expertise",
+     "marks": [
+      "M1",
+      "M2",
+      "M5",
+      "M6"
+     ],
+     "detail": "Methodological support does not replace Indonesian observations. The Oct 2026 ILO-OJK-Kemenko collaboration is an existing finance-employment-social-protection connection.",
+     "ev": "spar26-ecosystem.md s3, s4"
+    },
+    {
+     "id": "n-disnaker",
+     "band": "e5",
+     "label": "Provincial & district Disnaker",
+     "sub": "Local notifications, dispute/mediation aggregates, referrals, training waiting lists, employer-contact evidence",
+     "marks": [
+      "M3",
+      "M4",
+      "M5"
+     ],
+     "detail": "The local interface, and where JKP coordination actually lands. Uneven capacity office by office; incomplete employer reporting; workers may live and work in different jurisdictions. Verify responsibility and records office by office.",
+     "ev": "spar26-ecosystem.md s2, s7"
+    },
+    {
+     "id": "n-training",
+     "band": "e5",
+     "label": "Training centres (incl. the new 50,000-worker programme)",
+     "sub": "Applications, course places, waiting lists, completion, assessment, placement follow-up",
+     "marks": [
+      "M5"
+     ],
+     "detail": "On 22 Oct 2026 Kemnaker announced vocational training for 50,000 laid-off workers, priority for eligible workers who had NOT received JKP benefits, across 21 identified centres. That is a programme to catalogue - not evidence that 50,000 have enrolled, completed or found suitable work.",
+     "ev": "setkab.go.id; spar26-ecosystem.md s2"
+    },
+    {
+     "id": "n-peka",
+     "band": "e5",
+     "label": "Employment services & employer programmes (PEKA)",
+     "sub": "Benefit-linked training delivery and uptake",
+     "marks": [
+      "M5"
+     ],
+     "detail": "Concrete activity to catalogue. PEKA participation (1,426 across 45 locations, Aug 2026) does not establish nationwide retraining capacity or stable post-training earnings.",
+     "ev": "id-signals.csv ind-sig-peka-training"
+    },
+    {
+     "id": "n-ojk",
+     "band": "e6",
+     "label": "OJK - financial regulator & supervisor",
+     "sub": "Public bank statistics and disclosures; request aggregated AI-use/function information and workforce-transition reporting",
+     "marks": [
+      "M2",
+      "M1",
+      "M3",
+      "M4"
+     ],
+     "detail": "The stronger first door for bank-level deployment context. Prudential indicators can look healthy while employment pathways worsen; supervisory data is confidential; separating digitalisation from LLM-specific change is hard. The RP3I roadmap already addresses digital transformation and governance.",
+     "ev": "spar26-ecosystem.md s2, s5"
+    },
+    {
+     "id": "n-bi",
+     "band": "e6",
+     "label": "Bank Indonesia - central bank",
+     "sub": "Payment-system activity, financial conditions, macro context - aggregate indicators, not customer records",
+     "marks": [
+      "M6",
+      "M2",
+      "M3",
+      "M4"
+     ],
+     "detail": "Supplies macro and payment controls. Payment growth is not a measure of labour welfare; its boundaries differ from OJK's integrated supervision; aggregate indicators dilute local stress.",
+     "ev": "spar26-ecosystem.md s2, s5"
+    },
+    {
+     "id": "n-kemenkeu",
+     "band": "e6",
+     "label": "Kemenkeu - Ministry of Finance",
+     "sub": "Public APBN KiTa revenue/spending; aggregated labour-related revenue and programme allocation via DJP and DJPb",
+     "marks": [
+      "M6",
+      "M5"
+     ],
+     "detail": "M6 primarily, plus M5 programme financing. National tax changes are highly confounded; taxpayer confidentiality; bank profitability can rise while payroll falls. APBN KiTa gives budget execution, not AI-attributed fiscal loss.",
+     "ev": "spar26-ecosystem.md s3"
+    },
+    {
+     "id": "n-bappenas",
+     "band": "e6",
+     "label": "Bappenas - national development planning",
+     "sub": "Planning targets, programme indicators, evaluation requirements; convening around cross-sector scenarios",
+     "marks": [
+      "M1",
+      "M2",
+      "M3",
+      "M4",
+      "M5",
+      "M6"
+     ],
+     "detail": "Synthesis and response planning. Caveat: planning targets may not match administrative reporting units or short-run warning needs. Convening bodies do not necessarily hold operational records - assign data owner and action owner separately.",
+     "ev": "spar26-ecosystem.md s3, s5"
+    },
+    {
+     "id": "n-kemenko",
+     "band": "e6",
+     "label": "Kemenko Perekonomian - economic affairs coordination",
+     "sub": "Convening employers, OJK, labour institutions and programme owners; resolving ownership of a shared indicator panel",
+     "marks": [
+      "M2",
+      "M5",
+      "M6"
+     ],
+     "detail": "Coordination authority is not ownership of underlying microdata. Its Oct 2026 collaboration with OJK and ILO is an existing finance-employment-social-protection link.",
+     "ev": "spar26-ecosystem.md s3"
+    },
+    {
+     "id": "n-komdigi",
+     "band": "e6",
+     "label": "Komdigi - Communication & Digital",
+     "sub": "AI-policy implementation, digital-talent programmes, provider and infrastructure context",
+     "marks": [
+      "M2",
+      "M5"
+     ],
+     "detail": "Contextual adoption evidence and skills supply only: AI policy or training participation does not establish employment effects inside banks. Keep enabling policy separate from actual deployment.",
+     "ev": "spar26-ecosystem.md s3, s5"
+    },
+    {
+     "id": "n-kssk",
+     "band": "e6",
+     "label": "KSSK - Financial System Stability Committee",
+     "sub": "Combined assessments from Kemenkeu, BI, OJK and LPS",
+     "marks": [
+      "M6"
+     ],
+     "detail": "Conditional escalation only. Not the default lead for ordinary retraining or a bank's restructuring, and a labour shock is not automatically a systemic financial crisis.",
+     "ev": "spar26-ecosystem.md s3, s7"
+    },
+    {
+     "id": "n-lps",
+     "band": "e6",
+     "label": "LPS - deposit insurance & resolution",
+     "sub": "Deposit-insurance and bank-resolution context",
+     "marks": [
+      "M6"
+     ],
+     "detail": "Explicitly: not unemployment insurance, not a placement agency, and not the primary monitor of bank staff outcomes. Conditional M6 branch only.",
+     "ev": "spar26-ecosystem.md s3"
+    },
+    {
+     "id": "n-perbanas",
+     "band": "e2",
+     "label": "PERBANAS; HIMBARA, ASBANDA, ASBISINDO",
+     "sub": "Employer recruitment, coordinated surveys, sector validation, access across bank types",
+     "marks": [
+      "M1",
+      "M2",
+      "M3",
+      "M5"
+     ],
+     "detail": "Appears in OJK's financial-sector HR ecosystem; PERBANAS describes its government/regulator liaison role. Caveat: member interests may discourage comparable workforce disclosure, and segment averages hide differences.",
+     "ev": "spar26-ecosystem.md s4"
+    },
+    {
+     "id": "n-associns",
+     "band": "e2",
+     "label": "Insurance/finance/securities associations - AAJI, AAUI, APPI, APEI",
+     "sub": "Access to non-bank employers and comparative work functions",
+     "marks": [
+      "M1",
+      "M2",
+      "M3",
+      "M4",
+      "M5"
+     ],
+     "detail": "Comparative only. Different business models and classifications - their employment effects must not be treated as banking evidence.",
+     "ev": "spar26-ecosystem.md s4"
+    },
+    {
+     "id": "n-team",
+     "band": "e4",
+     "label": "Research team (this project)",
+     "sub": "Triangulated evidence, uncertainty assessment, joint review",
+     "marks": [],
+     "detail": "The lane's own position on the map, shown explicitly so the proposed links are visible as proposed. Solid lines into it would falsely imply data-sharing agreements that do not exist yet.",
+     "ev": "spar26-ecosystem.md s7, s9"
+    },
+    {
+     "id": "n-review",
+     "band": "e6",
+     "label": "Joint review group (proposed)",
+     "sub": "Verification and proportionate support response",
+     "marks": [],
+     "detail": "Proposed, not an established government protocol. Labelled dashed for exactly that reason. Also the secondary nodes to add later: Ministry of Social Affairs, education/skills ministries, social-empowerment coordination - verify current ownership and status before assigning datasets.",
+     "ev": "spar26-ecosystem.md s7, s3"
+    }
+   ],
+   "edges": [
+    {
+     "from": "n-bankmgmt",
+     "to": "n-ojk",
+     "kind": "existing",
+     "label": "Financial supervision / regulated reporting",
+     "note": "A bank is simultaneously a regulated financial institution and an employer. Financial soundness is not labour-market wellbeing, and labour reporting is not prudential supervision.",
+     "status": "Source-backed institutional relationship."
+    },
+    {
+     "from": "n-bi",
+     "to": "n-kssk",
+     "kind": "existing",
+     "label": "Financial-stability coordination through KSSK",
+     "note": "BI, OJK, Kemenkeu and LPS sit together on financial stability.",
+     "status": "Existing."
+    },
+    {
+     "from": "n-bps",
+     "to": "n-kemnaker",
+     "kind": "existing",
+     "label": "Labour-market statistics inform diagnosis and planning",
+     "note": "Kemnaker explicitly connects Sakernas with SIAPkerja. BPS estimates population outcomes; administrative systems record service users, reporters or transactions. Compare trends - never equate survey employment with registered jobseekers or platform vacancies.",
+     "status": "Existing use described by Kemnaker."
+    },
+    {
+     "from": "n-kemnaker",
+     "to": "n-bpjs",
+     "kind": "existing",
+     "label": "JKP transition-service coordination",
+     "note": "Entitlement, payment, counselling, training and placement are different processes. Measure each stage separately to locate bottlenecks.",
+     "status": "Existing coordination described by Kemnaker."
+    },
+    {
+     "from": "n-bankmgmt",
+     "to": "n-staff",
+     "kind": "existing",
+     "label": "Task allocation, contracts, pay and transition",
+     "note": "The operational relationship that actually moves work. Documented case by case, not inferable from aggregates.",
+     "status": "Operational; case by case."
+    },
+    {
+     "from": "n-union",
+     "to": "n-staff",
+     "kind": "existing",
+     "label": "Representation, consultation, bargaining",
+     "note": "Where lived task change, target shifts and disputed 'voluntary' exits surface.",
+     "status": "Evidenced in the Oct 2026 banking dialogue; coverage varies."
+    },
+    {
+     "from": "n-union",
+     "to": "n-bankmgmt",
+     "kind": "existing",
+     "label": "Transition dialogue and skills bargaining",
+     "note": "Employer disclosure captures organisational intent; worker evidence captures experience and contested outcomes. Triangulate both rather than selecting one as definitive.",
+     "status": "Evidenced Oct 2026 dialogue."
+    },
+    {
+     "from": "n-bankmgmt",
+     "to": "n-bpo",
+     "kind": "existing",
+     "label": "Client-linked staffing and contract substitution",
+     "note": "The bank can reduce outsourced work without its own headcount falling. Track client-side task change and legal-employer-side worker outcomes separately.",
+     "status": "Operational."
+    },
+    {
+     "from": "n-perbanas",
+     "to": "n-team",
+     "kind": "proposed",
+     "label": "Recruit employers for a standardised pulse survey",
+     "note": "Associations convene banks into a comparable instrument - the only route to function-level comparability across bank types.",
+     "status": "Proposed; access unconfirmed."
+    },
+    {
+     "from": "n-banktech",
+     "to": "n-team",
+     "kind": "proposed",
+     "label": "Function-level deployment / workforce aggregates",
+     "note": "Dated rollout plus task allocation plus redeployment, from the department that holds it.",
+     "status": "Proposed; access and definitions unconfirmed."
+    },
+    {
+     "from": "n-kemnaker",
+     "to": "n-team",
+     "kind": "proposed",
+     "label": "Aggregated vacancy, claims and support indicators",
+     "note": "The measurement institutions feed the team; permissions and fields are not yet agreed.",
+     "status": "Proposed; permissions and fields unconfirmed."
+    },
+    {
+     "from": "n-bpjs",
+     "to": "n-team",
+     "kind": "proposed",
+     "label": "Aggregated claim and latency indicators",
+     "note": "Same. Denominate carefully: claim cases vs distinct recipients are not interchangeable.",
+     "status": "Proposed."
+    },
+    {
+     "from": "n-team",
+     "to": "n-review",
+     "kind": "proposed",
+     "label": "Triangulated evidence and uncertainty assessment",
+     "note": "The team's output is an assessment with uncertainty attached, not a verdict on causation.",
+     "status": "Proposed."
+    },
+    {
+     "from": "n-review",
+     "to": "n-kemnaker",
+     "kind": "proposed",
+     "label": "Verification and proportionate support response",
+     "note": "'Proportionate' is the operative word: a warning justifies investigation or early support without proving AI causation.",
+     "status": "Proposed, not an established government protocol."
+    },
+    {
+     "from": "n-displaced",
+     "to": "n-kssk",
+     "kind": "transmission",
+     "label": "Escalate only if financially systemic transmission becomes material",
+     "note": "Hypothesised economic transmission, drawn dotted. A labour shock is not automatically a systemic financial crisis.",
+     "status": "Proposed conditional pathway, not automatic escalation."
+    },
+    {
+     "from": "n-household",
+     "to": "n-kemenkeu",
+     "kind": "transmission",
+     "label": "Household and local stress reaching public finances or social-insurance financing",
+     "note": "Concentrated household stress plus support pressure, consistent with the observed labour pathway. Real household spending is the strongest evidence here, and the hardest to obtain.",
+     "status": "Hypothesised; needs consenting household research."
+    },
+    {
+     "from": "n-komdigi",
+     "to": "n-banktech",
+     "kind": "existing",
+     "label": "Responsible-AI and digital-skills enabling policy",
+     "note": "National digital policy does not substitute for financial-sector supervision or employer HR evidence. Keep enabling policy separate from actual deployment and labour outcomes.",
+     "status": "Existing policy relationship; not a labour data link."
+    },
+    {
+     "from": "n-vendor",
+     "to": "n-banktech",
+     "kind": "existing",
+     "label": "Vendors supply what the bank deploys",
+     "note": "Implementation dates, licensed tools and usage logs. Corroborating M2 only - usage is not workforce impact.",
+     "status": "Vendor relationship; disclosure requires authorisation."
+    },
+    {
+     "from": "n-contract",
+     "to": "n-bpo",
+     "kind": "existing",
+     "label": "Legal employer of record",
+     "note": "The staffing provider employs the worker whose task the bank's AI reshaped. Split across two legal entities is the outsourcing blind spot.",
+     "status": "Existing."
+    },
+    {
+     "from": "n-entrant",
+     "to": "n-bankmgmt",
+     "kind": "existing",
+     "label": "Entry-level hiring gate",
+     "note": "Where a hiring freeze would show first - payroll stays stable while entry-level access narrows.",
+     "status": "Existing."
+    },
+    {
+     "from": "n-academy",
+     "to": "n-bankmgmt",
+     "kind": "existing",
+     "label": "Employer skills pipeline",
+     "note": "Internal academies and certification feed redeployment.",
+     "status": "Existing."
+    },
+    {
+     "from": "n-associns",
+     "to": "n-perbanas",
+     "kind": "existing",
+     "label": "Parallel convenors across financial sub-sectors",
+     "note": "Comparative only - different business models and classifications, so their employment effects must not be read as banking evidence.",
+     "status": "Existing; comparative use only."
+    },
+    {
+     "from": "n-kemnaker",
+     "to": "n-disnaker",
+     "kind": "existing",
+     "label": "National mandate, local delivery",
+     "note": "Delivery sits with provincial and district offices, which is why local capacity is a bottleneck rather than a footnote.",
+     "status": "Existing coordination."
+    },
+    {
+     "from": "n-training",
+     "to": "n-kemnaker",
+     "kind": "existing",
+     "label": "Training centres under ministry programmes",
+     "note": "The 50,000-worker programme names 21 centres; the ministry authorises, the centres deliver.",
+     "status": "Announced 22 Oct 2026."
+    },
+    {
+     "from": "n-disnaker",
+     "to": "n-training",
+     "kind": "existing",
+     "label": "Referral into local training intake",
+     "note": "Local offices refer displaced workers to places. Waiting lists are the observable.",
+     "status": "Existing."
+    },
+    {
+     "from": "n-peka",
+     "to": "n-bpjs",
+     "kind": "existing",
+     "label": "Benefit-linked training delivery",
+     "note": "PEKA delivers training to benefit recipients; JKP identifies them.",
+     "status": "Existing."
+    },
+    {
+     "from": "n-bappenas",
+     "to": "n-kemnaker",
+     "kind": "existing",
+     "label": "Planning targets meet programme delivery",
+     "note": "Planning units may not match administrative reporting units - a known mismatch, named rather than hidden.",
+     "status": "Existing."
+    },
+    {
+     "from": "n-kemenko",
+     "to": "n-ojk",
+     "kind": "existing",
+     "label": "Convening finance, employment and social protection",
+     "note": "The Oct 2026 ILO-OJK-Kemenko collaboration is the working precedent for a shared indicator panel.",
+     "status": "Existing."
+    },
+    {
+     "from": "n-kssk",
+     "to": "n-lps",
+     "kind": "existing",
+     "label": "Both sit on the KSSK financial-stability forum",
+     "note": "LPS is a member; neither is a labour actor. Conditional branch only.",
+     "status": "Existing."
+    },
+    {
+     "from": "n-ilo",
+     "to": "n-research",
+     "kind": "existing",
+     "label": "Exposure methodology travels to local research",
+     "note": "Methodological support does not replace Indonesian observation - the local series still has to be built.",
+     "status": "Existing."
+    },
+    {
+     "from": "n-platform",
+     "to": "n-team",
+     "kind": "proposed",
+     "label": "Posting histories, requirements, advertised wages",
+     "note": "The route that produced this lane's 331-row postings sample. Applications are not hires, and coverage shifts.",
+     "status": "Proposed; partially delivered by this lane's own harvest."
+    },
+    {
+     "from": "n-research",
+     "to": "n-team",
+     "kind": "proposed",
+     "label": "Classification crosswalks and validation methods",
+     "note": "Independent validation of exposure and outcome claims.",
+     "status": "Proposed."
+    }
+   ]
+  },
+  "policy": {
+   "title": "Policy map",
+   "sub": "Documents, monitoring and levers on their own - what exists, what it observes, and what it can do.",
+   "note": "Kept separate from the ecosystem map on purpose. The ecosystem map shows who is positioned where; this shows what the rules and programmes actually say. Two questions per document: does it name AI-driven job loss at all, and does it monitor anything? On the current three-document inventory the answer to both is largely no, and that is the finding - a policy layer with real instruments (JKP, Karirhub) that were not built to watch this transition.",
+   "bands": [
+    {
+     "id": "p1",
+     "title": "Statutory & supervisory",
+     "sub": "the rules that bind"
+    },
+    {
+     "id": "p2",
+     "title": "Social insurance",
+     "sub": "the cash floor"
+    },
+    {
+     "id": "p3",
+     "title": "Employment service & skills",
+     "sub": "the route back"
+    },
+    {
+     "id": "p4",
+     "title": "Planning & coordination",
+     "sub": "the join between ministries"
+    },
+    {
+     "id": "p5",
+     "title": "Response menu",
+     "sub": "the levers, with price and speed"
+    }
+   ],
+   "nodes": [
+    {
+     "id": "pol-ojk",
+     "band": "p1",
+     "label": "OJK AI Guide - Panduan AI untuk Perbankan",
+     "sub": "Guideline. AI governance guidance for banks.",
+     "status": "real",
+     "detail": "Named AI job loss as a risk: NO - it governs AI use, not labour outcomes. Owner and budget not stated in source. Monitoring not stated. No action rule. This is the q1-q6 grade, and the gap is the point.",
+     "ev": "id-policy-inventory.csv ind-ojk-ai-guide-2025"
+    },
+    {
+     "id": "pol-rp3i",
+     "band": "p1",
+     "label": "RP3I 2026-2030 - banking development roadmap",
+     "sub": "Supervisory roadmap. Explicitly addresses digital transformation, emerging technologies and governance.",
+     "status": "real",
+     "detail": "Context for the OJK door, not a labour instrument: it establishes that OJK is already steering bank digitalisation, which is why a workforce-transition reporting request is plausible rather than exotic.",
+     "ev": "spar26-ecosystem.md s2 (ojk.go.id)"
+    },
+    {
+     "id": "pol-jkp",
+     "band": "p2",
+     "label": "JKP - Jaminan Kehilangan Pekerjaan",
+     "sub": "Programme. Job-loss insurance; claims after eligible layoffs.",
+     "status": "real",
+     "detail": "PP No. 6 of 2025 (eff. 7 Feb 2025) changed generosity, claim timing and contribution conditions - a structural break that confounds cross-year comparison. Occupation detail unconfirmed. Payroll and JKP capture only part of the labour market.",
+     "ev": "id-policy-inventory.csv ind-jkp-2022; id-signals.csv ind-sig-jkp-reform-break"
+    },
+    {
+     "id": "pol-pasker",
+     "band": "p3",
+     "label": "Pasker ID / Karirhub",
+     "sub": "Programme. Kemnaker vacancy portal - postings, job titles, employers.",
+     "status": "real",
+     "detail": "The only entry-level, per-posting series in the lane, and the route by which M3 exists at all. Detailed extract still to request.",
+     "ev": "id-policy-inventory.csv ind-paskerid-kemnaker"
+    },
+    {
+     "id": "pol-voc50k",
+     "band": "p3",
+     "label": "Vocational training for 50,000 laid-off workers",
+     "sub": "Programme, announced 22 Oct 2026. 21 identified training centres; priority for eligible laid-off workers who had not received JKP benefits.",
+     "status": "new",
+     "detail": "NEW to the inventory. This is a concrete programme to catalogue - NOT evidence that 50,000 workers have enrolled, completed training, or found suitable employment. The priority rule for non-JKP workers is itself a finding about who JKP misses.",
+     "ev": "setkab.go.id; spar26-ecosystem.md s2"
+    },
+    {
+     "id": "pol-peka",
+     "band": "p3",
+     "label": "PEKA",
+     "sub": "Programme. Benefit-linked training: 1,426 recipients across 45 locations (Aug 2026).",
+     "status": "real",
+     "detail": "Concrete activity. Participation does not establish nationwide retraining capacity for dismissed bank staff, nor stable earnings after. Different again from JKK's 97.30% rehabilitation return-to-work, which must never be read as a JKP placement rate.",
+     "ev": "id-signals.csv ind-sig-peka-training, ind-sig-jkk-rtw"
+    },
+    {
+     "id": "pol-integ",
+     "band": "p4",
+     "label": "Kemnaker's Sakernas x SIAPkerja integration",
+     "sub": "Practice, described by Kemnaker. Survey evidence combined with administrative systems for diagnosis and planning.",
+     "status": "real",
+     "detail": "The one place in the policy layer where a survey and an administrative series are deliberately joined. It is the model the bridge view proposes extending to a bank x function x time frame.",
+     "ev": "spar26-ecosystem.md s2, s5"
+    },
+    {
+     "id": "pol-trilat",
+     "band": "p4",
+     "label": "ILO - OJK - Kemenko Perekonomian collaboration (Oct 2026)",
+     "sub": "Coordination. An existing finance-employment-social-protection connection.",
+     "status": "real",
+     "detail": "Proof that the three policy domains already talk to each other, so a shared indicator panel is a coordination ask, not a new institution.",
+     "ev": "spar26-ecosystem.md s3 (ilo.org)"
+    },
+    {
+     "id": "pol-inst",
+     "band": "p5",
+     "label": "Instruments - job fair / Prakerja vouchers / JKP surge / reskilling roadmap",
+     "sub": "Placeholder. The response menu with cost, speed and evidence.",
+     "status": "placeholder",
+     "detail": "Tab holds one DEMO row; the instrument map is due 22 Nov. Until it exists the trigger cannot be costed, and 'no-regret vs contingent' cannot be separated. This is the single hardest blocker in the policy layer.",
+     "ev": "id-instruments.csv; data/model-id-demo.json"
+    }
+   ],
+   "edges": [
+    {
+     "from": "pol-ojk",
+     "to": "pol-rp3i",
+     "kind": "existing",
+     "label": "Guideline sits under the supervisory roadmap",
+     "note": "The AI guide is one instrument of the broader digital-transformation agenda, not a standalone labour measure.",
+     "status": "Existing."
+    },
+    {
+     "from": "pol-jkp",
+     "to": "pol-voc50k",
+     "kind": "existing",
+     "label": "JKP non-recipients are the priority group",
+     "note": "The 50,000-worker programme explicitly prioritises eligible laid-off workers who did not receive JKP - so its beneficiary definition is defined by a gap in the insurance programme.",
+     "status": "Announced 22 Oct 2026."
+    },
+    {
+     "from": "pol-jkp",
+     "to": "pol-peka",
+     "kind": "existing",
+     "label": "Benefit-linked training delivery",
+     "note": "PEKA delivers training to benefit recipients; JKP is the entitlement that identifies them.",
+     "status": "Existing."
+    },
+    {
+     "from": "pol-pasker",
+     "to": "pol-voc50k",
+     "kind": "gap",
+     "label": "Demand matching is unproven",
+     "note": "Training places must match actual vacancies or completion substitutes for outcome. Pasker holds the vacancy side; no published link joins the two.",
+     "status": "Named gap."
+    },
+    {
+     "from": "pol-pasker",
+     "to": "pol-integ",
+     "kind": "existing",
+     "label": "Vacancy records inside the Sakernas/SIAPkerja integration",
+     "note": "Pasker is one of the administrative systems Kemnaker integrates with survey evidence.",
+     "status": "Existing."
+    },
+    {
+     "from": "pol-inst",
+     "to": "pol-jkp",
+     "kind": "placeholder",
+     "label": "The menu prices the response to a JKP surge",
+     "note": "JKP surge processing is one instrument in the menu; without the menu its cost and lead time stay unestimated.",
+     "status": "Blocked until 22 Nov."
+    },
+    {
+     "from": "pol-trilat",
+     "to": "pol-ojk",
+     "kind": "existing",
+     "label": "The convening route into OJK",
+     "note": "ILO-Kemenko-OJK is the existing channel through which a workforce-transition reporting request would travel.",
+     "status": "Existing."
+    },
+    {
+     "from": "pol-trilat",
+     "to": "pol-inst",
+     "kind": "proposed",
+     "label": "The menu is the coordination body's natural output",
+     "note": "A shared instrument map is exactly what a cross-ministry forum would own.",
+     "status": "Proposed."
+    }
+   ]
+  },
+  "bridge": {
+   "title": "Ecosystem -> policy bridge",
+   "sub": "The join: for each measure, who observes it, who can validate it, who is authorised to act, and who delivers.",
+   "note": "This is the view that earns its own map. Name a problem's best observer and you have not named anyone empowered to fix it - on this map that is true for M1, M3, M4 and M6. The four labels are deliberately separate so the diagram cannot imply that the institution best able to observe a problem is also the institution authorised or equipped to solve it.",
+   "bands": [
+    {
+     "id": "c1",
+     "title": "Observe",
+     "sub": "data owner - who can actually see it"
+    },
+    {
+     "id": "c2",
+     "title": "Validate",
+     "sub": "evidence validator - who can corroborate it"
+    },
+    {
+     "id": "c3",
+     "title": "Decide",
+     "sub": "decision owner - who is authorised"
+    },
+    {
+     "id": "c4",
+     "title": "Deliver",
+     "sub": "delivery owner - who can act, and how fast"
+    }
+   ],
+   "nodes": [
+    {
+     "id": "b-obs1",
+     "band": "c1",
+     "label": "Banks (HR / ops / tech)",
+     "sub": "Dated rollout, affected functions, redeployment",
+     "tm": "B2",
+     "detail": "Sees the deployment decision as it is made.",
+     "ev": "Holds M2 evidence privately; no obligation to publish it."
+    },
+    {
+     "id": "b-obs2",
+     "band": "c1",
+     "label": "BPJS Ketenagakerjaan",
+     "sub": "JKP claims, distinct recipients, payment timing",
+     "tm": "B4",
+     "detail": "Sees separations once they enter the insured system.",
+     "ev": "Blind to anyone outside covered formal employment - 87.74m informal workers are invisible here."
+    },
+    {
+     "id": "b-obs3",
+     "band": "c1",
+     "label": "BPS-Statistics",
+     "sub": "Sakernas employment, occupation, wages; Susenas consumption",
+     "tm": "B1",
+     "detail": "Sees population-level outcomes.",
+     "ev": "Small finance x occupation x province cells; cannot follow an individual from job to next job."
+    },
+    {
+     "id": "b-obs4",
+     "band": "c1",
+     "label": "Kemnaker / Karirhub",
+     "sub": "Vacancies, jobseekers, training records",
+     "tm": "B3",
+     "detail": "Sees both the demand signal and the delivery machinery.",
+     "ev": "Reported vacancies are not hires; coverage varies."
+    },
+    {
+     "id": "b-val1",
+     "band": "c2",
+     "label": "BPS + universities",
+     "sub": "Classification crosswalks, causal and longitudinal methods",
+     "tm": "B1",
+     "detail": "Can independently validate an exposure or outcome claim.",
+     "ev": "Needs data access the team does not control."
+    },
+    {
+     "id": "b-val2",
+     "band": "c2",
+     "label": "ILO & tripartite partners",
+     "sub": "Exposure methodology, decent-work framing",
+     "tm": "B1",
+     "detail": "Confirms the method travels across countries.",
+     "ev": "Methodological support does not replace Indonesian observation."
+    },
+    {
+     "id": "b-val3",
+     "band": "c2",
+     "label": "Unions (ASPEK / UNI-AP)",
+     "sub": "Lived task change, targets, voluntary-exit disputes",
+     "tm": "B2",
+     "detail": "Can corroborate what employer data asserts.",
+     "ev": "Fear of retaliation, uneven coverage, contract workers often excluded."
+    },
+    {
+     "id": "b-dec1",
+     "band": "c3",
+     "label": "OJK",
+     "sub": "Confirms bank-level deployment context; holds supervisory data",
+     "tm": "B2",
+     "detail": "The stronger first door for bank-level context.",
+     "ev": "Confidential supervisory data; prudential health can coexist with worsening employment pathways."
+    },
+    {
+     "id": "b-dec2",
+     "band": "c3",
+     "label": "Kemnaker (Pusat Pasar Kerja)",
+     "sub": "Authorises employment-service and training response",
+     "tm": "B3",
+     "detail": "Owns the levers and the vacancy platform.",
+     "ev": "Cannot compel employer workforce disclosure."
+    },
+    {
+     "id": "b-dec3",
+     "band": "c3",
+     "label": "Kemenko Perekonomian",
+     "sub": "Convenes across employment, finance and social protection",
+     "tm": "B3",
+     "detail": "Can resolve ownership of a shared indicator panel.",
+     "ev": "Coordination authority is not ownership of the underlying microdata."
+    },
+    {
+     "id": "b-del1",
+     "band": "c4",
+     "label": "Disnaker (provincial / district)",
+     "sub": "Local job fairs, referrals, training intake",
+     "tm": "B3",
+     "detail": "Delivers where the impact lands.",
+     "ev": "Uneven capacity office by office; workers may live and work in different jurisdictions."
+    },
+    {
+     "id": "b-del2",
+     "band": "c4",
+     "label": "BPJS JKP office",
+     "sub": "Surge processing, benefit payment",
+     "tm": "B4",
+     "detail": "Fastest cash lever: weeks, not quarters.",
+     "ev": "Documentation barriers and rule changes confound the volume series."
+    },
+    {
+     "id": "b-del3",
+     "band": "c4",
+     "label": "Training centres (incl. 50k programme)",
+     "sub": "Course places, completion, placement follow-up",
+     "tm": "B5",
+     "detail": "The route back into work.",
+     "ev": "Completion can substitute for outcome reporting; courses may not match vacancies."
+    },
+    {
+     "id": "b-del4",
+     "band": "c4",
+     "label": "KSSK / LPS",
+     "sub": "Conditional financial-stability escalation",
+     "tm": "B6",
+     "detail": "The only actor with systemic reach.",
+     "ev": "Conditional only - a labour shock is not automatically a systemic financial crisis."
+    }
+   ],
+   "edges": [
+    {
+     "from": "b-obs1",
+     "to": "b-dec1",
+     "kind": "existing",
+     "label": "Banks -> OJK: regulated reporting",
+     "note": "Observation of deployment and the supervisory door are one relationship. This is the shortest chain in the whole map - and it covers M2 only.",
+     "status": "Existing institution; labour fields still proposed."
+    },
+    {
+     "from": "b-obs2",
+     "to": "b-del2",
+     "kind": "existing",
+     "label": "BPJS observes and pays",
+     "note": "Unusually, one institution both sees the separation and delivers the response - which is why JKP latency is measurable at all.",
+     "status": "Existing, but not a labour-outcome series."
+    },
+    {
+     "from": "b-obs4",
+     "to": "b-dec2",
+     "kind": "existing",
+     "label": "Kemnaker observes and acts",
+     "note": "The clearest symbiosis: the holder of the vacancy series is the office that runs employment services and training.",
+     "status": "Existing."
+    },
+    {
+     "from": "b-obs3",
+     "to": "b-dec3",
+     "kind": "gap",
+     "label": "BPS observes, but cannot decide",
+     "note": "The population view and the coordination authority are different institutions with no standing pipeline between them.",
+     "status": "Named gap."
+    },
+    {
+     "from": "b-obs2",
+     "to": "b-obs3",
+     "kind": "gap",
+     "label": "Claimants and survey respondents are not linked",
+     "note": "Covered-worker claims are not population-wide separations, and a survey respondent is not automatically a claimant. Denominators must be reported separately.",
+     "status": "Named gap."
+    },
+    {
+     "from": "b-val3",
+     "to": "b-obs1",
+     "kind": "proposed",
+     "label": "Unions corroborate employer accounts",
+     "note": "Triangulation, not substitution. Neither employer disclosure nor worker evidence is definitive alone.",
+     "status": "Proposed."
+    },
+    {
+     "from": "b-dec1",
+     "to": "b-obs2",
+     "kind": "gap",
+     "label": "Supervision and labour institutions do not share a frame",
+     "note": "The same bank is a regulated institution and an employer, but financial soundness and labour-market wellbeing are not the same measurement. The proposal is a common bank x function x time frame - explicitly not a claim that one exists.",
+     "status": "Proposed frame; no existing pipeline."
+    },
+    {
+     "from": "b-del1",
+     "to": "b-dec2",
+     "kind": "existing",
+     "label": "Disnaker delivers under Kemnaker authority",
+     "note": "Delivery sits with local offices while the mandate is national - the reason local capacity is a bottleneck rather than a footnote.",
+     "status": "Existing coordination."
+    },
+    {
+     "from": "b-dec1",
+     "to": "b-del4",
+     "kind": "existing",
+     "label": "OJK feeds KSSK if transmission becomes material",
+     "note": "Dotted in the ecosystem map, solid here as an existing committee route - the conditionality is what gates it.",
+     "status": "Conditional."
+    },
+    {
+     "from": "b-obs3",
+     "to": "b-val1",
+     "kind": "proposed",
+     "label": "BPS measures, universities validate",
+     "note": "Population outcomes need independent method validation before they carry a warning.",
+     "status": "Proposed."
+    },
+    {
+     "from": "b-val2",
+     "to": "b-val1",
+     "kind": "existing",
+     "label": "ILO method reaches local validation",
+     "note": "The exposure method is already travelling through research partners.",
+     "status": "Existing."
+    },
+    {
+     "from": "b-obs4",
+     "to": "b-del3",
+     "kind": "proposed",
+     "label": "Vacancy data should shape training places",
+     "note": "Or completion substitutes for outcome. The observer holds the demand side; the deliverer holds the supply side.",
+     "status": "Proposed; no published link."
+    },
+    {
+     "from": "b-dec2",
+     "to": "b-del3",
+     "kind": "existing",
+     "label": "Kemnaker authorises, centres deliver",
+     "note": "The 50,000-worker programme is the live example.",
+     "status": "Announced 22 Oct 2026."
+    },
+    {
+     "from": "b-val3",
+     "to": "b-del1",
+     "kind": "proposed",
+     "label": "Worker account reaches the delivery office",
+     "note": "Local offices are where a disputed exit or an unwanted reassignment would surface first.",
+     "status": "Proposed."
+    }
+   ]
+  }
+ },
+ "responsibility": {
+  "title": "Responsibility map - four labels on every indicator",
+  "note": "The central output. Every measure carries four separate labels so that seeing, validating, deciding and delivering are never collapsed into one institution.",
+  "cols": [
+   "Measure",
+   "Data owner",
+   "Evidence validator",
+   "Decision owner",
+   "Delivery owner",
+   "Where the chain breaks",
+   "What would strengthen a warning"
+  ],
+  "rows": [
+   {
+    "m": "M1 Sector employment & exposure",
+    "owner": "BPS (Sakernas); employers; staffing firms",
+    "validator": "Universities; ILO method",
+    "decider": "Bappenas (planning); OJK (segment context)",
+    "deliverer": "BPS (publication); Kemnaker (service design)",
+    "break": "Observed at population level, never at bank-function level.",
+    "strengthen": "Concentration in specific functions, cohorts or locations - not exposure alone."
+   },
+   {
+    "m": "M2 AI deployment & workforce change",
+    "owner": "Bank tech/ops/HR; OJK",
+    "validator": "Unions; workers; vendors",
+    "decider": "OJK (supervisory frame); bank boards",
+    "deliverer": "Bank HR (redeployment); employer academies",
+    "break": "Deployment is private until disclosed; the observer is the decider's regulated entity.",
+    "strengthen": "Dated deployment followed by same-function change, corroborated from more than one perspective."
+   },
+   {
+    "m": "M3 Recruitment & vacancies",
+    "owner": "Kemnaker / Karirhub; commercial platforms",
+    "validator": "Employers; recruitment platforms",
+    "decider": "Kemnaker (Pusat Pasar Kerja)",
+    "deliverer": "Disnaker; training centres",
+    "break": "Only entry-level series in the lane - and the observer is also the actor.",
+    "strengthen": "Persistent within-function weakening against comparators, without a coverage break."
+   },
+   {
+    "m": "M4 Job loss & worker destinations",
+    "owner": "BPJS (JKP); Kemnaker/Disnaker; employers",
+    "validator": "Workers; unions; BPS",
+    "decider": "BPJS (programme rules); Kemnaker",
+    "deliverer": "BPJS (payment); Disnaker (placement)",
+    "break": "Destinations after exit have no public series at all.",
+    "strengthen": "Corroborated separation and poor recovery - not repeat claim payments."
+   },
+   {
+    "m": "M5 Worker support capacity",
+    "owner": "Kemnaker; BPJS; training providers",
+    "validator": "Local services; employers",
+    "decider": "Kemnaker; Bappenas (programme design)",
+    "deliverer": "Disnaker; training centres; PEKA",
+    "break": "Participation is counted; recovery is not.",
+    "strengthen": "Support demand exceeding delivery capacity, or weak earnings recovery despite participation."
+   },
+   {
+    "m": "M6 Consumption & fiscal effects",
+    "owner": "BPS (Susenas); Kemenkeu; BI",
+    "validator": "Consenting household research participants",
+    "decider": "Kemenkeu; Bappenas; KSSK (if systemic)",
+    "deliverer": "Fiscal and social-insurance programmes",
+    "break": "Most confounded and least observable of the six - national tax moves swamp the signal.",
+    "strengthen": "Concentrated household stress and support pressure consistent with the observed labour pathway."
+   }
+  ]
+ }
+}

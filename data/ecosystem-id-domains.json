@@ -1,0 +1,301 @@
+{
+  "_note": "v0 ECOSYSTEM & POLICY MAP - INDONESIA LANE ONLY. Domains and the intersects between them, for the SPAR F26 Indonesia lane ('From AI Exposure to Economic Shock'). Every field traces to a file in this repo or to the source those files cite (Akbar's Indonesia.pdf deck p2-4; 'Doc: Bank AI deployment and worker support in Indonesia'; the Karirhub harvest). No new findings; no invented figures. status: real = populated; draft = CRO/team proposal; gap = named missing series; placeholder = empty tab awaiting rows.",
+  "lane": {
+    "country": "Indonesia",
+    "anchor_sector": "Finance & insurance (banking), clerical support",
+    "role": "Policy lead + Indonesia contrast case (Philippines anchors the pair)",
+    "workplan_due": "Ecosystem map rows by 22 Nov",
+    "grids": {
+      "S": "S1-S10 Ian skeleton signals",
+      "M": "M1-M6 Akbar measures"
+    }
+  },
+  "domains": [
+    {
+      "id": "D1",
+      "band": "watch",
+      "n": 1,
+      "label": "Anchor sector & exposure baseline",
+      "sub": "How big, how exposed",
+      "marks": [
+        "M1",
+        "S1"
+      ],
+      "status": "real",
+      "detail": "Finance & insurance = 1.65m employed (Aug 2025, BPS Sakernas). 21.7% of jobs had above-minimal GenAI exposure; 93.9% of clerical support workers had some exposure (ILO method). Clerical support is the most exposed occupation and finance is the anchor sector, so the two overlap exactly where the trigger sits.",
+      "figures": [
+        "1.65m employed, finance & insurance (Aug 2025)",
+        "21.7% above-minimal exposure",
+        "93.9% of clerical support workers exposed"
+      ],
+      "source": "id-signals.csv ind-sig-baseline-exposure, ind-sig-baseline-sector-size"
+    },
+    {
+      "id": "D2",
+      "band": "watch",
+      "n": 2,
+      "label": "Employer AI deployment",
+      "sub": "The first observed adoption",
+      "marks": [
+        "M2",
+        "S2",
+        "S10"
+      ],
+      "status": "real",
+      "detail": "Named AI use cases in bank reports: BCA, Bank Mandiri, BRI, BNI, CIMB Niaga (DIVA, VIRA, Kopra, Sabrina, BRIBRAIN, transaction risk scoring). BRI Sabrina handled 45% of 21,535,701 Contact BRI interactions; BCA reports 2,550 employees trained on AI in 2025. The only public read on employer AI intent in the anchor sector.",
+      "figures": [
+        "Sabrina: 45% of 21.5m interactions",
+        "BCA: 2,550 trained on AI (2025)",
+        "5 OJK-regulated banks disclosing"
+      ],
+      "source": "id-signals.csv ind-sig-bank-ai-usecases, ind-sig-contact-centre-share, ind-sig-bank-ai-training"
+    },
+    {
+      "id": "D3",
+      "band": "watch",
+      "n": 3,
+      "label": "Recruitment & vacancies",
+      "sub": "Entry-level lead time",
+      "marks": [
+        "M3",
+        "S5"
+      ],
+      "status": "real",
+      "detail": "Karirhub / Pasker ID is the vacancy series. This lane harvested 331 individual postings (281 live + 50 archived) in finance/BPO, 2025-10-20 to 2026-10-20, with titles, employers, timestamps, locations, content and a derived AI-skill flag. The only series here at entry-level, per-posting granularity.",
+      "figures": [
+        "331 postings (281 live / 50 archived)",
+        "finance/BPO, one-year window",
+        "AI-skill flag derived from content"
+      ],
+      "source": "data/id-postings/karirhub-id-postings-sample.csv + README.md"
+    },
+    {
+      "id": "D4",
+      "band": "watch",
+      "n": 4,
+      "label": "Job loss & worker destinations",
+      "sub": "Claims, and where people go",
+      "marks": [
+        "M4",
+        "S8",
+        "S9"
+      ],
+      "status": "real",
+      "detail": "JKP job-loss insurance: 237,550 (2023) -> 250,594 (2024) -> 431,086 (2025) claim cases; distinct recipients 57,960 (2024) and 90,513 (2025) - different denominators, not interchangeable. PP No. 6 of 2025 (eff. 7 Feb 2025) changed generosity and claim conditions, so the 2025 jump carries a structural break. 87.74m informal vs 59.93m formal workers (Feb 2026): once someone exits formal payroll, no public series follows them.",
+      "figures": [
+        "431,086 claim cases (2025)",
+        "90,513 distinct recipients (2025)",
+        "17% of applications rejected (May 2025 hearing)",
+        "87.74m informal vs 59.93m formal"
+      ],
+      "source": "id-signals.csv ind-sig-jkp-cases-v-recipients, ind-sig-jkp-rejections, ind-sig-jkp-reform-break, ind-sig-baseline-informal"
+    },
+    {
+      "id": "D5",
+      "band": "watch",
+      "n": 5,
+      "label": "Worker support capacity",
+      "sub": "Can the safety net absorb a surge",
+      "marks": [
+        "M5",
+        "S10"
+      ],
+      "status": "real",
+      "detail": "PEKA training: 1,426 benefit recipients across 45 locations (Aug 2026). JKK rehabilitation return-to-work 97.30% (2025) - a DIFFERENT programme, logged only so it is not misused as a JKP placement rate. Missing is the operational series: applications -> approvals -> first payment by cohort, median/p90 days, and training slots vs placements.",
+      "figures": [
+        "PEKA: 1,426 participants, 45 locations",
+        "JKK RTW 97.30% (different programme - caution)",
+        "JKP processing latency: not published"
+      ],
+      "source": "id-signals.csv ind-sig-peka-training, ind-sig-jkk-rtw, ind-sig-jkp-processing-time, ind-sig-jkp-training-outcomes"
+    },
+    {
+      "id": "D6",
+      "band": "watch",
+      "n": 6,
+      "label": "Consumption & fiscal effects",
+      "sub": "Why a local shock travels",
+      "marks": [
+        "M6"
+      ],
+      "status": "real",
+      "detail": "Payroll and JKP capture only part of the labour market. With 87.74m informal workers, an income drop among displaced staff is not fully visible in payroll data but can still move household spending - the channel by which a sectoral transition becomes a wider economic effect.",
+      "figures": [
+        "payroll/JKP cover only part of the labour market",
+        "income change -> household spending (BPS)"
+      ],
+      "source": "id-signals.csv ind-sig-baseline-informal (M6 link)"
+    },
+    {
+      "id": "D7",
+      "band": "decide",
+      "n": 7,
+      "label": "Policy inventory & readiness",
+      "sub": "What exists, and whether it monitors",
+      "marks": [
+        "q1-q6"
+      ],
+      "status": "real",
+      "detail": "Three documents catalogued: OJK AI Guide (guideline), JKP (programme), Pasker ID / Karirhub (programme). Each is graded on six questions - does it name AI job loss, assign an owner and budget, monitor something, say what happens when a signal fires, reach entry-level/provincial/informal/women workers, govern AI decisions inside firms. Grades DOCUMENTS, never a government; no ranking. Scoring is the 26 Oct deliverable and currently reads tbc.",
+      "figures": [
+        "3 documents: OJK AI Guide, JKP, Pasker ID",
+        "6 readiness questions, q1-q6",
+        "grades documents, not governments"
+      ],
+      "source": "id-policy-inventory.csv, id-readiness.csv"
+    },
+    {
+      "id": "D8",
+      "band": "decide",
+      "n": 8,
+      "label": "Triggers",
+      "sub": "When a reading becomes a decision",
+      "marks": [
+        "thresholds"
+      ],
+      "status": "draft",
+      "detail": "DRAFT, not a project decision. ind-trg-fin-clerical-01: AI-linked clerical reductions announced by 2+ banks in the same province within one quarter -> OJK banking supervision confirms (it already holds the data) -> Kemnaker Pusat Pasar Kerja + BPJS JKP office act within 30 days: joint job fair, Prakerja retraining places, fast-tracked JKP access, and a workforce-transition note from the affected banks. Deliberately runs on events and notifications, not a data series, because JKP occupation detail is unconfirmed and no series links AI adoption to hires. Wording rule: 'consistent with AI-driven change', never 'caused by AI'.",
+      "figures": [
+        "2+ banks, same province, same quarter",
+        "confirmation: retrenchment filing OR PERBANAS",
+        "30-day action window",
+        "needs Akbar + mentor review"
+      ],
+      "source": "id-triggers.csv ind-trg-fin-clerical-01 (CRO draft)"
+    },
+    {
+      "id": "D9",
+      "band": "act",
+      "n": 9,
+      "label": "Who can act",
+      "sub": "The doors, not the org chart",
+      "marks": [
+        "M1-M6"
+      ],
+      "status": "real",
+      "detail": "Six organisations with a named proposed door each: BPS -> statistical service / SILASTIK (Sakernas jobs, occupation, wages); OJK -> banking supervision office (banking data + AI guide); Kemnaker -> Pusat Pasar Kerja (Pasker ID vacancies); BPJS Ketenagakerjaan -> JKP programme office (claims, covered workers); PERBANAS -> secretariat (member banks, employer outreach); ILO -> employment specialist team (exposure method). The door is what makes a trigger actionable.",
+      "figures": [
+        "BPS, OJK, Kemnaker, BPJS, PERBANAS, ILO",
+        "one proposed door per organisation",
+        "OJK confirms; Kemnaker + BPJS act"
+      ],
+      "source": "id-who-can-act.csv"
+    },
+    {
+      "id": "D10",
+      "band": "act",
+      "n": 10,
+      "label": "Instruments",
+      "sub": "The response menu, with price and speed",
+      "marks": [
+        "no-regret / contingent"
+      ],
+      "status": "placeholder",
+      "detail": "The instrument map answers, for each response: what does it cost, how fast can it move, what evidence justifies it. This is what separates no-regret measures that should start now from contingent actions gated on a warning signal. Tab is a single DEMO row - the map is due 22 Nov, and the trigger above cannot be costed until it exists.",
+      "figures": [
+        "tab: 1 DEMO row",
+        "due 22 Nov",
+        "job fair / Prakerja vouchers / JKP surge / reskilling roadmap (from model)"
+      ],
+      "source": "id-instruments.csv (placeholder), data/model-id-demo.json triggers"
+    }
+  ],
+  "intersects": [
+    {
+      "from": "D1",
+      "to": "D2",
+      "kind": "flow",
+      "label": "exposure is the prior, deployment is the observation",
+      "flow": "Exposure tells us where to watch; employer disclosures are the first thing we can actually observe there. Neither alone says tasks changed - only that they might.",
+      "evidence": "id-signals.csv ind-sig-gap-adoption-hires (no public series links AI adoption to hires, wages, output, tax)"
+    },
+    {
+      "from": "D2",
+      "to": "D3",
+      "kind": "gap",
+      "label": "deployment should show up in hiring - the series does not exist",
+      "flow": "Documented AI rollout inside banks has no paired, function-specific vacancy / hire / exit / redeploy series. The 20% YoY-for-two-quarters figure in the source doc is illustrative ONLY, not a threshold we assert.",
+      "evidence": "id-signals.csv ind-sig-bank-function-hiring; ind-sig-branch-footprint"
+    },
+    {
+      "from": "D2",
+      "to": "D4",
+      "kind": "flow",
+      "label": "capacity substitution precedes claims",
+      "flow": "A bank agent absorbing 45% of contacts is a capability milestone (S1/S2 proxy), never evidence of jobs saved or lost. A leading reading that must not be read as S7 or as the cause of any claim number.",
+      "evidence": "id-signals.csv ind-sig-contact-centre-share (proxy-only warning)"
+    },
+    {
+      "from": "D3",
+      "to": "D4",
+      "kind": "flow",
+      "label": "vacancies fall before claims rise",
+      "flow": "Entry-level postings give the lead time claims cannot: a hiring freeze shows up in vacancies, the human cost shows up later as JKP claims. Postings are also the only entry-level granularity in the lane.",
+      "evidence": "data/id-postings/ (S5 hiring-signal report, build/spar-id-postings.html)"
+    },
+    {
+      "from": "D4",
+      "to": "D5",
+      "kind": "flow",
+      "label": "claims volume is the load test for the safety net",
+      "flow": "Claim volume is the demand signal that tests support capacity. Capacity is measured by processing latency and training outcomes, not participation counts - the readiness gap the lane names on the record.",
+      "evidence": "id-signals.csv ind-sig-jkp-processing-time, ind-sig-jkp-training-outcomes"
+    },
+    {
+      "from": "D4",
+      "to": "D6",
+      "kind": "flow",
+      "label": "exit from formal payroll is the transmission channel",
+      "flow": "Once displaced staff leave formal payroll they enter a pool of 87.74m informal workers that no series follows. That is where a sectoral shock stops being visible in labour data and starts showing up in household spending.",
+      "evidence": "id-signals.csv ind-sig-baseline-informal, ind-sig-worker-destinations (data gap)"
+    },
+    {
+      "from": "D1",
+      "to": "D8",
+      "kind": "flow",
+      "label": "anchor sector + most-exposed occupation sets the trigger",
+      "flow": "The trigger exists where the anchor sector and the most exposed occupation overlap: finance & insurance, clerical support. That is why one trigger covers the lane, and why it is designed to run on events when no series exists.",
+      "evidence": "id-triggers.csv ind-trg-fin-clerical-01 rationale"
+    },
+    {
+      "from": "D2",
+      "to": "D7",
+      "kind": "flow",
+      "label": "every reading grades a document",
+      "flow": "Each observed signal becomes a readiness question against the inventory: does the OJK AI Guide monitor AI deployment (q3)? Does JKP say what happens when claims surge (q4)? The signals are the evidence the readiness grid is scored against.",
+      "evidence": "id-signals.csv ian_signal / measure columns; id-readiness.csv q1-q6"
+    },
+    {
+      "from": "D7",
+      "to": "D8",
+      "kind": "flow",
+      "label": "a trigger is only credible if the instrument exists",
+      "flow": "The trigger invokes instruments (job fair, Prakerja places, JKP fast-track, reskilling roadmap). If the inventory shows no such instrument, the trigger is aspirational. So the trigger cannot be signed off before the instrument map lands on 22 Nov.",
+      "evidence": "id-triggers.csv cost_lead_time: 'cost not yet estimated - needs the instrument map (due 22 Nov)'"
+    },
+    {
+      "from": "D8",
+      "to": "D9",
+      "kind": "flow",
+      "label": "the trigger names who confirms and who acts",
+      "flow": "OJK confirms because it already holds the banking data; Kemnaker and BPJS act because they hold the levers. The confirmer is not the actor, and the door is pre-named so nobody invents a route during a surge.",
+      "evidence": "id-triggers.csv agency field; id-who-can-act.csv proposed_door"
+    },
+    {
+      "from": "D9",
+      "to": "D10",
+      "kind": "flow",
+      "label": "the door needs a menu with a price",
+      "flow": "Who-can-act names the door; instruments are what that door actually deploys, each with cost, speed and the evidence that justifies it. Together they turn 'someone should act' into 'this office, this week, this spend'.",
+      "evidence": "id-who-can-act.csv + id-instruments.csv (instrument map due 22 Nov)"
+    },
+    {
+      "from": "D3",
+      "to": "D9",
+      "kind": "flow",
+      "label": "the data holder is also the door",
+      "flow": "Kemnaker is both the vacancy data holder (Pasker ID / Karirhub) and the acting door (Pusat Pasar Kerja). That is the clearest symbiosis in the lane: the series we harvest and the office that acts are the same institution - which is why the postings work is not just evidence, it is a route in.",
+      "evidence": "id-who-can-act.csv ind-act-kemnaker; id-policy-inventory.csv ind-paskerid-kemnaker"
+    }
+  ]
+}
