@@ -13,3 +13,11 @@ scratch/
 *.pem
 *.key
 service-account*.json
+
+# python bytecode
+__pycache__/
+*.pyc
+
+# per-deploy page copies staged by the deploy workflow; dist/index.html stays tracked
+# as the committed snapshot
+dist/build/
