@@ -1,54 +1,79 @@
-[11:15:16] === SPAR F26 ID -- Wayback CDX census start ===
-[11:15:16] hosts=11 years=['2024', '2025', '2026'] delay=2.0s UA identifies as research crawler
-[11:15:16] -- JobStreet ID (jobstreet.co.id)
-[11:15:29]     HTTP 503 -> backoff 10s
-[11:16:39]     HTTP 504 -> backoff 20s
-[11:17:05]     HTTP 503 -> backoff 30s
-[11:18:46] === SPAR F26 ID -- Wayback CDX census start ===
-[11:18:46] hosts=11 years=['2024', '2025', '2026'] delay=3.0s UA identifies as research crawler
-[11:18:46] -- JobStreet ID (jobstreet.co.id)
-[11:22:29]     net error IncompleteRead: IncompleteRead(1955437 bytes read)
-[11:24:12]     net error IncompleteRead: IncompleteRead(476316 bytes read)
-[11:25:26] === SPAR F26 ID -- Wayback CDX census start ===
-[11:25:26] hosts=11 years=['2024', '2025', '2026'] delay=3.0s UA identifies as research crawler
-[11:25:26] -- Karirhub (ours) (karirhub.kemnaker.go.id)
-[11:26:32] === SPAR F26 ID -- Wayback CDX census start ===
-[11:26:32] hosts=11 years=['2024', '2025', '2026'] delay=3.0s UA identifies as research crawler
-[11:26:32] -- Karirhub (ours) (karirhub.kemnaker.go.id)
-[11:26:37]      2024: 5,772 distinct URLs (cumulative 5,772)
-[11:27:13]      2025: 7,266 distinct URLs (cumulative 13,038)
-[11:28:04]      2026: 270 distinct URLs (cumulative 13,308)
-[11:28:04] -- Dealls (dealls.com)
-[11:28:12]     HTTP 503 -> backoff 10s
-[11:29:24]      2024: 17,946 distinct URLs (cumulative 17,946)
-[11:29:47]      2025: 26,471 distinct URLs (cumulative 44,417)
-[11:30:20]      2026: 31,928 distinct URLs (cumulative 76,345)
-[11:30:20] -- KitaLulus (kitalulus.com)
-[11:31:39]      2024: 49,881 distinct URLs (cumulative 49,881)
-[11:32:33]      2025: 72,729 distinct URLs (cumulative 122,610)
-[11:33:31]      2026: 61,372 distinct URLs (cumulative 183,982)
-[11:33:31] -- Pintarnya (pintarnya.id)
-[11:33:51]      2024: 0 distinct URLs (cumulative 0)
-[11:34:13]      2025: 0 distinct URLs (cumulative 0)
-[11:34:22]     HTTP 503 -> backoff 10s
-[11:34:37]     HTTP 503 -> backoff 20s
-[11:35:13]      2026: 0 distinct URLs (cumulative 0)
-[11:35:13] -- Kalibrr (kalibrr.com)
-[11:35:55]      2024: 28,039 distinct URLs (cumulative 28,039)
-[11:36:15]      2025: 12,423 distinct URLs (cumulative 40,462)
-[11:36:42]      2026: 2,518 distinct URLs (cumulative 42,980)
-[11:36:42] -- Karir.com (karir.com)
-[11:38:00]      2024: 4,118 distinct URLs (cumulative 4,118)
-[11:39:27]      2025: 2,197 distinct URLs (cumulative 6,315)
-[11:39:33]     HTTP 503 -> backoff 10s
-[11:41:53]      2026: 1,006 distinct URLs (cumulative 7,321)
-[11:41:53] -- Bossjob (bossjob.co.id)
-[11:42:36]      2024: 0 distinct URLs (cumulative 0)
-[11:43:01]      2025: 0 distinct URLs (cumulative 0)
-[11:43:16]      2026: 0 distinct URLs (cumulative 0)
-[11:43:16] -- Glints (glints.com)
-[11:43:33]     HTTP 503 -> backoff 10s
-[11:44:40]      2024: 100,000 distinct URLs (cumulative 100,000)
-[11:45:16]      2025: 100,000 distinct URLs (cumulative 200,000)
-[11:46:30]      2026: 33,876 distinct URLs (cumulative 233,876)
-[11:46:30] -- JobStreet PH (jobstreet.com.ph)
+[11:55:55] === SPAR F26 ID -- Wayback CDX census start ===
+[11:55:55] hosts=10 years=['2024', '2025', '2026'] delay=3.0s UA identifies as research crawler
+[11:55:55] -- Karirhub (ours) (karirhub.kemnaker.go.id)
+[11:56:00]      2024: 5,772 distinct URLs (cumulative 5,772)
+[11:56:00]      2025: 7,266 distinct URLs (cumulative 13,038)
+[11:56:00]      2026: 270 distinct URLs (cumulative 13,308)
+[11:56:00] -- Dealls (dealls.com)
+[11:56:08]      2024: 17,946 distinct URLs (cumulative 17,946)
+[11:56:08]      2025: 26,471 distinct URLs (cumulative 44,417)
+[11:56:09]      2026: 31,928 distinct URLs (cumulative 76,345)
+[11:56:09] -- KitaLulus (kitalulus.com)
+[11:56:17]      2024: 49,881 distinct URLs (cumulative 49,881)
+[11:56:17]      2025: 72,729 distinct URLs (cumulative 122,610)
+[11:56:17]      2026: 61,372 distinct URLs (cumulative 183,982)
+[11:56:17] -- Pintarnya (pintarnya.id)
+[11:56:25]     HTTP 503 -> backoff 10s
+[11:56:40]      2024: 0 distinct URLs (cumulative 0)
+[11:56:40]      2025: 0 distinct URLs (cumulative 0)
+[11:56:40]      2026: 0 distinct URLs (cumulative 0)
+[11:56:40] -- Kalibrr (kalibrr.com)
+[11:56:49]      2024: 28,039 distinct URLs (cumulative 28,039)
+[11:56:49]      2025: 12,423 distinct URLs (cumulative 40,462)
+[11:56:49]      2026: 2,518 distinct URLs (cumulative 42,980)
+[11:56:49] -- Karir.com (karir.com)
+[11:56:57]     HTTP 503 -> backoff 10s
+[11:57:16]      2024: 4,118 distinct URLs (cumulative 4,118)
+[11:57:16]      2025: 2,197 distinct URLs (cumulative 6,315)
+[11:57:16]      2026: 1,006 distinct URLs (cumulative 7,321)
+[11:57:16] -- Bossjob (bossjob.co.id)
+[11:57:24]      2024: 0 distinct URLs (cumulative 0)
+[11:57:24]      2025: 0 distinct URLs (cumulative 0)
+[11:57:24]      2026: 0 distinct URLs (cumulative 0)
+[11:57:24] -- Glints (glints.com)
+[11:57:33]      2024: 100,000 distinct URLs (cumulative 100,000)
+[11:57:33]      2025: 100,000 distinct URLs (cumulative 200,000)
+[11:57:33]      2026: 33,876 distinct URLs (cumulative 233,876)
+[11:57:33] -- JobStreet ID (jobstreet.co.id)
+[12:00:38]      2024: 20,000 distinct URLs (cumulative 20,000)
+[12:01:39]     HTTP 504 -> backoff 10s
+[12:02:49]     HTTP 504 -> backoff 20s
+[12:04:09]     HTTP 504 -> backoff 30s
+[12:04:45]     HTTP 503 -> backoff 40s
+[12:05:25]      2025: 0 distinct URLs (cumulative 20,000)
+[12:06:25]     HTTP 504 -> backoff 10s
+[12:06:35]     net error URLError: <urlopen error [Errno 111] Connection refused>
+[12:06:41]     net error URLError: <urlopen error [Errno 111] Connection refused>
+[12:06:46]     net error URLError: <urlopen error [Errno 111] Connection refused>
+[12:06:51]      2026: 0 distinct URLs (cumulative 20,000)
+[12:06:51] -- LinkedIn Jobs (linkedin.com)
+[12:08:01]     HTTP 504 -> backoff 10s
+[12:08:16]     HTTP 503 -> backoff 20s
+[12:08:42]     HTTP 503 -> backoff 30s
+[12:10:12]     HTTP 504 -> backoff 40s
+[12:10:52]      2024: 0 distinct URLs (cumulative 0)
+[12:11:52]     HTTP 504 -> backoff 10s
+[12:13:03]     HTTP 504 -> backoff 20s
+[12:14:23]     HTTP 504 -> backoff 30s
+[12:15:54]     HTTP 504 -> backoff 40s
+[12:16:34]      2025: 0 distinct URLs (cumulative 0)
+[12:16:54]      2026: 20,000 distinct URLs (cumulative 20,000)
+[12:16:54] 
+[12:16:54] === CENSUS TABLE ===
+[12:16:54] platform          host                             2024     2025     2026   distinct cdx_pages
+[12:16:54] Karirhub (ours)   karirhub.kemnaker.go.id         5,772    7,266      270     13,308         5
+[12:16:54] Dealls            dealls.com                     17,946   26,471   31,928     76,345        17
+[12:16:54] KitaLulus         kitalulus.com                  49,881   72,729   61,372    183,982        38
+[12:16:54] Pintarnya         pintarnya.id                        0        0        0          0         1
+[12:16:54] Kalibrr           kalibrr.com                    28,039   12,423    2,518     42,980        43
+[12:16:54] Karir.com         karir.com                       4,118    2,197    1,006      7,321        65
+[12:16:54] Bossjob           bossjob.co.id                       0        0        0          0         1
+[12:16:54] Glints            glints.com                    100,000  100,000   33,876    233,876       164
+[12:16:54] JobStreet ID      jobstreet.co.id                20,000        0        0     20,000       635
+[12:16:54] LinkedIn Jobs     linkedin.com                        0        0   20,000     20,000     5,222
+[12:16:54] NOTE: distinct URLs = one row per urlkey, statuscode 200, published 2024-01-01..2026-11-30.
+[12:16:54] NOTE: cdx_pages = number of CDX result pages; a volume probe, NOT postings.
+[12:16:54] NOTE: CDX results are subject to the archive's own index filters; treat as a RANGE.
+[12:16:54] === census done ===
+ results are subject to the archive's own index filters; treat as a RANGE.
+[12:16:54] === census done ===

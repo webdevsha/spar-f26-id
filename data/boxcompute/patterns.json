@@ -219,6 +219,143 @@
       ]
     ]
   },
+  "jobstreet.co.id": {
+    "distinct_urls": 20000,
+    "posting_like": 18327,
+    "posting_rate_pct": 91.6,
+    "top_shapes": [
+      [
+        "/id/job/<num>",
+        1937
+      ],
+      [
+        "/id/job/<num>/apply",
+        1598
+      ],
+      [
+        "/id/<long>/at-this-company",
+        430
+      ],
+      [
+        "/",
+        137
+      ],
+      [
+        "/id/expiredjob/<num>",
+        112
+      ],
+      [
+        "/expiredjob/<num>",
+        111
+      ],
+      [
+        "/<long>",
+        100
+      ],
+      [
+        "/id/<long>",
+        90
+      ],
+      [
+        "/id/career-advice/article/<long>",
+        85
+      ],
+      [
+        "/id/jobs",
+        49
+      ],
+      [
+        "/id/page/seekmax",
+        37
+      ],
+      [
+        "/id/seo-jobs",
+        35
+      ]
+    ]
+  },
+  "jobstreet.com.ph": {
+    "distinct_urls": 20000,
+    "posting_like": 17120,
+    "posting_rate_pct": 85.6,
+    "top_shapes": [
+      [
+        "/job/<num>",
+        12039
+      ],
+      [
+        "/",
+        1373
+      ],
+      [
+        "/<long>",
+        629
+      ],
+      [
+        "/career-advice/article/<long>",
+        109
+      ],
+      [
+        "/<long>/in-dasmarinas-city-cavite",
+        65
+      ],
+      [
+        "/csr-jobs/full-time",
+        57
+      ],
+      [
+        "/companies/<long>",
+        49
+      ],
+      [
+        "/%22top-5-universities%22-jobs",
+        40
+      ],
+      [
+        "/companies/<long>/reviews",
+        39
+      ],
+      [
+        "/%22php12%22-jobs",
+        38
+      ],
+      [
+        "/fpga-jobs/in-dasmarinas-city-cavite",
+        38
+      ],
+      [
+        "/%22embedded-linux,-c%2b%2b%22-jobs",
+        36
+      ]
+    ]
+  },
+  "linkedin.com": {
+    "distinct_urls": 20000,
+    "posting_like": 20000,
+    "posting_rate_pct": 100.0,
+    "top_shapes": [
+      [
+        "/jobs-guest/jobs/api/jobposting/<num>",
+        19645
+      ],
+      [
+        "/jobs-guest/api/typeaheadhits",
+        352
+      ],
+      [
+        "/jobs",
+        1
+      ],
+      [
+        "/jobs-guest/api/ingraphs/counter",
+        1
+      ],
+      [
+        "/jobs-guest/api/ingraphs/gauge",
+        1
+      ]
+    ]
+  },
   "karirhub.kemnaker.go.id": {
     "distinct_urls": 13308,
     "posting_like": 12390,

@@ -398,7 +398,7 @@ frozen into the repo) → Wed 2 Dec (§5 + §8 to Rachel). SPAR submission 14 De
 
 **Why BoxCompute.** The lane's posting evidence currently rests on one government portal plus a
 sampled archive (2,618 rows). The v2 brief ([docs/PROMPTS-BOXCOMPUTE-V2.md](docs/PROMPTS-BOXCOMPUTE-V2.md)) moves to an
-**archive-first** design across 13 platforms, because that is both the ToS-clean route to volume and
+**archive-first** design across 13 platforms, **Indonesia only** (the Philippines lane was dropped on 24 Nov as this study covers Indonesia), because that is both the ToS-clean route to volume and
 the only route that reaches a platform's own published scale.
 
 **Target (v2 brief, Step 1).** Per platform: `distinct posting URLs` by year, plus a coverage probe —
@@ -409,13 +409,15 @@ archived?** Until that is answered, any collection number is a guess.
 web chat: the chat surface is not exposed by the CLI, SDK or REST API, and a scripted sandbox puts
 results in the repo as artefacts instead of chat prose.
 
-Artefacts produced by the run live under `data/boxcompute/`:
+Artefacts produced by the run are committed under [`data/boxcompute/`](data/boxcompute/):
 
 | File | What |
 |---|---|
-| `census.json` | per platform: CDX page probe, distinct URLs per year, and the scoped CDX target |
-| `url_shapes/<host>.txt` | sampled distinct URLs — used to **derive** posting-pattern filters from evidence rather than guessing them |
-| `census.log` | full request log, including every backoff |
+| [census.json](data/boxcompute/census.json) | per platform: CDX page probe, distinct URLs per year, the scoped CDX target, and whether the host was capped |
+| [patterns.json](data/boxcompute/patterns.json) | per host: distinct URLs → **posting-like** URLs, the rate, and the URL shapes behind both — the derivation of the posting filters from evidence rather than guesswork |
+| [url_shapes/](data/boxcompute/url_shapes) | sampled distinct URLs, one file per host (e.g. [kitalulus.com.txt](data/boxcompute/url_shapes/kitalulus.com.txt)) |
+| [census.log](data/boxcompute/census.log) | full request log, including every backoff |
+| [harvest.log](data/boxcompute/harvest.log) | Stage 2 `job_card` harvest progress, bucket by bucket |
 
 **Method, and its limits.** Wayback CDX only: `collapsed=urlkey`, `statuscode:200`, one request every
 3 s, backoff on 429/503/504, and a User-Agent that identifies the crawler as an academic study.
@@ -428,20 +430,46 @@ Three cautions are part of the result, not footnotes:
 - **Some hosts are too large for a single CDX response.** Piercing `jobstreet.co.id` and
   `linkedin.com` needs monthly pagination; where a host is skipped or throttled the table says so.
 
-**First results (run in progress, 24 Nov).** Distinct archived posting URLs, `statuscode:200`,
-`collapsed=urlkey`. This is the register's own question — *are the data real?* — being answered
-platform by platform:
+**Census complete (24 Nov, 10 Indonesian platforms).** The census produced a number that must
+**not** be quoted as-is, and finding that out is the run's first real result.
 
-| Platform | 2024 | 2025 | 2026 (to 30 Nov) | Distinct URLs |
-|---|---:|---:|---:|---:|
-| Karirhub (ours) | 5,772 | 7,266 | 270 | **13,308** |
-| Dealls | 17,946 | 26,471 | *(running)* | **44,417** |
-| *9 platforms still queued or running* | | | | |
+Raw distinct-URL counts are dominated by non-postings: on KitaLulus, 16,172 of 183,982 distinct URLs
+are `/_next/image` paths; on Dealls, tens of thousands are city × category *search permutations*.
+Posting patterns were therefore **derived from the data** — see
+[patterns.json](data/boxcompute/patterns.json) — and applied as a filter:
 
-Read this table as **what the archive holds**, never as hiring. A distinct URL may be one ad or one
-search page, and 2026 is a partial year (captures to 30 Nov), so it is **not comparable** to 2024 or
-2025 on its own. The two oversized hosts (`jobstreet.co.id`, `linkedin.com`) are queued last and are
-capped at 20,000 rows per year, because a single CDX response for either drops mid-stream.
+| Platform | 2024 | 2025 | 2026 (to 30 Nov) | Distinct URLs | Posting-like | Rate |
+|---|---:|---:|---:|---:|---:|---:|
+| Glints ⚠️ *capped* | 100,000 | 100,000 | 33,876 | 233,876 | 136,451 | 58.3% † |
+| KitaLulus | 49,881 | 72,729 | 61,372 | 183,982 | 71,076 | 38.6% |
+| Dealls | 17,946 | 26,471 | 31,928 | 76,345 | 67,647 | 88.6% |
+| Kalibrr | 28,039 | 12,423 | 2,518 | 42,980 | 29,455 | 68.5% |
+| JobStreet ID ⚠️ *capped* | 20,000 | 0 | 0 | 20,000 | 18,327 | 91.6% † |
+| LinkedIn Jobs ⚠️ *capped* | 0 | 0 | 20,000 | 20,000 | 20,000 | 100.0% † |
+| Karirhub (ours) | 5,772 | 7,266 | 270 | 13,308 | 12,390 | 93.1% |
+| Karir.com | 4,118 | 2,197 | 1,006 | 7,321 | 52 | 0.7% † |
+| Pintarnya | 0 | 0 | 0 | 0 | 0 | — |
+| Bossjob | 0 | 0 | 0 | 0 | 0 | — |
+| **Total (10 of 10 ID)** | | | | **597,812** | **355,398** | 59.4% |
+
+Three cautions are part of the result, not footnotes:
+
+- **The total is a floor, not a total.** Three hosts stopped at a per-request cap — Glints at exactly
+  100,000 for two consecutive years, JobStreet ID and LinkedIn at 20,000 — so those rows are minimums.
+- **† The filter errs both ways.** It over-counts where a URL is a search permutation, and
+  under-counts where the real pattern was not anticipated: Karir.com's pattern is
+  `/opportunities/<num>` (4,658 URLs), so its rate reads wrongly near-zero. JobStreet ID and LinkedIn
+  each returned a zero year whose neighbours are full — a failed query, not a year without vacancies —
+  so those cells are unusable. Posting-like is a **per-platform sanity signal, never a cross-platform
+  ranking.**
+- **Distinct URLs ≠ postings ≠ hires.** A URL can be one ad or one search page; CDX volume is a
+  property of the crawl, not of hiring. 2026 is a partial year and is not comparable on its own.
+
+**Stage 2 (`job_card` harvest) is running**, chained into Stage 3 (`full_page`). Stratified 25 URLs per
+platform-month, extracted via schema.org `JobPosting` where the page carries it, falling back to
+OpenGraph. Every row carries `posted_basis` (`jsonld` | `capture_proxy`) so a crawl date can never be
+read as a posting date, and rows without a title or employer go to a rejected file rather than being
+emitted blank. Progress in [harvest.log](data/boxcompute/harvest.log).
 
 **Access is not the constraint.** From the sandbox: Wayback CDX **200**, Common Crawl index **200**,
 Karirhub live **200**, Pasker ID **200**. By contrast Algolia (`algolia.kemnaker.go.id`, the
