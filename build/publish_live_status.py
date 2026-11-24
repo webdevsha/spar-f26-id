@@ -12,6 +12,7 @@ import os
 import re
 import shutil
 import subprocess
+import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "build", "boxcompute-status.json")
@@ -60,6 +61,22 @@ def main():
                  "finance/BPO scope. Rate is bounded by the archive's "
                  "one-request-per-2s courtesy rule."),
     }
+    # observed rate, from the previous run -- used only to animate between
+    # refreshes, never presented as a measured count
+    prev = None
+    try:
+        prev = json.load(open(OUT))
+    except Exception:
+        prev = None
+    rate = None
+    if prev and prev.get("rows_total") and prev.get("sampled_epoch"):
+        dt = time.time() - prev["sampled_epoch"]
+        d_rows = total - prev["rows_total"]
+        if dt > 30 and d_rows >= 0:
+            rate = round(d_rows / (dt / 60.0), 3)      # rows per minute
+    st["rate_per_min"] = rate
+    st["sampled_epoch"] = int(time.time())
+
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(st, open(OUT, "w"), indent=2)
     print("wrote %s  rows=%d (bulk %d, sample %d, live %d)"
