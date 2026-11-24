@@ -7,6 +7,7 @@ on:
       - "data/**"
       - "build/build_dashboard.py"
       - "build/*.html"
+      - "build/*.json"
       - "functions/**"
       - ".github/workflows/deploy.yml"
   workflow_dispatch: {}
@@ -31,6 +32,14 @@ jobs:
         run: |
           mkdir -p dist/build
           for f in build/*.html; do
+            [ -f "$f" ] || continue
+            cp "$f" "dist/build/$(basename "$f")"
+          done
+          # Data files the standalone pages fetch at runtime (e.g. the live
+          # intake status). Without this they are not deployed, and a request
+          # under /build/ falls through to the middleware fallback -- which
+          # returns an HTML page with a 200, breaking any JSON fetch.
+          for f in build/*.json; do
             [ -f "$f" ] || continue
             cp "$f" "dist/build/$(basename "$f")"
           done
