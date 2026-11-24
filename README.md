@@ -346,20 +346,43 @@ Three cautions are part of the result, not footnotes:
 - **Some hosts are too large for a single CDX response.** Piercing `jobstreet.co.id` and
   `linkedin.com` needs monthly pagination; where a host is skipped or throttled the table says so.
 
-**First results (run in progress, 24 Nov).** Distinct archived posting URLs, `statuscode:200`,
-`collapsed=urlkey`. This is the register's own question — *are the data real?* — being answered
-platform by platform:
+**First results (24 Nov, run still in progress).** The census produced a number that must **not** be
+quoted as-is, and finding that out is the run's first real result.
 
-| Platform | 2024 | 2025 | 2026 (to 30 Nov) | Distinct URLs |
-|---|---:|---:|---:|---:|
-| Karirhub (ours) | 5,772 | 7,266 | 270 | **13,308** |
-| Dealls | 17,946 | 26,471 | *(running)* | **44,417** |
-| *9 platforms still queued or running* | | | | |
+Raw distinct-URL counts are dominated by non-postings. The URL-shape audit (`cdx_patterns.py`,
+run over the cached CDX rows — no extra requests) shows what the totals are actually made of:
+KitaLulus alone contributes **16,172** `/_next/image` paths, Dealls tens of thousands of
+city × category *search permutations*, and Karirhub a long tail of `.js` bundles and `.well-known/*`.
+So the register's own question — *are the data real?* — has a two-part answer: the archive is real
+and large, and **the raw count is not a posting count.**
 
-Read this table as **what the archive holds**, never as hiring. A distinct URL may be one ad or one
-search page, and 2026 is a partial year (captures to 30 Nov), so it is **not comparable** to 2024 or
-2025 on its own. The two oversized hosts (`jobstreet.co.id`, `linkedin.com`) are queued last and are
-capped at 20,000 rows per year, because a single CDX response for either drops mid-stream.
+| Platform | Distinct URLs | Posting-like | Rate | Posting URL shape |
+|---|---:|---:|---:|---|
+| kitalulus.com | 183,982 | 71,076 | 38.6% | `/lowongan/detail/<id>` |
+| dealls.com | 76,345 | 67,647 | 88.6% | `/loker/<id>` |
+| kalibrr.com | 28,039 | 20,083 | 71.6% | `/c/<co>/jobs/<n>/<id>` |
+| karirhub.kemnaker.go.id | 13,308 | 12,390 | 93.1% | `/vacancies/<uuid>` |
+| **subtotal (4 of 11)** | **301,674** | **171,196** | 56.7% | |
+| *7 platforms queued / running* | | | | |
+
+`posting-like` means the URL shape contains a job token. It is an **upper bound on postings**: a
+posting URL can still resolve to a category page, and one posting can appear under several URLs.
+2026 is a partial year (captures to 30 Nov) and is **not comparable** to 2024/2025 on its own. Every
+shape above was **derived from the data**, not assumed.
+
+**Stage 2 — `job_card` harvest (started 24 Nov).** The posting-pattern URLs are now being fetched from
+the archive, sampled **stratified by month** (25 per platform-month) so coverage is even across the
+time axis instead of following the crawl's own bias. Cards carry
+`title · employer · location · category · date · teaser` and **no description**; `kind` is always
+`job_card`, because counts, job cards and full pages are three different questions and are never
+summed. Two integrity rules are enforced in code:
+
+- **`posted_basis`** records where the date came from: `jsonld` when the page carries a schema.org
+  `JobPosting` block, or **`capture_proxy`** when the only date available is the archive capture.
+  Without that label a reviewer would read a crawl date as a posting date, and the 90-day capture
+  rule would be meaningless.
+- **A row with neither title nor employer is written to `job_cards_rejected.jsonl`**, never emitted
+  as a blank card.
 
 **Access is not the constraint.** From the sandbox: Wayback CDX **200**, Common Crawl index **200**,
 Karirhub live **200**, Pasker ID **200**. By contrast Algolia (`algolia.kemnaker.go.id`, the
