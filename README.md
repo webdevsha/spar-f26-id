@@ -13,15 +13,34 @@ README is wrong — fix it in the same commit as the file.
 
 ---
 
+## Contents
+
+- [Start here (five files, in this order)](#start-here-five-files-in-this-order)
+- [What this repo is for](#what-this-repo-is-for)
+- [File index — everything we actually work on](#file-index--everything-we-actually-work-on)
+- [Layout](#layout)
+- [The pipeline](#the-pipeline)
+- [The sheets](#the-sheets)
+- [Sync visibility — who changed what](#sync-visibility--who-changed-what)
+- [Running it](#running-it)
+- [Live URLs (tested 24 Nov 2026)](#live-urls-tested-24-nov-2026)
+- [Secrets (never in this repo)](#secrets-never-in-this-repo)
+- [Shafira's task progress (SPAR Fall 2026)](#shafiras-task-progress-spar-fall-2026)
+- [Open items and blockers](#open-items-and-blockers)
+- [BoxCompute collection (24 Nov 2026)](#boxcompute-collection-24-nov-2026)
+- [Non-negotiables](#non-negotiables)
+
+---
+
 ## Start here (five files, in this order)
 
 | # | File | Why |
 |---|---|---|
-| 1 | `docs/ID-PENDING-24NOV.md` | What is open, what is closed, and what "done" means for each item |
-| 2 | `docs/ID-SIGNAL-SOURCE-MATRIX.md` | The sourced evidence base: 22 Indonesia signals, each with a public source, a verbatim figure, a confidence tag and its stated gap |
-| 3 | `data/id-postings/README.md` | The hiring-signal dataset: schema, provenance, what refused us, and its limits |
-| 4 | `docs/ID-HANDOFF-HANNACHAN.md` | Continuity: where the truth lives, the boundaries, the blockers |
-| 5 | `build/spar-id-overview.html` | The lane's findings page: overview, highlights, policy scenarios |
+| 1 | [docs/ID-PENDING-24NOV.md](docs/ID-PENDING-24NOV.md) | What is open, what is closed, and what "done" means for each item |
+| 2 | [docs/ID-SIGNAL-SOURCE-MATRIX.md](docs/ID-SIGNAL-SOURCE-MATRIX.md) | The sourced evidence base: 22 Indonesia signals, each with a public source, a verbatim figure, a confidence tag and its stated gap |
+| 3 | [data/id-postings/README.md](data/id-postings/README.md) | The hiring-signal dataset: schema, provenance, what refused us, and its limits |
+| 4 | [docs/ID-HANDOFF-HANNACHAN.md](docs/ID-HANDOFF-HANNACHAN.md) | Continuity: where the truth lives, the boundaries, the blockers |
+| 5 | [build/spar-id-overview.html](build/spar-id-overview.html) | The lane's findings page: overview, highlights, policy scenarios |
 
 ---
 
@@ -51,48 +70,48 @@ deployed · `blocked` = waiting on infrastructure · `superseded` = kept for pro
 
 | File | What it is | Owner | Status |
 |---|---|---|---|
-| `ID-PENDING-24NOV.md` | The open/closed task ledger, with what "done" looks like per item | Shafira (ID lane) | repo |
-| `ID-SIGNAL-SOURCE-MATRIX.md` | Source matrix v2 — the 22-row verified source line, 5 status corrections, 2 attribution traps, 3 denominator traps | Shafira + CRO | repo |
-| `ID-PART3-DRAFT.md` | Country Report Part 3 draft, 678 words, every figure traced; unverified figures left bracketed | Shafira | repo (untracked) |
-| `ID-READINESS-WORKSHEET.md` | 3 policy documents × 6 readiness questions, pre-loaded with the evidence each question answers from | Shafira | repo (untracked) |
-| `ID-HANDOFF-HANNACHAN.md` | Continuity handoff: truth map, boundaries, blockers, order of work | CRO | repo (untracked) |
-| `ID-SIGNALS-PERPLEXITY-PACK.md` | The verification brief sent to Perplexity (blocks A–E, rules, output contract) | CRO | repo |
-| `PROMPTS-PERPLEXITY-BOXCOMPUTE.md` | Copy-paste prompt set: Perplexity verification (P1, P2) and the first BoxCompute collection brief (B1–B3) | CRO | repo |
-| `PROMPTS-BOXCOMPUTE-V2.md` | **Current** collection brief — archive-first, three record kinds, 34-field schema, comparability gate (supersedes B1–B3) | CRO | repo |
-| `SCRAPING-WITH-BOXCOMPUTE.md` | Plain-English guide to scraping with BoxCompute, using this Indonesia run as the worked example | CRO | repo |
-| `SHEET-WRITE-2026-11-24.md` | Audit + revert instructions for the three shared-sheet writes made on 24 Nov | CRO | repo |
-| `MODEL-INDONESIA.md` | How the scenario model maps onto Indonesia: what the data identifies, what must be calibrated | CRO + Natraj | repo |
-| `back-up-research.md` | Evidence notes behind the six measures M1–M6, with sources per indicator | CRO | repo |
-| `apps-script-trigger.gs` | Apps Script `onChange` hook → `repository_dispatch`, so a sheet edit reaches the repo in seconds | CTO | repo |
+| [ID-PENDING-24NOV.md](docs/ID-PENDING-24NOV.md) | The open/closed task ledger, with what "done" looks like per item | Shafira (ID lane) | repo |
+| [ID-SIGNAL-SOURCE-MATRIX.md](docs/ID-SIGNAL-SOURCE-MATRIX.md) | Source matrix v2 — the 22-row verified source line, 5 status corrections, 2 attribution traps, 3 denominator traps | Shafira + CRO | repo |
+| [ID-PART3-DRAFT.md](docs/ID-PART3-DRAFT.md) | Country Report Part 3 draft, 678 words, every figure traced; unverified figures left bracketed | Shafira | repo (untracked) |
+| [ID-READINESS-WORKSHEET.md](docs/ID-READINESS-WORKSHEET.md) | 3 policy documents × 6 readiness questions, pre-loaded with the evidence each question answers from | Shafira | repo (untracked) |
+| [ID-HANDOFF-HANNACHAN.md](docs/ID-HANDOFF-HANNACHAN.md) | Continuity handoff: truth map, boundaries, blockers, order of work | CRO | repo (untracked) |
+| [ID-SIGNALS-PERPLEXITY-PACK.md](docs/ID-SIGNALS-PERPLEXITY-PACK.md) | The verification brief sent to Perplexity (blocks A–E, rules, output contract) | CRO | repo |
+| [PROMPTS-PERPLEXITY-BOXCOMPUTE.md](docs/PROMPTS-PERPLEXITY-BOXCOMPUTE.md) | Copy-paste prompt set: Perplexity verification (P1, P2) and the first BoxCompute collection brief (B1–B3) | CRO | repo |
+| [PROMPTS-BOXCOMPUTE-V2.md](docs/PROMPTS-BOXCOMPUTE-V2.md) | **Current** collection brief — archive-first, three record kinds, 34-field schema, comparability gate (supersedes B1–B3) | CRO | repo |
+| [SCRAPING-WITH-BOXCOMPUTE.md](docs/SCRAPING-WITH-BOXCOMPUTE.md) | Plain-English guide to scraping with BoxCompute, using this Indonesia run as the worked example | CRO | repo |
+| [SHEET-WRITE-2026-11-24.md](docs/SHEET-WRITE-2026-11-24.md) | Audit + revert instructions for the three shared-sheet writes made on 24 Nov | CRO | repo |
+| [MODEL-INDONESIA.md](docs/MODEL-INDONESIA.md) | How the scenario model maps onto Indonesia: what the data identifies, what must be calibrated | CRO + Natraj | repo |
+| [back-up-research.md](docs/back-up-research.md) | Evidence notes behind the six measures M1–M6, with sources per indicator | CRO | repo |
+| [apps-script-trigger.gs](docs/apps-script-trigger.gs) | Apps Script `onChange` hook → `repository_dispatch`, so a sheet edit reaches the repo in seconds | CTO | repo |
 
 ### B. Signal register and registers data (`data/`)
 
 | File | What it is | Owner | Status |
 |---|---|---|---|
-| `id-signals.csv` | Mirror of the register's `signals` tab — **currently stale**: repo holds 9 rows, the sheet holds 22 | sync job | repo (stale) |
-| `id-policy-inventory.csv` | Policy inventory: 3 documents (OJK AI guide, JKP, Pasker ID) | team | repo |
-| `id-readiness.csv` | Readiness scoring join — all `q1`–`q6` still `tbc` | Shafira | repo (open) |
-| `id-who-can-act.csv` | The who-can-act map: 6 organisations with proposed doors | Shafira + Rachel | repo |
-| `id-instruments.csv` | Instrument map — **DEMO row only**, needs real rows | team | repo (open) |
-| `id-triggers.csv` | Trigger card(s) — one row so far | Akbar | repo |
-| `sheets.json` | Tab name → output CSV map used by the sync | CTO | repo |
-| `SYNC-LOG.md` | Append-only record of every sync run: editors, `+added / −removed`, changed `id`s | sync job | repo |
-| `PERSONAL-DATA-STOP.md` | The no-personal-data rule and what it means row by row | CRO | repo |
-| `ecosystem-id-map.json`, `ecosystem-id-domains.json` | The Indonesia ecosystem & policy map (actors, instruments, support routes) that renders as a public page | Shafira + Rachel | repo |
-| `ecosystem-ph-v0.json` | Philippines ecosystem stub — kept in this repo for parity; PH lane owns the content | BG | repo |
-| `model-id-demo.json` | Inputs for the interactive model demo | CRO + Natraj | repo |
+| [id-signals.csv](data/id-signals.csv) | Mirror of the register's `signals` tab — **currently stale**: repo holds 9 rows, the sheet holds 22 | sync job | repo (stale) |
+| [id-policy-inventory.csv](data/id-policy-inventory.csv) | Policy inventory: 3 documents (OJK AI guide, JKP, Pasker ID) | team | repo |
+| [id-readiness.csv](data/id-readiness.csv) | Readiness scoring join — all `q1`–`q6` still `tbc` | Shafira | repo (open) |
+| [id-who-can-act.csv](data/id-who-can-act.csv) | The who-can-act map: 6 organisations with proposed doors | Shafira + Rachel | repo |
+| [id-instruments.csv](data/id-instruments.csv) | Instrument map — **DEMO row only**, needs real rows | team | repo (open) |
+| [id-triggers.csv](data/id-triggers.csv) | Trigger card(s) — one row so far | Akbar | repo |
+| [sheets.json](data/sheets.json) | Tab name → output CSV map used by the sync | CTO | repo |
+| [SYNC-LOG.md](data/SYNC-LOG.md) | Append-only record of every sync run: editors, `+added / −removed`, changed `id`s | sync job | repo |
+| [PERSONAL-DATA-STOP.md](data/PERSONAL-DATA-STOP.md) | The no-personal-data rule and what it means row by row | CRO | repo |
+| [ecosystem-id-map.json](data/ecosystem-id-map.json), [ecosystem-id-domains.json](data/ecosystem-id-domains.json) | The Indonesia ecosystem & policy map (actors, instruments, support routes) that renders as a public page | Shafira + Rachel | repo |
+| [ecosystem-ph-v0.json](data/ecosystem-ph-v0.json) | Philippines ecosystem stub — kept in this repo for parity; PH lane owns the content | BG | repo |
+| [model-id-demo.json](data/model-id-demo.json) | Inputs for the interactive model demo | CRO + Natraj | repo |
 | `seed/*.tsv` | Original seed rows used to create the sheet tabs | CTO | superseded |
 
 ### C. The postings dataset (`data/id-postings/`)
 
 | File | What it is | Owner | Status |
 |---|---|---|---|
-| `postings-2024.csv` (1.4 MB) · `postings-2025.csv` (1.8 MB) · `postings-2026.csv` (0.4 MB) | 2,618 archived Indonesian finance/BPO postings, 2024-02 → 2026-10, one row per posting, 37 columns | Shafira | repo |
-| `README.md` | Schema, provenance, ethics, coverage limits for the dataset | Shafira + CRO | repo |
-| `summary.json` | Counts used by the report builder (sectors, months, AI tiers, provinces) | build | repo |
-| `verification.json` | Per-row re-fetch results (411 of 2,618 checked) | build | repo |
-| `karirhub-id-postings-sample.csv` | The original 331-row sample from the first successful scrape | CRO | repo |
-| `perplexity-id-data.md` | The verification run: 22 rows, 5 priority figures, request routes, contradictions | Shafira (run) | repo |
+| [postings-2024.csv](data/id-postings/postings-2024.csv) (1.4 MB) · [postings-2025.csv](data/id-postings/postings-2025.csv) (1.8 MB) · [postings-2026.csv](data/id-postings/postings-2026.csv) (0.4 MB) | 2,618 archived Indonesian finance/BPO postings, 2024-02 → 2026-10, one row per posting, 37 columns | Shafira | repo |
+| [README.md](README.md) | Schema, provenance, ethics, coverage limits for the dataset | Shafira + CRO | repo |
+| [summary.json](data/id-postings/summary.json) | Counts used by the report builder (sectors, months, AI tiers, provinces) | build | repo |
+| [verification.json](data/id-postings/verification.json) | Per-row re-fetch results (411 of 2,618 checked) | build | repo |
+| [karirhub-id-postings-sample.csv](data/id-postings/karirhub-id-postings-sample.csv) | The original 331-row sample from the first successful scrape | CRO | repo |
+| [perplexity-id-data.md](data/id-postings/perplexity-id-data.md) | The verification run: 22 rows, 5 priority figures, request routes, contradictions | Shafira (run) | repo |
 
 ### D. Kemnaker's own portal counts (`data/kemnaker/` and `build/`)
 
@@ -101,14 +120,14 @@ to. All four are public CSV downloads from `paskerid.kemnaker.go.id/documents/`,
 
 | File | What it is | Status |
 |---|---|---|
-| `data/kemnaker/Lowongan_Kerja_Menurut_Kategori_Lapangan_Usaha_Tahun_2022-2024.csv` | Postings and advertised slots by industry (KBLI 1-digit), 2022–24. Finance & insurance: **1,195 → 797 → 726** | repo |
-| `data/kemnaker/Lowongan_Kerja_di_Karirhub_Menurut_Golongan_Pokok_Jabatan_Tahun_2022-2024.csv` | The same by occupation group (KBJI). Clerical (group 4): 1,751 → 3,341 → 2,034 | repo |
-| `build/sector.csv` | Byte-identical copy of the industry file — **duplicate, should move to `data/kemnaker/`** | repo (duplicate) |
-| `build/occ.csv` | Duplicate of the occupation file | repo (duplicate) |
-| `build/emp.csv` | **Postings by experience requirement, 2022–24.** `0-1 tahun`: 1,833 → 1,807 → **2**. See the flag below — do not plot this as a trend without checking with Kemnaker | repo |
-| `build/prov.csv` | Employers posting by province: national 2,483 → 2,730 → 2,644; DKI Jakarta 389 → 492 → 576 | repo |
+| [data/kemnaker/Lowongan_Kerja_Menurut_Kategori_Lapangan_Usaha_Tahun_2022-2024.csv](data/kemnaker/Lowongan_Kerja_Menurut_Kategori_Lapangan_Usaha_Tahun_2022-2024.csv) | Postings and advertised slots by industry (KBLI 1-digit), 2022–24. Finance & insurance: **1,195 → 797 → 726** | repo |
+| [data/kemnaker/Lowongan_Kerja_di_Karirhub_Menurut_Golongan_Pokok_Jabatan_Tahun_2022-2024.csv](data/kemnaker/Lowongan_Kerja_di_Karirhub_Menurut_Golongan_Pokok_Jabatan_Tahun_2022-2024.csv) | The same by occupation group (KBJI). Clerical (group 4): 1,751 → 3,341 → 2,034 | repo |
+| [build/sector.csv](build/sector.csv) | Byte-identical copy of the industry file — **duplicate, should move to `data/kemnaker/`** | repo (duplicate) |
+| [build/occ.csv](build/occ.csv) | Duplicate of the occupation file | repo (duplicate) |
+| [build/emp.csv](build/emp.csv) | **Postings by experience requirement, 2022–24.** `0-1 tahun`: 1,833 → 1,807 → **2**. See the flag below — do not plot this as a trend without checking with Kemnaker | repo |
+| [build/prov.csv](build/prov.csv) | Employers posting by province: national 2,483 → 2,730 → 2,644; DKI Jakarta 389 → 492 → 576 | repo |
 
-> **Flag on `emp.csv`.** The portal's own `0-1 tahun` (entry-level) postings fall from 1,807 in 2023 to
+> **Flag on [emp.csv](build/emp.csv).** The portal's own `0-1 tahun` (entry-level) postings fall from 1,807 in 2023 to
 > **2** in 2024, while `tidak ada informasi` (not stated) absorbs 5,126. A collapse that extreme is far
 > more likely a change in how the portal captured the field than a collapse in entry-level hiring — our
 > own ad sample shows entry-level wording in roughly one in ten finance/BPO ads. **Treat it as a
@@ -119,42 +138,42 @@ to. All four are public CSV downloads from `paskerid.kemnaker.go.id/documents/`,
 
 | File | What it is | Live URL | Status |
 |---|---|---|---|
-| `build/spar-id-postings.html` | Individual-postings report: method, refusals, coverage, AI-skill table, filterable posting table | `/build/spar-id-postings` | **live** |
-| `build/spar-id-ecosystem-map.html` | Ecosystem, policy and bridge maps (~210 KB, SVG-driven) | `/build/spar-id-ecosystem-map` | **live** |
-| `build/spar-id-overview.html` | Overview + 7 highlights + 4 policy scenarios + portal counts + exposure scores | — | **local** (deploy blocked) |
-| `build/spar-id-model-demo.html` | Interactive scenario-model demo (current-data vs with-more-data) | see `dist/build/` | repo |
-| `build/spar-signal-feasibility.html` | The S5 vacancy feasibility test write-up | see `dist/build/` | repo |
-| `build/model_section.html` | Partial markup embedded into the dashboard build | — | repo |
-| `build/eco_theme.css` | Shared light-theme tokens for the map and overview pages | — | repo |
-| `build/spar-id-eco.svg`, `spar-id-bridge.svg`, `spar-id-policy.svg`, `spar-id-ecosystem-map.svg` | The SVG sources behind the ecosystem page | — | repo |
-| `dist/index.html`, `dist/build/*` | Generated output — **never hand-edit**; what Cloudflare Pages serves | `spar-f26-id.pages.dev` (dashboard is gated, HTTP 401) | generated |
+| [build/spar-id-postings.html](build/spar-id-postings.html) | Individual-postings report: method, refusals, coverage, AI-skill table, filterable posting table | [`/build/spar-id-postings`](https://spar-f26-id.pages.dev/build/spar-id-postings) | **live** |
+| [build/spar-id-ecosystem-map.html](build/spar-id-ecosystem-map.html) | Ecosystem, policy and bridge maps (~210 KB, SVG-driven) | [`/build/spar-id-ecosystem-map`](https://spar-f26-id.pages.dev/build/spar-id-ecosystem-map) | **live** |
+| [build/spar-id-overview.html](build/spar-id-overview.html) | Overview + 7 highlights + 4 policy scenarios + portal counts + exposure scores | — | **local** (deploy blocked) |
+| [build/spar-id-model-demo.html](build/spar-id-model-demo.html) | Interactive scenario-model demo (current-data vs with-more-data) | see `dist/build/` | repo |
+| [build/spar-signal-feasibility.html](build/spar-signal-feasibility.html) | The S5 vacancy feasibility test write-up | see `dist/build/` | repo |
+| [build/model_section.html](build/model_section.html) | Partial markup embedded into the dashboard build | — | repo |
+| [build/eco_theme.css](build/eco_theme.css) | Shared light-theme tokens for the map and overview pages | — | repo |
+| [build/spar-id-eco.svg](build/spar-id-eco.svg), [spar-id-bridge.svg](build/spar-id-bridge.svg), [spar-id-policy.svg](build/spar-id-policy.svg), [spar-id-ecosystem-map.svg](build/spar-id-ecosystem-map.svg) | The SVG sources behind the ecosystem page | — | repo |
+| [dist/index.html](dist/index.html), `dist/build/*` | Generated output — **never hand-edit**; what Cloudflare Pages serves | [spar-f26-id.pages.dev](https://spar-f26-id.pages.dev) (dashboard is gated, HTTP 401) | generated |
 
 ### F. Build scripts
 
 | Script | What it does |
 |---|---|
-| `build/build_dashboard.py` | `data/*.csv` → `dist/index.html` (the gated dashboard) |
-| `build/build_overview.py` | `data/id-postings/postings-*.csv` + `data/kemnaker/*.csv` → `build/spar-id-overview.html` (stdlib only) |
-| `build/build_ecosystem_map.py` | `data/ecosystem-id-*.json` → `build/spar-id-ecosystem-map.html` + SVGs |
-| `build/build_postings_report.py` | `postings-*.csv` + `summary.json` → `build/spar-id-postings.html` |
-| `build/prep_postings.py` | Raw scrape → normalised, year-sharded CSVs (calls `ai_classify`) |
-| `build/ai_classify.py` | The AI/data/digital-basic requirement classifier |
-| `build/verify_postings.py` | Re-fetches a sample of rows and writes `verification.json` |
-| `build/sync_sheets.py` | GSheets → `data/*.csv` (the hourly job; **needs creds**) |
-| `build/check_parity.py` | Read-only diff: does the sheet still agree with `data/*.csv`, row for row? |
-| `build/seed_sheet.py` | One-off seeding of the six tabs from `data/seed/` |
-| `deploy.sh` | Build + `wrangler pages deploy` |
-| `tools/scrape_karirhub.py` | Standalone, robots-aware scraper that writes the team schema |
-| `functions/_middleware.js` | Access gate: dashboard gated, `/build/*` public |
+| [build/build_dashboard.py](build/build_dashboard.py) | `data/*.csv` → [dist/index.html](dist/index.html) (the gated dashboard) |
+| [build/build_overview.py](build/build_overview.py) | `data/id-postings/postings-*.csv` + `data/kemnaker/*.csv` → [build/spar-id-overview.html](build/spar-id-overview.html) (stdlib only) |
+| [build/build_ecosystem_map.py](build/build_ecosystem_map.py) | `data/ecosystem-id-*.json` → [build/spar-id-ecosystem-map.html](build/spar-id-ecosystem-map.html) + SVGs |
+| [build/build_postings_report.py](build/build_postings_report.py) | `postings-*.csv` + [summary.json](data/id-postings/summary.json) → [build/spar-id-postings.html](build/spar-id-postings.html) |
+| [build/prep_postings.py](build/prep_postings.py) | Raw scrape → normalised, year-sharded CSVs (calls `ai_classify`) |
+| [build/ai_classify.py](build/ai_classify.py) | The AI/data/digital-basic requirement classifier |
+| [build/verify_postings.py](build/verify_postings.py) | Re-fetches a sample of rows and writes [verification.json](data/id-postings/verification.json) |
+| [build/sync_sheets.py](build/sync_sheets.py) | GSheets → `data/*.csv` (the hourly job; **needs creds**) |
+| [build/check_parity.py](build/check_parity.py) | Read-only diff: does the sheet still agree with `data/*.csv`, row for row? |
+| [build/seed_sheet.py](build/seed_sheet.py) | One-off seeding of the six tabs from `data/seed/` |
+| [deploy.sh](deploy.sh) | Build + `wrangler pages deploy` |
+| [tools/scrape_karirhub.py](tools/scrape_karirhub.py) | Standalone, robots-aware scraper that writes the team schema |
+| [functions/_middleware.js](functions/_middleware.js) | Access gate: dashboard gated, `/build/*` public |
 
 ### G. Task and continuity notes
 
 | File | What it is |
 |---|---|
-| `SPAR_Fall2026_Shafira_Tasks.md` | Shafira's task card extracted from the six-week plan deck (roles, deliverables, dates) |
-| `build/CTO-HANDOFF.md` | CRO → CTO handoff: open items, decisions left open |
-| `.github/workflows/sync.yml` | Hourly sheet → repo sync (+ Apps Script dispatch) |
-| `.github/workflows/deploy.yml` | Build + Cloudflare Pages deploy (runs only on push to `main`) |
+| [SPAR_Fall2026_Shafira_Tasks.md](SPAR_Fall2026_Shafira_Tasks.md) | Shafira's task card extracted from the six-week plan deck (roles, deliverables, dates) |
+| [build/CTO-HANDOFF.md](build/CTO-HANDOFF.md) | CRO → CTO handoff: open items, decisions left open |
+| [.github/workflows/sync.yml](.github/workflows/sync.yml) | Hourly sheet → repo sync (+ Apps Script dispatch) |
+| [.github/workflows/deploy.yml](.github/workflows/deploy.yml) | Build + Cloudflare Pages deploy (runs only on push to `main`) |
 
 ---
 
@@ -185,7 +204,7 @@ postings-*.csv + kemnaker/*.csv ──build_overview──▶ build/spar-id-over
 | Layer | Where | Who edits |
 |---|---|---|
 | Source of truth | Google Drive — folder `1WW-Af6uO5_k9MQeHpnbIqjqvyeHo0-el` | the team |
-| Tracker (India team progress) | Sheet `1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ` | the team |
+| Tracker (India team progress) | Sheet [1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ](https://docs.google.com/spreadsheets/d/1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ/edit) | the team |
 | Register / skeleton / trackers | see "The sheets" below | the team |
 | Audit trail | this repo, `data/*.csv` | the sync job |
 | Team view | Cloudflare Pages (dashboard) | nobody — read-only, **gated** |
@@ -195,16 +214,16 @@ postings-*.csv + kemnaker/*.csv ──build_overview──▶ build/spar-id-over
 
 ## The sheets
 
-`data/sheets.json` maps a **tab name** to an output CSV; the Sheets API is used by tab name, so the
+[data/sheets.json](data/sheets.json) maps a **tab name** to an output CSV; the Sheets API is used by tab name, so the
 "CSV export only returns the first tab" gotcha does not apply.
 
 | Sheet | ID | Tab(s) | What is in it |
 |---|---|---|---|
-| Core file — the register | `1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k` | `signals` (gid `838965401`), `triggers`, `Indonesia policy inventory`, `readiness`, `who-can-act`, `instruments` | 22 Indonesia signal rows; each policy document; the six readiness questions |
-| SPAR signals skeleton (team) | `1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo` | `README`, `SIGNALS`, `(dani notes)`, `LOG` | S1–S10 signal definitions in three layers; the observation log |
-| IND team progress | `1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ` | `Sheet1` | Every Indonesia deliverable with progress, status, PIC |
+| Core file — the register | [1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit) | `signals` (gid `838965401`), `triggers`, `Indonesia policy inventory`, `readiness`, `who-can-act`, `instruments` | 22 Indonesia signal rows; each policy document; the six readiness questions |
+| SPAR signals skeleton (team) | [1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo](https://docs.google.com/spreadsheets/d/1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo/edit) | `README`, `SIGNALS`, `(dani notes)`, `LOG` | S1–S10 signal definitions in three layers; the observation log |
+| IND team progress | [1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ](https://docs.google.com/spreadsheets/d/1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ/edit) | `Sheet1` | Every Indonesia deliverable with progress, status, PIC |
 
-**Columns added 24 Nov (previously empty — revert ranges in `docs/SHEET-WRITE-2026-11-24.md`):**
+**Columns added 24 Nov (previously empty — revert ranges in [docs/SHEET-WRITE-2026-11-24.md](docs/SHEET-WRITE-2026-11-24.md)):**
 
 | Sheet → tab | New columns | Contents |
 |---|---|---|
@@ -219,7 +238,7 @@ header without telling CTO. Demo rows are marked `verified_by=DEMO`.
 
 ## Sync visibility — who changed what
 
-Every sync run appends to `data/SYNC-LOG.md` (newest first): timestamp, source, editor when known, and
+Every sync run appends to [data/SYNC-LOG.md](data/SYNC-LOG.md) (newest first): timestamp, source, editor when known, and
 per tab the `+added / −removed` counts with the changed `id`s. The dashboard renders the newest
 entries in its **Recent changes** panel, and the commit message carries the editor.
 
@@ -252,9 +271,9 @@ python3 build/sync_sheets.py              # GSheets -> data/*.csv (needs creds)
 
 | URL | Status |
 |---|---|
-| `https://spar-f26-id.pages.dev/` | 401 — gated dashboard (expected) |
-| `https://spar-f26-id.pages.dev/build/spar-id-postings` | 200 — public |
-| `https://spar-f26-id.pages.dev/build/spar-id-ecosystem-map` | 200 — public |
+| [https://spar-f26-id.pages.dev/](https://spar-f26-id.pages.dev) | 401 — gated dashboard (expected) |
+| [https://spar-f26-id.pages.dev/build/spar-id-postings](https://spar-f26-id.pages.dev/build/spar-id-postings) | 200 — public |
+| [https://spar-f26-id.pages.dev/build/spar-id-ecosystem-map](https://spar-f26-id.pages.dev/build/spar-id-ecosystem-map) | 200 — public |
 
 > **Deploy is broken.** Cloudflare Pages fails authentication (error code 10000) — last successful
 > deploy 22 Oct, failure first seen 5 Nov. Newly built pages therefore stay **local only**. Owner:
@@ -296,8 +315,8 @@ Atlas site        ██████████░░░░░░░░░░�
 
 **Evidence behind the bars:** Core file `signals` — 22 rows · `triggers` 1 · `who-can-act` 6 ·
 policy inventory 3 · readiness 3 (all `tbc`) · instruments 1 (DEMO) · postings 2,618 rows (2024→Oct
-2026) · Kemnaker portal counts 2022–24 in `data/kemnaker/` · `docs/ID-SIGNAL-SOURCE-MATRIX.md`,
-`docs/ID-PART3-DRAFT.md`, `docs/ID-READINESS-WORKSHEET.md`, `docs/ID-PENDING-24NOV.md`.
+2026) · Kemnaker portal counts 2022–24 in `data/kemnaker/` · [docs/ID-SIGNAL-SOURCE-MATRIX.md](docs/ID-SIGNAL-SOURCE-MATRIX.md),
+[docs/ID-PART3-DRAFT.md](docs/ID-PART3-DRAFT.md), [docs/ID-READINESS-WORKSHEET.md](docs/ID-READINESS-WORKSHEET.md), [docs/ID-PENDING-24NOV.md](docs/ID-PENDING-24NOV.md).
 
 **Next due:** Sun 22 Nov (Part 3 + Part 4 — Part 3 drafted; Part 4 with Ian) → Sun 29 Nov (sheet
 frozen into the repo) → Wed 2 Dec (§5 + §8 to Rachel). SPAR submission 14 Dec; Demo Day 19 Dec.
@@ -310,12 +329,12 @@ frozen into the repo) → Wed 2 Dec (§5 + §8 to Rachel). SPAR submission 14 De
 | 2 | Cloudflare Pages deploy auth failure (code 10000) | CTO / `@misshanna_bot` | Every new page going live |
 | 3 | Readiness scoring — 3 documents × 6 questions | Shafira | Needs the six question texts (not recorded anywhere; the tab holds only `q1`–`q6`) |
 | 4 | Regulator-facing requests: 15 routes surfaced to BPJS, OJK, Kemnaker, BPS, DPR Commission IX, plus a scope question on platform data obtained via web archives | **@clo before anything is sent** | Nothing sent to date |
-| 5 | `data/id-signals.csv` etc. mirror stale vs the sheets | sync job (#1) | Dashboard accuracy |
+| 5 | [data/id-signals.csv](data/id-signals.csv) etc. mirror stale vs the sheets | sync job (#1) | Dashboard accuracy |
 
 ## BoxCompute collection (24 Nov 2026)
 
 **Why BoxCompute.** The lane's posting evidence currently rests on one government portal plus a
-sampled archive (2,618 rows). The v2 brief (`docs/PROMPTS-BOXCOMPUTE-V2.md`) moves to an
+sampled archive (2,618 rows). The v2 brief ([docs/PROMPTS-BOXCOMPUTE-V2.md](docs/PROMPTS-BOXCOMPUTE-V2.md)) moves to an
 **archive-first** design across 13 platforms, because that is both the ToS-clean route to volume and
 the only route that reaches a platform's own published scale.
 
@@ -373,7 +392,7 @@ not a preference — it is the only route that works and the only one that respe
 
 - **Consent gate.** Anything shown *publicly* needs AISA's consent first. Default private; the
   dashboard stays behind the access gate, and public reports are published only after sign-off.
-- **No personal data.** See `data/PERSONAL-DATA-STOP.md`. Aggregates and totals/shares only — never
+- **No personal data.** See [data/PERSONAL-DATA-STOP.md](data/PERSONAL-DATA-STOP.md). Aggregates and totals/shares only — never
   raw individual ads — in anything shared beyond the team.
 - **Framing.** This grades *documents*, never a government. No ranking, no scoring of institutions.
   Statements are "consistent with AI-driven change", never "caused by AI".
