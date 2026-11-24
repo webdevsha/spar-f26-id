@@ -174,7 +174,7 @@ Runnable companion: `tools/scrape_karirhub.py` (stdlib only, robots-aware, write
 
 > Tallied 2026-11-24 (evening) from the Core file `signals` tab (22 rows), the Perplexity
 > verification run, Kemnaker's own portal counts, `IND team progress` and repo state.
-> **Draft, not pushed.** Supersedes the 2026-11-10 and earlier-24-Nov tallies.
+> PR #15 (conflict-resolved against `main` after #14). Supersedes the 2026-11-10 and earlier-24-Nov tallies.
 
 ```
 Data spine        ████████████████████░░░░  88%  22 signal rows; OJK/Kemnaker/Pasker sources located; portal counts downloaded
@@ -185,7 +185,7 @@ Shared sheet/repo ████████████████░░░░�
 Section 5 (SPAR)  ██░░░░░░░░░░░░░░░░░░░░░░  10%  2,500w Indonesia chapter; data underpinning ready
 Section 8 (Limits)█░░░░░░░░░░░░░░░░░░░░░░░   5%  not started (with Napat, Wed 2 Dec)
 Interview (BPS)   ████░░░░░░░░░░░░░░░░░░░░  20%  question reframed as a data-availability enquiry (Perplexity Block E); SPAR still confirming access
-Atlas site        ██████████░░░░░░░░░░░░░░  45%  ecosystem map + postings report + new overview/scenarios page built; deploy + data feed blocked
+Atlas site        ██████████░░░░░░░░░░░░░░  45%  ecosystem map + postings report + new overview/scenarios page built; deployed 24 Nov and live (200)
 ```
 
 **New evidence and artefacts behind the bars (2026-11-24):**
@@ -201,7 +201,7 @@ Atlas site        ██████████░░░░░░░░░░�
 
 **Blockers and flags (lanes: CTO / @misshanna_bot / @clo):**
 1. `sync-sheets` still fails hourly at *Commit if changed* — repo CSV holds 9 signal rows against the tab's 22, so the dashboard reads stale data.
-2. Cloudflare Pages deploy still fails auth (code 10000) since 5 Nov — nothing new reaches `spar-f26-id.pages.dev`.
+2. **Deploy is not broken** — verified 24 Nov: PR #14's merge fired `deploy-dashboard` (success, 21s) and `/build/spar-id-ecosystem-map`, `/build/spar-id-postings`, `/build/spar-id-model-demo` all return HTTP 200; the dashboard root correctly returns 401 (gate active). The earlier "auth code 10000 since 5 Nov" note did **not** reproduce (deploys also succeeded 18 Nov) and is removed. The real constraint: `deploy.yml` fires **only on push to `main`**, so this branch ships once it merges.
 3. **@clo:** the verification surfaced 15 formal information requests to **BPJS, OJK, Kemnaker, BPS and DPR Commission IX**, and a scope question on platform data obtained via web archives (LinkedIn/JobStreet-class). Regulator-facing requests in the study's name need a compliance pass before any are sent. None have been sent.
 
 **Next due from Shafira:** Sun 22 Nov (Part 3 + Part 4 — **overdue**) -> Sun 29 Nov (sheet frozen into the repo) -> Wed 2 Dec (§5 + §8 to Rachel). SPAR team meeting tonight 22:00 MYT.
