@@ -327,6 +327,50 @@ comparison to it.</p>
        "".join(rows_html), capped, hosts)
 
 
+def live_panel():
+    return """<section>
+<div class="card" id="livepanel">
+  <h2 style="margin-top:0">Live intake &mdash; BoxCompute census harvest</h2>
+  <p class="lede">Reads <code>/build/boxcompute-status.json</code> as the crawler writes rows. The bar is
+  against a 100,000-row target; the run is bounded by the archive's one-request-per-2-second courtesy rule,
+  so volume accrues steadily rather than fast.</p>
+  <div style="height:22px;background:#e9e9e9;border-radius:11px;overflow:hidden;margin:10px 0">
+    <div id="lv-fill" style="height:100%;width:0;background:#C41E3A;transition:width .6s ease"></div>
+  </div>
+  <p class="note" id="lv-txt">loading live figures&hellip;</p>
+  <p class="note" id="lv-extra"></p>
+</div>
+<script>
+(function(){
+  var fill = document.getElementById('lv-fill'),
+      txt  = document.getElementById('lv-txt'),
+      ext  = document.getElementById('lv-extra');
+  function n(x){ return (x||0).toLocaleString(); }
+  function tick(){
+    fetch('/build/boxcompute-status.json?_=' + Date.now(), {cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw new Error('no status'); return r.json(); })
+      .then(function(s){
+        var pct = Math.min(100, 100 * (s.rows_total||0) / (s.target||100000));
+        fill.style.width = pct.toFixed(2) + '%';
+        txt.innerHTML = '<b>' + n(s.rows_total) + '</b> rows collected &middot; ' +
+                        pct.toFixed(2) + '% of ' + n(s.target) + ' target';
+        ext.textContent = 'archive bulk ' + n(s.rows_bulk_archive) +
+                          ' | sampled pass ' + n(s.rows_sample_pass) +
+                          ' | live portals ' + n(s.rows_live_portal) +
+                          ' | ' + (s.buckets_done||0) + '/' + (s.buckets_total||0) + ' buckets' +
+                          ' | updated ' + (s.updated_utc||'');
+      })
+      .catch(function(){ txt.textContent = 'live status file not published yet'; });
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+</section>
+
+<section>
+<h2>The result</h2>"""
+
+
 HTML = f"""<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -421,6 +465,8 @@ Every row is traceable to a public URL. This is a <b>sample</b>, not a census.</
 </div></div>
 
 <main class="wrap">
+
+{live_panel()}
 
 <section>
 <h2>The result</h2>
