@@ -5,7 +5,7 @@
   "archive": 2337,
   "live": 281,
   "census": 2644,
-  "finance_bpo": 876
+  "finance_bpo": 883
  },
  "months": [
   [
@@ -216,11 +216,11 @@
  "sector": [
   [
    "Outside finance scope (guessed, unverified)",
-   2106
+   4379
   ],
   [
    "Finance/BPO (guessed from title/employer, unverified)",
-   231
+   602
   ],
   [
    "Banking & Financial Services",
@@ -238,46 +238,46 @@
  "province": [
   [
    "DKI Jakarta",
-   553
+   1555
   ],
   [
    "Jawa Tengah",
-   521
+   577
   ],
   [
    "Jawa Barat",
-   379
+   535
   ],
   [
    "Banten",
-   181
+   347
   ],
   [
    "Jawa Timur",
-   158
-  ],
-  [
-   "Sulawesi Tengah",
-   83
-  ],
-  [
-   "Kepulauan Riau",
-   73
-  ],
-  [
-   "Bali",
-   70
-  ],
-  [
-   "Kalimantan Barat",
-   69
+   250
   ],
   [
    "Daerah Istimewa Yogyakarta",
-   60
+   106
+  ],
+  [
+   "Bali",
+   102
+  ],
+  [
+   "Sulawesi Tengah",
+   87
+  ],
+  [
+   "Kepulauan Riau",
+   83
+  ],
+  [
+   "Kalimantan Barat",
+   74
   ]
  ],
- "sector_unknown": 2644,
- "province_unknown": 2653,
+ "sector_unknown": 0,
+ "province_unknown": 998,
  "note": "Counts are advertised listings collected, not vacancies that existed. Archive and census dates come from the capture or the card, not a live page."
 }
