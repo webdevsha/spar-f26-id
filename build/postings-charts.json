@@ -1,11 +1,11 @@
 {
  "generated": "2026-11-04 04:56 UTC",
  "counts": {
-  "rows": 5031,
+  "rows": 5262,
   "archive": 2337,
   "live": 281,
-  "census": 2413,
-  "finance_bpo": 842
+  "census": 2644,
+  "finance_bpo": 876
  },
  "months": [
   [
@@ -36,7 +36,7 @@
    "2024-05",
    49,
    0,
-   172
+   403
   ],
   [
    "2024-06",
@@ -277,7 +277,7 @@
    60
   ]
  ],
- "sector_unknown": 2413,
- "province_unknown": 2422,
+ "sector_unknown": 2644,
+ "province_unknown": 2653,
  "note": "Counts are advertised listings collected, not vacancies that existed. Archive and census dates come from the capture or the card, not a live page."
 }
