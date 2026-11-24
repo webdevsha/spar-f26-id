@@ -110,6 +110,39 @@ without an access request. The live portal is dense only for the newest listings
 The AI-skill question is answerable in principle (1 explicit hits, 22 data-skill hits, 156 "digital-basic" postings), but the base rate is low enough that keyword flags alone will not carry Dani's and Akbar's classification — that needs the deferred LLM/human pass on the stored content.</p></div>
 </section>
 
+
+<section>
+<h2>How much is actually archived? &mdash; census, 24 Nov 2026</h2>
+<p class="lede">A separate run on BoxCompute asked the question underneath this page: for each Indonesian
+platform, how many postings does the public archive hold at all? It counted archived URLs only and read no
+page content, so it measures <b>crawl coverage</b>, never hiring. It exists because this page's own backfill
+is limited to whatever the archive happened to capture.</p>
+<div class="kpis">
+  <div class="kpi acc"><div class="v">597,812</div><div class="l">archived URLs censused</div></div>
+  <div class="kpi"><div class="v">355,398</div><div class="l">of them posting-like</div></div>
+  <div class="kpi"><div class="v">10</div><div class="l">platforms censused</div></div>
+  <div class="kpi tl"><div class="v">59.4%</div><div class="l">posting-like share</div></div>
+</div>
+<div class="tblwrap"><table>
+<thead><tr><th>platform</th><th class="n">archived URLs</th><th class="n">posting-like</th><th class="n">rate</th><th>by year</th></tr></thead>
+<tbody><tr><td>Karirhub (ours)</td><td class="n">13,308</td><td class="n">12,390</td><td class="n">93.1%</td><td class="note" style="border:0">2024 5,772 &middot; 2025 7,266 &middot; 2026 270</td></tr><tr><td>Dealls</td><td class="n">76,345</td><td class="n">67,647</td><td class="n">88.6%</td><td class="note" style="border:0">2024 17,946 &middot; 2025 26,471 &middot; 2026 31,928</td></tr><tr><td>KitaLulus</td><td class="n">183,982</td><td class="n">71,076</td><td class="n">38.6%</td><td class="note" style="border:0">2024 49,881 &middot; 2025 72,729 &middot; 2026 61,372</td></tr><tr><td>Pintarnya</td><td class="n">0</td><td class="n">&mdash;</td><td class="n">&mdash;</td><td class="note" style="border:0">2024 0 &middot; 2025 0 &middot; 2026 0</td></tr><tr><td>Kalibrr</td><td class="n">42,980</td><td class="n">29,455</td><td class="n">68.5%</td><td class="note" style="border:0">2024 28,039 &middot; 2025 12,423 &middot; 2026 2,518</td></tr><tr><td>Karir.com</td><td class="n">7,321</td><td class="n">52</td><td class="n">0.7%</td><td class="note" style="border:0">2024 4,118 &middot; 2025 2,197 &middot; 2026 1,006</td></tr><tr><td>Bossjob</td><td class="n">0</td><td class="n">&mdash;</td><td class="n">&mdash;</td><td class="note" style="border:0">2024 0 &middot; 2025 0 &middot; 2026 0</td></tr><tr><td>Glints <b>&#9888; capped</b></td><td class="n">233,876</td><td class="n">136,451</td><td class="n">58.3%&dagger;</td><td class="note" style="border:0">2024 100,000 &middot; 2025 100,000 &middot; 2026 33,876</td></tr><tr><td>JobStreet ID <b>&#9888; capped</b></td><td class="n">20,000</td><td class="n">18,327</td><td class="n">91.6%&dagger;</td><td class="note" style="border:0">2024 20,000 &middot; 2025 0 &middot; 2026 0</td></tr><tr><td>LinkedIn Jobs <b>&#9888; capped</b></td><td class="n">20,000</td><td class="n">20,000</td><td class="n">100.0%&dagger;</td><td class="note" style="border:0">2024 0 &middot; 2025 0 &middot; 2026 20,000</td></tr></tbody></table></div>
+<p class="note"><b>Read this as a floor, not a total.</b> 3 of the 10 platforms stopped at a per-request cap
+(&#9888;, and their rates carry a &dagger;)
+(&#9888;), so their counts are minimums; two returned nothing at all, which most likely means the host is
+unarchived rather than empty. Two hosts also returned a zero for a year whose neighbours are full &mdash; that is
+a failed query, not a year without vacancies, and those cells are not used.</p>
+<p class="note"><b>And the filter errs both ways.</b> Raw URL counts are dominated by non-postings: on KitaLulus
+16,172 of 183,982 are image paths, and on Dealls tens of thousands are city &times; category search
+permutations. Posting patterns were derived from the crawl's own URL shapes, so the &ldquo;posting-like&rdquo;
+column is an upper bound where the pattern was recognised and a lower bound where it was not &mdash; on Karir.com
+the real pattern (<code>/opportunities/&lt;n&gt;</code>) was not anticipated, so its rate reads near zero.
+It is a per-platform sanity signal, never a ranking across platforms.</p>
+<p class="note">Context, not a target: the Claude-artefact study this lane is measured against reported
+1,059,854 postings. This census counts <i>archived URLs</i>, a different thing, and is not offered as a
+comparison to it.</p>
+</section>
+
+
 <section>
 <details class="sec" open>
 <summary class="sh2">Coverage — read this before trusting any trend</summary>

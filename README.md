@@ -386,14 +386,20 @@ Posting patterns were therefore **derived from the data** — see
 | Kalibrr | 28,039 | 12,423 | 2,518 | 42,980 | 29,455 | 68.5% |
 | Karirhub (ours) | 5,772 | 7,266 | 270 | 13,308 | 12,390 | 93.1% |
 | Karir.com | 4,118 | 2,197 | 1,006 | 7,321 | *52 †* | *0.7% †* |
+| JobStreet ID ⚠️ *capped* | 20,000 | 0 | 0 | 20,000 | 18,327 | 91.6% † |
+| LinkedIn Jobs ⚠️ *capped* | 0 | 0 | 20,000 | 20,000 | 20,000 | 100.0% † |
 | Pintarnya | 0 | 0 | 0 | 0 | 0 | — |
 | Bossjob | 0 | 0 | 0 | 0 | 0 | — |
-| **Total (8 of 10 ID)** | | | | **557,812** | **317,071** | 56.8% |
+| **Total (10 of 10 ID)** | | | | **597,812** | **355,398** | 59.4% |
+
+*Census complete 24 Nov 12:16 UTC. † JobStreet ID and LinkedIn each returned a zero year whose neighbours
+are full — a failed query, not a year without vacancies — so their per-year cells are unusable and their
+rates rest on an incomplete crawl. Neither is quoted as a count anywhere.*
 
 Three cautions are part of the result, not footnotes:
 
-- **The total is a floor, not a total.** Glints stopped at exactly 100,000 for two consecutive years
-  — that is the per-year cap, not the archive's size. JobStreet and LinkedIn are not counted at all.
+- **The total is a floor, not a total.** Three hosts stopped at a per-request cap — Glints at exactly
+  100,000 for two consecutive years, JobStreet ID and LinkedIn at 20,000 — so those rows are minimums.
 - **† The filter undercounts in the other direction.** Karir.com's real pattern is
   `/opportunities/<num>` (4,658 URLs), which the token list did not anticipate, so its rate is
   wrongly near-zero. Posting-like is therefore an **upper bound on some hosts and a lower bound on
