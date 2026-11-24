@@ -1,0 +1,10 @@
+[11:37:31] === job_card harvest start | 122 host-months | cap 25/bucket ===
+[11:37:31] resuming: 0 cards already collected
+[11:37:32]   Dealls     202401  sampled   1  cards   0   (total ok=0 rej=1)
+[11:37:47]   Dealls     202402  sampled   5  cards   5   (total ok=5 rej=1)
+[11:39:01]   Dealls     202403  sampled  25  cards  25   (total ok=30 rej=1)
+[11:40:15]   Dealls     202404  sampled  25  cards  25   (total ok=55 rej=1)
+[11:41:33]   Dealls     202405  sampled  25  cards  25   (total ok=80 rej=1)
+[11:42:57]   Dealls     202406  sampled  25  cards  25   (total ok=105 rej=1)
+[11:44:23]   Dealls     202407  sampled  25  cards  25   (total ok=130 rej=1)
+[11:45:42]   Dealls     202408  sampled  25  cards  25   (total ok=155 rej=1)

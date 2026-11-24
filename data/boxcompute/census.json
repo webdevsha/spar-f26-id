@@ -1,0 +1,114 @@
+[
+  {
+    "platform": "Karirhub (ours)",
+    "host": "karirhub.kemnaker.go.id",
+    "cdx_target": "karirhub.kemnaker.go.id",
+    "cdx_pages": 5,
+    "years": {
+      "2024": 5772,
+      "2025": 7266,
+      "2026": 270
+    },
+    "distinct_urls_total": 13308,
+    "capped": false,
+    "shape_sample": 180
+  },
+  {
+    "platform": "Dealls",
+    "host": "dealls.com",
+    "cdx_target": "dealls.com",
+    "cdx_pages": 17,
+    "years": {
+      "2024": 17946,
+      "2025": 26471,
+      "2026": 31928
+    },
+    "distinct_urls_total": 76345,
+    "capped": false,
+    "shape_sample": 180
+  },
+  {
+    "platform": "KitaLulus",
+    "host": "kitalulus.com",
+    "cdx_target": "kitalulus.com",
+    "cdx_pages": 38,
+    "years": {
+      "2024": 49881,
+      "2025": 72729,
+      "2026": 61372
+    },
+    "distinct_urls_total": 183982,
+    "capped": false,
+    "shape_sample": 180
+  },
+  {
+    "platform": "Pintarnya",
+    "host": "pintarnya.id",
+    "cdx_target": "pintarnya.id",
+    "cdx_pages": 1,
+    "years": {
+      "2024": 0,
+      "2025": 0,
+      "2026": 0
+    },
+    "distinct_urls_total": 0,
+    "capped": false,
+    "shape_sample": 0
+  },
+  {
+    "platform": "Kalibrr",
+    "host": "kalibrr.com",
+    "cdx_target": "kalibrr.com",
+    "cdx_pages": 43,
+    "years": {
+      "2024": 28039,
+      "2025": 12423,
+      "2026": 2518
+    },
+    "distinct_urls_total": 42980,
+    "capped": false,
+    "shape_sample": 180
+  },
+  {
+    "platform": "Karir.com",
+    "host": "karir.com",
+    "cdx_target": "karir.com",
+    "cdx_pages": 65,
+    "years": {
+      "2024": 4118,
+      "2025": 2197,
+      "2026": 1006
+    },
+    "distinct_urls_total": 7321,
+    "capped": false,
+    "shape_sample": 180
+  },
+  {
+    "platform": "Bossjob",
+    "host": "bossjob.co.id",
+    "cdx_target": "bossjob.co.id",
+    "cdx_pages": 1,
+    "years": {
+      "2024": 0,
+      "2025": 0,
+      "2026": 0
+    },
+    "distinct_urls_total": 0,
+    "capped": false,
+    "shape_sample": 0
+  },
+  {
+    "platform": "Glints",
+    "host": "glints.com",
+    "cdx_target": "glints.com",
+    "cdx_pages": 164,
+    "years": {
+      "2024": 100000,
+      "2025": 100000,
+      "2026": 33876
+    },
+    "distinct_urls_total": 233876,
+    "capped": true,
+    "shape_sample": 180
+  }
+]
