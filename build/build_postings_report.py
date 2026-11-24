@@ -545,12 +545,21 @@ function applyCharts(d){
 }
 
 applyCharts(CHART_SEED);
-setInterval(function(){
-  fetch("/build/postings-charts.json?_=" + Date.now(), {cache:"no-store"})
+// Prefer the figures the BoxCompute sandbox publishes to the Worker, so the
+// charts keep updating with the laptop shut; fall back to the committed file.
+var CHART_SRC_W = "https://spar-f26-state.shalomshafa.workers.dev/charts";
+function loadCharts(){
+  fetch(CHART_SRC_W + "?_=" + Date.now(), {cache:"no-store"})
     .then(function(r){ if(!r.ok) throw 0; return r.json(); })
     .then(applyCharts)
-    .catch(function(){});
-}, 30000);
+    .catch(function(){
+      fetch("/build/postings-charts.json?_=" + Date.now(), {cache:"no-store"})
+        .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+        .then(applyCharts)
+        .catch(function(){});
+    });
+}
+setInterval(loadCharts, 30000);
 </script>"""
 CHART_JS = CHART_JS.replace("__CHART_SEED__", CHART_JSON)
 
@@ -821,12 +830,13 @@ dataset <code>data/id-postings/postings-&lt;year&gt;.csv</code> · internal, con
 </main>
 
 <script>
-const RAW = {TABLE_JSON};
+let RAW = {TABLE_JSON};
 const PROVS = {json.dumps(PROVS, ensure_ascii=False)};
 const SECTORS = {json.dumps(SECTORS, ensure_ascii=False)};
 const COLS = {json.dumps(TABLE_COLS)};
 const KH = "https://karirhub.kemnaker.go.id/lowongan-dalam-negeri/lowongan/";
-const ROWS = RAW.map(a => {{
+let ROWS = buildRows();
+function buildRows(){{ return RAW.map(a => {{
   const o = {{}}; COLS.forEach((k,i)=>o[k]=a[i]);
   o.prov = PROVS[o.prov]; o.sector = SECTORS[o.sector];
   const [ts, slug] = r_split(o);
@@ -837,7 +847,7 @@ const ROWS = RAW.map(a => {{
           : o.arm === "boxcompute_census" ? o.u
           : KH + slug;
   return o;
-}});
+}}); }}
 function r_split(r){{
   if (r.arm === "live" || r.arm === "boxcompute_census") return ["", r.u];
   const i = r.u.indexOf("|");
@@ -910,6 +920,24 @@ document.querySelectorAll("#tbl thead th").forEach(th=>th.onclick=()=>{{
   state.sort=k; render();
 }});
 render();
+
+// Live rehydrate. The BoxCompute sandbox rebuilds this same dataset and
+// publishes it to the Worker, so the table keeps updating with the laptop
+// shut. The inline table above is the fallback -- if the Worker is silent or
+// unreachable, nothing here changes and the page renders exactly as built.
+(function(){{
+  var ROWS_SRC = "https://spar-f26-state.shalomshafa.workers.dev/rows";
+  fetch(ROWS_SRC + "?_=" + Date.now(), {{cache:"no-store"}})
+    .then(function(r){{ if(!r.ok) throw 0; return r.json(); }})
+    .then(function(a){{
+      if(!a || !a.length) return;
+      RAW = a; ROWS = buildRows(); render();
+      var c = document.getElementById("count");
+      if(c) c.textContent += " Live source: BoxCompute sandbox, "
+        + a.length.toLocaleString() + " rows.";
+    }})
+    .catch(function(){{}});
+}})();
 </script>
 {CHART_JS}
 </body></html>
