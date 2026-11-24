@@ -58,7 +58,17 @@ n_census_fin = sum(1 for r in rows
 # The original panel's finance/BPO figure keeps its own, stricter rule (it also
 # required a finance sector on archive rows). Census rows have no sector field,
 # so their in-scope label is looser -- reported separately, never added in.
-n_fin = S["totals"]["finance_scope"]
+# Counted from the rows so the chip equals exactly what its filter shows.
+# 512 was the original panel's stricter figure (live 281 + archive 231);
+# the census arm adds 330 keyword-scoped rows.
+n_fin = sum(1 for r in rows if r["fin"])
+n_fin_orig = S["totals"]["finance_scope"]
+n_fin_census = sum(1 for r in rows if r["fin"] and r.get("arm") == "boxcompute_census")
+OCT = "2026-10"
+n_oct_live = sum(1 for r in rows if r["fin"] and r.get("arm") == "live"
+                 and (r.get("posted_at") or "")[:7] == OCT)
+n_oct_census = sum(1 for r in rows if r["fin"] and r.get("arm") == "boxcompute_census"
+                   and (r.get("posted_at") or "")[:7] == OCT)
 ai_n = S["ai"]["flagged"]
 ai_of = S["ai"]["of"]
 AI_TOTAL = S["ai"].get("total_flagged", ai_n)
@@ -528,8 +538,7 @@ Every row is traceable to a public URL. This is a <b>sample</b>, not a census.</
 (BoxCompute, web archive, {n_census_platforms} platforms) and a <b>wider population</b>: platform-wide, all sectors
 &mdash; not the finance/BPO panel the original {n_all_orig} rows were filtered to. {n_census_fin} of them are labelled
 finance/BPO by the repo’s own keyword rule, but that rule is <b>looser here</b>: these platforms expose no industry
-field, so the sector condition the original panel used cannot be applied. The two figures are therefore kept separate
-and are <b>never added together</b>. These rows also carry no province, no salary, no deadline and no full description
+field, so the sector condition the original panel used cannot be applied. The Finance/BPO chip therefore counts <b>{n_fin}</b> = {n_fin_orig} from the original panel (all live 281 + archive 231, the strict rule) plus <b>{n_fin_census}</b> census rows that matched the keyword rule only &mdash; the sector check those platforms cannot support was never applied to them. These rows also carry no province, no salary, no deadline and no full description
 &mdash; so an AI-requirement flag cannot be established for them from a card alone, and none is claimed.</p>
 
 <div class="verdict"><p><b>What this proves.</b> A timestamped, location-tagged, content-bearing panel of Indonesian finance-sector vacancies is obtainable from public data
@@ -545,7 +554,7 @@ The AI-skill question is answerable in principle ({ai_n} explicit hits, {data_n}
 <p class="lede">Postings per month in the window. Red = live portal, teal = archived capture. The shape is a collection artefact, not a hiring trend.</p>
 <div class="card">{bars_month()}
 <p class="legend"><i style="background:var(--cr)"></i>live portal &nbsp;<i style="background:var(--teal)"></i>Web Archive</p>
-<p class="note">187 of the {n_fin} in-scope rows were posted in Oct 2026 because open listings are the ones still online. The archive arm now reaches back to Jan 2024 but is lumpy: it holds only what the Internet Archive crawled, so Feb 2025 and Aug 2025 are heavy and early 2024 is nearly empty. A real monthly series needs the same crawl repeated every month.</p></div>
+<p class="note">{n_oct_live} of the {n_live} live in-scope rows were posted in Oct 2026 because open listings are the ones still online; the census arm adds {n_oct_census} more dated to that month, but on archive capture dates rather than a live page. The archive arm now reaches back to Jan 2024 but is lumpy: it holds only what the Internet Archive crawled, so Feb 2025 and Aug 2025 are heavy and early 2024 is nearly empty. A real monthly series needs the same crawl repeated every month.</p></div>
 
 <div class="grid2">
   <div class="card tl"><h3 style="margin-top:0">Sector split — live rows ({n_live})</h3>{sector_bars}
@@ -566,6 +575,7 @@ Download: <a href="https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_
   <button class="chip" data-f="fin">Finance/BPO ({n_fin})</button>
   <button class="chip" data-f="live">Live portal ({n_live})</button>
   <button class="chip" data-f="arch">Archive ({n_arch})</button>
+  <button class="chip" data-f="census">Census ({n_census})</button>
   <select id="fsector"><option value="">all sectors</option><option>Banking &amp; Financial Services</option><option>Business Process Outsourcing (BPO)</option><option>Insurance</option></select>
   <select id="fai"><option value="">AI flag: any</option><option value="Yes">AI-skill: yes</option><option value="No">AI-skill: no</option></select>
   <select id="fver"><option value="">verification: any</option><option value="verified">verified</option><option value="partly verified">partly verified</option><option value="unverified">unverified / not checked</option></select>
@@ -707,6 +717,7 @@ function match(r){{
   if(state.f==="fin" && !r.fin) return false;
   if(state.f==="live" && r.arm!=="live") return false;
   if(state.f==="arch" && r.arm!=="archive") return false;
+  if(state.f==="census" && r.arm!=="boxcompute_census") return false;
   if(state.sector && r.sector!==state.sector) return false;
   if(state.ai && r.ai!==state.ai) return false;
   if(state.ver==="unverified" && !(r.vs==="unverified"||r.vs==="not checked")) return false;
