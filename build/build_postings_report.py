@@ -235,6 +235,55 @@ VC_LIVE = collections.Counter(r["verified_status"] for r in rows if r["arm"] == 
 VC_ARCH = collections.Counter(r["verified_status"] for r in rows if r["arm"] == "archive")
 
 
+# ---- chart data ---------------------------------------------------------
+# Computed from the rows, not summary.json: summary.json covers only the
+# original 2,618-row panel, so sourcing charts from it silently omitted the
+# census arm from every graph on the page.
+_ch_arch, _ch_live, _ch_cen = collections.Counter(), collections.Counter(), collections.Counter()
+for _r in rows:
+    _mo = (_r.get("posted_at") or "")[:7]
+    if not _mo:
+        continue
+    _arm = _r.get("arm")
+    if _arm == "archive":
+        _ch_arch[_mo] += 1
+    elif _arm == "live":
+        _ch_live[_mo] += 1
+    else:
+        _ch_cen[_mo] += 1
+
+# "Unknown" is excluded, not charted: the census platforms expose no
+# industry field. The count is kept so the page can say how many.
+_ch_sector = collections.Counter(
+    r["sector"] for r in rows if r["sector"] and r["sector"] != "Unknown")
+_ch_prov = collections.Counter(
+    r["location_province"] for r in rows
+    if r["location_province"] and r["location_province"] != "Unknown")
+
+n_sector_unknown = sum(1 for r in rows if r["sector"] == "Unknown")
+n_prov_unknown = sum(1 for r in rows if r["location_province"] == "Unknown")
+
+CHART_DATA = {
+    "generated": S.get("generated", ""),
+    "counts": {
+        "rows": n_all, "archive": n_arch, "live": n_live,
+        "census": n_census, "finance_bpo": n_fin,
+    },
+    "months": [[m, _ch_arch.get(m, 0), _ch_live.get(m, 0), _ch_cen.get(m, 0)]
+               for m in MONTHS],
+    "sector": _ch_sector.most_common(10),
+    "province": _ch_prov.most_common(10),
+    "sector_unknown": sum(1 for r in rows if r["sector"] == "Unknown"),
+    "province_unknown": sum(1 for r in rows
+                            if r["location_province"] == "Unknown"),
+    "note": ("Counts are advertised listings collected, not vacancies that existed. "
+             "Archive and census dates come from the capture or the card, not a live page."),
+}
+with open(os.path.join(ROOT, "build", "postings-charts.json"), "w") as _fh:
+    json.dump(CHART_DATA, _fh, indent=1)
+
+CHART_JSON = json.dumps(CHART_DATA, ensure_ascii=False, separators=(",", ":"))
+
 sector_bars = hbars({k: v for k, v in sector.items()}, color="#C41E3A")
 prov_bars = hbars(prov, color="#0F6E7A", topn=10)
 
@@ -424,6 +473,71 @@ def live_panel():
 <h2>The result</h2>"""
 
 
+
+CHART_JS = """<script>
+const CHART_SEED = __CHART_SEED__;
+const C_ARCH = "#0F6E7A", C_LIVE = "#C41E3A", C_CEN = "#B7791F";
+
+function nfmt(x){ return (x||0).toLocaleString(); }
+
+function renderMonth(d){
+  const months = d.months || [];
+  if(!months.length) return "";
+  const w = 940, h = 210, pad = 34;
+  const bw = (w - 2*pad) / months.length;
+  let mx = 1;
+  months.forEach(m => { mx = Math.max(mx, (m[1]||0)+(m[2]||0)+(m[3]||0)); });
+  let out = '<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="listings per month by collection arm">';
+  out += '<line x1="'+pad+'" y1="'+(h-pad)+'" x2="'+(w-pad)+'" y2="'+(h-pad)+'" stroke="#E3E7E7"/>';
+  months.forEach(function(m,i){
+    const x = pad + i*bw + bw*0.18, bwid = bw*0.64;
+    const a = m[1]||0, l = m[2]||0, c = m[3]||0;
+    const ha = (a/mx)*(h-2*pad), hl = (l/mx)*(h-2*pad), hc = (c/mx)*(h-2*pad);
+    if(a) out += '<rect x="'+x+'" y="'+(h-pad-ha)+'" width="'+bwid+'" height="'+ha+'" fill="'+C_ARCH+'" opacity=".85"><title>'+m[0]+': '+a+' archive</title></rect>';
+    if(l) out += '<rect x="'+x+'" y="'+(h-pad-ha-hl)+'" width="'+bwid+'" height="'+hl+'" fill="'+C_LIVE+'"><title>'+m[0]+': '+l+' live</title></rect>';
+    if(c) out += '<rect x="'+x+'" y="'+(h-pad-ha-hl-hc)+'" width="'+bwid+'" height="'+hc+'" fill="'+C_CEN+'" opacity=".85"><title>'+m[0]+': '+c+' census</title></rect>';
+    const tot = a+l+c;
+    if(tot) out += '<text x="'+(x+bwid/2)+'" y="'+(h-pad-ha-hl-hc-5)+'" font-size="10" fill="#212A2A" text-anchor="middle">'+tot+'</text>';
+    out += '<text x="'+(x+bwid/2)+'" y="'+(h-pad+15)+'" font-size="9.5" fill="#8B9999" text-anchor="middle">'+m[0].slice(2)+'</text>';
+  });
+  return out + '</svg>';
+}
+
+function renderBars(items, color){
+  if(!items || !items.length) return "";
+  let mx = 1;
+  items.forEach(function(it){ mx = Math.max(mx, it[1]||0); });
+  let out = '<div class="hbars">';
+  items.forEach(function(it){
+    const pct = (it[1]||0)/mx*100;
+    out += '<div class="hrow"><span class="hlab">'+(it[0]||"(blank)")+'</span>'
+         + '<span class="hbar"><i style="width:'+pct.toFixed(1)+'%;background:'+color+'"></i></span>'
+         + '<span class="hval">'+nfmt(it[1])+'</span></div>';
+  });
+  return out + '</div>';
+}
+
+function applyCharts(d){
+  if(!d) return;
+  const m = document.getElementById("chart-month");
+  if(m) m.innerHTML = renderMonth(d);
+  const s = document.getElementById("chart-sector");
+  if(s) s.innerHTML = renderBars(d.sector, C_LIVE);
+  const pv = document.getElementById("chart-prov");
+  if(pv) pv.innerHTML = renderBars(d.province, C_ARCH);
+}
+
+applyCharts(CHART_SEED);
+setInterval(function(){
+  fetch("/build/postings-charts.json?_=" + Date.now(), {cache:"no-store"})
+    .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+    .then(applyCharts)
+    .catch(function(){});
+}, 30000);
+</script>"""
+CHART_JS = CHART_JS.replace("__CHART_SEED__", CHART_JSON)
+
+
 HTML = f"""<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -552,15 +666,15 @@ The AI-skill question is answerable in principle ({ai_n} explicit hits, {data_n}
 <details class="sec" open>
 <summary class="sh2">Coverage — read this before trusting any trend</summary>
 <p class="lede">Postings per month in the window. Red = live portal, teal = archived capture. The shape is a collection artefact, not a hiring trend.</p>
-<div class="card">{bars_month()}
+<div class="card"><div id="chart-month" class="chartbox"></div>
 <p class="legend"><i style="background:var(--cr)"></i>live portal &nbsp;<i style="background:var(--teal)"></i>Web Archive</p>
 <p class="note">{n_oct_live} of the {n_live} live in-scope rows were posted in Oct 2026 because open listings are the ones still online; the census arm adds {n_oct_census} more dated to that month, but on archive capture dates rather than a live page. The archive arm now reaches back to Jan 2024 but is lumpy: it holds only what the Internet Archive crawled, so Feb 2025 and Aug 2025 are heavy and early 2024 is nearly empty. A real monthly series needs the same crawl repeated every month.</p></div>
 
 <div class="grid2">
-  <div class="card tl"><h3 style="margin-top:0">Sector split — live rows ({n_live})</h3>{sector_bars}
+  <div class="card tl"><h3 style="margin-top:0">Sector split — all arms</h3><p class="te" style="margin:2px 0 8px;font-size:12px">Rows with a stated sector. {n_sector_unknown} archived rows carry none (the census platforms expose no industry field) and are excluded here rather than charted as "unknown".</p><div id="chart-sector"></div>
   <p class="note">Sector is the portal's own industry field, so it is only shown for live rows. The {AQ['rows']} archive rows have no industry field; their finance/not-finance label is a keyword guess on title and employer and is marked unverified in the CSV.</p>
   <p class="note">BPO is well represented (118) — relevant to Dani's question about AI skills in BPO roles.</p></div>
-  <div class="card tl"><h3 style="margin-top:0">Top provinces</h3>{prov_bars}
+  <div class="card tl"><h3 style="margin-top:0">Top provinces — all arms</h3><p class="te" style="margin:2px 0 8px;font-size:12px">Rows with a stated location; {n_prov_unknown} archived rows carry none.</p><div id="chart-prov"></div>
   <p class="note">Province is the province printed on the posting. An earlier build showed "Indonesia" for 40 archived rows because it read the trailing country in "CITY, PROVINCE, Indonesia" as the province; that is fixed, and no row now has "Indonesia" as a province.</p></div>
 </div>
 </details>
@@ -778,6 +892,7 @@ document.querySelectorAll("#tbl thead th").forEach(th=>th.onclick=()=>{{
 }});
 render();
 </script>
+{CHART_JS}
 </body></html>
 """
 
