@@ -1,11 +1,11 @@
 {
  "generated": "2026-11-04 04:56 UTC",
  "counts": {
-  "rows": 14075,
+  "rows": 4221,
   "archive": 2337,
   "live": 281,
-  "census": 11457,
-  "finance_bpo": 1768
+  "census": 1603,
+  "finance_bpo": 742
  },
  "months": [
   [
@@ -18,151 +18,151 @@
    "2024-02",
    5,
    0,
-   118
+   81
   ],
   [
    "2024-03",
    4,
    0,
-   334
+   58
   ],
   [
    "2024-04",
    4,
    0,
-   467
+   69
   ],
   [
    "2024-05",
    49,
    0,
-   558
+   75
   ],
   [
    "2024-06",
    2,
    0,
-   466
+   75
   ],
   [
    "2024-07",
    13,
    0,
-   474
+   79
   ],
   [
    "2024-08",
    157,
    0,
-   426
+   60
   ],
   [
    "2024-09",
    175,
    0,
-   561
+   49
   ],
   [
    "2024-10",
    49,
    0,
-   559
+   49
   ],
   [
    "2024-11",
    123,
    0,
-   585
+   53
   ],
   [
    "2024-12",
    402,
    0,
-   380
+   41
   ],
   [
    "2025-01",
    134,
    0,
-   546
+   50
   ],
   [
    "2025-02",
    164,
    0,
-   495
+   51
   ],
   [
    "2025-03",
    126,
    0,
-   650
+   39
   ],
   [
    "2025-04",
    94,
    0,
-   385
+   42
   ],
   [
    "2025-05",
    105,
    0,
-   351
+   52
   ],
   [
    "2025-06",
    77,
    0,
-   356
+   50
   ],
   [
    "2025-07",
    378,
    0,
-   454
+   48
   ],
   [
    "2025-08",
    118,
    0,
-   424
+   54
   ],
   [
    "2025-09",
    21,
    0,
-   397
+   30
   ],
   [
    "2025-10",
    74,
    0,
-   515
+   55
   ],
   [
    "2025-11",
    33,
    0,
-   575
+   59
   ],
   [
    "2025-12",
    23,
    0,
-   526
+   52
   ],
   [
    "2026-01",
    2,
    0,
-   382
+   49
   ],
   [
    "2026-02",
    0,
    0,
-   234
+   44
   ],
   [
    "2026-03",
@@ -216,11 +216,11 @@
  "sector": [
   [
    "Outside finance scope (guessed, unverified)",
-   12307
+   3479
   ],
   [
    "Finance/BPO (guessed from title/employer, unverified)",
-   1487
+   461
   ],
   [
    "Banking & Financial Services",
@@ -238,46 +238,46 @@
  "province": [
   [
    "DKI Jakarta",
-   5889
-  ],
-  [
-   "Banten",
-   1288
-  ],
-  [
-   "Jawa Barat",
-   1279
+   938
   ],
   [
    "Jawa Tengah",
-   929
+   551
+  ],
+  [
+   "Jawa Barat",
+   441
+  ],
+  [
+   "Banten",
+   247
   ],
   [
    "Jawa Timur",
-   746
+   206
   ],
   [
-   "Daerah Istimewa Yogyakarta",
-   286
+   "Sulawesi Tengah",
+   86
   ],
   [
    "Bali",
-   266
+   81
   ],
   [
-   "Sumatera Utara",
-   182
-  ],
-  [
-   "Kalimantan Timur",
-   139
+   "Daerah Istimewa Yogyakarta",
+   79
   ],
   [
    "Kepulauan Riau",
-   125
+   78
+  ],
+  [
+   "Kalimantan Barat",
+   74
   ]
  ],
  "sector_unknown": 0,
- "province_unknown": 1733,
+ "province_unknown": 932,
  "note": "Counts are advertised listings collected, not vacancies that existed. Archive and census dates come from the capture or the card, not a live page."
 }
