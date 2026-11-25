@@ -1,14 +1,14 @@
 {
-  "updated_utc": "2026-11-25T01:50:09Z",
-  "rows_total": 15706,
-  "rows_bulk_archive": 14114,
+  "updated_utc": "2026-11-25T03:23:37Z",
+  "rows_total": 16301,
+  "rows_bulk_archive": 14709,
   "rows_sample_pass": 1573,
   "rows_live_portal": 19,
-  "buckets_done": 35,
+  "buckets_done": 36,
   "buckets_total": 185,
-  "workers_alive": 3,
+  "workers_alive": 2,
   "target": 100000,
   "note": "Counts are rows written by the crawler, not yet filtered to finance/BPO scope. Rate is bounded by the archive's one-request-per-2s courtesy rule.",
-  "rate_per_min": 18.71,
-  "sampled_epoch": 1795571409
+  "rate_per_min": 6.366,
+  "sampled_epoch": 1795577017
 }
