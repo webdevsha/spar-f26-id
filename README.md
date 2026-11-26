@@ -161,7 +161,7 @@ deployed · `blocked` = waiting on infrastructure · `superseded` = kept for pro
 | [sheets.json](data/sheets.json) | Tab name → output CSV map used by the sync | CTO | repo |
 | [SYNC-LOG.md](data/SYNC-LOG.md) | Append-only record of every sync run: editors, `+added / −removed`, changed `id`s | sync job | repo |
 | [PERSONAL-DATA-STOP.md](data/PERSONAL-DATA-STOP.md) | The no-personal-data rule and what it means row by row | CRO | repo |
-| [ecosystem-id-map.json](data/ecosystem-id-map.json), [ecosystem-id-domains.json](data/ecosystem-id-domains.json) | The Indonesia ecosystem & policy map (actors, instruments, support routes) that renders as a public page | Shafira + Rachel | repo |
+| [ecosystem-id-map.json](data/ecosystem-id-map.json), [ecosystem-id-domains.json](data/ecosystem-id-domains.json) | The Indonesia ecosystem & policy map (actors, instruments, support routes) that renders as a public page. **`views.policy.nodes` is now generated** from the register by [build/sync_map_from_register.py](build/sync_map_from_register.py) (22 nodes: 8 hand-written kept, 8 added, 6 levers); bands, edges, marks and `responsibility` stay hand-curated | Shafira + Rachel | repo |
 | [ecosystem-ph-v0.json](data/ecosystem-ph-v0.json) | Philippines ecosystem stub — kept in this repo for parity; PH lane owns the content | BG | repo |
 | [model-id-demo.json](data/model-id-demo.json) | Inputs for the interactive model demo | CRO + Natraj | repo |
 | `seed/*.tsv` | Original seed rows used to create the sheet tabs | CTO | superseded |
@@ -225,6 +225,7 @@ to. All four are public CSV downloads from `paskerid.kemnaker.go.id/documents/`,
 | [build/verify_postings.py](build/verify_postings.py) | Re-fetches a sample of rows and writes [verification.json](data/id-postings/verification.json) |
 | [build/sync_sheets.py](build/sync_sheets.py) | GSheets → `data/*.csv` (the hourly job; **needs creds**) |
 | [build/check_parity.py](build/check_parity.py) | Read-only diff: does the sheet still agree with `data/*.csv`, row for row? |
+| [build/sync_map_from_register.py](build/sync_map_from_register.py) | `--check` (default) prints the drift between the register and the ecosystem map; `--write` rebuilds the map's **policy nodes** from `id-policy-inventory.csv` + `id-instruments.csv`. Keeps hand-written node detail; never touches bands, edges, marks or the responsibility map |
 | [build/seed_sheet.py](build/seed_sheet.py) | One-off seeding of the six tabs from `data/seed/` |
 | [deploy.sh](deploy.sh) | Build + `wrangler pages deploy` |
 | [tools/scrape_karirhub.py](tools/scrape_karirhub.py) | Standalone, robots-aware scraper that writes the team schema |
@@ -287,6 +288,39 @@ postings-*.csv + kemnaker/*.csv ──build_overview──▶ build/spar-id-over
 | SPAR signals skeleton (team) | [1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo](https://docs.google.com/spreadsheets/d/1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo/edit) | `README`, `SIGNALS`, `SIGNALS_ID`, `(dani notes)`, `LOG` | S1–S10 signal definitions in three layers; **`SIGNALS_ID` = the Indonesia indicator table** (indicator · source · policy · verdict · capability · details); the observation log. `README` carries the policy legend, the layer definitions and the float-up key |
 | IND team progress | [1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ](https://docs.google.com/spreadsheets/d/1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ/edit) | `Sheet1` | Every Indonesia deliverable with progress, status, PIC |
 
+### Direct links — every tab, clickable
+
+The sheets are navigable: cells carry cross-tab links, so a policy name jumps to its row in the register
+and a signal code jumps to its definition. Use these links directly, or click through from the cells.
+
+| Sheet | Tab | Link |
+|---|---|---|
+| Core file | `signals` (22 rows, the register) | [gid=838965401](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit#gid=838965401) |
+| Core file | `Indonesia policy inventory` (16 rows) | [gid=562214644](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit#gid=562214644) |
+| Core file | `instruments` (6 levers) | [gid=2122536552](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit#gid=2122536552) |
+| Core file | `who-can-act` (6 bodies) | [gid=2093456593](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit#gid=2093456593) |
+| Core file | `triggers` | [gid=778752423](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit#gid=778752423) |
+| Core file | `readiness` | [gid=597313565](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit#gid=597313565) |
+| Skeleton | `SIGNALS_ID` (the indicator table) | [gid=265881413](https://docs.google.com/spreadsheets/d/1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo/edit#gid=265881413) |
+| Skeleton | `SIGNALS` (signal definitions) | [gid=514284320](https://docs.google.com/spreadsheets/d/1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo/edit#gid=514284320) |
+| Skeleton | `README` (legend + keys) | [gid=179910438](https://docs.google.com/spreadsheets/d/1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo/edit#gid=179910438) |
+| Tracker | `Shafira's tasks` | [IND team progress](https://docs.google.com/spreadsheets/d/1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ/edit) |
+
+**Cross-tab link graph (written 26 Nov, 134 cells — only where a cell was plain text, so no existing
+hyperlink was overwritten):**
+
+| From | Cell | Goes to |
+|---|---|---|
+| Core `signals` | `ian_signal` · `holder` | the `SIGNALS` row · the `who-can-act` row |
+| Core `who-can-act` | `proposed_door` · `relevant_data_or_programme` | the `instruments` lever · the `policy inventory` row |
+| Core `instruments` | `evidence` | the `who-can-act` row named in the cell |
+| Core `Indonesia policy inventory` | `owner_agency` · `short_name` | the `who-can-act` row · the `readiness` row |
+| Core `triggers` | `agency` · `action` | the `who-can-act` row · the lever it describes |
+| Core `readiness` | `document` | the `policy inventory` row |
+| Skeleton `SIGNALS` / `SIGNALS_ID` | `#` | each other's row for that signal |
+| Skeleton `SIGNALS_ID` | `Indonesia's policy` | **each instrument name links to its own register row** (`textFormatRuns`, 18 cells / 55 links, wording unchanged) |
+| Skeleton `README` | legend `P1`–`P10` names | the `policy inventory` row |
+
 **Columns added 24–26 Nov (previously empty — revert ranges in [docs/SHEET-WRITE-2026-11-24.md](docs/SHEET-WRITE-2026-11-24.md)):**
 
 | Sheet → tab | New columns | Contents |
@@ -296,6 +330,8 @@ postings-*.csv + kemnaker/*.csv ──build_overview──▶ build/spar-id-over
 | IND team progress → `Sheet1` | `G` | `Comments` — one line per task, plain language |
 | Skeleton → `SIGNALS_ID` | `E`–`J` | `Indonesia's indicator` (name only, linked to the register row) · `Source` (compiled per shared indicator) · `Indonesia's policy` · `Verdict` · `Capability` · `Details` (the old single review column, split three ways on 26 Nov) |
 | Skeleton → `SIGNALS` | `J` | `Relevant Policies` — the same instruments as `SIGNALS_ID`, one row per signal |
+| Core file → `Indonesia policy inventory` | rows 5–17 | **3 → 16 rows.** The 7 other instruments the indicator table names (`UU 27/2026`, `PP 35/2021`, `PP 6/2025`, `Stranas KA`, `Kartu Prakerja`, `PP 44/2015`, `PP 46/2015`), the 5 the ecosystem map knew and the register did not (`RP3I 2026-2030`, the 50,000-worker programme, `PEKA`, `Sakernas × SIAPkerja`, the ILO–OJK–Kemenko collaboration) and `POJK 11/PADK 1` |
+| Core file → `instruments` | rows 2–7 | **DEMO placeholder → 6 real levers**, one per actor's door in Part 4, each citing the `who-can-act` row or trigger card it rests on |
 
 **Edit rules (all tabs):** header row is row 1 · `id` is the upsert and join key, never rename or
 reorder · no merged cells, no blank spacer rows · one document per row · dates `YYYY-MM-DD` ·
@@ -401,6 +437,19 @@ Atlas site        ██████████░░░░░░░░░░�
 - **Duplicates and dead weight removed:** the indicator column was checked for repeats, the stray
   leftover row was cleared, layer definitions and the policy legend were moved out of the repeated
   cells into the tab's `README`, and one broken pointer (S8 had lost the row it pointed at) was rebuilt.
+- **The sheets are now navigable.** 134 cross-tab links: a policy name jumps to its register row, a
+  signal code to its definition, an actor to its lever, a lever back to the actor. `SIGNALS_ID`'s policy
+  column links **each instrument name separately** to its own row in the register.
+- **Part 4 in the register, so the map can read it.** `Indonesia policy inventory` 3 → **16 rows**;
+  `instruments` DEMO → **6 real levers**; new generator
+  [build/sync_map_from_register.py](build/sync_map_from_register.py) keeps the map's policy nodes in
+  step with the register (9 → **22 nodes**), which is why the map page now shows `UU 27/2026`,
+  `PP 6/2025`, `POJK 11`, `Stranas KA`, `RP3I` and the six levers.
+
+**Open pull requests (neither merged):** [#35](https://github.com/webdevsha/spar-f26-id/pull/35) this
+progress section · [#36](https://github.com/webdevsha/spar-f26-id/pull/36) Part 4 v1 + the register and
+map work above · Part 4 itself: [docs/ID-PART4-DRAFT.md](docs/ID-PART4-DRAFT.md) (the section has no
+Google Doc; the repo draft is its only home).
 
 **Evidence behind the bars:** `SIGNALS_ID` — 18 indicator rows across S1–S10, verdict + capability on
 every row, 10 full readings, 9 of 10 signals flagged for float-up · Core file `signals` — 22 rows ·
