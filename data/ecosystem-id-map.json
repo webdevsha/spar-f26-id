@@ -787,16 +787,7 @@
      "sub": "Guideline. AI governance guidance for banks.",
      "status": "real",
      "detail": "Named AI job loss as a risk: NO - it governs AI use, not labour outcomes. Owner and budget not stated in source. Monitoring not stated. No action rule. This is the q1-q6 grade, and the gap is the point.",
-     "ev": "id-policy-inventory.csv ind-ojk-ai-guide-2025"
-    },
-    {
-     "id": "pol-rp3i",
-     "band": "p1",
-     "label": "RP3I 2026-2030 - banking development roadmap",
-     "sub": "Supervisory roadmap. Explicitly addresses digital transformation, emerging technologies and governance.",
-     "status": "real",
-     "detail": "Context for the OJK door, not a labour instrument: it establishes that OJK is already steering bank digitalisation, which is why a workforce-transition reporting request is plausible rather than exotic.",
-     "ev": "spar26-ecosystem.md s2 (ojk.go.id)"
+     "source": "register:id-policy-inventory.csv"
     },
     {
      "id": "pol-jkp",
@@ -805,7 +796,7 @@
      "sub": "Programme. Job-loss insurance; claims after eligible layoffs.",
      "status": "real",
      "detail": "PP No. 6 of 2025 (eff. 7 Feb 2025) changed generosity, claim timing and contribution conditions - a structural break that confounds cross-year comparison. Occupation detail unconfirmed. Payroll and JKP capture only part of the labour market.",
-     "ev": "id-policy-inventory.csv ind-jkp-2022; id-signals.csv ind-sig-jkp-reform-break"
+     "source": "register:id-policy-inventory.csv"
     },
     {
      "id": "pol-pasker",
@@ -814,7 +805,79 @@
      "sub": "Programme. Kemnaker vacancy portal - postings, job titles, employers.",
      "status": "real",
      "detail": "The only entry-level, per-posting series in the lane, and the route by which M3 exists at all. Detailed extract still to request.",
-     "ev": "id-policy-inventory.csv ind-paskerid-kemnaker"
+     "source": "register:id-policy-inventory.csv"
+    },
+    {
+     "id": "pol-uu27",
+     "band": "p1",
+     "label": "UU 27/2026 - Undang-Undang No. 27 Tahun 2026 tentang Pelindungan Ketenagakerjaan",
+     "sub": "Law. Employment protection law; repeals UU 13/2003 and the labour cluster of UU 6/2023 - layoff, contract and termination rules",
+     "status": "real",
+     "detail": "Owner: Kemnaker. Monitoring: tbc - not stated in source. Effective: 2026-10-28. Status: in force 28 Oct 2026, no transition period; implementing rules due 28 Oct 2027. Generated from the register (id ind-uu27-2026); hand-written detail wins where a node already exists.",
+     "source": "register:id-policy-inventory.csv"
+    },
+    {
+     "id": "pol-pp35",
+     "band": "p1",
+     "label": "PP 35/2021 - Peraturan Pemerintah No. 35 Tahun 2021",
+     "sub": "Regulation. Fixed-term contracts, outsourcing, work/rest hours, termination - shapes entry-level hiring directly",
+     "status": "real",
+     "detail": "Owner: Kemnaker. Monitoring: tbc - not stated in source. Effective: tbc. Status: in force. Generated from the register (id ind-pp35-2021); hand-written detail wins where a node already exists.",
+     "source": "register:id-policy-inventory.csv"
+    },
+    {
+     "id": "pol-pp6",
+     "band": "p1",
+     "label": "PP 6/2025 - Peraturan Pemerintah No. 6 Tahun 2025 (amendment to PP 37/2021, JKP)",
+     "sub": "Regulation. Amends JKP: generosity, claim timing, contribution conditions - introduces a break in the claims series",
+     "status": "real",
+     "detail": "Owner: Kemnaker / BPJS Ketenagakerjaan. Monitoring: tbc - claim volumes (BPJS). Effective: 2025-02-07. Status: in force. Generated from the register (id ind-pp6-2025); hand-written detail wins where a node already exists.",
+     "source": "register:id-policy-inventory.csv"
+    },
+    {
+     "id": "pol-stranas",
+     "band": "p1",
+     "label": "Stranas KA - Strategi Nasional Kecerdasan Artifisial Indonesia 2020-2045",
+     "sub": "Strategy. National direction for artificial intelligence; sets policy direction but publishes no adoption or labour series",
+     "status": "real",
+     "detail": "Owner: tbc. Monitoring: tbc - not stated in source. Effective: tbc. Status: tbc. Generated from the register (id ind-stranas-ka-2020-2045); hand-written detail wins where a node already exists.",
+     "source": "register:id-policy-inventory.csv"
+    },
+    {
+     "id": "pol-prakerja",
+     "band": "p3",
+     "label": "Kartu Prakerja - Kartu Prakerja (upskilling programme)",
+     "sub": "Programme. Funds training courses; records who joined training, not where participants ended up",
+     "status": "real",
+     "detail": "Owner: PMO Kartu Prakerja. Monitoring: training participation - participation counts published; job or earnings outcomes not linked. Effective: tbc. Status: tbc. Generated from the register (id ind-prakerja); hand-written detail wins where a node already exists.",
+     "source": "register:id-policy-inventory.csv"
+    },
+    {
+     "id": "pol-pp44",
+     "band": "p1",
+     "label": "PP 44/2015 (JKK, JKM) - Peraturan Pemerintah No. 44 Tahun 2015 (JKK, JKM)",
+     "sub": "Regulation. Work-injury (JKK) and death (JKM) benefits - pays out regardless of whether a person resigned or retired",
+     "status": "real",
+     "detail": "Owner: BPJS Ketenagakerjaan. Monitoring: return-to-work statistics - 97.30% return-to-work figure has an unconfirmed reference year. Effective: tbc. Status: in force. Generated from the register (id ind-pp44-2015); hand-written detail wins where a node already exists.",
+     "source": "register:id-policy-inventory.csv"
+    },
+    {
+     "id": "pol-pp46",
+     "band": "p1",
+     "label": "PP 46/2015 (JHT) - Peraturan Pemerintah No. 46 Tahun 2015 (JHT)",
+     "sub": "Regulation. Old-age benefit (JHT); pays out on resignation and retirement alike, so it does not track a dismissed worker's destination",
+     "status": "real",
+     "detail": "Owner: BPJS Ketenagakerjaan. Monitoring: tbc - not stated in source. Effective: tbc. Status: in force. Generated from the register (id ind-pp46-2015); hand-written detail wins where a node already exists.",
+     "source": "register:id-policy-inventory.csv"
+    },
+    {
+     "id": "pol-rp3i",
+     "band": "p1",
+     "label": "RP3I 2026-2030 - banking development roadmap",
+     "sub": "Supervisory roadmap. Explicitly addresses digital transformation, emerging technologies and governance.",
+     "status": "real",
+     "detail": "Context for the OJK door, not a labour instrument: it establishes that OJK is already steering bank digitalisation, which is why a workforce-transition reporting request is plausible rather than exotic.",
+     "source": "register:id-policy-inventory.csv"
     },
     {
      "id": "pol-voc50k",
@@ -823,16 +886,16 @@
      "sub": "Programme, announced 22 Oct 2026. 21 identified training centres; priority for eligible laid-off workers who had not received JKP benefits.",
      "status": "new",
      "detail": "NEW to the inventory. This is a concrete programme to catalogue - NOT evidence that 50,000 workers have enrolled, completed training, or found suitable employment. The priority rule for non-JKP workers is itself a finding about who JKP misses.",
-     "ev": "setkab.go.id; spar26-ecosystem.md s2"
+     "source": "register:id-policy-inventory.csv"
     },
     {
      "id": "pol-peka",
-     "band": "p3",
+     "band": "p2",
      "label": "PEKA",
      "sub": "Programme. Benefit-linked training: 1,426 recipients across 45 locations (Aug 2026).",
      "status": "real",
      "detail": "Concrete activity. Participation does not establish nationwide retraining capacity for dismissed bank staff, nor stable earnings after. Different again from JKK's 97.30% rehabilitation return-to-work, which must never be read as a JKP placement rate.",
-     "ev": "id-signals.csv ind-sig-peka-training, ind-sig-jkk-rtw"
+     "source": "register:id-policy-inventory.csv"
     },
     {
      "id": "pol-integ",
@@ -841,7 +904,7 @@
      "sub": "Practice, described by Kemnaker. Survey evidence combined with administrative systems for diagnosis and planning.",
      "status": "real",
      "detail": "The one place in the policy layer where a survey and an administrative series are deliberately joined. It is the model the bridge view proposes extending to a bank x function x time frame.",
-     "ev": "spar26-ecosystem.md s2, s5"
+     "source": "register:id-policy-inventory.csv"
     },
     {
      "id": "pol-trilat",
@@ -850,16 +913,70 @@
      "sub": "Coordination. An existing finance-employment-social-protection connection.",
      "status": "real",
      "detail": "Proof that the three policy domains already talk to each other, so a shared indicator panel is a coordination ask, not a new institution.",
-     "ev": "spar26-ecosystem.md s3 (ilo.org)"
+     "source": "register:id-policy-inventory.csv"
     },
     {
-     "id": "pol-inst",
+     "id": "pol-pojk11-padk1",
+     "band": "p1",
+     "label": "POJK 11/PADK 1 - POJK 11/POJK.03/2022 (IT risk management) and PADK OJK 1/2026",
+     "sub": "Regulation. Technology-risk rules for banks: IT risk management in the use of technology by commercial banks",
+     "status": "real",
+     "detail": "Owner: OJK. Monitoring: tbc - not stated in source. Effective: tbc. Status: in force. Generated from the register (id ind-pojk11-padk1); hand-written detail wins where a node already exists.",
+     "source": "register:id-policy-inventory.csv"
+    },
+    {
+     "id": "lev-ojk-supervision",
      "band": "p5",
-     "label": "Instruments - job fair / Prakerja vouchers / JKP surge / reskilling roadmap",
-     "sub": "Placeholder. The response menu with cost, speed and evidence.",
-     "status": "placeholder",
-     "detail": "Tab holds one DEMO row; the instrument map is due 22 Nov. Until it exists the trigger cannot be costed, and 'no-regret vs contingent' cannot be separated. This is the single hardest blocker in the policy layer.",
-     "ev": "id-instruments.csv; data/model-id-demo.json"
+     "label": "OJK banking supervision - confirmation of workforce movement inside supervised banks",
+     "sub": "Cost: tbc. Speed: weeks (supervisory cycle).",
+     "status": "draft",
+     "detail": "Covers: Movement inside banks, before any publication; segment context for the sector. Evidence: Core file who-can-act: ind-act-ojk (shared deck p2-4). Verified by: CRO draft - needs Akbar + mentor review.",
+     "source": "register:id-instruments.csv"
+    },
+    {
+     "id": "lev-kemnaker-pasker",
+     "band": "p5",
+     "label": "Pusat Pasar Kerja - vacancy-side response through Pasker ID / Karirhub",
+     "sub": "Cost: not yet estimated - need a costed plan before the trigger is used. Speed: within 30 days (joint job fair + retraining referral, per the trigger card).",
+     "status": "draft",
+     "detail": "Covers: Vacancy counts, job titles, employers; response on the hiring side. Evidence: Core file who-can-act: ind-act-kemnaker; Core file triggers: ind-trg-fin-clerical-01. Verified by: CRO draft - needs Akbar + mentor review.",
+     "source": "register:id-instruments.csv"
+    },
+    {
+     "id": "lev-jkp-monitoring",
+     "band": "p5",
+     "label": "JKP programme office - claim monitoring and benefit administration",
+     "sub": "Cost: tbc. Speed: tbc.",
+     "status": "draft",
+     "detail": "Covers: Claims and covered workers: the only national record of formal job loss. Evidence: Core file who-can-act: ind-act-bpjs; policy inventory: ind-jkp-2022. Verified by: CRO draft - needs Akbar + mentor review.",
+     "source": "register:id-instruments.csv"
+    },
+    {
+     "id": "lev-bps-sakernas",
+     "band": "p5",
+     "label": "BPS / SILASTIK - Sakernas tabulation request (the denominator every share needs)",
+     "sub": "Cost: tbc. Speed: tbc.",
+     "status": "draft",
+     "detail": "Covers: Employment, occupation and wages; turns the posting sample into a share of something. Evidence: Core file who-can-act: ind-act-bps (shared deck p2-4). Verified by: CRO draft - needs Akbar + mentor review.",
+     "source": "register:id-instruments.csv"
+    },
+    {
+     "id": "lev-perbanas-outreach",
+     "band": "p5",
+     "label": "PERBANAS secretariat - employer-side outreach through member banks",
+     "sub": "Cost: tbc. Speed: tbc.",
+     "status": "draft",
+     "detail": "Covers: Employer-side evidence that no public series records. Evidence: Core file who-can-act: ind-act-perbanas (shared deck p2-4). Verified by: CRO draft - needs Akbar + mentor review.",
+     "source": "register:id-instruments.csv"
+    },
+    {
+     "id": "lev-ilo-method",
+     "band": "p5",
+     "label": "ILO - occupational exposure method and technical assistance",
+     "sub": "Cost: tbc. Speed: tbc.",
+     "status": "draft",
+     "detail": "Covers: The exposure method the study's figures rest on. Evidence: Core file who-can-act: ind-act-ilo (shared deck p2-4). Verified by: CRO draft - needs Akbar + mentor review.",
+     "source": "register:id-instruments.csv"
     }
    ],
    "edges": [
@@ -1267,5 +1384,10 @@
     "strengthen": "Concentrated household stress and support pressure consistent with the observed labour pathway."
    }
   ]
+ },
+ "_generated": {
+  "by": "build/sync_map_from_register.py",
+  "at": "2026-11-26T03:07:41Z",
+  "note": "views.policy.nodes rebuilt from the register (id-policy-inventory.csv + id-instruments.csv). bands, edges, marks and responsibility stay hand-curated."
  }
 }
