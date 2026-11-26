@@ -360,3 +360,41 @@ the inventory does not (`pol-rp3i` RP3I 2026-2030, `pol-voc50k` the 50,000-worke
 
 **Revert:** clear `'Indonesia policy inventory'!A5:M11`; re-enter the DEMO row at `'instruments'!A2:L2`
 and clear `'instruments'!A3:L7`; restore the two CSVs from git (`git checkout HEAD~ -- data/id-policy-inventory.csv data/id-instruments.csv`).
+
+### Cross-tab navigation links + register<->map loop (26 Nov, evening)
+Instruction: make the sheet data clickable across tabs so the sheets are navigable.
+
+**Links written (134 cells, every one only where the cell was plain text - no existing hyperlink was
+overwritten):**
+- Core `signals`: `M ian_signal` -> skeleton `SIGNALS` row; `E holder` -> Core `who-can-act` row (37 links)
+- Core `who-can-act`: `E proposed_door` -> Core `instruments` lever row; `D relevant_data_or_programme`
+  -> Core `Indonesia policy inventory` row (9 links)
+- Core `instruments`: `G evidence` -> the `who-can-act` row named in the cell (6 links)
+- Core `Indonesia policy inventory`: `E owner_agency` -> `who-can-act` row; `C short_name` -> `readiness`
+  row for the same id (16 links)
+- Core `triggers`: `E agency` -> `who-can-act`; `F action` -> the lever it describes (job fair/retraining
+  -> `ind-inst-kemnaker-pasker`)
+- Core `readiness`: `B document` -> `inv` row for the same id (3 links)
+- Skeleton `SIGNALS`: `A #` -> first `SIGNALS_ID` row for that signal (10 links)
+- Skeleton `SIGNALS_ID`: `A #` -> `SIGNALS` row (18 links)
+- Skeleton `README`: legend `B` (P1-P10 names) -> Core `inv` rows (8 links)
+
+**Cross-file links added later:** `SIGNALS_ID` column `G` - the policy cells had reverted to plain text,
+so each instrument name now carries its own link (textFormatRuns, 18 cells / 55 link spans) pointing at
+that instrument's row in the Core file's `Indonesia policy inventory`. The cell text was not changed.
+
+**New inventory row:** `ind-pojk11-padk1` (row 17) - her wording now reads "Technology-risk rules for
+banks (POJK 11/POJK.03/2022 and PADK OJK 1/2026)", so the register needed a row to link to. The old
+"POJK 38/SEOJK 21" reference is superseded; not re-inserted anywhere.
+
+**Register <-> map loop:**
+- `Indonesia policy inventory` 15 -> 16 rows; `instruments` 6 levers.
+- New generator `build/sync_map_from_register.py` (default `--check` is read-only): policy nodes
+  9 -> 22 in `data/ecosystem-id-map.json` (8 hand-written nodes kept, 8 added, 6 lever nodes replacing the
+  `pol-inst` placeholder). `bands`, `edges`, `marks` and `responsibility` are never touched.
+- Map page rebuilt: 22 policy nodes, and it now shows UU 27/2026, PP 6/2025, POJK 11, Stranas KA, PEKA,
+  RP3I and the six levers.
+
+**Revert:** clear the hyperlink/textFormatRuns on the ranges above (they all previously held plain text);
+delete `ind-pojk11-padk1` from `'Indonesia policy inventory'!A17:M17`; `git checkout` the map JSON + page
+to restore the 9-node policy view.
