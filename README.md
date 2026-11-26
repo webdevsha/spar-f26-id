@@ -8,7 +8,7 @@ versioned, auditable, and (where consented) public evidence base. The analysis a
 the shared deck and the Google Sheets tracker; this repo keeps that work **reproducible, diffable,
 and shippable** without anyone hand-coding a webpage or re-exporting a CSV.
 
-**Last full sync of this file: 24 November 2026.** If a file below is missing from this README, the
+**Last full sync of this file: 26 November 2026.** If a file below is missing from this README, the
 README is wrong — fix it in the same commit as the file.
 
 ---
@@ -83,7 +83,8 @@ Mirrors the `Shafira's tasks` tab — her work only, so the shared sheet stays u
 | Report section 5 — Indonesia chapter | 15% | In progress | 2 Dec 2026 |
 | Report section 8 — limits (with Napat) | 60% | Draft ready to read | 2 Dec 2026 |
 | Policy readiness review | 50% | In progress | 26 Oct 2026 — overdue |
-| Signal watchlist (with Ian) | 80% | Ready to check | Ongoing |
+| Signal watchlist (with Ian) | 90% | Ready to check | Ongoing |
+| Indonesia indicator table — S1–S10 (`SIGNALS_ID`, with Ian) | 90% | Ready to check | Ongoing |
 | Decision calendar (with Rachel) | 80% | Ready to check | 22 Nov 2026 — overdue |
 | Ecosystem and policy map (with Rachel) | 75% | Ready to check | 22 Nov 2026 — overdue |
 | Atlas page (our public page) | 45% | In progress | Jan 2027 |
@@ -142,7 +143,7 @@ deployed · `blocked` = waiting on infrastructure · `superseded` = kept for pro
 | [PROMPTS-PERPLEXITY-BOXCOMPUTE.md](docs/PROMPTS-PERPLEXITY-BOXCOMPUTE.md) | Copy-paste prompt set: Perplexity verification (P1, P2) and the first BoxCompute collection brief (B1–B3) | CRO | repo |
 | [PROMPTS-BOXCOMPUTE-V2.md](docs/PROMPTS-BOXCOMPUTE-V2.md) | **Current** collection brief — archive-first, three record kinds, 34-field schema, comparability gate (supersedes B1–B3) | CRO | repo |
 | [SCRAPING-WITH-BOXCOMPUTE.md](docs/SCRAPING-WITH-BOXCOMPUTE.md) | Plain-English guide to scraping with BoxCompute, using this Indonesia run as the worked example | CRO | repo |
-| [SHEET-WRITE-2026-11-24.md](docs/SHEET-WRITE-2026-11-24.md) | Audit + revert instructions for the three shared-sheet writes made on 24 Nov | CRO | repo |
+| [SHEET-WRITE-2026-11-24.md](docs/SHEET-WRITE-2026-11-24.md) | Audit + revert instructions for every shared-sheet write, 24–26 Nov (Core file `signals` O–T, skeleton `SIGNALS` H–K, `SIGNALS_ID` E–J + highlighting, `IND team progress` G, `SIGNALS` J) | CRO | repo |
 | [MODEL-INDONESIA.md](docs/MODEL-INDONESIA.md) | How the scenario model maps onto Indonesia: what the data identifies, what must be calibrated | CRO + Natraj | repo |
 | [back-up-research.md](docs/back-up-research.md) | Evidence notes behind the six measures M1–M6, with sources per indicator | CRO | repo |
 | [apps-script-trigger.gs](docs/apps-script-trigger.gs) | Apps Script `onChange` hook → `repository_dispatch`, so a sheet edit reaches the repo in seconds | CTO | repo |
@@ -283,16 +284,18 @@ postings-*.csv + kemnaker/*.csv ──build_overview──▶ build/spar-id-over
 | Sheet | ID | Tab(s) | What is in it |
 |---|---|---|---|
 | Core file — the register | [1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k](https://docs.google.com/spreadsheets/d/1v_TCkJ79k-OOmEvrBq5F_8p8qxO4TjtweWQDXmiad1k/edit) | `signals` (gid `838965401`), `triggers`, `Indonesia policy inventory`, `readiness`, `who-can-act`, `instruments` | 22 Indonesia signal rows; each policy document; the six readiness questions |
-| SPAR signals skeleton (team) | [1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo](https://docs.google.com/spreadsheets/d/1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo/edit) | `README`, `SIGNALS`, `(dani notes)`, `LOG` | S1–S10 signal definitions in three layers; the observation log |
+| SPAR signals skeleton (team) | [1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo](https://docs.google.com/spreadsheets/d/1XhtoLn9hjkk_c0vwSuVT8LIfZyq19VdwWPOFpQi5Wmo/edit) | `README`, `SIGNALS`, `SIGNALS_ID`, `(dani notes)`, `LOG` | S1–S10 signal definitions in three layers; **`SIGNALS_ID` = the Indonesia indicator table** (indicator · source · policy · verdict · capability · details); the observation log. `README` carries the policy legend, the layer definitions and the float-up key |
 | IND team progress | [1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ](https://docs.google.com/spreadsheets/d/1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ/edit) | `Sheet1` | Every Indonesia deliverable with progress, status, PIC |
 
-**Columns added 24 Nov (previously empty — revert ranges in [docs/SHEET-WRITE-2026-11-24.md](docs/SHEET-WRITE-2026-11-24.md)):**
+**Columns added 24–26 Nov (previously empty — revert ranges in [docs/SHEET-WRITE-2026-11-24.md](docs/SHEET-WRITE-2026-11-24.md)):**
 
 | Sheet → tab | New columns | Contents |
 |---|---|---|
 | Core file → `signals` | `O`–`T` | `link` · `source_verbatim` · `confidence` · `data_status` · `not_verified` · `source_checked` |
 | Skeleton → `SIGNALS` | `H`–`K` | Indonesian evidence · public source · status · gap/route |
 | IND team progress → `Sheet1` | `G` | `Comments` — one line per task, plain language |
+| Skeleton → `SIGNALS_ID` | `E`–`J` | `Indonesia's indicator` (name only, linked to the register row) · `Source` (compiled per shared indicator) · `Indonesia's policy` · `Verdict` · `Capability` · `Details` (the old single review column, split three ways on 26 Nov) |
+| Skeleton → `SIGNALS` | `J` | `Relevant Policies` — the same instruments as `SIGNALS_ID`, one row per signal |
 
 **Edit rules (all tabs):** header row is row 1 · `id` is the upsert and join key, never rename or
 reorder · no merged cells, no blank spacer rows · one document per row · dates `YYYY-MM-DD` ·
@@ -360,29 +363,59 @@ wrangler pages secret put SITE_PASSWORD --project-name spar-f26-id
 
 ## Shafira's task progress (SPAR Fall 2026)
 
-> Tallied 2026-11-24 from the Core file `signals` tab (22 rows), the Perplexity verification run,
-> Kemnaker's own portal counts, `IND team progress` and repo state. Supersedes the 2026-11-10 tally.
-> **On PR #15 — not yet merged into main.**
+> Tallied **2026-11-26** from the `SIGNALS_ID` indicator table in the SPAR signals skeleton, the Core
+> file `signals` tab (22 rows), the Perplexity verification run, Kemnaker's own portal counts,
+> `IND team progress` and repo state. Supersedes the 2026-11-24 tally.
 
 ```
-Data spine        ████████████████████░░░░  88%  22 signal rows; OJK/Kemnaker/Pasker sources located; portal counts downloaded
-Data list (lead)  ██████████████████████░░  92%  public source URL + verbatim + H/M/L on all 22 rows; 5 statuses corrected; unverified named
+Data spine        ███████████████████████░  94%  22 signal rows; the S1–S10 indicator table now carries a source, a policy and a verdict per row
+Data list (lead)  ███████████████████████░  95%  public source + verbatim + H/M/L on all rows; sources compiled per shared indicator; duplicate rows cleared
 Part 3 (signals)  ██████████████░░░░░░░░░░  70%  678-word draft written from the sourced base; needs Shafira's read-through, not a rewrite
 Part 4 (policy)   ██████░░░░░░░░░░░░░░░░░░  25%  who-can-act map + request routes ready; 600w with Ian pending (assembly, not discovery)
-Shared sheet/repo ████████████████░░░░░░░░  75%  sheet ahead of repo; hourly sync failing, so the 29 Nov freeze is blocked
+Shared sheet/repo ██████████████████░░░░░░  85%  indicator table now mirrors the review in three columns; hourly sync still failing, so the 29 Nov freeze is blocked
 Section 5 (SPAR)  ██░░░░░░░░░░░░░░░░░░░░░░  10%  2,500w Indonesia chapter; data underpinning ready
 Section 8 (Limits)█░░░░░░░░░░░░░░░░░░░░░░░   5%  not started (with Napat, Wed 2 Dec)
 Interview (BPS)   ████░░░░░░░░░░░░░░░░░░░░  20%  question reframed as a data-availability enquiry; candidate question found (see the emp.csv flag)
 Atlas site        ██████████░░░░░░░░░░░░░░  45%  ecosystem map + postings report live; overview/scenarios page built, deploy blocked
 ```
 
-**Evidence behind the bars:** Core file `signals` — 22 rows · `triggers` 1 · `who-can-act` 6 ·
-policy inventory 3 · readiness 3 (all `tbc`) · instruments 1 (DEMO) · postings 2,618 rows (2024→Oct
-2026) · Kemnaker portal counts 2022–24 in `data/kemnaker/` · [docs/ID-SIGNAL-SOURCE-MATRIX.md](docs/ID-SIGNAL-SOURCE-MATRIX.md),
-[docs/ID-PART3-DRAFT.md](docs/ID-PART3-DRAFT.md), [docs/ID-READINESS-WORKSHEET.md](docs/ID-READINESS-WORKSHEET.md), [docs/ID-PENDING-24NOV.md](docs/ID-PENDING-24NOV.md).
+**Moved on 26 Nov — the Indonesia indicator table (`SIGNALS_ID`):**
 
-**Next due:** Sun 22 Nov (Part 3 + Part 4 — Part 3 drafted; Part 4 with Ian) → Sun 29 Nov (sheet
-frozen into the repo) → Wed 2 Dec (§5 + §8 to Rachel). SPAR submission 14 Dec; Demo Day 19 Dec.
+- **S1–S10 each mapped to an Indonesia indicator**, every row linked to the exact register row it came
+  from (S3 and S4 correctly show none, because no indicator exists for them yet).
+- **Source compiled per shared indicator.** Where one indicator serves several signals, its `Source`
+  cell now carries the union of what backs it (e.g. M1 → `ILO · BPS`), so the same indicator reads
+  identically wherever it appears.
+- **Policy mapped and de-coded.** Every instrument is named in full with its acronym — `UU 27/2026`,
+  `POJK 38/SEOJK 21`, `JKP (PP 37/2021)`, `Stranas KA 2020-2045`, `Kartu Prakerja` — and hyperlinked to
+  its official source. Full titles, status and links live once in the tab's `README`, not on every row.
+- **The long review cell is now three columns: `Verdict` · `Capability` · `Details`.** The full reading
+  sits on the first row of each signal; the other rows of that signal carry the verdict and the
+  capability line plus a one-line pointer, so no paragraph is repeated 2–5 times.
+- **Reframed to the team's own question.** Each `Details` line now closes on what the signal *cannot*
+  tell us about an AI economic shock — e.g. S5: *"a fall in banking vacancies caused by AI would look
+  identical to a fall caused by a change in the rules."*
+- **Float-up highlighting on the rows that should be raised, not just read.** Rose `#FCE8E6` = the
+  shock would be invisible (S1, S3, S4); amber `#FFF2CC` = the number exists but cannot be read as an
+  AI shock on its own (S5–S10); plain = S2 only. The key sits on the tab's `README`.
+- **Duplicates and dead weight removed:** the indicator column was checked for repeats, the stray
+  leftover row was cleared, layer definitions and the policy legend were moved out of the repeated
+  cells into the tab's `README`, and one broken pointer (S8 had lost the row it pointed at) was rebuilt.
+
+**Evidence behind the bars:** `SIGNALS_ID` — 18 indicator rows across S1–S10, verdict + capability on
+every row, 10 full readings, 9 of 10 signals flagged for float-up · Core file `signals` — 22 rows ·
+`triggers` 1 · `who-can-act` 6 · policy inventory 3 · readiness 3 (all `tbc`) · instruments 1 (DEMO) ·
+postings 2,618 rows (2024→Oct 2026) · Kemnaker portal counts 2022–24 in `data/kemnaker/` ·
+[docs/ID-SIGNAL-SOURCE-MATRIX.md](docs/ID-SIGNAL-SOURCE-MATRIX.md),
+[docs/ID-PART3-DRAFT.md](docs/ID-PART3-DRAFT.md), [docs/ID-READINESS-WORKSHEET.md](docs/ID-READINESS-WORKSHEET.md), [docs/ID-PENDING-24NOV.md](docs/ID-PENDING-24NOV.md),
+[docs/SHEET-WRITE-2026-11-24.md](docs/SHEET-WRITE-2026-11-24.md) (revert ranges for every sheet write, 24–26 Nov).
+
+**Open question on the table:** **M6 has no row** in `SIGNALS_ID` — coverage is M1 ×6, M2 ×5, M3 ×2,
+M4 ×6, M5 ×5, plus rows still without an indicator. Either a signal carries M6, or it should be marked
+unused so the register's six-measure structure does not look one short.
+
+**Next due:** Fri 27 Nov (one interview about data gaps) → Sun 29 Nov (sheet frozen into the repo —
+blocked by the sync failure) → Wed 2 Dec (§5 + §8 to Rachel). SPAR submission 14 Dec; Demo Day 19 Dec.
 
 ## Open items and blockers
 
