@@ -330,3 +330,71 @@ question); refine the highlights accordingly.
 
 **Revert:** clear `backgroundColor` on `'SIGNALS_ID'!A2:M19`; `'README'!A39:D42` clear. Row numbers shift
 with the live edits - re-read first.
+
+### Core file: Part 4's data into the register (26 Nov) - `Indonesia policy inventory` + `instruments`
+Instruction: Part 4 (who can act / policies in place) must exist in Google Sheets too, so the data can
+feed the ecosystem map and the policy inventory readily.
+
+1. **`Indonesia policy inventory` A5:M11 - 3 rows -> 10.** The 3 existing ids were untouched
+   (`ind-ojk-ai-guide-2025`, `ind-jkp-2022`, `ind-paskerid-kemnaker`); 7 added, matching exactly the
+   instruments the `SIGNALS_ID` indicator table names (the P1-P10 legend):
+   `ind-uu27-2026` (law, in force 28 Oct 2026, implementing rules due 28 Oct 2027) · `ind-pp35-2021` ·
+   `ind-pp6-2025` (effective 7 Feb 2025) · `ind-stranas-ka-2020-2045` · `ind-prakerja` ·
+   `ind-pp44-2015` (JKK, JKM) · `ind-pp46-2015` (JHT). Existing 13-column schema kept; unknown values
+   left `tbc`, per the register's own convention.
+2. **`instruments` A2:L7 - the DEMO placeholder replaced with 6 real lever rows**, one per actor's door
+   in Part 4: `ind-inst-ojk-supervision` · `ind-inst-kemnaker-pasker` (the only lever with a stated lead
+   time: within 30 days, per the trigger card; cost not yet estimated) · `ind-inst-jkp-monitoring` ·
+   `ind-inst-bps-sakernas` · `ind-inst-perbanas-outreach` · `ind-inst-ilo-method`. All are marked
+   `source_type=draft`, `verified_by="CRO draft - needs Akbar + mentor review"`, with the evidence cell
+   pointing at the who-can-act row or the trigger card each one rests on. Cost/speed stay `tbc` where
+   nothing sourced says otherwise.
+3. **Repo mirror updated by hand** (the hourly sync is still failing): `data/id-policy-inventory.csv`
+   (10 rows) and `data/id-instruments.csv` (6 rows) now match the sheets, so the map and dashboard read
+   the same data once the sync is restored. This is a manual mirror, not a new source of truth.
+
+**Found while doing it (not fixed - needs a decision):** the ecosystem map's policy view
+(`data/ecosystem-id-map.json`) is out of step with the register **in both directions** - it holds nodes
+the inventory does not (`pol-rp3i` RP3I 2026-2030, `pol-voc50k` the 50,000-worker programme), and the
+7 documents just added are absent from it.
+
+**Revert:** clear `'Indonesia policy inventory'!A5:M11`; re-enter the DEMO row at `'instruments'!A2:L2`
+and clear `'instruments'!A3:L7`; restore the two CSVs from git (`git checkout HEAD~ -- data/id-policy-inventory.csv data/id-instruments.csv`).
+
+### Cross-tab navigation links + register<->map loop (26 Nov, evening)
+Instruction: make the sheet data clickable across tabs so the sheets are navigable.
+
+**Links written (134 cells, every one only where the cell was plain text - no existing hyperlink was
+overwritten):**
+- Core `signals`: `M ian_signal` -> skeleton `SIGNALS` row; `E holder` -> Core `who-can-act` row (37 links)
+- Core `who-can-act`: `E proposed_door` -> Core `instruments` lever row; `D relevant_data_or_programme`
+  -> Core `Indonesia policy inventory` row (9 links)
+- Core `instruments`: `G evidence` -> the `who-can-act` row named in the cell (6 links)
+- Core `Indonesia policy inventory`: `E owner_agency` -> `who-can-act` row; `C short_name` -> `readiness`
+  row for the same id (16 links)
+- Core `triggers`: `E agency` -> `who-can-act`; `F action` -> the lever it describes (job fair/retraining
+  -> `ind-inst-kemnaker-pasker`)
+- Core `readiness`: `B document` -> `inv` row for the same id (3 links)
+- Skeleton `SIGNALS`: `A #` -> first `SIGNALS_ID` row for that signal (10 links)
+- Skeleton `SIGNALS_ID`: `A #` -> `SIGNALS` row (18 links)
+- Skeleton `README`: legend `B` (P1-P10 names) -> Core `inv` rows (8 links)
+
+**Cross-file links added later:** `SIGNALS_ID` column `G` - the policy cells had reverted to plain text,
+so each instrument name now carries its own link (textFormatRuns, 18 cells / 55 link spans) pointing at
+that instrument's row in the Core file's `Indonesia policy inventory`. The cell text was not changed.
+
+**New inventory row:** `ind-pojk11-padk1` (row 17) - her wording now reads "Technology-risk rules for
+banks (POJK 11/POJK.03/2022 and PADK OJK 1/2026)", so the register needed a row to link to. The old
+"POJK 38/SEOJK 21" reference is superseded; not re-inserted anywhere.
+
+**Register <-> map loop:**
+- `Indonesia policy inventory` 15 -> 16 rows; `instruments` 6 levers.
+- New generator `build/sync_map_from_register.py` (default `--check` is read-only): policy nodes
+  9 -> 22 in `data/ecosystem-id-map.json` (8 hand-written nodes kept, 8 added, 6 lever nodes replacing the
+  `pol-inst` placeholder). `bands`, `edges`, `marks` and `responsibility` are never touched.
+- Map page rebuilt: 22 policy nodes, and it now shows UU 27/2026, PP 6/2025, POJK 11, Stranas KA, PEKA,
+  RP3I and the six levers.
+
+**Revert:** clear the hyperlink/textFormatRuns on the ranges above (they all previously held plain text);
+delete `ind-pojk11-padk1` from `'Indonesia policy inventory'!A17:M17`; `git checkout` the map JSON + page
+to restore the 9-node policy view.
