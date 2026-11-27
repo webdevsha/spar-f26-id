@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-27T04:00:22Z",
+  "updated_utc": "2026-11-27T04:10:23Z",
   "rows_total": 16301,
   "rows_bulk_archive": 14709,
   "rows_sample_pass": 1573,
@@ -10,5 +10,5 @@
   "target": 100000,
   "note": "Counts are rows written by the crawler, not yet filtered to finance/BPO scope. Rate is bounded by the archive's one-request-per-2s courtesy rule.",
   "rate_per_min": 0.0,
-  "sampled_epoch": 1795752022
+  "sampled_epoch": 1795752623
 }
