@@ -54,7 +54,7 @@ pay next, job-loss claims and official unemployment last.*
 ## 5. The two infrastructure failures in front of the work
 
 1. **`sync-sheets` fails on every hourly run** — step *Sync tabs to CSV* succeeds, step *Commit if changed* fails. Effect: the repo's `data/*.csv` no longer mirrors the sheets (repo holds 9 signal rows against the tab's 22), so the dashboard reads stale data, and **item 6 cannot proceed**.
-2. **Cloudflare Pages deploy fails authentication (code 10000)** since 5 Nov. Effect: newly built pages (e.g. `build/spar-id-overview.html`) exist locally but are not online. The public report and ecosystem map URLs that *are* live were tested on 24 Nov (HTTP 200).
+2. ~~**Cloudflare Pages deploy fails authentication (code 10000)** since 5 Nov.~~ **Retracted 28 Nov 2026:** deploys were verified working — `wrangler pages deploy` uploaded 30 files plus the Functions bundle and published deployment `6bf9dacb`. The token in `~/.hermes/.env` authenticates; `./deploy.sh` stages `app/` as the site root and keeps the generated dashboard at `/dashboard.html`. The public report and map URLs remain HTTP 200.
 
 Both are **CTO / `@misshanna_bot`** lane: a Cloudflare API token regeneration with no expiry, and the
 GitHub push credential for the sync job.
