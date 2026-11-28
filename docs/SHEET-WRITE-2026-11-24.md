@@ -478,3 +478,13 @@ Two new tabs in the Core file, Indonesia only, interns counted in, panel breaks 
   Revert: delete the tab.
 Neither touches `id-postings`, `signals`, `id-shock-data` or any existing tab.
 
+### BoxCompute briefs batch appended, 28 Nov
+Core `id-shock-data` **A69:AE86** — 18 rows from `id-shock-briefs-new.tsv`, taking the register to **85
+evidence rows**.
+**Renumbered before append:** the batch arrived as `ind-ev-0131`-`0148`, but 0131-0135 were already used by the
+BPS rows from the archived release. Renumbered to **`ind-ev-0136`-`0153`**, order preserved; the mapping is in
+the run report. Duplicate-grain check against indicator, period and unit: none.
+New coverage: ID-09 x7 (job boards, all blocked, every block dated), ID-05 x5 (landing-page figures and the
+gate), ID-12 x4 (BNI arithmetic, BRI definition, history block), ID-22 and ID-13 x1 each (access log).
+Revert: clear `id-shock-data!A69:AE86`.
+

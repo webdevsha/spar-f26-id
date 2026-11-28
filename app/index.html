@@ -196,7 +196,12 @@ footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);f
  <textarea id="paste" placeholder="BRI, 84949, 2900, 0.35"></textarea>
  <p><button class="btn ghost" id="bImp">Import rows</button><button class="btn ghost" id="bRst">Reset defaults</button></p>
 </div>
-</div></section>
+</div>
+<h3 style="margin:38px 0 12px">Both values, both bases — the grid behind the headline</h3>
+<p class="lead">Four cells. Two assumptions decide everything, and neither is a fact: the exposed share (a 30% placeholder versus the measured 0.582) and whose separations count as absorption capacity. Every figure below is computed live from the same model the sliders drive.</p>
+<div class="scroll"><table id="tGrid"></table></div>
+<p class="note" style="margin-top:12px"><b>0.582</b> is measured: 20,088 Indonesian banking advertisements, 94.3% in exposure groups G2–G4, and the crawl estimate validated against a same-month census within <b>0.57 of a percentage point</b>. <b>0.30</b> was a placeholder with no source and is kept in view deliberately. Voluntary-only attrition uses the two banks that publish it (BRI 1.24%, Mandiri 3.53%); the rest keep their reported leavers. Adopting BNI's 1,324 leavers — rather than the unsupported 2,254 — raised the low case, because less separation means less absorption.</p>
+</section>
 
 <section id="adjust"><div class="wrap">
 <div class="num">6</div><h2>Where we adjusted Moody's, and why</h2>
@@ -299,7 +304,8 @@ function drawPctrls(){
 }
 function setPreset(p,keep){preset=p;document.querySelectorAll('#presetSeg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.p===p));if(!keep&&PRIORS[p]){W={...PRIORS[p]};drawPctrls();}}
 function refreshW(){const w=weights();['slow','medium','extreme'].forEach(k=>$('#po_'+k).textContent=Math.round(w[k]*100)+'%');drawBranch();
-drawPostings();renderEV();}
+drawPostings();
+drawGrid();renderEV();}
 function results(){const R={};for(const k in SC)R[k]=runScenario(P,SC[k],BANKS);return R;}
 function renderEV(){
   const R=results(),e=expected(R,weights());
@@ -351,6 +357,26 @@ function renderModel(){
   const us=[['Moody baseline',(9.38/9.20-1)*100],['Upheaval',(9.18/9.20-1)*100],['Dystopia',(8.61/9.20-1)*100]];
   mk('cX',{type:'bar',data:{labels:['Slow vs US baseline','Medium vs US Upheaval','Extreme vs US Dystopia'],datasets:[{label:'US financial activities, 2025 to 2030',data:us.map(x=>+x[1].toFixed(1)),backgroundColor:'#7aa7e8'},{label:'Our five-bank panel, to 2030',data:['slow','medium','extreme'].map(q=>+(R[q].sum.chg*100).toFixed(1)),backgroundColor:['slow','medium','extreme'].map(q=>COL[q])}]},
    options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:v=>v+'%'}}}}});
+}
+
+
+function drawGrid(){
+  const cols=[{k:'0.30',x:0.30,label:'0.30 placeholder'},{k:'0.582',x:0.582,label:'0.582 measured'}];
+  const bases=[{k:'all',label:'all leavers'},{k:'voluntary',label:'voluntary only'}];
+  const VOL={BRI:0.0124,'Bank Mandiri':0.0353};
+  let rows=[];
+  for(const c of cols){ for(const b of bases){
+    const panel=BANKS.map(bk=>{
+      const lv=(b.k==='voluntary'&&VOL[bk.n])?Math.round((+bk.hc||0)*VOL[bk.n]):(+bk.leavers||0);
+      return {...bk,leavers:lv,exp:c.x};
+    });
+    const r=runScenario(P,SC.extreme,panel);
+    rows.push(`<tr><td><b>${c.label}</b></td><td>${b.label}</td><td>${(r.q*100).toFixed(2)}%</td>
+      <td><b>${Math.round(r.sum.cum).toLocaleString()}</b></td><td>Rp ${r.sum.cost.toFixed(1)} bn</td>
+      <td>${Math.round(r.sum.E).toLocaleString()}</td></tr>`);
+  }}
+  const el=$('#tGrid'); if(!el) return;
+  el.innerHTML=`<thead><tr><th>Exposed share</th><th>Attrition basis</th><th>Weighted q</th><th>Dismissals 2026-30</th><th>JKP cost</th><th>Headcount 2030</th></tr></thead><tbody>${rows.join('')}</tbody>`;
 }
 
 function drawPostings(){
