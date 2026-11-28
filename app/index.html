@@ -69,18 +69,20 @@ textarea{width:100%;min-height:64px;background:var(--bg2);color:var(--ink);borde
 footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);font-size:13px}
 .note{font-size:13px;color:var(--faint)}
 .hide{display:none}
+.skip{position:absolute;left:-999px;top:8px;background:var(--id);color:#0f1115;padding:8px 14px;border-radius:6px;z-index:50;font-weight:600}.skip:focus{left:8px}
 @media(prefers-reduced-motion:no-preference){.branch .draw{stroke-dasharray:1200;stroke-dashoffset:1200;animation:d 2.2s ease-out forwards}@keyframes d{to{stroke-dashoffset:0}}}
 </style>
 </head>
 <body>
+<a class="skip" href="#adoption">Skip to content</a>
 <nav><div class="wrap"><b>SPAR Indonesia</b>
-<a href="#adoption">Adoption</a><a href="#labour">Job market</a><a href="#shock">What shock</a><a href="#scenarios">Scenarios</a><a href="#model">Model</a><a href="#adjust">Adjustments</a><a href="#sources">Sources</a><a href="atlas.html" style="color:var(--id)">Atlas: ecosystem and policy</a></div></nav>
+<a href="#adoption">Adoption</a><a href="#labour">Job market</a><a href="#shock">What shock</a><a href="#scenarios">Scenarios</a><a href="#model">Model</a><a href="#adjust">Adjustments</a><a href="#sources">Sources</a><a href="files/The_Empty_Chair_SPAR_Indonesia_report.pdf">Report (PDF)</a><a href="atlas.html" style="color:var(--id)">Atlas: ecosystem and policy</a></div></nav>
 
 <header class="hero"><div class="wrap">
 <div class="eyebrow">SPAR Indonesia, AI economic shock research</div>
-<h1>What kind of AI shock is coming for Indonesia's banks?</h1>
-<p class="lead">A stress test of large-bank employment under three adoption speeds, with probabilities adapted from Moody's Analytics' five US scenarios and adjusted for Indonesia. Draft v0.2, 28 November 2026. Not a forecast.</p>
-<a class="btn" href="#scenarios">Explore the futures</a>
+<h1>It will arrive as an empty chair.</h1>
+<p class="lead">Indonesia's banks will not announce an AI shock. It will be a teller who retires and is not replaced, a school-leaver who applies and hears nothing, and beneath them a job-loss net that holds about 16 million of 148 million workers. This page stress-tests large-bank employment under three adoption speeds, with probabilities adapted from Moody's Analytics and adjusted for Indonesia. Draft v0.4, 28 November 2026. Not a forecast.</p>
+<a class="btn" href="#scenarios">Explore the futures</a> <a class="btn" style="background:transparent;color:var(--id);border:1px solid var(--id);margin:8px 8px 0 0" href="files/The_Empty_Chair_SPAR_Indonesia_report.pdf">Read the report (PDF)</a>
 <svg class="branch" viewBox="0 0 880 250" role="img" aria-label="Three paths from 2026: slow, medium and extreme adoption, with line width showing probability">
 <g id="bsvg"></g></svg>
 </div></header>
