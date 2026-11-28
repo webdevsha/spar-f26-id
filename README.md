@@ -407,23 +407,24 @@ wrangler pages secret put SITE_PASSWORD --project-name spar-f26-id
 
 ## Shafira's task progress (SPAR Fall 2026)
 
-> Tallied **2026-11-26** from the `SIGNALS_ID` indicator table in the SPAR signals skeleton, the Core
-> file `signals` tab (22 rows), the Perplexity verification run, Kemnaker's own portal counts,
-> `IND team progress` and repo state. Supersedes the 2026-11-24 tally.
+> Tallied **2026-11-28** from the `SIGNALS_ID` indicator table, the Core file (9 tabs: 22 signals,
+> 16 policy instruments, 6 levers, 6 bodies), the generated ecosystem map (22 policy nodes), the
+> Perplexity verification run, Kemnaker's own portal counts, `IND team progress` and repo state.
+> Supersedes the 2026-11-26 tally.
 
 ```
-Data spine        ███████████████████████░  94%  22 signal rows; the S1–S10 indicator table now carries a source, a policy and a verdict per row
-Data list (lead)  ███████████████████████░  95%  public source + verbatim + H/M/L on all rows; sources compiled per shared indicator; duplicate rows cleared
-Part 3 (signals)  ██████████████░░░░░░░░░░  70%  678-word draft written from the sourced base; needs Shafira's read-through, not a rewrite
-Part 4 (policy)   ██████░░░░░░░░░░░░░░░░░░  25%  who-can-act map + request routes ready; 600w with Ian pending (assembly, not discovery)
-Shared sheet/repo ██████████████████░░░░░░  85%  indicator table now mirrors the review in three columns; hourly sync still failing, so the 29 Nov freeze is blocked
-Section 5 (SPAR)  ██░░░░░░░░░░░░░░░░░░░░░░  10%  2,500w Indonesia chapter; data underpinning ready
-Section 8 (Limits)█░░░░░░░░░░░░░░░░░░░░░░░   5%  not started (with Napat, Wed 2 Dec)
-Interview (BPS)   ████░░░░░░░░░░░░░░░░░░░░  20%  question reframed as a data-availability enquiry; candidate question found (see the emp.csv flag)
-Atlas site        ██████████░░░░░░░░░░░░░░  45%  ecosystem map + postings report live; overview/scenarios page built, deploy blocked
+Data spine        ███████████████████████░   96%  22 signal rows + 16 policy rows + 6 levers + 6 bodies; the register now generates the map's policy nodes
+Data list (lead)  ███████████████████████░   95%  public source + verbatim + H/M/L on all rows; sources compiled per shared indicator; duplicates cleared
+Part 3 (signals)  █████████████████░░░░░░░   70%  678-word draft written from the sourced base; needs Shafira's read-through, not a rewrite
+Part 4 (policy)   ████████████████████░░░░   85%  v1 written and reframed to the shock question; its data is in the register; waiting on Ian's read + the word trim
+Shared sheet/repo ██████████████████████░░   90%  three columns, 134 cross-tab links, register→map generator; hourly sync still failing, so the 29 Nov freeze is not safe
+Section 5 (SPAR)  ██░░░░░░░░░░░░░░░░░░░░░░   10%  2,500w Indonesia chapter; data underpinning ready
+Section 8 (Limits)██████████████░░░░░░░░░░   60%  draft ready to read with Napat; tracker says 60%
+Interview (BPS)   █████░░░░░░░░░░░░░░░░░░░   20%  question reframed as a data-availability enquiry; candidate question found (see the emp.csv flag)
+Atlas site        ████████████░░░░░░░░░░░░   50%  ecosystem map + postings report live; five pages built, proposal written, deploy still not done
 ```
 
-**Moved on 26 Nov — the Indonesia indicator table (`SIGNALS_ID`):**
+**Moved on 26 Nov — the indicator table, and the register made navigable:**
 
 - **S1–S10 each mapped to an Indonesia indicator**, every row linked to the exact register row it came
   from (S3 and S4 correctly show none, because no indicator exists for them yet).
@@ -431,7 +432,7 @@ Atlas site        ██████████░░░░░░░░░░�
   cell now carries the union of what backs it (e.g. M1 → `ILO · BPS`), so the same indicator reads
   identically wherever it appears.
 - **Policy mapped and de-coded.** Every instrument is named in full with its acronym — `UU 27/2026`,
-  `POJK 38/SEOJK 21`, `JKP (PP 37/2021)`, `Stranas KA 2020-2045`, `Kartu Prakerja` — and hyperlinked to
+  `POJK 11/POJK.03/2022 and PADK OJK 1/2026`, `JKP (PP 37/2021)`, `Stranas KA 2020-2045`, `Kartu Prakerja` — and hyperlinked to
   its official source. Full titles, status and links live once in the tab's `README`, not on every row.
 - **The long review cell is now three columns: `Verdict` · `Capability` · `Details`.** The full reading
   sits on the first row of each signal; the other rows of that signal carry the verdict and the
@@ -454,11 +455,31 @@ Atlas site        ██████████░░░░░░░░░░�
   step with the register (9 → **22 nodes**), which is why the map page now shows `UU 27/2026`,
   `PP 6/2025`, `POJK 11`, `Stranas KA`, `RP3I` and the six levers.
 
-**Pull requests:** [#35](https://github.com/webdevsha/spar-f26-id/pull/35) this progress section ·
+**Moved on 28 Nov — the product, and the reference base:**
+
+- **Studied the Windfall scenarios site** (`scenarios-2030.windfalltrust.org`) and wrote the proposal:
+  ten patterns that work for a policy reader, what we must not copy, seven routes (five already built),
+  two scenario axes our own evidence can support, and the evidence grammar — see
+  [docs/ID-POLICY-SITE-PROPOSAL.md](docs/ID-POLICY-SITE-PROPOSAL.md).
+- **A wireframe that shows it** — [build/proposal-wireframe.html](build/proposal-wireframe.html), light
+  theme, using only figures already verified in the register; unsigned scenario bands print
+  `bracket pending` rather than an invented midpoint.
+- **The reference base indexed** — [docs/REFERENCE-LIBRARY.md](docs/REFERENCE-LIBRARY.md) cites the
+  twelve third-party documents we rely on instead of redistributing them; eight of the twelve are
+  voluntary corporate disclosures, which is itself one of the study's findings.
+- **Work log added** — [the 24–28 Nov log](#work-log--everything-built-2428-november-2026) records every
+  artefact with the PR or audit entry that carries it.
+
+**Pull requests:** [#35](https://github.com/webdevsha/spar-f26-id/pull/35) the first progress tally ·
 [#36](https://github.com/webdevsha/spar-f26-id/pull/36) Part 4 v1 + the register and map work ·
-[#37](https://github.com/webdevsha/spar-f26-id/pull/37) the tab links and the link graph — **all three
-merged**. [#38](https://github.com/webdevsha/spar-f26-id/pull/38) carries the policy-site proposal, the
-wireframe and this work log, and is **open**. Part 4 itself:
+[#37](https://github.com/webdevsha/spar-f26-id/pull/37) the tab links and the link graph ·
+[#38](https://github.com/webdevsha/spar-f26-id/pull/38) the proposal, the wireframe and the work log —
+**all four merged**. [#39](https://github.com/webdevsha/spar-f26-id/pull/39) carries the one-pager, the
+scenario export and the reference-library index, and **cannot merge yet**: the `main` ruleset requires
+CodeQL to be clean at error severity, and alert
+[#4](https://github.com/webdevsha/spar-f26-id/security/code-scanning/4)
+(`py/clear-text-storage-sensitive-data`, `build/build_overview.py:607`) is open on `main`. That alert sits
+on the base branch, so it holds every pull request until it is fixed or dismissed. Part 4 itself:
 [docs/ID-PART4-DRAFT.md](docs/ID-PART4-DRAFT.md) (the section has no Google Doc; the repo draft is its
 only home).
 
