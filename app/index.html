@@ -213,7 +213,7 @@ const COL={slow:'#5cc2a6',medium:'#e8b04a',extreme:'#ef6b5b'};
 const NAME={slow:'Slow',medium:'Medium',extreme:'Extreme'};
 const P0={baseYear:2026,q:.034,x:.30,g:0,A0:.18,wage:5.05,cap:5,rate:.6,months:6,acc:.83,chi:.5,theta:.6,iota:1,psi:.5,fi:1.65};
 const SC0={slow:{A:.30,year:2030,e:.24,phi:.625,m:0},medium:{A:.52,year:2029,e:.53,phi:.66,m:0},extreme:{A:.85,year:2028,e:.82,phi:.73,m:0}};
-const BANK0=[{n:"BRI",hc:84949,leavers:3323,exp:0},{n:"BNI",hc:27201,leavers:2254,exp:0},{n:"BCA",hc:26435,leavers:860,exp:0},{n:"CIMB Niaga",hc:10775,leavers:1729,exp:0},{n:"KB Bank",hc:2334,leavers:1063,exp:0},{n:"Bank Mandiri",hc:38732,leavers:2868,exp:0},{n:"BTN",hc:11429,leavers:224,exp:0},{n:"BSI",hc:16274,leavers:1001,exp:0}];
+const BANK0=[{n:"BRI",hc:84949,hires:12070,leavers:3323,exp:0},{n:"BNI",hc:27201,hires:1596,leavers:2254,exp:0},{n:"BCA",hc:26435,hires:2330,leavers:860,exp:0},{n:"CIMB Niaga",hc:10775,hires:1446,leavers:1729,exp:0},{n:"KB Bank",hc:2334,hires:499,leavers:1063,exp:0},{n:"Bank Mandiri",hc:38732,hires:2717,leavers:2868,exp:0},{n:"BTN",hc:11429,hires:802,leavers:224,exp:0},{n:"BSI",hc:16274,hires:352,leavers:1001,exp:0}];
 let P={...P0},SC=JSON.parse(JSON.stringify(SC0)),BANKS=JSON.parse(JSON.stringify(BANK0)),sel='medium',preset='indo',W={...PRIORS.indo};
 Chart.defaults.color='#9aa3b2';Chart.defaults.borderColor='#2a3140';Chart.defaults.font.family='Inter';
 const charts={};
@@ -332,9 +332,9 @@ function renderModel(){
    options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:v=>v+'%'}}}}});
 }
 function drawBank(){
-  $('#tBank').innerHTML=`<thead><tr><th>Bank</th><th>Headcount</th><th>Leavers per year</th><th>Exposed share</th><th>Status</th></tr></thead><tbody>`+BANKS.map((b,i)=>`<tr><td>${b.n}</td>
-   <td><input aria-label="${b.n} headcount" data-i="${i}" data-f="hc" value="${b.hc||''}"></td><td><input aria-label="${b.n} leavers" data-i="${i}" data-f="leavers" value="${b.leavers||''}" placeholder="feed"></td><td><input aria-label="${b.n} exposed share" data-i="${i}" data-f="exp" value="${b.exp||''}" placeholder="feed"></td>
-   <td><span class="tag ${b.hc?'obs':'need'}">${b.hc?'Observed':'Needs feed'}</span></td></tr>`).join('')+`<tr><td><b>Panel</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.hc||0),0))}</b></td><td></td><td></td><td></td></tr></tbody>`;
+  $('#tBank').innerHTML=`<thead><tr><th>Bank</th><th>Headcount</th><th>Hires / yr</th><th>Leavers / yr</th><th>Net</th><th>Exposed share</th><th>Status</th></tr></thead><tbody>`+BANKS.map((b,i)=>{const net=(+b.hires||0)-(+b.leavers||0);return `<tr><td>${b.n}</td>
+   <td><input aria-label="${b.n} headcount" data-i="${i}" data-f="hc" value="${b.hc||''}"></td><td>${b.hires?fmt(b.hires):'—'}</td><td><input aria-label="${b.n} leavers" data-i="${i}" data-f="leavers" value="${b.leavers||''}" placeholder="feed"></td><td style="font-weight:600;color:${net>=0?'var(--ok,#3f9d6b)':'#c0392b'}">${b.hires?((net>=0?'+':'')+fmt(net)):'—'}</td><td><input aria-label="${b.n} exposed share" data-i="${i}" data-f="exp" value="${b.exp||''}" placeholder="feed"></td>
+   <td><span class="tag ${b.hc?'obs':'need'}">${b.hc?'Observed':'Needs feed'}</span></td></tr>`}).join('')+`<tr><td><b>Panel</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.hc||0),0))}</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.hires||0),0))}</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.leavers||0),0))}</b></td><td><b>${(()=>{const n=BANKS.reduce((a,b)=>a+(+b.hires||0)-(+b.leavers||0),0);return (n>=0?'+':'')+fmt(n)})()}</b></td><td></td><td></td></tr><tr><td colspan="7" style="font-size:12.5px;color:var(--mut);padding-top:10px">Net flow is reported hires minus reported leavers. Across the eight banks it is <b>positive</b>: the panel is still growing, so on today's disclosures an AI shock would appear as a <b>hiring slowdown</b>, not a fall in headcount. KB Bank (1,063 leavers on 2,334 staff) drives the 6.11% weighted attrition on its own.</td></tr></tbody>`;
   document.querySelectorAll('#tBank input').forEach(inp=>inp.addEventListener('change',e=>{BANKS[+e.target.dataset.i][e.target.dataset.f]=parseFloat(String(e.target.value).replace(/,/g,''))||0;drawBank();renderModel();renderEV();}));
 }
 /* ---- 6,7 */

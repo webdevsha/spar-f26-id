@@ -34,7 +34,7 @@ const LABOUR = [
 LABOUR.forEach(r=>{ r.total=r.formal+r.inf; r.derived=false; });
 const MOODY = [
   {n:"AI-Empowered Economy",p:40,lo:35,hi:50,avg:41.3,map:"medium",fit:"Partly",ur:0,emp:"baseline",fin:"+2.0% (9.20m to 9.38m)",why:"Adoption path and gains plausible for banks. The baseline leans on a stock wealth effect (about two-thirds of AI's 0.52pp contribution to 2025 US growth) that is thin in Indonesia."},
-  {n:"AI Falls Flat",p:25,lo:20,hi:35,avg:24.4,map:"slow",fit:"Does not fit as written",ur:2.4,emp:"-4.2m by 2027",fin:"not published",why:"US job losses come from an equity and capex bust (stocks -25%), not from adoption. In Indonesia the channel would be capital flows and the rupiah. We keep the slow-adoption part and test the bust with a separate overlay."},
+  {n:"AI Falls Flat",p:25,lo:20,hi:35,avg:24.4,map:"slow",fit:"Does not fit as written",ur:2.4,emp:"-1.71m by 2030",fin:"not published",why:"US job losses come from an equity and capex bust (stocks -25%), not from adoption. In Indonesia the channel would be capital flows and the rupiah. We keep the slow-adoption part and test the bust with a separate overlay."},
   {n:"Productivity Boon",p:20,lo:10,hi:20,avg:17.5,map:"medium",fit:"Does not fit",ur:0.8,emp:"-0.26m by 2030, then positive",fin:"not published",why:"Needs tight labour markets, wage pass-through and domestic ownership of the gains. Indonesia has a labour surplus and imports frontier models."},
   {n:"Job Market Upheaval",p:10,lo:5,hi:18,avg:11.6,map:"extreme",fit:"Mechanism fits, timing does not",ur:2.2,emp:"-3.8m by 2030",fin:"-0.2% vs 2025 (-199k vs baseline)",why:"Fast substitution of cognitive tasks. With usage at 14.8% against 33.0% in the US, a 2030 arrival needs a very fast catch-up. Plausible first inside banks and BPO."},
   {n:"Job Market Dystopia",p:5,lo:3,hi:7,avg:5.3,map:"extreme",fit:"Tail only",ur:2.1,emp:"-7.1m by 2030",fin:"-6.4% vs 2025 (-769k vs baseline)",why:"Mass cognitive-labour substitution. Our Extreme case is the nearest run; not modelled separately."}
@@ -65,19 +65,21 @@ const HYP = [
 const ADJ = [
  ["Scenario probabilities","US economists' subjective average: 40 / 25 / 10 / 5 / 20.","Usage 14.8% vs 33.0%; banks ahead of the economy (52% piloting or operational).","Slow 40, Medium 50, Extreme 10 as a starting prior (from 25 / 60 / 15). Editable. Replace with expert elicitation.","Low"],
  ["Wealth effect","About two-thirds of AI's 0.52pp 2025 US growth came through stock wealth.","About 9m equity investor accounts; 32m capital-market accounts, 99.8% retail.","Not carried over. Macro overlay set to 0; external channel left as a flagged gap.","Medium"],
- ["Shock measure","Unemployment rate and payrolls.","Open unemployment 4.75%; informal 57.9%; JKP formal only.","Track where displaced staff go: formal, informal, open unemployed.","Medium"],
+ ["Shock measure","Unemployment rate and payrolls.","Open unemployment 4.68% (Feb 2026), 4.75% (Aug 2026); informal 57.9%; JKP formal only.","Track where displaced staff go: formal, informal, open unemployed.","Medium"],
  ["Labour supply","US labour force growth slows with immigration.","Labour force +1.37m a year vs formal jobs +0.41m (Aug 2025 to Aug 2026).","Adjustment lands on hiring of entrants; hiring cut is a headline output.","Medium"],
  ["Exposure to loss","Loss = exposure x adoption x friction, an upper bound (Box 4).","ILO: 21.7% of Indonesian jobs exposed; 24% of clerical tasks highly exposed, 58% medium.","r = e x phi. e from ILO task shares; phi is our friction residual, to be calibrated.","Low to medium"],
  ["Baseline growth","US financial activities payrolls +2.0% over 2025 to 2030.","Finance and insurance employment 1.71m (Aug 2024) to 1.65m (Aug 2025).","No baseline growth (g = 0).","Medium"],
  ["Policy response","Reaction function and stabilisers only.","JKP pays 60% of wages for up to 6 months, formal workers only.","JKP cost tracked; no new programme assumed.","Medium"],
  ["Horizon","2025 to 2035.","Evidence base anchors on 2026.","2026 to 2030 only.","Medium"]
 ];
+// Mirrors Data_Feed in the workbook as of v0.3b: what is still missing, after the 28 Nov feed.
 const FEEDS = [
- ["Hires and leavers per bank per year","GRI 401-1 in bank sustainability reports","Attrition rate per bank: sets the layoff threshold"],
- ["Headcount by function","GRI 2-7; Sakernas KBJI by KBLI K","Exposed share x"],
- ["Expert probabilities for Indonesia","Two-round elicitation (Moody_Authors layout)","Replaces the judgement prior"],
- ["Mandiri, BTN, BSI headcount; one BRI definition","Annual reports","Panel coverage"],
- ["Total banking employees","OJK statistics","Sector scale-up"],
- ["Sakernas transitions out of formal finance jobs","BPS request","Destination split"],
- ["Foreign portfolio flows, rupiah, imported AI service spend","BI, IDX","External shock and market-structure channels"]
+ ["Headcount by function (tellers, customer service, back office)","GRI 2-7; OJK; Sakernas KBJI by KBLI K","Exposed share x — currently a flat 30% assumption"],
+ ["One BRI headcount definition","BRI annual report","Panel size: BRI is 56% of the panel at bank-only 84,949"],
+ ["Full ID-05 white paper (PERBANAS/IBM/K&A)","PERBANAS","Adoption anchors and the 34 / 18 / 4% split"],
+ ["AI system start dates per bank","Annual reports, press","Bank-level adoption timing"],
+ ["Labour-saving estimate r, calibrated","ILO index mapped to KBJI","Size of the shock in each scenario"],
+ ["Sakernas transitions out of formal finance jobs","BPS SILASTIK request","Destination split; mu and theta"],
+ ["Vacancies for teller, customer service, back office","Pasker ID / Karirhub; Core file","Job-finding rate f(theta)"],
+ ["FED as of v0.3b: hires and leavers for all 8 banks; Mandiri, BTN, BSI headcount","GRI 401-1 in bank sustainability reports","Done — attrition is now per bank, 6.11% weighted, not the flat 3.4%"]
 ];
