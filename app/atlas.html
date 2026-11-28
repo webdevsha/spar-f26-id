@@ -65,19 +65,21 @@ td.n{text-align:center}
 .gaps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .gaps .card h3{font-size:17px;color:var(--ink)}.gaps .card p{margin:6px 0 8px;font-size:14px;color:var(--mut)}
 .btn{display:inline-block;background:var(--amb);color:#0f1115;font-weight:600;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--amb);color:#0f1115;padding:8px 14px;border-radius:6px;z-index:50;font-weight:600}.skip:focus{left:8px}
 footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);font-size:13px}
 @media(max-width:900px){.net{grid-template-columns:1fr}.g3,.gaps{grid-template-columns:1fr}.wrap{padding:0 18px}section{padding:44px 0}.rung{grid-template-columns:1fr}.rung small{grid-column:1}.net svg{aspect-ratio:1/1.1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<a class="skip" href="#map">Skip to content</a>
 <nav><div class="wrap"><b>SPAR Indonesia | Atlas</b>
 <a href="index.html">Scenario model</a><a href="#map">Ecosystem</a><a href="#inv">Policy inventory</a><a href="#ready">Readiness</a><a href="#signals">Signals</a><a href="#ladder">Trigger ladder</a><a href="#gaps">Gaps</a><a href="files/The_Empty_Chair_SPAR_Indonesia_report.pdf">Report (PDF)</a></div></nav>
 
 <header><div class="wrap">
-<div class="eyebrow">Companion to the report "The Empty Chair" | Draft v0.3, 28 November 2026</div>
-<h1>Who can act, with what, and where the gaps are</h1>
-<p class="lead">An interactive map of 15 actors and 24 policies that touch Indonesia's banking workforce in an AI transition, how ready each policy is, and how signals connect to triggers and instruments. Provisional: scores and several rows await team review.</p>
+<div class="eyebrow">Companion to the report "The Empty Chair" | Draft v0.4, 28 November 2026</div>
+<h1>The safety net is built for dismissals. The shock is not.</h1>
+<p class="lead">Who can act, with what, and where the gaps are: an interactive map of 15 actors and 24 policies that touch Indonesia's banking workforce in an AI transition, how ready each policy is, and how signals connect to triggers and instruments. Provisional: scores and several rows await team review.</p>
 <div class="grid g3" style="margin-top:28px">
  <div class="card kpi"><div class="v" id="k1">73</div><div class="l">relationships mapped</div><div class="n">65 stated in a source, 8 inferred by us</div></div>
  <div class="card kpi"><div class="v">4 of 24</div><div class="l">policies state how they are funded</div><div class="n">None is AI-specific</div></div>
@@ -120,9 +122,20 @@ footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);f
 
 <section id="ready"><div class="wrap">
 <div class="num">3</div><h2>Readiness: strongest on reaching bank workers, thinnest on funding and informal workers</h2>
-<p class="lead">Six tests, scored 0, 0.5 or 1 from the inventory fields. This is a provisional analyst rubric: the Core file's own readiness questions (q1 to q6) are not yet defined, so these can be swapped when the team defines them.</p>
+<p class="lead">Two views of the same question. The grid screens all 24 policies on six yes-or-no tests (0, 0.5 or 1) read from the inventory fields: a provisional analyst rubric. The table beneath it is the team's q1 to q6 draft, scored 0 to 2 on the three documents that matter most. Both await Sha's review.</p>
 <div class="scroll" style="margin-top:18px"><table class="heat" id="tHeat"></table></div>
-<p class="verdict"><b>Reading.</b> The best-prepared instruments (JKP, PP 6/2025) are built for dismissals. The AI-specific ones score lowest. No instrument clearly links AI to a worker response.</p>
+<h3 style="margin:28px 0 10px;font-size:19px">Team draft: three documents, six questions</h3>
+<div class="scroll"><table><thead><tr><th>Question</th><th>OJK AI Guide</th><th>JKP (PP 6/2025)</th><th>Pasker ID / Karirhub</th></tr></thead><tbody>
+<tr><td><b>q1</b> Reach: does it reach the people a bank shock hits?</td><td class="n">1</td><td class="n">1</td><td class="n">1</td></tr>
+<tr><td><b>q2</b> Who is missed</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+<tr><td><b>q3</b> Trigger and timing</td><td class="n">0</td><td class="n">1</td><td class="n">0</td></tr>
+<tr><td><b>q4</b> Funding</td><td class="n">n/a</td><td class="n">1</td><td class="n">n/a</td></tr>
+<tr><td><b>q5</b> Delivery latency</td><td class="n">1</td><td class="n">1</td><td class="n">1</td></tr>
+<tr><td><b>q6</b> Monitoring and revision</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+<tr><td><b>Provisional total</b></td><td class="n"><b>3</b></td><td class="n"><b>4</b></td><td class="n"><b>2</b></td></tr></tbody></table></div>
+<p class="note">Scores grade documents, never a government. n/a marks a question that does not apply to a supervisory instrument. Source: <code>docs/READINESS-SCORING-DRAFT.md</code>, 28 Nov 2026, not yet written to the sheet.</p>
+<p class="verdict"><b>Reading.</b> In the team draft every instrument scores 0 on who is missed (q2) and on monitoring (q6): the two columns where a hiring-side shock lives. In the 24-policy grid the best-prepared instruments (JKP, PP 6/2025) are built for dismissals, and the AI-specific ones score lowest.</p>
+
 </div></section>
 
 <section id="signals"><div class="wrap">
@@ -165,7 +178,7 @@ footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);f
 <p class="note" style="margin-top:14px">Each of these is a property of the Indonesian market rather than a failure of effort — which is why the policy asks are about <i>publishing</i> a series, not about analysing one harder.</p>
 <p style="margin-top:30px"><a class="btn" href="index.html#scenarios">See how the gaps play out in the scenarios</a></p>
 </div></section>
-<footer><div class="wrap">SPAR Indonesia atlas, draft v0.4 — model v0.4. Data from the SPAR Core file (policy inventory, who-can-act, relationships) and indicator table (ID-PH draft, 26 Nov 2026). Several rows are web-checked and await human review. Readiness scores are a provisional analyst rubric. <a href="files/charts/">Chart files</a> are listed in the report.</div></footer>
+<footer><div class="wrap">SPAR Indonesia atlas, draft v0.4 — model v0.4. Data from the SPAR Core file (policy inventory, who-can-act, relationships) and indicator table (ID-PH draft, 26 Nov 2026). Several rows are web-checked and await human review. Readiness scores are a provisional analyst rubric. Chart files (SVG and PNG) are in <code>files/charts/</code> in the repository.</div></footer>
 
 <script src="atlas_data.js"></script>
 <script>
