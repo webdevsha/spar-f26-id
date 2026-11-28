@@ -2,11 +2,13 @@
 **Prepared 24 Nov 2026 · for Shafira · status: overdue (the readiness tab's own note dates the scoring 26 Oct)**
 Companion: `docs/ID-PENDING-24NOV.md` item 3 · writes into Core file `readiness` tab (`q1`–`q6`, `score`, `blind_spot`).
 
-**Why this is a template, not a filled sheet:** the six readiness question texts are **not recorded
-anywhere I can verify** — the `readiness` tab holds only the column names `q1`–`q6`. Rather than
-invent what the questions are, the texts are left as pasted placeholders. Everything else — the
-documents, and the evidence each question can be answered from — is collected below, so that once
-the six texts are in, the scoring is mechanical.
+**Status of the six texts (28 Nov 2026):** the texts are still not recorded anywhere authoritative — the
+`readiness` tab held only the column names `q1`–`q6`. They have now been **reconstructed from this
+worksheet's own six evidence blocks (A–F), which are the framework in order**, and written into the tab's
+legend at `readiness!M1:N8` plus the caution in its `notes` column. Treat them as a **proposal for Akbar
+to confirm or replace**, not as a team decision: the wording is ours, the six-part structure is theirs.
+Everything else — the documents, and the evidence each question can be answered from — is below, so once
+the texts are confirmed the scoring is mechanical.
 
 ---
 
@@ -54,14 +56,14 @@ the six texts are in, the scoring is mechanical.
 
 ## The grid to fill (paste the six question texts into row 1)
 
-| Question | Text (paste) | `ind-ojk-ai-guide-2025` | `ind-jkp-2022` | `ind-paskerid-kemnaker` |
+| Question | Text | `ind-ojk-ai-guide-2025` | `ind-jkp-2022` | `ind-paskerid-kemnaker` |
 |---|---|---|---|---|
-| q1 | *(paste)* | | | |
-| q2 | *(paste)* | | | |
-| q3 | *(paste)* | | | |
-| q4 | *(paste)* | | | |
-| q5 | *(paste)* | | | |
-| q6 | *(paste)* | | | |
+| q1 · Reach | Does the instrument reach the people a banking job shock would hit, and at what scale? | | | |
+| q2 · Who is missed | Who is excluded — by formality, sector or eligibility — and how large is that excluded group? | | | |
+| q3 · Trigger and timing | What triggers the instrument, and how soon after a displacement does money or training actually start? | | | |
+| q4 · Funding | Is it funded at a level that survives a surge in claims? | | | |
+| q5 · Delivery | What latency is actually achieved, as opposed to the standard that is published? | | | |
+| q6 · Monitoring and revision | Does a named agency watch an AI-uptake signal and commit to revising the instrument when it moves? | | | |
 | **score** | — | | | |
 | **blind_spot** | — | No reach or take-up measure for the guide itself | Achieved latency unpublished; comparability broken by PP 6/2025; informal workers out of scope | Advertised vacancies only — not hires, not destinations |
 

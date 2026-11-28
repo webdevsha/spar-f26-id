@@ -444,3 +444,14 @@ Mandiri 3.53%) with the counts-only banks left blank and the calc stated in the 
 Nothing existing was changed; the checked-empty guard refused to write if M:O had held data.
 Revert: clear `Feed_Panel!M4:O12` (model sheet `1GdULcdyhkJRwzTLH7xcFP4xnLC5tYFHnk-5vaGduTSE`).
 
+### Readiness texts + stale ID-12 value, 28 Nov
+- Core `readiness` **M1:N8**: a legend giving the six question texts (`q1 · Reach` ... `q6 · Monitoring and
+  revision`) plus the "grades documents, never a government" caution. Additive - the q1..q6 data columns
+  are untouched. `K2:K4` notes appended with a pointer to the legend, existing text kept.
+  Revert: clear `readiness!M1:N8`; remove the appended sentence from `K2:K4`.
+- Team workbook `2_INDICATOR_TABLE` **K13**: ID-12's `latest value` refreshed from the stale Jun-2025
+  figures to the Dec-2025 panel (BNI 27,201; BCA 26,435; CIMB 10,775; KB 2,334; Mandiri 38,732; BTN
+  11,429; BSI 16,274; BRI 84,949 bank-only; panel 218,129). **P13** appended with the turnover split and
+  the BNI contradiction; nothing replaced.
+  Revert: restore the previous K13 text; remove the appended sentence from P13.
+
