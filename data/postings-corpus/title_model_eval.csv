@@ -1,0 +1,3 @@
+﻿country,training_titles,test_titles,test_employers,exact_subcategory_pct,broad_category_pct,mean_abs_error_exposure,true_mean_exposure,predicted_mean_exposure,max_gradient_share_error_pt,true_g2_g4_pct,predicted_g2_g4_pct,seconds
+Philippines,272658,57366,4474,60.7,75.8,0.045,0.4459,0.4457,1.35,65.24,64.44,108
+Indonesia,432897,106974,13873,57.5,73.3,0.051,0.4094,0.4087,0.69,52.49,52.28,154
