@@ -1,4 +1,4 @@
-# Decision note: exposed share x is the role mix (29 Nov 2026 build, v1.0)
+# Decision note: exposed share x is the role mix (28 Nov 2026, v1.0)
 
 Supersedes the choice in DECISIONS-28NOV.md that adopted the postings index 0.582 as x.
 
