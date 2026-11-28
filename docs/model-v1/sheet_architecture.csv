@@ -1,0 +1,28 @@
+tab,band,purpose,reads_from,status
+README_Map,0 Guide,"Question to module to indicator to tab map; basis labels (A all leavers, B voluntary); version log",All,Extend README
+Summary,1 Output,"One page: four answers, three scenarios, panel and sector range, flags","Eng_*, Fingerprint","Existing, extend"
+Fingerprint,1 Output,Scenario x S1 to S10 movement against what is readable today; fills Forecast 2027/2030 column of indicator table,"Eng_*, F_Protection, Core signals",New
+Trigger_Calibration,1 Output,"Watch, Alert, Act thresholds tested against each fingerprint; detection lag and false alarm notes","Fingerprint, Core triggers",New
+Policy_Gaps,1 Output,24 policies and 6 instruments vs loud shock (dismissal) and quiet shock (hires not made); readiness q1 to q6,"Core policy-inventory, readiness, instruments",New
+Inputs,2 Parameters,"x, e, phi, q, g, A0, adoption paths, probabilities, scale factor, basis switch",F_*,"Existing, extend"
+Scenarios,2 Parameters,"Slow, Medium, Extreme definitions and probabilities; Moody's mapping",Moody_Scenarios,Existing
+F_Economy,3 Feed,"Sakernas formal/informal, unemployment, youth, underemployment, GDP share","BPS, Core id-shock-data",New
+F_Sector,3 Feed,"KBLI K jobs, wages, OJK bank employees (needs feed), office network","BPS, OJK",New
+F_Panel,3 Feed,"8-bank headcount, hires, leavers, non-permanent split",Feed_Panel (GRI 401-1),"Existing, rename"
+F_Exposure,3 Feed,"Postings exposure index by category, ILO shares, AI Job Risk Map",Core postings-exposure,New
+F_Protection,3 Feed,"JKP recipients, rejections, PHK counts, enrolment, rules","BPJS, Kemnaker, Core",New
+Eng_Stock,4 Engine,"M1: employment by layer (panel, sector range, economy)","F_Economy, F_Sector, F_Panel",New
+Eng_Panel_Slow,4 Engine,"M2 to M4 on the panel, Slow","Inputs, Scenarios",Existing (Model_Slow)
+Eng_Panel_Medium,4 Engine,"M2 to M4 on the panel, Medium","Inputs, Scenarios",Existing (Model_Medium)
+Eng_Panel_Extreme,4 Engine,"M2 to M4 on the panel, Extreme","Inputs, Scenarios",Existing (Model_Extreme)
+Eng_Entry,4 Engine,"M3: entry-level pipeline, graduates and youth unemployment vs seats not made","F_Economy, Eng_Panel_*",New
+Eng_Destinations,4 Engine,"M4: re-employed, informal, open unemployed; outsourced and contract layer","Eng_Panel_*, F_Economy",New
+Eng_Protection,4 Engine,"M5: JKP load vs capacity, 17% rejection, uncovered informal share","F_Protection, Eng_Destinations",New
+Eng_Fiscal,4 Engine,"M6: wage bill, JKP cost, spending, illustrative only","Eng_*, F_Sector",New
+Moody_Scenarios,5 Check,Moody's scenarios and mapping,,Existing
+Moody_Authors,5 Check,Author and study register,,Existing
+Fit_Log,5 Check,Where Moody's does not fit Indonesia,,Existing
+Crosscheck,5 Check,"Model vs ILO, postings, Moody's",,Existing
+Backtest,5 Check,2022 to 2025 panel replay,F_Panel,Existing
+Data_Feed,5 Check,"Feed status, source, date, owner",All F_*,Existing
+Evidence_Link,5 Check,Core ind-ev ids per input and indicator,Core id-shock-data,New

@@ -1,0 +1,8 @@
+question,module,indicators,data_in_hand,tabs,gap
+Q1 How much work can AI take?,"M1, M2",ID-01 ILO exposure; ID-04 named AI systems,"Postings index 0.582; ILO 21.7% of jobs, 93.9% of clerks","F_Exposure, Eng_Stock",Role-mix share x still to confirm
+Q2 How fast will banks adopt it?,M2,"ID-02, ID-03 Sabrina; ID-05 stage of adoption; ID-06 governance; ID-07 public use",ID-05 A0 18% (91 respondents); public use 14.8%,"Inputs, Scenarios",One survey wave; no time series
+"Q3 Where does it land: hires, exits, dismissals?","M3, M4","ID-09, ID-10 hiring; ID-11 PHK; ID-12 headcount; ID-13 finance jobs; ID-14 turnover","Panel hires 21,812 and leavers 12,392; Pasker slots 46,556 to 7,334 (2022 to 2024)","Eng_Panel_*, Eng_Entry",ID-09 unverified; no fill status; ID-10 and ID-13 need feeds
+Q4 Where do displaced workers go?,M4,ID-21 formal and informal; ID-22 unemployment; ID-23 JKP reskilling,"Aug 2026: informal 85.73m, unemployment 4.75%, youth 17.5%","Eng_Destinations, F_Economy",No follow-up of leavers; outsourced layer (about 24% non-permanent at KB Bank)
+Q5 Who is protected?,M5,ID-17 JKP payout; ID-18 benefit terms; ID-19 service standard; ID-25 PEKA,"JKP 90,513 paid, Rp1.01tn (2025); 17% rejected; PP 6/2025","Eng_Protection, Policy_Gaps",No sector split of PHK; informal workers uncovered
+Q6 Would we see it in time?,Monitor,S1 to S10 across ID-01 to ID-25; trigger ind-trg-fin-clerical-01,"52 signals, 1 drafted trigger","Fingerprint, Trigger_Calibration",Watch level and hiring-side row are proposals
+Q7 What does it cost the economy?,M6,"ID-15, ID-16 branches; ID-20 finance wage",Wage Rp5.08m vs Rp3.42m; finance 4.11% of GDP,Eng_Fiscal,Mostly needs feed; illustrative
