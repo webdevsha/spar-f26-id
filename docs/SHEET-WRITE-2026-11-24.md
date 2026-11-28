@@ -455,6 +455,20 @@ Revert: clear `Feed_Panel!M4:O12` (model sheet `1GdULcdyhkJRwzTLH7xcFP4xnLC5tYFH
   the BNI contradiction; nothing replaced.
   Revert: restore the previous K13 text; remove the appended sentence from P13.
 
+### Exposed share wired, run-1 rows appended, 28 Nov
+- Model sheet `Feed_Panel` **G5:G12 = 0.582** (was empty for all eight banks). **P4:P5** added:
+  `Exposed share basis / note`, recording that 0.582 is the Banking & Financial Services mean exposure
+  from the BoxCompute postings corpus (20,088 ID ads, 94.3% in G2-G4, crawler verified against a
+  same-month census within 0.57pt) and that it replaces the 30% assumption in Inputs B6 for these banks.
+  Nothing overwritten; guards refused if G or P had held data.
+  **Effect:** `Summary` recalculated - 2030 headcount 215,844 / 203,030 / 167,214; Extreme layoffs 602 ->
+  25,826 and JKP Rp9.0bn -> Rp385.8bn. Verified against `app/model.js` in node: identical.
+  Revert: clear `Feed_Panel!G5:G12` and `P4:P5`.
+- Core `id-shock-data` **A40:AE49**: the ten run-1 rows `ind-ev-0107`-`0116` appended after a header
+  comparison and a duplicate check on `id` and `match_key`. Tab now holds **48 evidence rows**
+  (0069-0116). Revert: clear `id-shock-data!A40:AE49`.
+- Open integrity gap: the run assumed rows `ind-ev-0001`-`0068` existed. They do not — see
+  `docs/RUN1-REPORT-DIGEST.md`. Nothing from today's work is affected.
 ### Corpus tabs built, 28 Nov
 Two new tabs in the Core file, Indonesia only, interns counted in, panel breaks flagged:
 - **`postings-monthly`** (new sheet) — 256 rows x 16 columns, header frozen and tinted, 80 panel-break rows
