@@ -424,6 +424,24 @@ Interview (BPS)   █████░░░░░░░░░░░░░░░�
 Atlas site        ████████████░░░░░░░░░░░░   50%  ecosystem map + postings report live; five pages built, proposal written, deploy still not done
 ```
 
+**Backfilled from the Hermes logs — Thu 26 and Fri 27 Nov.** Work that happened in the sessions but did
+not leave a commit, recorded here so the progress bar is not flattering itself:
+
+| When | What she did | Where it lives now |
+|---|---|---|
+| **Thu 26, 09:24–10:07** | Directed the `SIGNALS_ID` build point by point: the six own indicators pulled out of the tab, the new column, the no-redundancy rule ("if yes, must show details that makes it cited"), indicator **names only**, verdict first in the review, duplicates removed, one compiled source per shared indicator, acronyms in place of `P7`/`P8` | skeleton `SIGNALS_ID` |
+| **Thu 26, ~11:00** | Restructured the Core `signals` tab with `signal_code`, `indicator_no`, `data_layer`, `next_step`, `origin_code` — the columns the 26 Nov merge had to respect | Core file `signals`, now 23 columns (re-verified 28 Nov) |
+| **Fri 27, 18:46–18:54** | Set the **ground layer** going — the official files (Kemnaker Satudata PHK, OJK banking statistics, BPS, BPJS JKP) — and prototyped an `id-shock-data` tab, 29 columns, with the first real platform counts. **Jobstreet publishes a total (68,114 postings); most Indonesian boards are JS-only and publish nothing** | tab was closed on her instruction; the schema and the counts survive in the kit below |
+| **Fri 27, 18:58–19:08** | Built the **BoxCompute kit** so the collection can run without her narrating it: a 92-line self-contained prompt, the ID+PH indicator spine as CSV, Akbar's six measures as PDF, a column dictionary and a 37 KB source registry | [`docs/boxcompute-kit/`](docs/boxcompute-kit/) |
+| **Fri 27, 18:59–19:03** | Read the team's `SPAR indicator table — ID + PH (draft 26 Nov 2026)` (25 indicators per country) and Akbar's six measures, and set the crosswalk **S1–S10 × M1–M6** before writing anything | kit + the indicator table |
+| **Fri 27, 19:33–19:34** | The 22-row merge into `signals` overwrote her `M1:W1` headers. It was reported immediately rather than papered over; the header row is now clean and 23 columns wide — I re-verified it on 28 Nov | Core file `signals` |
+| **Fri 27, 18:30 Jakarta** | Indonesia team call with Akbar and Natraj (calendar) | — |
+
+Two honest footnotes. **The `id-shock-data` tab she closed leaves the ground-layer collection designed but
+not running** — the kit is its executable form, so the next step is a BoxCompute run, not more design. And
+**None of the Friday work was in the repo until now**: the kit sat in `~/.hermes/projects/productivity/`
+and the sheet was deleted, which is exactly the gap that makes a progress bar lie.
+
 **Moved on 26 Nov — the indicator table, and the register made navigable:**
 
 - **S1–S10 each mapped to an Indonesia indicator**, every row linked to the exact register row it came
