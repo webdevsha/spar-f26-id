@@ -27,11 +27,24 @@ const ADOPT = [ // Microsoft AI Diffusion: share of working-age population using
 const BIZ = [{c:"Singapore",v:48},{c:"Thailand",v:32},{c:"Indonesia",v:28},{c:"Malaysia",v:27},{c:"Philippines",v:21},{c:"Vietnam",v:18}];
 const EXPO = [{c:"Singapore",v:42.2},{c:"Philippines",v:28.1},{c:"Indonesia",v:21.7},{c:"Vietnam",v:20.8},{c:"Thailand",v:20.6}];
 // BPS Sakernas, August rounds. formal and inf in million, sh = informal share in percent of employed.
+//
+// VINTAGE WARNING (28 Nov 2026): this array is one consistent series - the August round only. The team
+// register holds the February 2026 round (Core file ID-21, conf M): formal 59.93m (40.58%), informal
+// 87.74m (59.42%); and a November 2025 reading of 59.19m formal / 86.58m informal. The two vintages
+// disagree by 2.3-2.6m in formal employment, which is seasonal and definitional, not a real six-month
+// move. Do NOT mix them in a chart or a trend sentence. Feb-round values are kept below as LABOUR_ALT
+// so nothing is lost; a single-vintage rebuild is what publishing a trend requires.
 const LABOUR = [
   {y:2021,formal:53.14,inf:77.91,sh:59.45},{y:2022,formal:55.06,inf:80.24,sh:59.31},{y:2023,formal:57.18,inf:82.67,sh:59.11},
   {y:2024,formal:60.81,inf:83.83,sh:57.95},{y:2025,formal:61.84,inf:84.70,sh:57.80},{y:2026,formal:62.25,inf:85.73,sh:57.93}
 ];
-LABOUR.forEach(r=>{ r.total=r.formal+r.inf; r.derived=false; });
+LABOUR.forEach(r=>{ r.total=r.formal+r.inf; r.derived=false; r.round="Aug"; r.vintage="BPS Sakernas, August round"; });
+// The other vintage, kept additively so no reading is lost. Source: Core file ID-21 (1_COLLECTION), conf M.
+const LABOUR_ALT = [
+  {y:"2025-11",formal:59.19,inf:86.58,sh:59.40,round:"Nov",vintage:"BPS Sakernas, November 2025 (register ID-21)"},
+  {y:"2026-02",formal:59.93,inf:87.74,sh:59.42,round:"Feb",vintage:"BPS Sakernas, February 2026 (register ID-21)"}
+];
+LABOUR_ALT.forEach(r=>{ r.total=r.formal+r.inf; r.derived=false; });
 const MOODY = [
   {n:"AI-Empowered Economy",p:40,lo:35,hi:50,avg:41.3,map:"medium",fit:"Partly",ur:0,emp:"baseline",fin:"+2.0% (9.20m to 9.38m)",why:"Adoption path and gains plausible for banks. The baseline leans on a stock wealth effect (about two-thirds of AI's 0.52pp contribution to 2025 US growth) that is thin in Indonesia."},
   {n:"AI Falls Flat",p:25,lo:20,hi:35,avg:24.4,map:"slow",fit:"Does not fit as written",ur:2.4,emp:"-1.71m by 2030",fin:"not published",why:"US job losses come from an equity and capex bust (stocks -25%), not from adoption. In Indonesia the channel would be capital flows and the rupiah. We keep the slow-adoption part and test the bust with a separate overlay."},

@@ -346,6 +346,13 @@ reorder · no merged cells, no blank spacer rows · one document per row · date
 `link` = the public source, not a Drive link · public sources only, no personal data · never rename a
 header without telling CTO. Demo rows are marked `verified_by=DEMO`.
 
+**Data is additive (Sha, 28 Nov 2026).** New data goes into the tab, row or column that already needs
+it — never by replacing or removing what is there. Existing values and headers stay unless Sha says
+otherwise in the session that is doing the work. Where a correction cannot be avoided, the superseded
+reading stays and the new one is added beside it with its own period and vintage, so both can be cited.
+This is why `app/data.js` now carries the August-round labour series *and* `LABOUR_ALT` for the
+February and November readings instead of overwriting one with the other.
+
 ## Sync visibility — who changed what
 
 Every sync run appends to [data/SYNC-LOG.md](data/SYNC-LOG.md) (newest first): timestamp, source, editor when known, and
