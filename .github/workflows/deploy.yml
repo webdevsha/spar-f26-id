@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "data/**"
+      - "app/**"
       - "build/build_dashboard.py"
       - "build/*.html"
       - "build/*.json"
@@ -43,6 +44,18 @@ jobs:
             [ -f "$f" ] || continue
             cp "$f" "dist/build/$(basename "$f")"
           done
+
+      - name: Stage the app as the site root
+        # app/ is the public face: app/index.html becomes the home page. The
+        # generated dashboard is kept (not deleted) at /dashboard.html so this
+        # mirrors deploy.sh exactly — a CI run must never revert the root.
+        run: |
+          if [ -f dist/index.html ]; then mv dist/index.html dist/dashboard.html; fi
+          cp app/*.html app/*.js app/*.json dist/
+          if [ -d app/files ]; then
+            mkdir -p dist/files
+            cp -R app/files/. dist/files/
+          fi
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

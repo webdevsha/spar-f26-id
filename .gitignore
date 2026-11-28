@@ -21,6 +21,15 @@ __pycache__/
 # per-deploy page copies staged by the deploy workflow; dist/index.html stays tracked
 # as the committed snapshot
 dist/build/
+# app/ is staged into dist/ on every deploy (see deploy.sh + deploy.yml). Those
+# copies are build output — the source of truth is app/, so do not track them.
+dist/atlas.html
+dist/dashboard.html
+dist/data.js
+dist/model.js
+dist/atlas_data.js
+dist/atlas_data.json
+dist/files/
 
 # Source documents ARE tracked (public disclosures, committed so the analysis pipeline can read them)
 # - see docs/REFERENCE-LIBRARY.md. Nothing under docs/ is ignored; add large binaries deliberately.
