@@ -497,3 +497,13 @@ Effect: weighted attrition 6.11% -> **5.68%**; extreme dismissals 25,826 -> **27
 bn**; 2030 headcount unchanged.
 Revert: set `Feed_Panel!F6` back to 2254 and remove the appended sentence in `O6`.
 
+### Run-1 recovery + Fifth Third quarantine, 28 Nov
+- **Recovered 59 rows** (`ind-ev-0010`-`0068`) from `id-shock-data-run1.csv`, appended at **A87:AE145** with the
+  header remapped column by column. The register now holds **144 rows, ids 0010-0153**. Still absent:
+  `0001`-`0009` (the nine pre-existing platform rows, never in any export we hold) and `0019`.
+  `m_code` backfilled for all recovered rows.
+- **`ind-ev-0079` quarantined**: it is a US bank (Fifth Third) filed in the same folder as the Indonesian
+  reports. `real or demo` set to `excluded`, and a note added explaining it must never be summed with
+  Indonesian figures. Kept visible rather than deleted, so the exclusion is auditable.
+  Revert: clear `id-shock-data!A87:AE145`; set AE12 back to `real` and remove the appended note.
+
