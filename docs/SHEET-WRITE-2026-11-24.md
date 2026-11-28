@@ -464,3 +464,11 @@ Two new tabs in the Core file, Indonesia only, interns counted in, panel breaks 
   Revert: delete the tab.
 Neither touches `id-postings`, `signals`, `id-shock-data` or any existing tab.
 
+### ID-05 citations in the team table, and the register merge, 28 Nov
+- Team workbook `2_INDICATOR_TABLE` **K6** (ID-05 latest value): the four sources appended in-cell - the IBM
+  release URL, the Kiantara landing page, OJK's AI governance book Tabel 2 (printed p.15, 2024 survey), and
+  the adoption series with its confidence caveat. Existing value text kept, citations added only.
+  Revert: remove the appended "Sources:" sentence.
+- Core file: new tab **`signals-evidence`** (62 rows x 18 columns) joining `id-shock-data` to `signals` on
+  the signal code. Generated, not hand-written. Revert: delete the tab.
+
