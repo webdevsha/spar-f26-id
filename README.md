@@ -346,6 +346,13 @@ reorder · no merged cells, no blank spacer rows · one document per row · date
 `link` = the public source, not a Drive link · public sources only, no personal data · never rename a
 header without telling CTO. Demo rows are marked `verified_by=DEMO`.
 
+**Data is additive (Sha, 28 Nov 2026).** New data goes into the tab, row or column that already needs
+it — never by replacing or removing what is there. Existing values and headers stay unless Sha says
+otherwise in the session that is doing the work. Where a correction cannot be avoided, the superseded
+reading stays and the new one is added beside it with its own period and vintage, so both can be cited.
+This is why `app/data.js` now carries the August-round labour series *and* `LABOUR_ALT` for the
+February and November readings instead of overwriting one with the other.
+
 ## Sync visibility — who changed what
 
 Every sync run appends to [data/SYNC-LOG.md](data/SYNC-LOG.md) (newest first): timestamp, source, editor when known, and
@@ -413,16 +420,34 @@ wrangler pages secret put SITE_PASSWORD --project-name spar-f26-id
 > Supersedes the 2026-11-26 tally.
 
 ```
-Data spine        ███████████████████████░   96%  22 signal rows + 16 policy rows + 6 levers + 6 bodies; the register now generates the map's policy nodes
+Data spine        ███████████████████████░   97%  22 signals + 16 policies + 6 levers; id-shock-data now holds 38 evidence rows (ID-12 ×33, ID-17 ×5)
 Data list (lead)  ███████████████████████░   95%  public source + verbatim + H/M/L on all rows; sources compiled per shared indicator; duplicates cleared
 Part 3 (signals)  █████████████████░░░░░░░   70%  678-word draft written from the sourced base; needs Shafira's read-through, not a rewrite
 Part 4 (policy)   ████████████████████░░░░   85%  v1 written and reframed to the shock question; its data is in the register; waiting on Ian's read + the word trim
-Shared sheet/repo ██████████████████████░░   90%  three columns, 134 cross-tab links, register→map generator; hourly sync still failing, so the 29 Nov freeze is not safe
+Shared sheet/repo ██████████████████████░░   92%  register, model sheet and app now agree to zero delta; sync job still failing, so the freeze is not safe
 Section 5 (SPAR)  ██░░░░░░░░░░░░░░░░░░░░░░   10%  2,500w Indonesia chapter; data underpinning ready
 Section 8 (Limits)██████████████░░░░░░░░░░   60%  draft ready to read with Napat; tracker says 60%
 Interview (BPS)   █████░░░░░░░░░░░░░░░░░░░   20%  question reframed as a data-availability enquiry; candidate question found (see the emp.csv flag)
-Atlas site        ████████████░░░░░░░░░░░░   50%  ecosystem map + postings report live; five pages built, proposal written, deploy still not done
+Atlas site        █████████████░░░░░░░░░░░   55%  8-bank panel with reported flows and net flows; five pages built, proposal written, deploy still not done
 ```
+
+**Backfilled from the Hermes logs — Thu 26 and Fri 27 Nov.** Work that happened in the sessions but did
+not leave a commit, recorded here so the progress bar is not flattering itself:
+
+| When | What she did | Where it lives now |
+|---|---|---|
+| **Thu 26, 09:24–10:07** | Directed the `SIGNALS_ID` build point by point: the six own indicators pulled out of the tab, the new column, the no-redundancy rule ("if yes, must show details that makes it cited"), indicator **names only**, verdict first in the review, duplicates removed, one compiled source per shared indicator, acronyms in place of `P7`/`P8` | skeleton `SIGNALS_ID` |
+| **Thu 26, ~11:00** | Restructured the Core `signals` tab with `signal_code`, `indicator_no`, `data_layer`, `next_step`, `origin_code` — the columns the 26 Nov merge had to respect | Core file `signals`, now 23 columns (re-verified 28 Nov) |
+| **Fri 27, 18:46–18:54** | Set the **ground layer** going — the official files (Kemnaker Satudata PHK, OJK banking statistics, BPS, BPJS JKP) — and prototyped an `id-shock-data` tab, 29 columns, with the first real platform counts. **Jobstreet publishes a total (68,114 postings); most Indonesian boards are JS-only and publish nothing** | tab was closed on her instruction; the schema and the counts survive in the kit below |
+| **Fri 27, 18:58–19:08** | Built the **BoxCompute kit** so the collection can run without her narrating it: a 92-line self-contained prompt, the ID+PH indicator spine as CSV, Akbar's six measures as PDF, a column dictionary and a 37 KB source registry | [`docs/boxcompute-kit/`](docs/boxcompute-kit/) |
+| **Fri 27, 18:59–19:03** | Read the team's `SPAR indicator table — ID + PH (draft 26 Nov 2026)` (25 indicators per country) and Akbar's six measures, and set the crosswalk **S1–S10 × M1–M6** before writing anything | kit + the indicator table |
+| **Fri 27, 19:33–19:34** | The 22-row merge into `signals` overwrote her `M1:W1` headers. It was reported immediately rather than papered over; the header row is now clean and 23 columns wide — I re-verified it on 28 Nov | Core file `signals` |
+| **Fri 27, 18:30 Jakarta** | Indonesia team call with Akbar and Natraj (calendar) | — |
+
+Two honest footnotes. **The `id-shock-data` tab she closed leaves the ground-layer collection designed but
+not running** — the kit is its executable form, so the next step is a BoxCompute run, not more design. And
+**None of the Friday work was in the repo until now**: the kit sat in `~/.hermes/projects/productivity/`
+and the sheet was deleted, which is exactly the gap that makes a progress bar lie.
 
 **Moved on 26 Nov — the indicator table, and the register made navigable:**
 
@@ -469,6 +494,27 @@ Atlas site        ████████████░░░░░░░░�
   voluntary corporate disclosures, which is itself one of the study's findings.
 - **Work log added** — [the 24–28 Nov log](#work-log--everything-built-2428-november-2026) records every
   artefact with the PR or audit entry that carries it.
+- **The model was backtested against the series that claims to measure it.** National JKP claims carry an
+  8.8% noise floor inside two months; Extreme's ~100 claims a year is 0.11% of that. To shift the annual
+  number 1% needs 1,090 layoffs in one year — 1.8× the model's entire five-year Extreme total. The model
+  survives; the instrument does not. See [MODEL-BACKTEST](docs/MODEL-BACKTEST.md).
+- **Attrition turned out to be the biggest lever, not adoption.** All-leavers attrition (6.11%) gives 602
+  Extreme layoffs and Rp 9.0 bn; voluntary-only (4.38%) gives 7,718 and Rp 115.3 bn — a 12.8× swing with
+  2030 headcount unchanged. Published as a sensitivity, not a new default: [MODEL-ATTRITION-SENSITIVITY](docs/MODEL-ATTRITION-SENSITIVITY.md).
+- **The model sheet was brought to v0.3b** (and renamed): 8-bank panel with reported hires, leavers and
+  turnover; `Feed_Panel` gained total and voluntary turnover columns; panel 218,129 and 2030 headcount
+  216,951 / 210,346 / 191,884 — reproduced by `app/model.js` in node with zero delta.
+- **The register went to 38 evidence rows** (`id-shock-data`, 31 columns): 27 new p6 rows of bank-level
+  hires, leavers and turnover, appended after a schema and duplicate check.
+- **The team table's stale ID-12 was refreshed** to the Dec-2025 panel, with the BNI contradiction and the
+  turnover split appended to its notes rather than replacing what was there.
+- **The six readiness question texts now exist** — reconstructed from the worksheet's own A–F evidence
+  blocks, written into `readiness!M1:N8` with the "grades documents, never a government" caution, and
+  labelled a proposal for Akbar to confirm.
+- **Everything the next BoxCompute run needs is in one kit**: [`docs/boxcompute-kit/`](docs/boxcompute-kit/),
+  now including the register export, plus the six collection targets in
+  [DATA-FEED-GAPS-28NOV](docs/DATA-FEED-GAPS-28NOV.md) and the shareable summary in
+  [TEAM-SHARE-28NOV](docs/TEAM-SHARE-28NOV.md).
 
 **Pull requests:** [#35](https://github.com/webdevsha/spar-f26-id/pull/35) the first progress tally ·
 [#36](https://github.com/webdevsha/spar-f26-id/pull/36) Part 4 v1 + the register and map work ·
@@ -483,7 +529,7 @@ on the base branch, so it holds every pull request until it is fixed or dismisse
 [docs/ID-PART4-DRAFT.md](docs/ID-PART4-DRAFT.md) (the section has no Google Doc; the repo draft is its
 only home).
 
-**Evidence behind the bars:** `SIGNALS_ID` — 18 indicator rows across S1–S10, verdict + capability on
+**Evidence behind the bars:** `id-shock-data` — **38 evidence rows** (31 columns) · `SIGNALS_ID` — 18 indicator rows across S1–S10, verdict + capability on
 every row, 10 full readings, 9 of 10 signals flagged for float-up · Core file `signals` — 22 rows ·
 `triggers` 1 · `who-can-act` 6 · policy inventory **16** · readiness 3 (all `tbc`) · instruments **6 real
 levers** (the DEMO placeholder is gone) ·

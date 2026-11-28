@@ -398,3 +398,60 @@ banks (POJK 11/POJK.03/2022 and PADK OJK 1/2026)", so the register needed a row 
 **Revert:** clear the hyperlink/textFormatRuns on the ranges above (they all previously held plain text);
 delete `ind-pojk11-padk1` from `'Indonesia policy inventory'!A17:M17`; `git checkout` the map JSON + page
 to restore the 9-node policy view.
+
+### Bank AI shock model sheet (v0.2 -> v0.3b), 28 Nov
+Instruction: update `1GdULcdyhkJRwzTLH7xcFP4xnLC5tYFHnk-5vaGduTSE` from the local
+`SPAR_Indonesia_Bank_AI_shock_model_v0.3b.xlsx` where it needs data.
+
+Method: cell-level diff of all 15 tabs, then write only where v0.3b carries something the sheet lacks
+or carries a sourced correction. **55 cells written.**
+
+- `Feed_Panel` 49 cells: hires/leavers per bank now filled from each bank's 2025 sustainability report
+  (GRI 401-1) - E5:F12 and the missing B/C headcount+date cells for Mandiri, BTN, BSI; headcount and
+  as-of corrections for BNI (27,201 Dec 2025), BCA (26,435), CIMB Niaga (10,775), KB Bank (2,334);
+  basis column now cites the report rather than Kontan/ID-12; `Status` 'Needs feed' -> 'Observed' for
+  Mandiri, BTN, BSI; notes carry page references.
+- `Data_Feed` 6 cells: D4, E4, D7, E7, D14, E14 status lines now describe the fed state.
+
+Deliberately NOT written: `Inputs`, `Scenarios`, `Moody_Scenarios` (their differences are formatting -
+0.034 vs 3.4% - not data), `Summary` and `Model_*` (already identical and formula-driven), and the
+formula columns `Feed_Panel` H/I (recomputed by the sheet itself: per-bank attrition 3.9 / 8.3 / 3.3 /
+16.0 / 45.5 / 7.4 / 2.0 / 6.2%, panel 6.11%).
+
+Effect: panel headcount 150,523 -> 218,129; 2030 headcount under the three scenarios now 216,951 /
+210,346 / 191,884 (was 150,523 / 145,940 / 133,131); Extreme still shows 602 cumulative layoffs.
+
+**Revert:** re-paste v0.2 values into `Feed_Panel!D5:F12`, `Feed_Panel!B6:C12`, `Feed_Panel!K10:K12`,
+`Feed_Panel!L5:L12`, `Data_Feed!D4:E4`, `Data_Feed!D7:E7`, `Data_Feed!D14:E14` from the v0.2 export;
+the formula columns recalculate on their own.
+
+### Model sheet rename + id-shock-data p6 append, 28 Nov
+- **Renamed** the model spreadsheet: title `SPAR Indonesia - Bank AI shock model v0.2` -> `... v0.3b`.
+  Revert: set the title back.
+- **Appended** `id-shock-p6-new.tsv` (27 rows, 31 columns) to Core file `id-shock-data` at
+  **A13:AE39**, after checking the header matched the existing schema column for column and that no
+  `id` or `match_key` already existed. The tab now holds 38 evidence rows (run3: 11, p6: 27).
+  All 27 are M1 / S6 / ID-12 - bank-level hires, leavers and turnover - and they agree with the panel
+  now in `Feed_Panel`: BRI 12,070 new hires and 3,323 leavers appear in both.
+  Revert: clear `id-shock-data!A13:AE39`.
+
+### Feed_Panel turnover columns (model sheet), 28 Nov
+Instruction: wire voluntary turnover alongside total turnover for what the model does not use yet.
+
+Added **M4:O12** - `Total turnover rate (feed)`, `Voluntary turnover rate (feed)`, `Turnover basis /
+note` - filled from the p6 rows in Core `id-shock-data` (BRI 5.58% / 1.24%; BNI 1.9%; BCA 3.4%;
+Mandiri 3.53%) with the counts-only banks left blank and the calc stated in the note column.
+Nothing existing was changed; the checked-empty guard refused to write if M:O had held data.
+Revert: clear `Feed_Panel!M4:O12` (model sheet `1GdULcdyhkJRwzTLH7xcFP4xnLC5tYFHnk-5vaGduTSE`).
+
+### Readiness texts + stale ID-12 value, 28 Nov
+- Core `readiness` **M1:N8**: a legend giving the six question texts (`q1 · Reach` ... `q6 · Monitoring and
+  revision`) plus the "grades documents, never a government" caution. Additive - the q1..q6 data columns
+  are untouched. `K2:K4` notes appended with a pointer to the legend, existing text kept.
+  Revert: clear `readiness!M1:N8`; remove the appended sentence from `K2:K4`.
+- Team workbook `2_INDICATOR_TABLE` **K13**: ID-12's `latest value` refreshed from the stale Jun-2025
+  figures to the Dec-2025 panel (BNI 27,201; BCA 26,435; CIMB 10,775; KB 2,334; Mandiri 38,732; BTN
+  11,429; BSI 16,274; BRI 84,949 bank-only; panel 218,129). **P13** appended with the turnover split and
+  the BNI contradiction; nothing replaced.
+  Revert: restore the previous K13 text; remove the appended sentence from P13.
+

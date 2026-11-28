@@ -1,0 +1,34 @@
+{
+  "_note": "Backtest of the JKP claims series against the model's AI-attributable layoffs. Reported values from the Core file id-shock-data rows ind-ev-0069 to ind-ev-0073 (run3); model values from Model_Extreme/Medium/Slow via app/model.js, verified against the sheet's Summary on 2026-11-28. No figure here is an estimate unless marked approx.",
+  "as_of": "2026-11-28",
+  "reported_claims": [
+    { "period": "2025 (full year)", "claims": 90513, "quality": "verified H", "row": "ind-ev-0069" },
+    { "period": "to 30 Jun 2026", "claims": 44000, "quality": "partial M, lower bound (source says 44,000+)", "row": "ind-ev-0071" },
+    { "period": "to 31 Aug 2026", "claims": 64000, "quality": "low L, approx", "row": "ind-ev-0072" }
+  ],
+  "run_rate": {
+    "jun2026": { "months": 6, "claims": 44000, "annualised": 88000, "vs_2025_pct": -2.8 },
+    "aug2026": { "months": 8, "claims": 64000, "annualised": 96000, "vs_2025_pct": 6.1 },
+    "swing_between_annualisations_pct_of_2025": 8.8,
+    "reading": "The two mid-2026 annualisations differ from each other by 8.8% of last year's total. That is the noise floor of this instrument."
+  },
+  "model_output": {
+    "slow":    { "cum_layoffs_2026_2030": 0,   "cum_claims_at_0_83_take_up": 0,   "note": "attrition absorbs the whole change" },
+    "medium":  { "cum_layoffs_2026_2030": 0,   "cum_claims_at_0_83_take_up": 0,   "note": "hiring falls, nobody is dismissed" },
+    "extreme": { "cum_layoffs_2026_2030": 602, "cum_claims_at_0_83_take_up": 500, "note": "602 layoffs spread across up to five years" }
+  },
+  "detection": {
+    "ai_layoffs_per_year_extreme": 120,
+    "ai_claims_per_year_extreme": 100,
+    "share_of_one_year_claims_pct": 0.11,
+    "noise_floor_pct": 8.8,
+    "signal_to_noise": "1:80",
+    "layoffs_needed_for_a_1pct_move_in_one_year": 1090,
+    "multiple_of_the_models_entire_five_year_extreme": 1.8
+  },
+  "verdict": {
+    "model": "not falsified — the reported path is flat within noise, which is what Slow and Medium predict",
+    "instrument": "falsified — the national JKP claims series cannot see the modelled shock; it would take 1,090 AI-attributable layoffs in a single year, 1.8x the model's entire five-year Extreme total, to move the annual number by 1%",
+    "implication": "S8 is the strongest instrument in the register and still blind here. Detection needs bank-level claims or a within-bank separation series, not the national total."
+  }
+}
