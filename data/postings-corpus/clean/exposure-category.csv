@@ -1,0 +1,30 @@
+country,category,classification,exposure_id,exposed_g2_g4_pct_id,cards_id,source_file,captured_on
+Indonesia,Banking & Financial Services,banking-financial-services,0.582,94.3,20088,exposure_class.csv,2026-11-21
+Indonesia,Administration & Office Support,administration-office-support,0.569,99.4,29752,exposure_class.csv,2026-11-21
+Indonesia,Insurance & Superannuation,insurance-superannuation,0.544,100.0,1291,exposure_class.csv,2026-11-21
+Indonesia,Call Centre & Customer Service,call-centre-customer-service,0.54,100.0,9125,exposure_class.csv,2026-11-21
+Indonesia,Accounting,accounting,0.522,96.6,38282,exposure_class.csv,2026-11-21
+Indonesia,Information & Communication Technology,information-communication-technology,0.511,98.6,24874,exposure_class.csv,2026-11-21
+Indonesia,Marketing & Communications,marketing-communications,0.502,97.2,39211,exposure_class.csv,2026-11-21
+Indonesia,Sales,sales,0.491,100.0,64191,exposure_class.csv,2026-11-21
+Indonesia,"Advertising, Arts & Media",advertising-arts-media,0.452,55.1,8465,exposure_class.csv,2026-11-21
+Indonesia,Human Resources & Recruitment,human-resources-recruitment,0.439,91.1,18442,exposure_class.csv,2026-11-21
+Indonesia,Consulting & Strategy,consulting-strategy,0.433,66.9,2580,exposure_class.csv,2026-11-21
+Indonesia,Design & Architecture,design-architecture,0.421,46.1,11625,exposure_class.csv,2026-11-21
+Indonesia,Government & Defence,government-defence,0.397,0.0,439,exposure_class.csv,2026-11-21
+Indonesia,CEO & General Management,ceo-general-management,0.396,39.5,1668,exposure_class.csv,2026-11-21
+Indonesia,Retail & Consumer Products,retail-consumer-products,0.395,20.3,48104,exposure_class.csv,2026-11-21
+Indonesia,Legal,legal,0.378,3.5,4975,exposure_class.csv,2026-11-21
+Indonesia,Science & Technology,science-technology,0.362,21.2,5015,exposure_class.csv,2026-11-21
+Indonesia,Real Estate & Property,real-estate-property,0.358,14.1,5413,exposure_class.csv,2026-11-21
+Indonesia,Engineering,engineering,0.33,13.5,31747,exposure_class.csv,2026-11-21
+Indonesia,Healthcare & Medical,healthcare-medical,0.327,19.7,14574,exposure_class.csv,2026-11-21
+Indonesia,Education & Training,education-training,0.326,10.6,14210,exposure_class.csv,2026-11-21
+Indonesia,"Manufacturing, Transport & Logistics",manufacturing-transport-logistics,0.322,15.1,63883,exposure_class.csv,2026-11-21
+Indonesia,Community Services & Development,community-services-development,0.312,7.7,1050,exposure_class.csv,2026-11-21
+Indonesia,Construction,construction,0.304,4.4,10787,exposure_class.csv,2026-11-21
+Indonesia,Sport & Recreation,sport-recreation,0.285,0.0,1574,exposure_class.csv,2026-11-21
+Indonesia,"Mining, Resources & Energy",mining-resources-energy,0.264,4.9,5582,exposure_class.csv,2026-11-21
+Indonesia,Hospitality & Tourism,hospitality-tourism,0.251,8.7,43991,exposure_class.csv,2026-11-21
+Indonesia,"Farming, Animals & Conservation",farming-animals-conservation,0.239,0.0,3778,exposure_class.csv,2026-11-21
+Indonesia,Trades & Services,trades-services,0.166,0.0,15291,exposure_class.csv,2026-11-21

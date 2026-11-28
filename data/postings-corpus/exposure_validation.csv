@@ -1,0 +1,5 @@
+﻿country,census_month,crawl,days_apart,estimator,cards,mean_exposure_est,mean_exposure_census,max_abs_diff_gradient_pt,max_abs_diff_isco2_pt,median_abs_diff_isco2_pt
+Indonesia,2025-09,CC-MAIN-2025-38,2,cards_weighted,46324,0.4127,0.4144,0.57,0.59,0.04
+Indonesia,2025-09,CC-MAIN-2025-38,2,cards_unweighted,46324,0.4054,0.4144,2.59,1.56,0.13
+Indonesia,2025-12,CC-MAIN-2025-51,4,cards_weighted,33810,0.4122,0.4123,0.88,0.73,0.05
+Indonesia,2025-12,CC-MAIN-2025-51,4,cards_unweighted,33810,0.4084,0.4123,2.03,1.34,0.14

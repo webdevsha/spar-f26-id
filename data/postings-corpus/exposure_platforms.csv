@@ -1,0 +1,68 @@
+﻿country,platform,segment,period,n,mean_exposure,exposed_g2_g4_pct,low_confidence_pct,method,pct_G4,pct_G3,pct_G2,pct_G1,pct_Min,pct_NE
+Philippines,Bossjob PH,,2024,621,0.4533,68.17,7.1,job title -> JobStreet sub-category (classifier) -> crosswalk,8.52,35.04,24.61,4.21,12.73,14.89
+Philippines,Bossjob PH,,2025,2991,0.4544,67.67,7.5,job title -> JobStreet sub-category (classifier) -> crosswalk,10.59,32.69,24.39,5.84,12.3,14.19
+Philippines,Bossjob PH,,2026,5,0.4824,84.65,20.0,job title -> JobStreet sub-category (classifier) -> crosswalk,2.14,37.39,45.12,2.8,4.05,8.5
+Philippines,Bossjob PH,,all,3617,0.4542,67.78,7.4,job title -> JobStreet sub-category (classifier) -> crosswalk,10.22,33.1,24.46,5.55,12.36,14.31
+Philippines,Indeed PH,,2024,553,0.4688,71.08,9.2,job title -> JobStreet sub-category (classifier) -> crosswalk,10.92,38.78,21.37,3.78,10.99,14.15
+Philippines,Indeed PH,,2025,96,0.4684,71.64,16.7,job title -> JobStreet sub-category (classifier) -> crosswalk,14.16,26.35,31.13,3.33,15.39,9.64
+Philippines,Indeed PH,,2026,19,0.4606,62.36,36.8,job title -> JobStreet sub-category (classifier) -> crosswalk,18.24,17.85,26.27,2.98,23.63,11.03
+Philippines,Indeed PH,,all,668,0.4685,70.91,11.1,job title -> JobStreet sub-category (classifier) -> crosswalk,11.6,36.4,22.91,3.69,11.98,13.42
+Philippines,Kalibrr,,2024,2755,0.4689,73.67,14.3,job title -> JobStreet sub-category (classifier) -> crosswalk,10.36,35.47,27.85,2.17,13.94,10.21
+Philippines,Kalibrr,,2025,791,0.4691,74.16,14.4,job title -> JobStreet sub-category (classifier) -> crosswalk,8.79,37.82,27.56,2.6,13.45,9.79
+Philippines,Kalibrr,,2026,310,0.4689,73.51,12.9,job title -> JobStreet sub-category (classifier) -> crosswalk,8.54,36.6,28.37,3.19,14.81,8.49
+Philippines,Kalibrr,,all,3856,0.469,73.76,14.2,job title -> JobStreet sub-category (classifier) -> crosswalk,9.89,36.04,27.83,2.34,13.91,9.98
+Philippines,LinkedIn PH,,2024,703,0.4855,80.84,14.9,job title -> JobStreet sub-category (classifier) -> crosswalk,10.25,40.65,29.94,1.78,10.63,6.75
+Philippines,LinkedIn PH,,2025,7642,0.4733,76.79,15.5,job title -> JobStreet sub-category (classifier) -> crosswalk,9.23,34.41,33.15,2.46,13.48,7.28
+Philippines,LinkedIn PH,,2026,3128,0.4657,73.55,19.0,job title -> JobStreet sub-category (classifier) -> crosswalk,8.78,32.67,32.1,1.53,16.04,8.88
+Philippines,LinkedIn PH,,all,11473,0.472,76.15,16.4,job title -> JobStreet sub-category (classifier) -> crosswalk,9.17,34.31,32.67,2.16,14.0,7.68
+Philippines,OnlineJobs.ph,,2024,958,0.4918,79.69,21.2,job title -> JobStreet sub-category (classifier) -> crosswalk,11.53,46.73,21.43,1.97,10.87,7.48
+Philippines,OnlineJobs.ph,,2025,141,0.4981,83.75,20.6,job title -> JobStreet sub-category (classifier) -> crosswalk,9.3,49.92,24.52,1.59,8.16,6.5
+Philippines,OnlineJobs.ph,,all,1099,0.4926,80.21,21.1,job title -> JobStreet sub-category (classifier) -> crosswalk,11.24,47.14,21.83,1.92,10.52,7.35
+Philippines,PhilJobNet,,2024,384,0.4098,48.61,3.4,job title -> JobStreet sub-category (classifier) -> crosswalk,7.29,24.01,17.31,15.04,17.9,18.45
+Philippines,PhilJobNet,,2025,393,0.4154,50.9,4.3,job title -> JobStreet sub-category (classifier) -> crosswalk,8.09,22.72,20.09,12.1,18.12,18.88
+Philippines,PhilJobNet,,2026,359,0.3994,47.73,8.9,job title -> JobStreet sub-category (classifier) -> crosswalk,7.75,21.73,18.25,8.79,17.5,25.98
+Philippines,PhilJobNet,,all,1136,0.4085,49.13,5.5,job title -> JobStreet sub-category (classifier) -> crosswalk,7.72,22.84,18.57,12.05,17.85,20.98
+Philippines,foundit PH,linkedin,2024,175,0.4651,72.23,14.9,job title -> JobStreet sub-category (classifier) -> crosswalk,7.09,40.11,25.03,1.51,14.63,11.63
+Philippines,foundit PH,linkedin,2025,219,0.4678,74.42,20.1,job title -> JobStreet sub-category (classifier) -> crosswalk,10.56,34.6,29.26,1.96,13.2,10.42
+Philippines,foundit PH,linkedin,2026,4872,0.4619,71.62,19.9,job title -> JobStreet sub-category (classifier) -> crosswalk,10.76,32.18,28.67,2.66,14.12,11.6
+Philippines,foundit PH,linkedin,all,5266,0.4623,71.75,19.7,job title -> JobStreet sub-category (classifier) -> crosswalk,10.63,32.55,28.58,2.6,14.1,11.55
+Philippines,foundit PH,native,2024,314,0.4952,82.91,13.7,job title -> JobStreet sub-category (classifier) -> crosswalk,8.82,49.22,24.87,1.4,10.23,5.45
+Philippines,foundit PH,native,2025,884,0.4953,84.0,10.6,job title -> JobStreet sub-category (classifier) -> crosswalk,6.59,50.08,27.33,1.4,7.84,6.76
+Philippines,foundit PH,native,2026,297,0.5246,86.93,3.0,job title -> JobStreet sub-category (classifier) -> crosswalk,3.58,70.07,13.28,0.92,6.53,5.63
+Philippines,foundit PH,native,all,1495,0.5011,84.35,9.8,job title -> JobStreet sub-category (classifier) -> crosswalk,6.46,53.87,24.02,1.31,8.08,6.26
+Philippines,foundit PH,other_site,2024,1891,0.4658,71.02,15.8,job title -> JobStreet sub-category (classifier) -> crosswalk,9.5,37.97,23.55,3.37,13.03,12.58
+Philippines,foundit PH,other_site,2025,567,0.4655,73.52,21.3,job title -> JobStreet sub-category (classifier) -> crosswalk,9.0,34.1,30.41,2.19,12.63,11.66
+Philippines,foundit PH,other_site,2026,3268,0.4655,72.98,21.1,job title -> JobStreet sub-category (classifier) -> crosswalk,10.94,32.78,29.26,1.96,14.15,10.91
+Philippines,foundit PH,other_site,all,5726,0.4656,72.39,19.4,job title -> JobStreet sub-category (classifier) -> crosswalk,10.27,34.62,27.49,2.45,13.63,11.54
+Indonesia,Dealls,,2024,6087,0.4396,64.2,14.6,job title -> JobStreet sub-category (classifier) -> crosswalk,6.72,27.96,29.52,4.51,17.34,13.95
+Indonesia,Dealls,,2025,6293,0.4473,67.43,18.7,job title -> JobStreet sub-category (classifier) -> crosswalk,6.53,28.48,32.42,5.46,15.18,11.93
+Indonesia,Dealls,,2026,3476,0.4557,70.43,17.2,job title -> JobStreet sub-category (classifier) -> crosswalk,6.72,33.17,30.54,4.75,14.45,10.37
+Indonesia,Dealls,,all,15856,0.4462,66.85,16.8,job title -> JobStreet sub-category (classifier) -> crosswalk,6.64,29.31,30.9,4.94,15.85,12.36
+Indonesia,Glints ID,,2024,30935,0.4127,53.57,14.2,job title -> JobStreet sub-category (classifier) -> crosswalk,6.61,24.12,22.84,8.92,16.44,21.07
+Indonesia,Glints ID,,2025,39520,0.4097,53.03,13.5,job title -> JobStreet sub-category (classifier) -> crosswalk,6.44,24.21,22.38,8.88,16.61,21.48
+Indonesia,Glints ID,,2026,8,0.4052,50.31,12.5,job title -> JobStreet sub-category (classifier) -> crosswalk,1.94,29.53,18.84,7.77,11.11,30.81
+Indonesia,Glints ID,,all,70463,0.411,53.27,13.8,job title -> JobStreet sub-category (classifier) -> crosswalk,6.52,24.17,22.58,8.9,16.53,21.3
+Indonesia,Indeed ID,,2024,1,0.3721,35.39,100.0,job title -> JobStreet sub-category (classifier) -> crosswalk,2.05,12.39,20.95,1.51,30.34,32.76
+Indonesia,Indeed ID,,2025,1,0.5102,87.57,0.0,job title -> JobStreet sub-category (classifier) -> crosswalk,36.0,36.05,15.52,0.73,2.75,8.94
+Indonesia,Indeed ID,,2026,1,0.4526,73.22,100.0,job title -> JobStreet sub-category (classifier) -> crosswalk,3.89,24.18,45.14,3.19,13.34,10.25
+Indonesia,Indeed ID,,all,3,0.445,65.39,66.7,job title -> JobStreet sub-category (classifier) -> crosswalk,13.98,24.21,27.2,1.81,15.48,17.32
+Indonesia,Kalibrr,,2024,1440,0.4716,75.37,20.9,job title -> JobStreet sub-category (classifier) -> crosswalk,9.29,36.06,30.02,4.76,11.28,8.6
+Indonesia,Kalibrr,,2025,1320,0.4705,75.8,18.7,job title -> JobStreet sub-category (classifier) -> crosswalk,8.11,36.52,31.17,3.68,12.18,8.34
+Indonesia,Kalibrr,,2026,1134,0.4577,70.32,20.9,job title -> JobStreet sub-category (classifier) -> crosswalk,7.33,31.74,31.25,6.77,12.72,10.18
+Indonesia,Kalibrr,,all,3894,0.4672,74.04,20.2,job title -> JobStreet sub-category (classifier) -> crosswalk,8.32,34.96,30.77,4.98,12.01,8.97
+Indonesia,Karir.com,,2024,939,0.4399,60.86,14.9,job title -> JobStreet sub-category (classifier) -> crosswalk,10.72,24.3,25.84,11.77,13.08,14.29
+Indonesia,Karir.com,,2025,388,0.4271,56.71,18.8,job title -> JobStreet sub-category (classifier) -> crosswalk,9.76,22.02,24.93,12.29,13.69,17.31
+Indonesia,Karir.com,,2026,82,0.4506,68.21,15.9,job title -> JobStreet sub-category (classifier) -> crosswalk,9.56,28.66,30.0,6.55,15.01,10.23
+Indonesia,Karir.com,,all,1409,0.437,60.15,16.0,job title -> JobStreet sub-category (classifier) -> crosswalk,10.39,23.93,25.83,11.61,13.36,14.88
+Indonesia,KitaLulus,,2024,2121,0.4032,49.44,15.2,job title -> JobStreet sub-category (classifier) -> crosswalk,8.71,17.9,22.83,15.12,14.17,21.28
+Indonesia,KitaLulus,,2025,7877,0.3976,47.31,15.6,job title -> JobStreet sub-category (classifier) -> crosswalk,9.13,16.36,21.82,13.68,15.35,23.66
+Indonesia,KitaLulus,,2026,13630,0.3787,41.53,15.5,job title -> JobStreet sub-category (classifier) -> crosswalk,7.89,14.64,19.01,14.31,16.55,27.61
+Indonesia,KitaLulus,,all,23628,0.3872,44.17,15.5,job title -> JobStreet sub-category (classifier) -> crosswalk,8.38,15.5,20.29,14.17,15.94,25.73
+Indonesia,LinkedIn ID,,2024,1111,0.4477,65.08,26.6,job title -> JobStreet sub-category (classifier) -> crosswalk,8.02,29.61,27.46,4.26,18.41,12.26
+Indonesia,LinkedIn ID,,2025,4000,0.4599,71.94,22.9,job title -> JobStreet sub-category (classifier) -> crosswalk,7.11,35.9,28.93,2.58,14.51,10.97
+Indonesia,LinkedIn ID,,2026,1848,0.4563,73.1,22.0,job title -> JobStreet sub-category (classifier) -> crosswalk,4.63,35.75,32.71,2.59,12.26,12.05
+Indonesia,LinkedIn ID,,all,6959,0.457,71.15,23.2,job title -> JobStreet sub-category (classifier) -> crosswalk,6.59,34.86,29.7,2.85,14.54,11.46
+Indonesia,Pintarnya,,2024,926,0.3869,42.94,11.4,job title -> JobStreet sub-category (classifier) -> crosswalk,7.92,12.39,22.63,21.28,14.23,21.55
+Indonesia,Pintarnya,,2025,3529,0.3957,46.03,11.8,job title -> JobStreet sub-category (classifier) -> crosswalk,7.86,13.56,24.62,20.54,13.36,20.06
+Indonesia,Pintarnya,,2026,25915,0.4059,48.46,15.2,job title -> JobStreet sub-category (classifier) -> crosswalk,9.08,14.18,25.2,20.33,12.84,18.37
+Indonesia,Pintarnya,,all,30370,0.4041,48.01,14.7,job title -> JobStreet sub-category (classifier) -> crosswalk,8.9,14.05,25.06,20.39,12.94,18.66

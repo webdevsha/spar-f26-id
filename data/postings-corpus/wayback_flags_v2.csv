@@ -1,0 +1,631 @@
+﻿platform,month,unique_jobs,platform_median,share_403,flag
+JobStreet PH,2024-01,70,61,0.00,
+JobStreet PH,2024-02,366,61,0.00,spike
+JobStreet PH,2024-03,15,61,0.00,low
+JobStreet PH,2024-04,1212,61,0.00,spike
+JobStreet PH,2024-05,1499,61,0.00,spike
+JobStreet PH,2024-06,6,61,0.00,low
+JobStreet PH,2024-07,5,61,0.00,low
+JobStreet PH,2024-08,273,61,0.00,spike
+JobStreet PH,2024-09,549,61,0.00,spike
+JobStreet PH,2024-10,501,61,0.00,spike
+JobStreet PH,2024-11,61,61,0.00,
+JobStreet PH,2024-12,441,61,0.00,spike
+JobStreet PH,2025-01,134,61,0.00,
+JobStreet PH,2025-02,25,61,0.00,
+JobStreet PH,2025-03,177,61,0.00,
+JobStreet PH,2025-04,17,61,0.00,
+JobStreet PH,2025-05,3,61,0.00,low
+JobStreet PH,2025-06,10,61,0.00,low
+JobStreet PH,2025-07,336,61,0.00,spike
+JobStreet PH,2025-08,490,61,0.00,spike
+JobStreet PH,2025-09,915,61,0.00,spike
+JobStreet PH,2025-10,46,61,0.02,
+JobStreet PH,2025-11,1,61,0.10,low
+JobStreet PH,2025-12,2,61,0.00,low
+JobStreet PH,2026-01,59,61,0.00,
+JobStreet PH,2026-02,200,61,0.00,
+JobStreet PH,2026-03,136,61,0.16,blocked
+JobStreet PH,2026-04,52,61,0.24,blocked
+JobStreet PH,2026-05,28,61,0.02,
+JobStreet PH,2026-06,53,61,0.01,
+JobStreet PH,2026-07,8,61,0.00,low
+JobStreet PH,2026-08,6,61,0.00,index lag
+JobStreet PH,2026-09,2,61,0.36,index lag
+JobStreet PH,2026-10,12,61,0.00,index lag
+JobStreet PH,2026-11,0,61,,index lag
+Indeed PH,2024-01,0,4,0.00,
+Indeed PH,2024-02,22,4,0.00,
+Indeed PH,2024-03,1,4,0.00,
+Indeed PH,2024-04,4,4,0.00,
+Indeed PH,2024-05,43,4,0.01,
+Indeed PH,2024-06,6,4,0.04,
+Indeed PH,2024-07,4,4,0.00,
+Indeed PH,2024-08,3,4,0.00,
+Indeed PH,2024-09,505,4,0.00,
+Indeed PH,2024-10,0,4,0.00,
+Indeed PH,2024-11,2,4,0.50,blocked
+Indeed PH,2024-12,11,4,0.08,
+Indeed PH,2025-01,2,4,0.00,
+Indeed PH,2025-02,10,4,0.04,
+Indeed PH,2025-03,15,4,0.00,
+Indeed PH,2025-04,17,4,0.05,
+Indeed PH,2025-05,20,4,0.00,
+Indeed PH,2025-06,3,4,0.00,
+Indeed PH,2025-07,20,4,0.29,blocked
+Indeed PH,2025-08,4,4,0.10,
+Indeed PH,2025-09,13,4,0.00,
+Indeed PH,2025-10,20,4,0.00,
+Indeed PH,2025-11,2,4,0.00,
+Indeed PH,2025-12,0,4,0.00,
+Indeed PH,2026-01,0,4,0.00,
+Indeed PH,2026-02,0,4,,
+Indeed PH,2026-03,1,4,0.00,
+Indeed PH,2026-04,10,4,0.15,
+Indeed PH,2026-05,4,4,0.01,
+Indeed PH,2026-06,35,4,0.01,
+Indeed PH,2026-07,2,4,0.02,
+Indeed PH,2026-08,0,4,0.00,index lag
+Indeed PH,2026-09,0,4,0.00,index lag
+Indeed PH,2026-10,0,4,0.31,index lag
+Indeed PH,2026-11,0,4,0.00,index lag
+LinkedIn PH,2024-01,17,195,0.00,low
+LinkedIn PH,2024-02,0,195,,low
+LinkedIn PH,2024-03,157,195,0.00,
+LinkedIn PH,2024-04,195,195,0.00,
+LinkedIn PH,2024-05,175,195,0.00,
+LinkedIn PH,2024-06,1,195,0.00,low
+LinkedIn PH,2024-07,4,195,0.00,low
+LinkedIn PH,2024-08,10,195,0.00,low
+LinkedIn PH,2024-09,58,195,0.00,
+LinkedIn PH,2024-10,35,195,0.00,low
+LinkedIn PH,2024-11,1,195,0.00,low
+LinkedIn PH,2024-12,0,195,0.00,low
+LinkedIn PH,2025-01,255,195,0.00,
+LinkedIn PH,2025-02,223,195,0.00,
+LinkedIn PH,2025-03,363,195,0.00,
+LinkedIn PH,2025-04,229,195,0.00,
+LinkedIn PH,2025-05,1444,195,0.00,spike
+LinkedIn PH,2025-06,113,195,0.00,
+LinkedIn PH,2025-07,335,195,0.00,
+LinkedIn PH,2025-08,1136,195,0.00,spike
+LinkedIn PH,2025-09,662,195,0.00,
+LinkedIn PH,2025-10,233,195,0.00,
+LinkedIn PH,2025-11,3574,195,0.00,spike
+LinkedIn PH,2025-12,1058,195,0.00,spike
+LinkedIn PH,2026-01,534,195,0.00,
+LinkedIn PH,2026-02,874,195,0.00,spike
+LinkedIn PH,2026-03,840,195,0.00,spike
+LinkedIn PH,2026-04,2259,195,0.00,spike
+LinkedIn PH,2026-05,160,195,0.00,
+LinkedIn PH,2026-06,18,195,0.00,low
+LinkedIn PH,2026-07,21,195,0.00,low
+LinkedIn PH,2026-08,13,195,0.00,index lag
+LinkedIn PH,2026-09,81,195,0.00,index lag
+LinkedIn PH,2026-10,120,195,0.00,index lag
+LinkedIn PH,2026-11,107,195,0.00,index lag
+PhilJobNet,2024-01,6,77,0.00,low
+PhilJobNet,2024-02,67,77,0.00,
+PhilJobNet,2024-03,5,77,0.00,low
+PhilJobNet,2024-04,82,77,0.00,
+PhilJobNet,2024-05,22,77,0.00,
+PhilJobNet,2024-06,44,77,0.00,
+PhilJobNet,2024-07,60,77,0.00,
+PhilJobNet,2024-08,50,77,0.00,
+PhilJobNet,2024-09,50,77,0.00,
+PhilJobNet,2024-10,50,77,0.00,
+PhilJobNet,2024-11,77,77,0.00,
+PhilJobNet,2024-12,47,77,0.00,
+PhilJobNet,2025-01,138,77,0.00,
+PhilJobNet,2025-02,118,77,0.00,
+PhilJobNet,2025-03,76,77,0.00,
+PhilJobNet,2025-04,420,77,0.00,spike
+PhilJobNet,2025-05,308,77,0.00,
+PhilJobNet,2025-06,71,77,0.00,
+PhilJobNet,2025-07,101,77,0.00,
+PhilJobNet,2025-08,82,77,0.00,
+PhilJobNet,2025-09,63,77,0.00,
+PhilJobNet,2025-10,145,77,0.00,
+PhilJobNet,2025-11,49,77,0.00,
+PhilJobNet,2025-12,90,77,0.00,
+PhilJobNet,2026-01,318,77,0.00,spike
+PhilJobNet,2026-02,186,77,0.00,
+PhilJobNet,2026-03,0,77,,low
+PhilJobNet,2026-04,105,77,0.00,
+PhilJobNet,2026-05,84,77,0.00,
+PhilJobNet,2026-06,110,77,0.00,
+PhilJobNet,2026-07,97,77,0.00,
+PhilJobNet,2026-08,0,77,,index lag
+PhilJobNet,2026-09,3,77,0.00,index lag
+PhilJobNet,2026-10,1,77,0.00,index lag
+PhilJobNet,2026-11,0,77,,index lag
+Bossjob PH,2024-01,22,52,0.00,
+Bossjob PH,2024-02,47,52,0.00,
+Bossjob PH,2024-03,40,52,0.00,
+Bossjob PH,2024-04,2,52,0.00,low
+Bossjob PH,2024-05,2877,52,0.00,spike
+Bossjob PH,2024-06,29,52,0.00,
+Bossjob PH,2024-07,1,52,0.00,low
+Bossjob PH,2024-08,67,52,0.00,
+Bossjob PH,2024-09,53,52,0.00,
+Bossjob PH,2024-10,52,52,0.00,
+Bossjob PH,2024-11,54,52,0.00,
+Bossjob PH,2024-12,105,52,0.00,
+Bossjob PH,2025-01,198,52,0.00,
+Bossjob PH,2025-02,3915,52,0.00,spike
+Bossjob PH,2025-03,315,52,0.00,spike
+Bossjob PH,2025-04,828,52,0.00,spike
+Bossjob PH,2025-05,1148,52,0.00,spike
+Bossjob PH,2025-06,323,52,0.00,spike
+Bossjob PH,2025-07,311,52,0.00,spike
+Bossjob PH,2025-08,240,52,0.00,spike
+Bossjob PH,2025-09,193,52,0.00,
+Bossjob PH,2025-10,961,52,0.00,spike
+Bossjob PH,2025-11,30,52,0.00,
+Bossjob PH,2025-12,1,52,0.00,low
+Bossjob PH,2026-01,3,52,0.00,low
+Bossjob PH,2026-02,4,52,0.00,low
+Bossjob PH,2026-03,7,52,0.00,low
+Bossjob PH,2026-04,4,52,0.00,low
+Bossjob PH,2026-05,0,52,,low
+Bossjob PH,2026-06,0,52,,low
+Bossjob PH,2026-07,0,52,0.00,low
+Bossjob PH,2026-08,0,52,1.00,index lag
+Bossjob PH,2026-09,0,52,,index lag
+Bossjob PH,2026-10,0,52,,index lag
+Bossjob PH,2026-11,0,52,1.00,index lag
+OnlineJobs.ph,2024-01,12,36,0.00,
+OnlineJobs.ph,2024-02,16,36,0.00,
+OnlineJobs.ph,2024-03,8,36,0.00,low
+OnlineJobs.ph,2024-04,192,36,0.00,spike
+OnlineJobs.ph,2024-05,98,36,0.00,
+OnlineJobs.ph,2024-06,251,36,0.00,spike
+OnlineJobs.ph,2024-07,222,36,0.00,spike
+OnlineJobs.ph,2024-08,171,36,0.00,spike
+OnlineJobs.ph,2024-09,129,36,0.00,
+OnlineJobs.ph,2024-10,86,36,0.00,
+OnlineJobs.ph,2024-11,190,36,0.00,spike
+OnlineJobs.ph,2024-12,17,36,0.00,
+OnlineJobs.ph,2025-01,36,36,0.00,
+OnlineJobs.ph,2025-02,7,36,0.00,low
+OnlineJobs.ph,2025-03,11,36,0.00,
+OnlineJobs.ph,2025-04,136,36,0.00,
+OnlineJobs.ph,2025-05,129,36,0.00,
+OnlineJobs.ph,2025-06,55,36,0.00,
+OnlineJobs.ph,2025-07,472,36,0.00,spike
+OnlineJobs.ph,2025-08,358,36,0.00,spike
+OnlineJobs.ph,2025-09,26,36,0.00,
+OnlineJobs.ph,2025-10,36,36,0.00,
+OnlineJobs.ph,2025-11,33,36,0.00,
+OnlineJobs.ph,2025-12,2,36,0.00,low
+OnlineJobs.ph,2026-01,7,36,0.00,low
+OnlineJobs.ph,2026-02,1,36,0.00,low
+OnlineJobs.ph,2026-03,28,36,0.00,
+OnlineJobs.ph,2026-04,99,36,0.00,
+OnlineJobs.ph,2026-05,15,36,0.00,
+OnlineJobs.ph,2026-06,2,36,0.00,low
+OnlineJobs.ph,2026-07,1,36,0.00,low
+OnlineJobs.ph,2026-08,6,36,0.00,index lag
+OnlineJobs.ph,2026-09,126,36,0.00,index lag
+OnlineJobs.ph,2026-10,68,36,0.00,index lag
+OnlineJobs.ph,2026-11,210,36,0.00,index lag
+JobYoda,2024-01,0,20,,low
+JobYoda,2024-02,0,20,,low
+JobYoda,2024-03,3,20,0.00,low
+JobYoda,2024-04,15,20,0.00,
+JobYoda,2024-05,6,20,0.00,
+JobYoda,2024-06,94,20,0.00,spike
+JobYoda,2024-07,109,20,0.00,spike
+JobYoda,2024-08,135,20,0.00,spike
+JobYoda,2024-09,12,20,0.00,
+JobYoda,2024-10,20,20,0.00,
+JobYoda,2024-11,39,20,0.00,
+JobYoda,2024-12,38,20,0.00,
+JobYoda,2025-01,7,20,0.00,
+JobYoda,2025-02,16,20,0.00,
+JobYoda,2025-03,38,20,0.00,
+JobYoda,2025-04,15,20,0.00,
+JobYoda,2025-05,0,20,,low
+JobYoda,2025-06,0,20,,low
+JobYoda,2025-07,0,20,0.00,low
+JobYoda,2025-08,27,20,0.00,
+JobYoda,2025-09,31,20,0.00,
+JobYoda,2025-10,34,20,0.00,
+JobYoda,2025-11,33,20,0.00,
+JobYoda,2025-12,33,20,0.00,
+JobYoda,2026-01,43,20,0.00,
+JobYoda,2026-02,30,20,0.00,
+JobYoda,2026-03,7,20,0.00,
+JobYoda,2026-04,89,20,0.00,spike
+JobYoda,2026-05,113,20,0.00,spike
+JobYoda,2026-06,0,20,,low
+JobYoda,2026-07,0,20,,low
+JobYoda,2026-08,0,20,,index lag
+JobYoda,2026-09,0,20,,index lag
+JobYoda,2026-10,0,20,,index lag
+JobYoda,2026-11,0,20,,index lag
+Kalibrr,2024-01,133,686,0.01,low
+Kalibrr,2024-02,1810,686,0.00,
+Kalibrr,2024-03,1360,686,0.00,
+Kalibrr,2024-04,2515,686,0.00,
+Kalibrr,2024-05,2088,686,0.00,
+Kalibrr,2024-06,2056,686,0.00,
+Kalibrr,2024-07,1974,686,0.00,
+Kalibrr,2024-08,1831,686,0.00,
+Kalibrr,2024-09,2400,686,0.00,
+Kalibrr,2024-10,1009,686,0.00,
+Kalibrr,2024-11,741,686,0.00,
+Kalibrr,2024-12,2131,686,0.00,
+Kalibrr,2025-01,2753,686,0.00,spike
+Kalibrr,2025-02,2605,686,0.00,
+Kalibrr,2025-03,248,686,0.01,
+Kalibrr,2025-04,363,686,0.07,
+Kalibrr,2025-05,396,686,0.01,
+Kalibrr,2025-06,267,686,0.11,
+Kalibrr,2025-07,404,686,0.00,
+Kalibrr,2025-08,620,686,0.02,
+Kalibrr,2025-09,535,686,0.01,
+Kalibrr,2025-10,925,686,0.01,
+Kalibrr,2025-11,714,686,0.02,
+Kalibrr,2025-12,354,686,0.00,
+Kalibrr,2026-01,504,686,0.03,
+Kalibrr,2026-02,377,686,0.04,
+Kalibrr,2026-03,312,686,0.07,
+Kalibrr,2026-04,339,686,0.00,
+Kalibrr,2026-05,461,686,0.02,
+Kalibrr,2026-06,686,686,0.00,
+Kalibrr,2026-07,677,686,0.01,
+Kalibrr,2026-08,312,686,0.00,index lag
+Kalibrr,2026-09,100,686,0.24,blocked
+Kalibrr,2026-10,14,686,0.00,index lag
+Kalibrr,2026-11,0,686,0.96,blocked
+foundit PH,2024-01,0,159,0.00,low
+foundit PH,2024-02,109,159,0.00,
+foundit PH,2024-03,69,159,0.00,
+foundit PH,2024-04,61,159,0.00,
+foundit PH,2024-05,126,159,0.00,
+foundit PH,2024-06,204,159,0.00,
+foundit PH,2024-07,159,159,0.00,
+foundit PH,2024-08,437,159,0.00,
+foundit PH,2024-09,357,159,0.00,
+foundit PH,2024-10,334,159,0.00,
+foundit PH,2024-11,736,159,0.00,spike
+foundit PH,2024-12,1,159,0.00,low
+foundit PH,2025-01,24,159,0.00,low
+foundit PH,2025-02,4,159,0.00,low
+foundit PH,2025-03,3,159,0.00,low
+foundit PH,2025-04,45,159,0.00,
+foundit PH,2025-05,44,159,0.00,
+foundit PH,2025-06,2,159,0.00,low
+foundit PH,2025-07,0,159,0.00,low
+foundit PH,2025-08,5,159,0.00,low
+foundit PH,2025-09,2,159,0.00,low
+foundit PH,2025-10,501,159,0.00,
+foundit PH,2025-11,503,159,0.00,
+foundit PH,2025-12,1196,159,0.00,spike
+foundit PH,2026-01,357,159,0.00,
+foundit PH,2026-02,183,159,0.21,blocked
+foundit PH,2026-03,723,159,0.05,spike
+foundit PH,2026-04,1214,159,0.00,spike
+foundit PH,2026-05,1220,159,0.00,spike
+foundit PH,2026-06,1221,159,0.00,spike
+foundit PH,2026-07,1221,159,0.00,spike
+foundit PH,2026-08,862,159,0.00,index lag
+foundit PH,2026-09,6,159,0.00,index lag
+foundit PH,2026-10,0,159,,index lag
+foundit PH,2026-11,0,159,,index lag
+JobStreet ID,2024-01,173,480,0.00,
+JobStreet ID,2024-02,216,480,0.00,
+JobStreet ID,2024-03,1023,480,0.00,
+JobStreet ID,2024-04,638,480,0.00,
+JobStreet ID,2024-05,513,480,0.00,
+JobStreet ID,2024-06,255,480,0.00,
+JobStreet ID,2024-07,129,480,0.00,
+JobStreet ID,2024-08,217,480,0.00,
+JobStreet ID,2024-09,580,480,0.00,
+JobStreet ID,2024-10,79,480,0.00,low
+JobStreet ID,2024-11,229,480,0.00,
+JobStreet ID,2024-12,389,480,0.00,
+JobStreet ID,2025-01,133,480,0.00,
+JobStreet ID,2025-02,203,480,0.00,
+JobStreet ID,2025-03,880,480,0.00,
+JobStreet ID,2025-04,2349,480,0.00,spike
+JobStreet ID,2025-05,1602,480,0.00,
+JobStreet ID,2025-06,1189,480,0.00,
+JobStreet ID,2025-07,419,480,0.00,
+JobStreet ID,2025-08,3280,480,0.00,spike
+JobStreet ID,2025-09,6093,480,0.00,spike
+JobStreet ID,2025-10,571,480,0.00,
+JobStreet ID,2025-11,1670,480,0.00,
+JobStreet ID,2025-12,3122,480,0.00,spike
+JobStreet ID,2026-01,713,480,0.00,
+JobStreet ID,2026-02,979,480,0.00,
+JobStreet ID,2026-03,480,480,0.00,
+JobStreet ID,2026-04,241,480,0.02,
+JobStreet ID,2026-05,418,480,0.01,
+JobStreet ID,2026-06,40,480,0.00,low
+JobStreet ID,2026-07,43,480,0.00,low
+JobStreet ID,2026-08,12,480,0.08,index lag
+JobStreet ID,2026-09,103,480,0.00,index lag
+JobStreet ID,2026-10,43,480,0.00,index lag
+JobStreet ID,2026-11,28,480,0.01,index lag
+Glints ID,2024-01,28,3303,0.02,low
+Glints ID,2024-02,2125,3303,0.00,
+Glints ID,2024-03,1311,3303,0.00,
+Glints ID,2024-04,5313,3303,0.00,
+Glints ID,2024-05,5084,3303,0.00,
+Glints ID,2024-06,4340,3303,0.00,
+Glints ID,2024-07,3303,3303,0.00,
+Glints ID,2024-08,1633,3303,0.01,
+Glints ID,2024-09,1819,3303,0.01,
+Glints ID,2024-10,3100,3303,0.00,
+Glints ID,2024-11,3448,3303,0.00,
+Glints ID,2024-12,3916,3303,0.00,
+Glints ID,2025-01,6270,3303,0.00,
+Glints ID,2025-02,6987,3303,0.00,
+Glints ID,2025-03,6929,3303,0.00,
+Glints ID,2025-04,9709,3303,0.00,
+Glints ID,2025-05,9532,3303,0.00,
+Glints ID,2025-06,7184,3303,0.00,
+Glints ID,2025-07,7331,3303,0.00,
+Glints ID,2025-08,7386,3303,0.00,
+Glints ID,2025-09,8323,3303,0.00,
+Glints ID,2025-10,6659,3303,0.00,
+Glints ID,2025-11,226,3303,0.00,low
+Glints ID,2025-12,117,3303,0.00,low
+Glints ID,2026-01,79,3303,0.00,low
+Glints ID,2026-02,345,3303,0.00,low
+Glints ID,2026-03,31,3303,0.00,low
+Glints ID,2026-04,94,3303,0.00,low
+Glints ID,2026-05,57,3303,0.00,low
+Glints ID,2026-06,11,3303,0.00,low
+Glints ID,2026-07,25,3303,0.00,low
+Glints ID,2026-08,3,3303,0.00,index lag
+Glints ID,2026-09,36,3303,0.00,index lag
+Glints ID,2026-10,51,3303,0.00,index lag
+Glints ID,2026-11,71,3303,0.00,index lag
+Indeed ID,2024-01,52,1,0.00,
+Indeed ID,2024-02,0,1,0.00,
+Indeed ID,2024-03,0,1,0.04,
+Indeed ID,2024-04,6,1,0.00,
+Indeed ID,2024-05,8,1,0.00,
+Indeed ID,2024-06,3,1,0.06,
+Indeed ID,2024-07,1,1,0.00,
+Indeed ID,2024-08,2,1,0.32,blocked
+Indeed ID,2024-09,119,1,0.08,
+Indeed ID,2024-10,1,1,0.00,
+Indeed ID,2024-11,0,1,1.00,blocked
+Indeed ID,2024-12,0,1,,
+Indeed ID,2025-01,0,1,,
+Indeed ID,2025-02,0,1,0.00,
+Indeed ID,2025-03,1,1,0.00,
+Indeed ID,2025-04,12,1,0.00,
+Indeed ID,2025-05,0,1,0.00,
+Indeed ID,2025-06,2,1,0.00,
+Indeed ID,2025-07,5,1,0.00,
+Indeed ID,2025-08,1,1,0.00,
+Indeed ID,2025-09,0,1,,
+Indeed ID,2025-10,4,1,0.00,
+Indeed ID,2025-11,1,1,0.00,
+Indeed ID,2025-12,1,1,0.00,
+Indeed ID,2026-01,0,1,,
+Indeed ID,2026-02,1,1,0.00,
+Indeed ID,2026-03,3,1,0.00,
+Indeed ID,2026-04,2,1,0.00,
+Indeed ID,2026-05,7,1,0.00,
+Indeed ID,2026-06,5,1,0.00,
+Indeed ID,2026-07,7,1,0.01,
+Indeed ID,2026-08,0,1,,index lag
+Indeed ID,2026-09,0,1,0.00,index lag
+Indeed ID,2026-10,1,1,0.00,index lag
+Indeed ID,2026-11,0,1,,index lag
+LinkedIn ID,2024-01,20,168,0.00,low
+LinkedIn ID,2024-02,0,168,,low
+LinkedIn ID,2024-03,65,168,0.00,
+LinkedIn ID,2024-04,195,168,0.00,
+LinkedIn ID,2024-05,114,168,0.00,
+LinkedIn ID,2024-06,8,168,0.00,low
+LinkedIn ID,2024-07,5,168,0.00,low
+LinkedIn ID,2024-08,3,168,0.00,low
+LinkedIn ID,2024-09,30,168,0.00,low
+LinkedIn ID,2024-10,1,168,0.00,low
+LinkedIn ID,2024-11,25,168,0.00,low
+LinkedIn ID,2024-12,389,168,0.00,
+LinkedIn ID,2025-01,168,168,0.00,
+LinkedIn ID,2025-02,56,168,0.00,
+LinkedIn ID,2025-03,190,168,0.00,
+LinkedIn ID,2025-04,1420,168,0.00,spike
+LinkedIn ID,2025-05,57,168,0.00,
+LinkedIn ID,2025-06,212,168,0.00,
+LinkedIn ID,2025-07,758,168,0.00,spike
+LinkedIn ID,2025-08,488,168,0.00,
+LinkedIn ID,2025-09,586,168,0.00,
+LinkedIn ID,2025-10,652,168,0.00,
+LinkedIn ID,2025-11,714,168,0.00,spike
+LinkedIn ID,2025-12,387,168,0.00,
+LinkedIn ID,2026-01,428,168,0.00,
+LinkedIn ID,2026-02,461,168,0.00,
+LinkedIn ID,2026-03,338,168,0.00,
+LinkedIn ID,2026-04,1126,168,0.00,spike
+LinkedIn ID,2026-05,101,168,0.00,
+LinkedIn ID,2026-06,23,168,0.00,low
+LinkedIn ID,2026-07,60,168,0.00,
+LinkedIn ID,2026-08,1,168,0.00,index lag
+LinkedIn ID,2026-09,104,168,0.00,index lag
+LinkedIn ID,2026-10,99,168,0.00,index lag
+LinkedIn ID,2026-11,193,168,0.00,index lag
+Karir.com,2024-01,1,133,0.00,low
+Karir.com,2024-02,0,133,,low
+Karir.com,2024-03,330,133,0.00,
+Karir.com,2024-04,229,133,0.00,
+Karir.com,2024-05,255,133,0.00,
+Karir.com,2024-06,370,133,0.00,
+Karir.com,2024-07,600,133,0.00,spike
+Karir.com,2024-08,313,133,0.00,
+Karir.com,2024-09,181,133,0.00,
+Karir.com,2024-10,125,133,0.00,
+Karir.com,2024-11,181,133,0.00,
+Karir.com,2024-12,133,133,0.00,
+Karir.com,2025-01,106,133,0.00,
+Karir.com,2025-02,138,133,0.00,
+Karir.com,2025-03,160,133,0.00,
+Karir.com,2025-04,79,133,0.00,
+Karir.com,2025-05,173,133,0.00,
+Karir.com,2025-06,179,133,0.00,
+Karir.com,2025-07,96,133,0.00,
+Karir.com,2025-08,46,133,0.00,
+Karir.com,2025-09,58,133,0.00,
+Karir.com,2025-10,30,133,0.00,low
+Karir.com,2025-11,25,133,0.00,low
+Karir.com,2025-12,142,133,0.00,
+Karir.com,2026-01,48,133,0.00,
+Karir.com,2026-02,47,133,0.00,
+Karir.com,2026-03,173,133,0.00,
+Karir.com,2026-04,47,133,0.00,
+Karir.com,2026-05,86,133,0.00,
+Karir.com,2026-06,213,133,0.00,
+Karir.com,2026-07,25,133,0.00,low
+Karir.com,2026-08,0,133,,index lag
+Karir.com,2026-09,0,133,,index lag
+Karir.com,2026-10,0,133,,index lag
+Karir.com,2026-11,0,133,,index lag
+KitaLulus,2024-01,0,517,,low
+KitaLulus,2024-02,0,517,,low
+KitaLulus,2024-03,0,517,,low
+KitaLulus,2024-04,0,517,,low
+KitaLulus,2024-05,0,517,,low
+KitaLulus,2024-06,98,517,0.00,low
+KitaLulus,2024-07,86,517,0.00,low
+KitaLulus,2024-08,328,517,0.00,
+KitaLulus,2024-09,582,517,0.00,
+KitaLulus,2024-10,520,517,0.00,
+KitaLulus,2024-11,6687,517,0.00,spike
+KitaLulus,2024-12,738,517,0.00,
+KitaLulus,2025-01,409,517,0.00,
+KitaLulus,2025-02,431,517,0.00,
+KitaLulus,2025-03,259,517,0.00,
+KitaLulus,2025-04,279,517,0.00,
+KitaLulus,2025-05,430,517,0.00,
+KitaLulus,2025-06,315,517,0.00,
+KitaLulus,2025-07,384,517,0.00,
+KitaLulus,2025-08,792,517,0.00,
+KitaLulus,2025-09,1530,517,0.00,
+KitaLulus,2025-10,1462,517,0.00,
+KitaLulus,2025-11,2217,517,0.00,spike
+KitaLulus,2025-12,776,517,0.00,
+KitaLulus,2026-01,691,517,0.00,
+KitaLulus,2026-02,674,517,0.00,
+KitaLulus,2026-03,1058,517,0.00,
+KitaLulus,2026-04,517,517,0.00,
+KitaLulus,2026-05,864,517,0.00,
+KitaLulus,2026-06,1759,517,0.00,
+KitaLulus,2026-07,4221,517,0.00,spike
+KitaLulus,2026-08,1742,517,0.00,index lag
+KitaLulus,2026-09,1,517,0.00,index lag
+KitaLulus,2026-10,13,517,0.00,index lag
+KitaLulus,2026-11,0,517,,index lag
+Dealls,2024-01,1,996,0.00,low
+Dealls,2024-02,5,996,0.00,low
+Dealls,2024-03,366,996,0.00,
+Dealls,2024-04,457,996,0.00,
+Dealls,2024-05,721,996,0.00,
+Dealls,2024-06,603,996,0.00,
+Dealls,2024-07,606,996,0.00,
+Dealls,2024-08,652,996,0.00,
+Dealls,2024-09,2381,996,0.00,
+Dealls,2024-10,1707,996,0.00,
+Dealls,2024-11,2225,996,0.00,
+Dealls,2024-12,838,996,0.00,
+Dealls,2025-01,1620,996,0.00,
+Dealls,2025-02,1419,996,0.00,
+Dealls,2025-03,1442,996,0.00,
+Dealls,2025-04,1639,996,0.00,
+Dealls,2025-05,893,996,0.00,
+Dealls,2025-06,1054,996,0.00,
+Dealls,2025-07,742,996,0.00,
+Dealls,2025-08,1157,996,0.00,
+Dealls,2025-09,1120,996,0.00,
+Dealls,2025-10,720,996,0.00,
+Dealls,2025-11,1062,996,0.00,
+Dealls,2025-12,1225,996,0.00,
+Dealls,2026-01,3974,996,0.00,
+Dealls,2026-02,3615,996,0.00,
+Dealls,2026-03,2067,996,0.00,
+Dealls,2026-04,996,996,0.00,
+Dealls,2026-05,955,996,0.00,
+Dealls,2026-06,780,996,0.00,
+Dealls,2026-07,928,996,0.00,
+Dealls,2026-08,419,996,0.00,index lag
+Dealls,2026-09,0,996,0.00,index lag
+Dealls,2026-10,10,996,0.00,index lag
+Dealls,2026-11,0,996,,index lag
+Karirhub (Kemnaker),2024-01,0,18,,
+Karirhub (Kemnaker),2024-02,0,18,0.00,
+Karirhub (Kemnaker),2024-03,1,18,0.00,
+Karirhub (Kemnaker),2024-04,1,18,0.00,
+Karirhub (Kemnaker),2024-05,2,18,0.00,
+Karirhub (Kemnaker),2024-06,1,18,0.00,
+Karirhub (Kemnaker),2024-07,53,18,0.00,
+Karirhub (Kemnaker),2024-08,3,18,0.00,
+Karirhub (Kemnaker),2024-09,9,18,0.00,
+Karirhub (Kemnaker),2024-10,279,18,0.00,
+Karirhub (Kemnaker),2024-11,57,18,0.00,
+Karirhub (Kemnaker),2024-12,19,18,0.00,
+Karirhub (Kemnaker),2025-01,43,18,0.00,
+Karirhub (Kemnaker),2025-02,535,18,0.00,
+Karirhub (Kemnaker),2025-03,316,18,0.00,
+Karirhub (Kemnaker),2025-04,63,18,0.00,
+Karirhub (Kemnaker),2025-05,69,18,0.00,
+Karirhub (Kemnaker),2025-06,129,18,0.00,
+Karirhub (Kemnaker),2025-07,115,18,0.00,
+Karirhub (Kemnaker),2025-08,942,18,0.00,
+Karirhub (Kemnaker),2025-09,155,18,0.00,
+Karirhub (Kemnaker),2025-10,61,18,0.00,
+Karirhub (Kemnaker),2025-11,44,18,0.00,
+Karirhub (Kemnaker),2025-12,18,18,0.00,
+Karirhub (Kemnaker),2026-01,3,18,0.00,
+Karirhub (Kemnaker),2026-02,5,18,0.00,
+Karirhub (Kemnaker),2026-03,1,18,0.00,
+Karirhub (Kemnaker),2026-04,4,18,0.00,
+Karirhub (Kemnaker),2026-05,6,18,0.00,
+Karirhub (Kemnaker),2026-06,3,18,0.00,
+Karirhub (Kemnaker),2026-07,0,18,0.50,
+Karirhub (Kemnaker),2026-08,0,18,1.00,index lag
+Karirhub (Kemnaker),2026-09,0,18,1.00,index lag
+Karirhub (Kemnaker),2026-10,0,18,1.00,index lag
+Karirhub (Kemnaker),2026-11,0,18,,index lag
+Pintarnya,2024-01,0,275,,low
+Pintarnya,2024-02,0,275,,low
+Pintarnya,2024-03,0,275,,low
+Pintarnya,2024-04,0,275,,low
+Pintarnya,2024-05,0,275,,low
+Pintarnya,2024-06,0,275,,low
+Pintarnya,2024-07,0,275,,low
+Pintarnya,2024-08,0,275,,low
+Pintarnya,2024-09,0,275,,low
+Pintarnya,2024-10,0,275,,low
+Pintarnya,2024-11,0,275,,low
+Pintarnya,2024-12,0,275,,low
+Pintarnya,2025-01,0,275,,low
+Pintarnya,2025-02,189,275,0.00,
+Pintarnya,2025-03,44,275,0.00,low
+Pintarnya,2025-04,11188,275,0.00,spike
+Pintarnya,2025-05,9930,275,0.00,spike
+Pintarnya,2025-06,11059,275,0.00,spike
+Pintarnya,2025-07,8818,275,0.00,spike
+Pintarnya,2025-08,8829,275,0.00,spike
+Pintarnya,2025-09,11690,275,0.00,spike
+Pintarnya,2025-10,9872,275,0.00,spike
+Pintarnya,2025-11,10152,275,0.00,spike
+Pintarnya,2025-12,275,275,0.00,
+Pintarnya,2026-01,7940,275,0.00,spike
+Pintarnya,2026-02,6138,275,0.00,spike
+Pintarnya,2026-03,7644,275,0.00,spike
+Pintarnya,2026-04,365,275,0.00,
+Pintarnya,2026-05,7455,275,0.00,spike
+Pintarnya,2026-06,6929,275,0.00,spike
+Pintarnya,2026-07,7782,275,0.00,spike
+Pintarnya,2026-08,4623,275,0.00,index lag
+Pintarnya,2026-09,0,275,,index lag
+Pintarnya,2026-10,8,275,0.00,index lag
+Pintarnya,2026-11,6,275,0.00,index lag

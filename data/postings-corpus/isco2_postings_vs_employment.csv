@@ -1,0 +1,259 @@
+﻿country,postings_group,isco08_2digit,occupation_group,postings_share_pct,employees_thousand,employees_share_pct,employment_thousand,employment_share_pct,posting_weighted_exposure,employment_year
+Indonesia,census 2025-09,01,Commissioned armed forces officers,0.0,92.1,0.14,92.1,0.06,,2024
+Indonesia,census 2025-09,02,Non-commissioned armed forces officers,0.0,361.5,0.54,361.5,0.25,,2024
+Indonesia,census 2025-09,03,"Armed forces occupations, other ranks",0.0,92.3,0.14,92.3,0.06,,2024
+Indonesia,census 2025-09,11,"Chief executives, senior officials and legislators",0.13,385.6,0.57,431.2,0.3,0.38,2024
+Indonesia,census 2025-09,12,Administrative and commercial managers,2.86,374.4,0.56,726.5,0.51,0.402,2024
+Indonesia,census 2025-09,13,Production and specialised services managers,2.32,444.0,0.66,881.0,0.61,0.377,2024
+Indonesia,census 2025-09,14,"Hospitality, retail and other services managers",2.58,100.5,0.15,1222.1,0.85,0.406,2024
+Indonesia,census 2025-09,21,Science and engineering professionals,6.72,374.5,0.56,478.1,0.33,0.371,2024
+Indonesia,census 2025-09,22,Health professionals,1.37,970.5,1.44,1050.1,0.73,0.278,2024
+Indonesia,census 2025-09,23,Teaching professionals,1.8,5416.1,8.05,5651.6,3.95,0.312,2024
+Indonesia,census 2025-09,24,Business and administration professionals,19.26,537.7,0.8,596.0,0.42,0.507,2024
+Indonesia,census 2025-09,25,Information and communications technology professionals,4.31,116.3,0.17,141.4,0.1,0.537,2024
+Indonesia,census 2025-09,26,"Legal, social and cultural professionals",1.51,312.8,0.46,544.0,0.38,0.421,2024
+Indonesia,census 2025-09,31,Science and engineering associate professionals,3.0,1128.5,1.68,1305.8,0.91,0.296,2024
+Indonesia,census 2025-09,32,Health associate professionals,0.7,637.4,0.95,897.3,0.63,0.265,2024
+Indonesia,census 2025-09,33,Business and administration associate professionals,17.21,1011.8,1.5,1220.1,0.85,0.497,2024
+Indonesia,census 2025-09,34,"Legal, social, cultural and related associate professionals",1.61,372.1,0.55,589.0,0.41,0.328,2024
+Indonesia,census 2025-09,35,Information and communications technicians,1.03,245.0,0.36,277.8,0.19,0.441,2024
+Indonesia,census 2025-09,41,General and keyboard clerks,3.29,2692.6,4.0,2733.2,1.91,0.604,2024
+Indonesia,census 2025-09,42,Customer services clerks,2.61,905.0,1.35,945.9,0.66,0.544,2024
+Indonesia,census 2025-09,43,Numerical and material recording clerks,2.98,1577.9,2.35,1614.6,1.13,0.463,2024
+Indonesia,census 2025-09,44,Other clerical support workers,0.75,1189.6,1.77,1199.2,0.84,0.471,2024
+Indonesia,census 2025-09,51,Personal service workers,3.5,2470.7,3.67,5535.1,3.86,0.244,2024
+Indonesia,census 2025-09,52,Sales workers,8.52,6059.7,9.01,28181.1,19.67,0.392,2024
+Indonesia,census 2025-09,53,Personal care workers,0.08,483.5,0.72,636.4,0.44,0.191,2024
+Indonesia,census 2025-09,54,Protective services workers,0.34,1759.0,2.61,1780.2,1.24,0.2,2024
+Indonesia,census 2025-09,61,Market-oriented skilled agricultural workers,0.05,1662.4,2.47,23906.1,16.69,0.18,2024
+Indonesia,census 2025-09,62,"Market-oriented skilled forestry, fishery and hunting workers",0.02,297.7,0.44,1408.6,0.98,0.195,2024
+Indonesia,census 2025-09,63,"Subsistence farmers, fishers, hunters and gatherers",0.0,159.1,0.24,4324.4,3.02,,2024
+Indonesia,census 2025-09,71,"Building and related trades workers, excluding electricians",0.13,2733.4,4.06,3387.5,2.36,0.18,2024
+Indonesia,census 2025-09,72,"Metal, machinery and related trades workers",0.57,1388.1,2.06,2474.3,1.73,0.176,2024
+Indonesia,census 2025-09,73,Handicraft and printing workers,0.05,569.4,0.85,1755.3,1.23,0.282,2024
+Indonesia,census 2025-09,74,Electrical and electronic trades workers,0.15,394.3,0.59,687.2,0.48,0.202,2024
+Indonesia,census 2025-09,75,"Food processing, wood working, garment and other craft and related trades workers",0.78,3223.2,4.79,7952.7,5.55,0.248,2024
+Indonesia,census 2025-09,81,Stationary plant and machine operators,0.68,2604.7,3.87,3426.3,2.39,0.18,2024
+Indonesia,census 2025-09,82,Assemblers,0.13,189.6,0.28,249.7,0.17,0.29,2024
+Indonesia,census 2025-09,83,Drivers and mobile plant operators,2.13,3012.5,4.48,5744.8,4.01,0.232,2024
+Indonesia,census 2025-09,91,Cleaners and helpers,0.85,3355.3,4.99,3966.8,2.77,0.127,2024
+Indonesia,census 2025-09,92,"Agricultural, forestry and fishery labourers",0.04,6219.0,9.24,9926.5,6.93,0.112,2024
+Indonesia,census 2025-09,93,"Labourers in mining, construction, manufacturing and transport",1.43,8540.7,12.69,9566.1,6.68,0.133,2024
+Indonesia,census 2025-09,94,Food preparation assistants,3.94,363.5,0.54,1051.0,0.73,0.155,2024
+Indonesia,census 2025-09,95,Street and related sales and service workers,0.0,157.1,0.23,889.2,0.62,,2024
+Indonesia,census 2025-09,96,Refuse workers and other elementary workers,0.56,2300.4,3.42,3357.1,2.34,0.349,2024
+Indonesia,census 2025-12,01,Commissioned armed forces officers,0.0,92.1,0.14,92.1,0.06,,2024
+Indonesia,census 2025-12,02,Non-commissioned armed forces officers,0.0,361.5,0.54,361.5,0.25,,2024
+Indonesia,census 2025-12,03,"Armed forces occupations, other ranks",0.0,92.3,0.14,92.3,0.06,,2024
+Indonesia,census 2025-12,11,"Chief executives, senior officials and legislators",0.14,385.6,0.57,431.2,0.3,0.38,2024
+Indonesia,census 2025-12,12,Administrative and commercial managers,2.94,374.4,0.56,726.5,0.51,0.402,2024
+Indonesia,census 2025-12,13,Production and specialised services managers,2.34,444.0,0.66,881.0,0.61,0.378,2024
+Indonesia,census 2025-12,14,"Hospitality, retail and other services managers",3.36,100.5,0.15,1222.1,0.85,0.4,2024
+Indonesia,census 2025-12,21,Science and engineering professionals,6.3,374.5,0.56,478.1,0.33,0.373,2024
+Indonesia,census 2025-12,22,Health professionals,1.32,970.5,1.44,1050.1,0.73,0.28,2024
+Indonesia,census 2025-12,23,Teaching professionals,1.62,5416.1,8.05,5651.6,3.95,0.307,2024
+Indonesia,census 2025-12,24,Business and administration professionals,18.99,537.7,0.8,596.0,0.42,0.507,2024
+Indonesia,census 2025-12,25,Information and communications technology professionals,3.6,116.3,0.17,141.4,0.1,0.537,2024
+Indonesia,census 2025-12,26,"Legal, social and cultural professionals",1.51,312.8,0.46,544.0,0.38,0.422,2024
+Indonesia,census 2025-12,31,Science and engineering associate professionals,2.93,1128.5,1.68,1305.8,0.91,0.298,2024
+Indonesia,census 2025-12,32,Health associate professionals,0.78,637.4,0.95,897.3,0.63,0.268,2024
+Indonesia,census 2025-12,33,Business and administration associate professionals,17.14,1011.8,1.5,1220.1,0.85,0.497,2024
+Indonesia,census 2025-12,34,"Legal, social, cultural and related associate professionals",1.71,372.1,0.55,589.0,0.41,0.328,2024
+Indonesia,census 2025-12,35,Information and communications technicians,0.5,245.0,0.36,277.8,0.19,0.42,2024
+Indonesia,census 2025-12,41,General and keyboard clerks,3.38,2692.6,4.0,2733.2,1.91,0.605,2024
+Indonesia,census 2025-12,42,Customer services clerks,2.68,905.0,1.35,945.9,0.66,0.543,2024
+Indonesia,census 2025-12,43,Numerical and material recording clerks,3.21,1577.9,2.35,1614.6,1.13,0.458,2024
+Indonesia,census 2025-12,44,Other clerical support workers,0.73,1189.6,1.77,1199.2,0.84,0.468,2024
+Indonesia,census 2025-12,51,Personal service workers,3.68,2470.7,3.67,5535.1,3.86,0.248,2024
+Indonesia,census 2025-12,52,Sales workers,8.91,6059.7,9.01,28181.1,19.67,0.394,2024
+Indonesia,census 2025-12,53,Personal care workers,0.08,483.5,0.72,636.4,0.44,0.185,2024
+Indonesia,census 2025-12,54,Protective services workers,0.26,1759.0,2.61,1780.2,1.24,0.2,2024
+Indonesia,census 2025-12,61,Market-oriented skilled agricultural workers,0.04,1662.4,2.47,23906.1,16.69,0.181,2024
+Indonesia,census 2025-12,62,"Market-oriented skilled forestry, fishery and hunting workers",0.02,297.7,0.44,1408.6,0.98,0.195,2024
+Indonesia,census 2025-12,63,"Subsistence farmers, fishers, hunters and gatherers",0.0,159.1,0.24,4324.4,3.02,,2024
+Indonesia,census 2025-12,71,"Building and related trades workers, excluding electricians",0.1,2733.4,4.06,3387.5,2.36,0.168,2024
+Indonesia,census 2025-12,72,"Metal, machinery and related trades workers",0.48,1388.1,2.06,2474.3,1.73,0.174,2024
+Indonesia,census 2025-12,73,Handicraft and printing workers,0.04,569.4,0.85,1755.3,1.23,0.283,2024
+Indonesia,census 2025-12,74,Electrical and electronic trades workers,0.15,394.3,0.59,687.2,0.48,0.203,2024
+Indonesia,census 2025-12,75,"Food processing, wood working, garment and other craft and related trades workers",0.84,3223.2,4.79,7952.7,5.55,0.246,2024
+Indonesia,census 2025-12,81,Stationary plant and machine operators,0.68,2604.7,3.87,3426.3,2.39,0.18,2024
+Indonesia,census 2025-12,82,Assemblers,0.1,189.6,0.28,249.7,0.17,0.29,2024
+Indonesia,census 2025-12,83,Drivers and mobile plant operators,2.29,3012.5,4.48,5744.8,4.01,0.229,2024
+Indonesia,census 2025-12,91,Cleaners and helpers,0.76,3355.3,4.99,3966.8,2.77,0.126,2024
+Indonesia,census 2025-12,92,"Agricultural, forestry and fishery labourers",0.04,6219.0,9.24,9926.5,6.93,0.112,2024
+Indonesia,census 2025-12,93,"Labourers in mining, construction, manufacturing and transport",1.55,8540.7,12.69,9566.1,6.68,0.134,2024
+Indonesia,census 2025-12,94,Food preparation assistants,4.28,363.5,0.54,1051.0,0.73,0.155,2024
+Indonesia,census 2025-12,95,Street and related sales and service workers,0.0,157.1,0.23,889.2,0.62,,2024
+Indonesia,census 2025-12,96,Refuse workers and other elementary workers,0.54,2300.4,3.42,3357.1,2.34,0.35,2024
+Indonesia,cards weighted 2024,01,Commissioned armed forces officers,0.0,92.1,0.14,92.1,0.06,,2024
+Indonesia,cards weighted 2024,02,Non-commissioned armed forces officers,0.0,361.5,0.54,361.5,0.25,,2024
+Indonesia,cards weighted 2024,03,"Armed forces occupations, other ranks",0.0,92.3,0.14,92.3,0.06,,2024
+Indonesia,cards weighted 2024,11,"Chief executives, senior officials and legislators",0.15,385.6,0.57,431.2,0.3,0.38,2024
+Indonesia,cards weighted 2024,12,Administrative and commercial managers,2.6,374.4,0.56,726.5,0.51,0.401,2024
+Indonesia,cards weighted 2024,13,Production and specialised services managers,2.64,444.0,0.66,881.0,0.61,0.379,2024
+Indonesia,cards weighted 2024,14,"Hospitality, retail and other services managers",4.27,100.5,0.15,1222.1,0.85,0.405,2024
+Indonesia,cards weighted 2024,21,Science and engineering professionals,7.06,374.5,0.56,478.1,0.33,0.368,2024
+Indonesia,cards weighted 2024,22,Health professionals,1.44,970.5,1.44,1050.1,0.73,0.281,2024
+Indonesia,cards weighted 2024,23,Teaching professionals,1.55,5416.1,8.05,5651.6,3.95,0.297,2024
+Indonesia,cards weighted 2024,24,Business and administration professionals,18.8,537.7,0.8,596.0,0.42,0.506,2024
+Indonesia,cards weighted 2024,25,Information and communications technology professionals,4.11,116.3,0.17,141.4,0.1,0.534,2024
+Indonesia,cards weighted 2024,26,"Legal, social and cultural professionals",1.52,312.8,0.46,544.0,0.38,0.41,2024
+Indonesia,cards weighted 2024,31,Science and engineering associate professionals,3.26,1128.5,1.68,1305.8,0.91,0.298,2024
+Indonesia,cards weighted 2024,32,Health associate professionals,0.73,637.4,0.95,897.3,0.63,0.27,2024
+Indonesia,cards weighted 2024,33,Business and administration associate professionals,15.19,1011.8,1.5,1220.1,0.85,0.499,2024
+Indonesia,cards weighted 2024,34,"Legal, social, cultural and related associate professionals",1.89,372.1,0.55,589.0,0.41,0.318,2024
+Indonesia,cards weighted 2024,35,Information and communications technicians,1.07,245.0,0.36,277.8,0.19,0.444,2024
+Indonesia,cards weighted 2024,41,General and keyboard clerks,3.22,2692.6,4.0,2733.2,1.91,0.601,2024
+Indonesia,cards weighted 2024,42,Customer services clerks,3.18,905.0,1.35,945.9,0.66,0.548,2024
+Indonesia,cards weighted 2024,43,Numerical and material recording clerks,2.9,1577.9,2.35,1614.6,1.13,0.466,2024
+Indonesia,cards weighted 2024,44,Other clerical support workers,0.45,1189.6,1.77,1199.2,0.84,0.492,2024
+Indonesia,cards weighted 2024,51,Personal service workers,4.6,2470.7,3.67,5535.1,3.86,0.243,2024
+Indonesia,cards weighted 2024,52,Sales workers,9.62,6059.7,9.01,28181.1,19.67,0.391,2024
+Indonesia,cards weighted 2024,53,Personal care workers,0.07,483.5,0.72,636.4,0.44,0.184,2024
+Indonesia,cards weighted 2024,54,Protective services workers,0.29,1759.0,2.61,1780.2,1.24,0.2,2024
+Indonesia,cards weighted 2024,61,Market-oriented skilled agricultural workers,0.06,1662.4,2.47,23906.1,16.69,0.181,2024
+Indonesia,cards weighted 2024,62,"Market-oriented skilled forestry, fishery and hunting workers",0.02,297.7,0.44,1408.6,0.98,0.195,2024
+Indonesia,cards weighted 2024,63,"Subsistence farmers, fishers, hunters and gatherers",0.0,159.1,0.24,4324.4,3.02,,2024
+Indonesia,cards weighted 2024,71,"Building and related trades workers, excluding electricians",0.11,2733.4,4.06,3387.5,2.36,0.17,2024
+Indonesia,cards weighted 2024,72,"Metal, machinery and related trades workers",0.68,1388.1,2.06,2474.3,1.73,0.177,2024
+Indonesia,cards weighted 2024,73,Handicraft and printing workers,0.06,569.4,0.85,1755.3,1.23,0.277,2024
+Indonesia,cards weighted 2024,74,Electrical and electronic trades workers,0.13,394.3,0.59,687.2,0.48,0.194,2024
+Indonesia,cards weighted 2024,75,"Food processing, wood working, garment and other craft and related trades workers",0.84,3223.2,4.79,7952.7,5.55,0.271,2024
+Indonesia,cards weighted 2024,81,Stationary plant and machine operators,0.74,2604.7,3.87,3426.3,2.39,0.18,2024
+Indonesia,cards weighted 2024,82,Assemblers,0.13,189.6,0.28,249.7,0.17,0.29,2024
+Indonesia,cards weighted 2024,83,Drivers and mobile plant operators,1.38,3012.5,4.48,5744.8,4.01,0.222,2024
+Indonesia,cards weighted 2024,91,Cleaners and helpers,0.74,3355.3,4.99,3966.8,2.77,0.126,2024
+Indonesia,cards weighted 2024,92,"Agricultural, forestry and fishery labourers",0.06,6219.0,9.24,9926.5,6.93,0.111,2024
+Indonesia,cards weighted 2024,93,"Labourers in mining, construction, manufacturing and transport",1.12,8540.7,12.69,9566.1,6.68,0.135,2024
+Indonesia,cards weighted 2024,94,Food preparation assistants,3.04,363.5,0.54,1051.0,0.73,0.155,2024
+Indonesia,cards weighted 2024,95,Street and related sales and service workers,0.0,157.1,0.23,889.2,0.62,,2024
+Indonesia,cards weighted 2024,96,Refuse workers and other elementary workers,0.28,2300.4,3.42,3357.1,2.34,0.331,2024
+Indonesia,cards weighted 2025,01,Commissioned armed forces officers,0.0,92.1,0.14,92.1,0.06,,2024
+Indonesia,cards weighted 2025,02,Non-commissioned armed forces officers,0.0,361.5,0.54,361.5,0.25,,2024
+Indonesia,cards weighted 2025,03,"Armed forces occupations, other ranks",0.0,92.3,0.14,92.3,0.06,,2024
+Indonesia,cards weighted 2025,11,"Chief executives, senior officials and legislators",0.14,385.6,0.57,431.2,0.3,0.38,2024
+Indonesia,cards weighted 2025,12,Administrative and commercial managers,3.19,374.4,0.56,726.5,0.51,0.402,2024
+Indonesia,cards weighted 2025,13,Production and specialised services managers,2.55,444.0,0.66,881.0,0.61,0.377,2024
+Indonesia,cards weighted 2025,14,"Hospitality, retail and other services managers",3.21,100.5,0.15,1222.1,0.85,0.411,2024
+Indonesia,cards weighted 2025,21,Science and engineering professionals,6.9,374.5,0.56,478.1,0.33,0.368,2024
+Indonesia,cards weighted 2025,22,Health professionals,1.4,970.5,1.44,1050.1,0.73,0.279,2024
+Indonesia,cards weighted 2025,23,Teaching professionals,1.86,5416.1,8.05,5651.6,3.95,0.305,2024
+Indonesia,cards weighted 2025,24,Business and administration professionals,19.19,537.7,0.8,596.0,0.42,0.506,2024
+Indonesia,cards weighted 2025,25,Information and communications technology professionals,3.95,116.3,0.17,141.4,0.1,0.536,2024
+Indonesia,cards weighted 2025,26,"Legal, social and cultural professionals",1.59,312.8,0.46,544.0,0.38,0.41,2024
+Indonesia,cards weighted 2025,31,Science and engineering associate professionals,3.22,1128.5,1.68,1305.8,0.91,0.297,2024
+Indonesia,cards weighted 2025,32,Health associate professionals,0.74,637.4,0.95,897.3,0.63,0.27,2024
+Indonesia,cards weighted 2025,33,Business and administration associate professionals,16.8,1011.8,1.5,1220.1,0.85,0.496,2024
+Indonesia,cards weighted 2025,34,"Legal, social, cultural and related associate professionals",1.72,372.1,0.55,589.0,0.41,0.329,2024
+Indonesia,cards weighted 2025,35,Information and communications technicians,1.15,245.0,0.36,277.8,0.19,0.447,2024
+Indonesia,cards weighted 2025,41,General and keyboard clerks,3.43,2692.6,4.0,2733.2,1.91,0.603,2024
+Indonesia,cards weighted 2025,42,Customer services clerks,2.61,905.0,1.35,945.9,0.66,0.545,2024
+Indonesia,cards weighted 2025,43,Numerical and material recording clerks,3.19,1577.9,2.35,1614.6,1.13,0.473,2024
+Indonesia,cards weighted 2025,44,Other clerical support workers,0.59,1189.6,1.77,1199.2,0.84,0.486,2024
+Indonesia,cards weighted 2025,51,Personal service workers,3.65,2470.7,3.67,5535.1,3.86,0.248,2024
+Indonesia,cards weighted 2025,52,Sales workers,8.08,6059.7,9.01,28181.1,19.67,0.391,2024
+Indonesia,cards weighted 2025,53,Personal care workers,0.08,483.5,0.72,636.4,0.44,0.189,2024
+Indonesia,cards weighted 2025,54,Protective services workers,0.25,1759.0,2.61,1780.2,1.24,0.2,2024
+Indonesia,cards weighted 2025,61,Market-oriented skilled agricultural workers,0.05,1662.4,2.47,23906.1,16.69,0.18,2024
+Indonesia,cards weighted 2025,62,"Market-oriented skilled forestry, fishery and hunting workers",0.02,297.7,0.44,1408.6,0.98,0.195,2024
+Indonesia,cards weighted 2025,63,"Subsistence farmers, fishers, hunters and gatherers",0.0,159.1,0.24,4324.4,3.02,,2024
+Indonesia,cards weighted 2025,71,"Building and related trades workers, excluding electricians",0.11,2733.4,4.06,3387.5,2.36,0.168,2024
+Indonesia,cards weighted 2025,72,"Metal, machinery and related trades workers",0.63,1388.1,2.06,2474.3,1.73,0.176,2024
+Indonesia,cards weighted 2025,73,Handicraft and printing workers,0.05,569.4,0.85,1755.3,1.23,0.278,2024
+Indonesia,cards weighted 2025,74,Electrical and electronic trades workers,0.13,394.3,0.59,687.2,0.48,0.201,2024
+Indonesia,cards weighted 2025,75,"Food processing, wood working, garment and other craft and related trades workers",0.8,3223.2,4.79,7952.7,5.55,0.264,2024
+Indonesia,cards weighted 2025,81,Stationary plant and machine operators,0.7,2604.7,3.87,3426.3,2.39,0.18,2024
+Indonesia,cards weighted 2025,82,Assemblers,0.13,189.6,0.28,249.7,0.17,0.29,2024
+Indonesia,cards weighted 2025,83,Drivers and mobile plant operators,1.74,3012.5,4.48,5744.8,4.01,0.224,2024
+Indonesia,cards weighted 2025,91,Cleaners and helpers,0.83,3355.3,4.99,3966.8,2.77,0.128,2024
+Indonesia,cards weighted 2025,92,"Agricultural, forestry and fishery labourers",0.04,6219.0,9.24,9926.5,6.93,0.113,2024
+Indonesia,cards weighted 2025,93,"Labourers in mining, construction, manufacturing and transport",1.32,8540.7,12.69,9566.1,6.68,0.134,2024
+Indonesia,cards weighted 2025,94,Food preparation assistants,3.56,363.5,0.54,1051.0,0.73,0.155,2024
+Indonesia,cards weighted 2025,95,Street and related sales and service workers,0.0,157.1,0.23,889.2,0.62,,2024
+Indonesia,cards weighted 2025,96,Refuse workers and other elementary workers,0.38,2300.4,3.42,3357.1,2.34,0.339,2024
+Philippines,cards weighted 2024,01,Commissioned armed forces officers,0.0,25.8,0.08,25.8,0.05,,2024
+Philippines,cards weighted 2024,02,Non-commissioned armed forces officers,0.0,11.5,0.04,11.5,0.02,,2024
+Philippines,cards weighted 2024,03,"Armed forces occupations, other ranks",0.0,54.9,0.18,54.9,0.12,,2024
+Philippines,cards weighted 2024,11,"Chief executives, senior officials and legislators",0.08,460.2,1.5,460.6,0.97,0.38,2024
+Philippines,cards weighted 2024,12,Administrative and commercial managers,2.57,279.6,0.91,354.1,0.75,0.404,2024
+Philippines,cards weighted 2024,13,Production and specialised services managers,3.09,165.2,0.54,379.5,0.8,0.39,2024
+Philippines,cards weighted 2024,14,"Hospitality, retail and other services managers",2.31,101.1,0.33,504.4,1.06,0.399,2024
+Philippines,cards weighted 2024,21,Science and engineering professionals,7.6,320.1,1.05,326.5,0.69,0.375,2024
+Philippines,cards weighted 2024,22,Health professionals,1.89,344.8,1.13,367.5,0.77,0.263,2024
+Philippines,cards weighted 2024,23,Teaching professionals,0.75,1345.8,4.39,1360.2,2.86,0.334,2024
+Philippines,cards weighted 2024,24,Business and administration professionals,16.84,287.1,0.94,292.8,0.62,0.509,2024
+Philippines,cards weighted 2024,25,Information and communications technology professionals,9.39,189.4,0.62,189.9,0.4,0.534,2024
+Philippines,cards weighted 2024,26,"Legal, social and cultural professionals",1.37,172.0,0.56,194.6,0.41,0.413,2024
+Philippines,cards weighted 2024,31,Science and engineering associate professionals,2.53,318.5,1.04,331.7,0.7,0.297,2024
+Philippines,cards weighted 2024,32,Health associate professionals,1.12,572.9,1.87,612.9,1.29,0.309,2024
+Philippines,cards weighted 2024,33,Business and administration associate professionals,16.56,764.0,2.49,790.3,1.66,0.489,2024
+Philippines,cards weighted 2024,34,"Legal, social, cultural and related associate professionals",0.67,161.3,0.53,197.9,0.42,0.342,2024
+Philippines,cards weighted 2024,35,Information and communications technicians,2.62,137.9,0.45,142.2,0.3,0.458,2024
+Philippines,cards weighted 2024,41,General and keyboard clerks,4.38,1203.6,3.93,1212.1,2.55,0.606,2024
+Philippines,cards weighted 2024,42,Customer services clerks,11.67,1753.0,5.72,1778.7,3.74,0.571,2024
+Philippines,cards weighted 2024,43,Numerical and material recording clerks,5.0,528.5,1.73,534.0,1.12,0.552,2024
+Philippines,cards weighted 2024,44,Other clerical support workers,0.47,155.3,0.51,157.7,0.33,0.524,2024
+Philippines,cards weighted 2024,51,Personal service workers,1.04,1532.6,5.0,1818.4,3.83,0.244,2024
+Philippines,cards weighted 2024,52,Sales workers,2.97,2746.3,8.97,8146.6,17.14,0.402,2024
+Philippines,cards weighted 2024,53,Personal care workers,0.07,376.9,1.23,386.2,0.81,0.176,2024
+Philippines,cards weighted 2024,54,Protective services workers,0.18,1152.6,3.76,1152.6,2.43,0.199,2024
+Philippines,cards weighted 2024,61,Market-oriented skilled agricultural workers,0.06,1.5,0.0,4377.8,9.21,0.182,2024
+Philippines,cards weighted 2024,62,"Market-oriented skilled forestry, fishery and hunting workers",0.0,12.3,0.04,920.2,1.94,0.195,2024
+Philippines,cards weighted 2024,63,"Subsistence farmers, fishers, hunters and gatherers",0.0,0.0,0.0,38.3,0.08,,2024
+Philippines,cards weighted 2024,71,"Building and related trades workers, excluding electricians",0.28,1186.7,3.88,1214.2,2.55,0.181,2024
+Philippines,cards weighted 2024,72,"Metal, machinery and related trades workers",0.78,594.5,1.94,691.6,1.46,0.177,2024
+Philippines,cards weighted 2024,73,Handicraft and printing workers,0.04,165.4,0.54,311.3,0.66,0.264,2024
+Philippines,cards weighted 2024,74,Electrical and electronic trades workers,0.29,352.9,1.15,391.4,0.82,0.193,2024
+Philippines,cards weighted 2024,75,"Food processing, wood working, garment and other craft and related trades workers",0.5,577.9,1.89,868.9,1.83,0.288,2024
+Philippines,cards weighted 2024,81,Stationary plant and machine operators,0.44,344.2,1.12,373.5,0.79,0.18,2024
+Philippines,cards weighted 2024,82,Assemblers,0.08,293.9,0.96,294.7,0.62,0.29,2024
+Philippines,cards weighted 2024,83,Drivers and mobile plant operators,0.92,1823.5,5.96,3454.7,7.27,0.213,2024
+Philippines,cards weighted 2024,91,Cleaners and helpers,0.23,2039.8,6.66,2064.8,4.34,0.125,2024
+Philippines,cards weighted 2024,92,"Agricultural, forestry and fishery labourers",0.04,3031.6,9.9,4463.8,9.39,0.114,2024
+Philippines,cards weighted 2024,93,"Labourers in mining, construction, manufacturing and transport",0.76,3975.7,12.98,4764.4,10.03,0.137,2024
+Philippines,cards weighted 2024,94,Food preparation assistants,0.25,274.9,0.9,338.2,0.71,0.155,2024
+Philippines,cards weighted 2024,95,Street and related sales and service workers,0.0,37.4,0.12,322.1,0.68,,2024
+Philippines,cards weighted 2024,96,Refuse workers and other elementary workers,0.16,748.1,2.44,850.9,1.79,0.272,2024
+Philippines,cards weighted 2025,01,Commissioned armed forces officers,0.0,25.8,0.08,25.8,0.05,,2024
+Philippines,cards weighted 2025,02,Non-commissioned armed forces officers,0.0,11.5,0.04,11.5,0.02,,2024
+Philippines,cards weighted 2025,03,"Armed forces occupations, other ranks",0.0,54.9,0.18,54.9,0.12,,2024
+Philippines,cards weighted 2025,11,"Chief executives, senior officials and legislators",0.07,460.2,1.5,460.6,0.97,0.38,2024
+Philippines,cards weighted 2025,12,Administrative and commercial managers,2.62,279.6,0.91,354.1,0.75,0.404,2024
+Philippines,cards weighted 2025,13,Production and specialised services managers,2.65,165.2,0.54,379.5,0.8,0.389,2024
+Philippines,cards weighted 2025,14,"Hospitality, retail and other services managers",2.17,101.1,0.33,504.4,1.06,0.401,2024
+Philippines,cards weighted 2025,21,Science and engineering professionals,6.4,320.1,1.05,326.5,0.69,0.37,2024
+Philippines,cards weighted 2025,22,Health professionals,1.59,344.8,1.13,367.5,0.77,0.263,2024
+Philippines,cards weighted 2025,23,Teaching professionals,1.35,1345.8,4.39,1360.2,2.86,0.325,2024
+Philippines,cards weighted 2025,24,Business and administration professionals,16.58,287.1,0.94,292.8,0.62,0.509,2024
+Philippines,cards weighted 2025,25,Information and communications technology professionals,8.35,189.4,0.62,189.9,0.4,0.533,2024
+Philippines,cards weighted 2025,26,"Legal, social and cultural professionals",1.36,172.0,0.56,194.6,0.41,0.43,2024
+Philippines,cards weighted 2025,31,Science and engineering associate professionals,2.42,318.5,1.04,331.7,0.7,0.298,2024
+Philippines,cards weighted 2025,32,Health associate professionals,1.0,572.9,1.87,612.9,1.29,0.314,2024
+Philippines,cards weighted 2025,33,Business and administration associate professionals,17.6,764.0,2.49,790.3,1.66,0.491,2024
+Philippines,cards weighted 2025,34,"Legal, social, cultural and related associate professionals",0.81,161.3,0.53,197.9,0.42,0.348,2024
+Philippines,cards weighted 2025,35,Information and communications technicians,2.73,137.9,0.45,142.2,0.3,0.46,2024
+Philippines,cards weighted 2025,41,General and keyboard clerks,4.65,1203.6,3.93,1212.1,2.55,0.606,2024
+Philippines,cards weighted 2025,42,Customer services clerks,11.35,1753.0,5.72,1778.7,3.74,0.569,2024
+Philippines,cards weighted 2025,43,Numerical and material recording clerks,5.57,528.5,1.73,534.0,1.12,0.557,2024
+Philippines,cards weighted 2025,44,Other clerical support workers,0.59,155.3,0.51,157.7,0.33,0.537,2024
+Philippines,cards weighted 2025,51,Personal service workers,1.16,1532.6,5.0,1818.4,3.83,0.246,2024
+Philippines,cards weighted 2025,52,Sales workers,3.46,2746.3,8.97,8146.6,17.14,0.406,2024
+Philippines,cards weighted 2025,53,Personal care workers,0.12,376.9,1.23,386.2,0.81,0.185,2024
+Philippines,cards weighted 2025,54,Protective services workers,0.18,1152.6,3.76,1152.6,2.43,0.198,2024
+Philippines,cards weighted 2025,61,Market-oriented skilled agricultural workers,0.02,1.5,0.0,4377.8,9.21,0.183,2024
+Philippines,cards weighted 2025,62,"Market-oriented skilled forestry, fishery and hunting workers",0.0,12.3,0.04,920.2,1.94,0.195,2024
+Philippines,cards weighted 2025,63,"Subsistence farmers, fishers, hunters and gatherers",0.0,0.0,0.0,38.3,0.08,,2024
+Philippines,cards weighted 2025,71,"Building and related trades workers, excluding electricians",0.31,1186.7,3.88,1214.2,2.55,0.163,2024
+Philippines,cards weighted 2025,72,"Metal, machinery and related trades workers",0.84,594.5,1.94,691.6,1.46,0.177,2024
+Philippines,cards weighted 2025,73,Handicraft and printing workers,0.03,165.4,0.54,311.3,0.66,0.247,2024
+Philippines,cards weighted 2025,74,Electrical and electronic trades workers,0.35,352.9,1.15,391.4,0.82,0.197,2024
+Philippines,cards weighted 2025,75,"Food processing, wood working, garment and other craft and related trades workers",0.56,577.9,1.89,868.9,1.83,0.263,2024
+Philippines,cards weighted 2025,81,Stationary plant and machine operators,0.44,344.2,1.12,373.5,0.79,0.18,2024
+Philippines,cards weighted 2025,82,Assemblers,0.11,293.9,0.96,294.7,0.62,0.29,2024
+Philippines,cards weighted 2025,83,Drivers and mobile plant operators,0.96,1823.5,5.96,3454.7,7.27,0.21,2024
+Philippines,cards weighted 2025,91,Cleaners and helpers,0.27,2039.8,6.66,2064.8,4.34,0.125,2024
+Philippines,cards weighted 2025,92,"Agricultural, forestry and fishery labourers",0.03,3031.6,9.9,4463.8,9.39,0.111,2024
+Philippines,cards weighted 2025,93,"Labourers in mining, construction, manufacturing and transport",0.86,3975.7,12.98,4764.4,10.03,0.137,2024
+Philippines,cards weighted 2025,94,Food preparation assistants,0.25,274.9,0.9,338.2,0.71,0.155,2024
+Philippines,cards weighted 2025,95,Street and related sales and service workers,0.0,37.4,0.12,322.1,0.68,,2024
+Philippines,cards weighted 2025,96,Refuse workers and other elementary workers,0.17,748.1,2.44,850.9,1.79,0.223,2024
