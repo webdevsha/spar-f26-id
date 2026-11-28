@@ -4,8 +4,177 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc 3.10" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>The empty chair — SPAR Indonesia country report v0.4</title>
+  <title>COUNTRY-REPORT-v0.4</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+<style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
@@ -27,29 +196,8 @@
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <link rel="stylesheet" href="" />
-<style>
-@page { size: A4; margin: 20mm 18mm; }
-body{font-family:Arial,Helvetica,sans-serif;font-size:10.5pt;line-height:1.55;color:#1a1a1a;background:#fff;max-width:190mm;margin:0 auto;padding:10mm 0}
-h1{font-family:Georgia,serif;font-size:26pt;line-height:1.15;color:#1a1a1a;margin:0 0 4mm;letter-spacing:-.2px}
-h2{font-family:Georgia,serif;font-size:15pt;color:#b3122a;margin:9mm 0 3mm;border-top:1px solid #e2ded6;padding-top:5mm}
-h2:first-of-type{border-top:none;padding-top:0}
-h3{font-family:Georgia,serif;font-size:12pt;margin:6mm 0 2mm}
-p{margin:0 0 3mm}
-table{border-collapse:collapse;width:100%;margin:4mm 0 5mm;font-size:9.5pt}
-th{background:#f7f6f3;text-align:left;padding:2.2mm 2.5mm;border-bottom:1px solid #d9d4ca;font-weight:600}
-td{padding:2.2mm 2.5mm;border-bottom:1px solid #eeeae2;vertical-align:top}
-strong{color:#111}
-hr{border:none;border-top:1px solid #e2ded6;margin:6mm 0}
-code{font-size:9pt;background:#f7f6f3;padding:.5mm 1.5mm}
-blockquote{margin:4mm 0;padding-left:5mm;border-left:2px solid #b3122a;color:#333}
-</style></head>
+  </style></head>
 <body>
-<header id="title-block-header">
-<h1 class="title">The empty chair — SPAR Indonesia country report
-v0.4</h1>
-</header>
 <h1 id="the-empty-chair">The empty chair</h1>
 <h2
 id="indonesias-ai-shock-will-arrive-as-a-hiring-decision-not-a-dismissal">Indonesia’s
@@ -129,11 +277,23 @@ meaningful protection Indonesia has. When a bank job disappears, the
 worker usually leaves the protected 42% and lands in the informal
 58%.</p>
 <h2 id="adoption-pilot-scale">2 · Adoption: pilot scale</h2>
-<p>The only adoption-stage evidence for Indonesian banks reports
-<strong>34% piloting, 18% running AI in some areas, and 4% using it
-across functions with formal governance</strong> — of 91 surveyed
-respondents, not of banks. Governance maturity averages 2.74 of 5; 43 of
-91 know the OJK AI guide.</p>
+<p>The only adoption-stage evidence for Indonesian banks now has a
+primary source: PERBANAS × IBM × K&amp;A, <em>Digital Sovereign AI and
+the Future of Trusted Banking</em>, 34 pages, launched 27 October 2026.
+It reports <strong>34% at pilot or limited trial, 18% with several use
+cases in production, 4% scaled across functions with formal
+governance</strong>, and <strong>12% not yet exploring AI</strong> — of
+<strong>91 respondents from 35 financial institutions</strong>, not of
+banks. Governance maturity averages <strong>2.74 of 5</strong> against a
+relevance score of 3.98; <strong>9%</strong> keep a complete AI use-case
+registry and <strong>32% have none</strong>; 43 of 91 know the OJK AI
+guide.</p>
+<p>Separately, OJK’s banking supervisor reports the share of banks
+adopting AI at <strong>about 30% (2024), 42% (2025) and 57.9% (Q1
+2026)</strong> — the only speed series available. It measures a
+different thing from the stage split (banks adopting at all, not the
+stage of respondents) and is press-reported, so it carries medium
+confidence and must never be added to the 34/18/4 figures.</p>
 <p>Country-wide, <strong>14.8%</strong> of working-age Indonesians use
 AI (rank 76 of 147), against 18.8% globally. Use rose 3.1 points in a
 year.</p>

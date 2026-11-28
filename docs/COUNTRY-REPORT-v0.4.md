@@ -51,9 +51,17 @@ leaves the protected 42% and lands in the informal 58%.
 
 ## 2 · Adoption: pilot scale
 
-The only adoption-stage evidence for Indonesian banks reports **34% piloting, 18% running AI in some
-areas, and 4% using it across functions with formal governance** — of 91 surveyed respondents, not of
-banks. Governance maturity averages 2.74 of 5; 43 of 91 know the OJK AI guide.
+The only adoption-stage evidence for Indonesian banks now has a primary source: PERBANAS × IBM × K&A,
+*Digital Sovereign AI and the Future of Trusted Banking*, 34 pages, launched 27 October 2026. It reports
+**34% at pilot or limited trial, 18% with several use cases in production, 4% scaled across functions with
+formal governance**, and **12% not yet exploring AI** — of **91 respondents from 35 financial
+institutions**, not of banks. Governance maturity averages **2.74 of 5** against a relevance score of 3.98;
+**9%** keep a complete AI use-case registry and **32% have none**; 43 of 91 know the OJK AI guide.
+
+Separately, OJK's banking supervisor reports the share of banks adopting AI at **about 30% (2024), 42%
+(2025) and 57.9% (Q1 2026)** — the only speed series available. It measures a different thing from the
+stage split (banks adopting at all, not the stage of respondents) and is press-reported, so it carries
+medium confidence and must never be added to the 34/18/4 figures.
 
 Country-wide, **14.8%** of working-age Indonesians use AI (rank 76 of 147), against 18.8% globally. Use
 rose 3.1 points in a year.
