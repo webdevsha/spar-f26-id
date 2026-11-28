@@ -24,3 +24,11 @@ dist/build/
 
 # Source documents ARE tracked (public disclosures, committed so the analysis pipeline can read them)
 # - see docs/REFERENCE-LIBRARY.md. Nothing under docs/ is ignored; add large binaries deliberately.
+
+# --- postings corpus: aggregates only, never the raw layers (3 GB+) ---
+data/postings-corpus/postings_clean.csv
+data/postings-corpus/postings_text.jsonl
+data/postings-corpus/scope_jobs.csv
+data/postings-corpus/cc_fetch_text.jsonl
+data/postings-corpus/html/
+data/postings-corpus/*.jsonl
