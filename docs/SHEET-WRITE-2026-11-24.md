@@ -455,3 +455,12 @@ Revert: clear `Feed_Panel!M4:O12` (model sheet `1GdULcdyhkJRwzTLH7xcFP4xnLC5tYFH
   the BNI contradiction; nothing replaced.
   Revert: restore the previous K13 text; remove the appended sentence from P13.
 
+### Corpus tabs built, 28 Nov
+Two new tabs in the Core file, Indonesia only, interns counted in, panel breaks flagged:
+- **`postings-monthly`** (new sheet) — 256 rows x 16 columns, header frozen and tinted, 80 panel-break rows
+  painted amber. Grain: platform x month; country-level figures prefixed `country_`.
+  Revert: delete the tab.
+- **`postings-exposure`** (new sheet) — 29 rows x 8 columns, grain: category.
+  Revert: delete the tab.
+Neither touches `id-postings`, `signals`, `id-shock-data` or any existing tab.
+

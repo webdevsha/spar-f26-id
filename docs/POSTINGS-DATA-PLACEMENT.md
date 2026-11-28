@@ -104,3 +104,30 @@ Overlapping platforms (Dealls, Glints) let us ask a question nobody has answered
 independent harvests of the same platform produce the same monthly shape?** If yes, S5's postings series
 has a validation; if no, one of them is measuring its own crawler. That is worth one small comparison table
 once the two tabs exist — and it would be the second real validation in the study, after the census check.
+
+---
+
+## 6 · Built 28 Nov — the decisions taken
+
+Three calls made on Sha's instruction, and what they changed:
+
+| Decision | Effect |
+|---|---|
+**Indonesia only** | Philippines rows removed from every load file and every tab. PH survives only inside the original corpus exports (`data/postings-corpus/*.csv`), kept for provenance. Tabs: **256** Indonesia platform-months (was 592 for both countries), **29** categories. |
+**Interns counted in** | The `postings` column is the inclusive count (interns + non-interns), so entry-level hiring is not silently excluded — the place a shock shows first. Dealls 2024: 405 interns of 6,087. |
+**Panel breaks kept, flagged** | `panel_break = 1` when a platform-month has fewer than 100 ads: **80 of 256** Indonesia platform-months, painted amber. Nothing dropped, nothing trended without the flag. |
+
+### Tabs as built
+
+**`postings-monthly`** — 256 rows, 9 platforms, 35 months (2024-01 → 2026-11), header frozen:
+`country · platform · segment · month · postings · bpo_share · finance_share · ai_share · ai_title_share ·
+country_open_ads · country_mean_exposure · country_exposed_pct · country_comparable · panel_break ·
+source_file · captured_on`
+
+Country-level columns are prefixed `country_` so nobody mistakes a national total for a platform number —
+the single most likely misreading in a tab like this.
+
+**`postings-exposure`** — 29 rows, one per category, Indonesia scores only:
+`country · category · classification · exposure_id · exposed_g2_g4_pct_id · cards_id · source_file · captured_on`
+
+Banking & Financial Services: **0.582**, 94.3% in G2–G4, 20,088 ads — the value now wired into the model.
