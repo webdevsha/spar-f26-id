@@ -201,7 +201,7 @@ footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);f
 </div>
 <div class="card" style="margin-top:18px"><h3>Sources</h3><ul id="srcs" style="color:var(--mut);font-size:13.5px;padding-left:18px;margin:0"></ul></div>
 </div></section>
-<footer><div class="wrap">SPAR Indonesia, bank AI-shock scenarios, draft v0.2. Page layout inspired by <a href="https://scenarios-2030.windfalltrust.org/">Windfall Trust, Scenarios 2030</a>; content and design are our own.</div></footer>
+<footer><div class="wrap">SPAR Indonesia, bank AI-shock scenarios, draft v0.3b. Page layout inspired by <a href="https://scenarios-2030.windfalltrust.org/">Windfall Trust, Scenarios 2030</a>; content and design are our own.</div></footer>
 
 <script src="data.js"></script>
 <script src="model.js"></script>
@@ -213,7 +213,7 @@ const COL={slow:'#5cc2a6',medium:'#e8b04a',extreme:'#ef6b5b'};
 const NAME={slow:'Slow',medium:'Medium',extreme:'Extreme'};
 const P0={baseYear:2026,q:.034,x:.30,g:0,A0:.18,wage:5.05,cap:5,rate:.6,months:6,acc:.83,chi:.5,theta:.6,iota:1,psi:.5,fi:1.65};
 const SC0={slow:{A:.30,year:2030,e:.24,phi:.625,m:0},medium:{A:.52,year:2029,e:.53,phi:.66,m:0},extreme:{A:.85,year:2028,e:.82,phi:.73,m:0}};
-const BANK0=[{n:"BRI",hc:84949,leavers:0,exp:0},{n:"BNI",hc:26935,leavers:0,exp:0},{n:"BCA",hc:26532,leavers:0,exp:0},{n:"CIMB Niaga",hc:10659,leavers:0,exp:0},{n:"KB Bank",hc:2265,leavers:0,exp:0},{n:"Bank Mandiri",hc:0,leavers:0,exp:0},{n:"BTN",hc:0,leavers:0,exp:0},{n:"BSI",hc:0,leavers:0,exp:0}];
+const BANK0=[{n:"BRI",hc:84949,leavers:3323,exp:0},{n:"BNI",hc:27201,leavers:2254,exp:0},{n:"BCA",hc:26435,leavers:860,exp:0},{n:"CIMB Niaga",hc:10775,leavers:1729,exp:0},{n:"KB Bank",hc:2334,leavers:1063,exp:0},{n:"Bank Mandiri",hc:38732,leavers:2868,exp:0},{n:"BTN",hc:11429,leavers:224,exp:0},{n:"BSI",hc:16274,leavers:1001,exp:0}];
 let P={...P0},SC=JSON.parse(JSON.stringify(SC0)),BANKS=JSON.parse(JSON.stringify(BANK0)),sel='medium',preset='indo',W={...PRIORS.indo};
 Chart.defaults.color='#9aa3b2';Chart.defaults.borderColor='#2a3140';Chart.defaults.font.family='Inter';
 const charts={};

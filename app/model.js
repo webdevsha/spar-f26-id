@@ -1,4 +1,5 @@
-// Mirror of the workbook logic (Model_* sheets, v0.2). Keep in sync with the Google Sheet.
+// Mirror of the workbook logic (Model_* sheets, v0.3b). Keep in sync with the Google Sheet.
+// Verified 28 Nov 2026 against the sheet's Summary: E2030 216,951 / 210,346 / 191,884 - zero delta.
 const YEARS = 5;
 function rOf(S){ return S.e*S.phi; }
 function runScenario(P, S, banks) {
