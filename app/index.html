@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPAR Indonesia | Bank AI-shock scenarios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+:root{--bg:#0f1115;--bg2:#161a21;--card:#1b2029;--line:#2a3140;--ink:#eceae4;--mut:#9aa3b2;--faint:#6d7685;
+--slow:#5cc2a6;--med:#e8b04a;--ext:#ef6b5b;--id:#e8b04a;--blue:#7aa7e8;--r:12px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;font-variant-numeric:tabular-nums lining-nums}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.15;margin:0}
+a{color:var(--blue)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:6px 22px;align-items:center;overflow-x:auto;padding-top:10px;padding-bottom:10px;white-space:nowrap}
+nav b{font-family:Fraunces,serif;margin-right:auto;font-size:15px}
+nav a{color:var(--mut);text-decoration:none;font-size:13px;font-weight:500}nav a:hover{color:var(--ink)}
+.hero{padding:80px 0 56px;position:relative;overflow:hidden}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--id);font-weight:600}
+.hero h1{font-size:clamp(34px,6vw,64px);max-width:16ch;margin:14px 0 18px}
+.hero p.lead{font-size:19px;color:var(--mut);max-width:60ch}
+.btn{display:inline-block;background:var(--id);color:#16130a;border:0;border-radius:99px;padding:12px 24px;font:600 15px Inter;text-decoration:none;cursor:pointer;margin-top:22px}
+.btn:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);padding:8px 14px;font-size:13px;margin:0 6px 0 0}
+.branch{margin-top:34px;width:100%;max-width:880px}
+.branch text{font:600 13px Inter;fill:var(--ink)}.branch .s{font-weight:400;fill:var(--mut);font-size:12px}
+section{scroll-margin-top:48px;padding:72px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(28px,4vw,40px);margin:8px 0 14px;max-width:24ch}
+section .lead{color:var(--mut);max-width:70ch;font-size:17px;margin:0 0 28px}
+.num{color:var(--id);font-family:Fraunces,serif;font-size:15px}
+.grid{display:grid;gap:18px}.g2{grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;min-width:0}
+.card h3{font-size:19px;margin-bottom:8px}.card p{margin:0 0 10px;color:var(--mut);font-size:14.5px}
+.kpi .v{font-family:Fraunces,serif;font-size:36px;font-weight:600;line-height:1}.kpi .l{color:var(--mut);font-size:13px;margin-top:6px}
+.kpi .n{color:var(--faint);font-size:12px;margin-top:4px}
+.chart{position:relative;height:300px}.chart.tall{height:360px}
+.chip{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}
+.chip.slow{color:var(--slow);border-color:var(--slow)}.chip.medium{color:var(--med);border-color:var(--med)}.chip.extreme{color:var(--ext);border-color:var(--ext)}
+.chip.warn{color:#f0a96a;border-color:#f0a96a}.chip.ok{color:var(--slow);border-color:var(--slow)}.chip.bad{color:var(--ext);border-color:var(--ext)}
+.verdict{border-left:3px solid var(--id);padding:12px 18px;background:var(--bg2);border-radius:0 var(--r) var(--r) 0;margin:22px 0;max-width:80ch}
+.verdict b{color:var(--id)}
+.src{font-size:12px;color:var(--faint);margin-top:10px}.src a{color:var(--faint)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}
+th:first-child,td:first-child{text-align:left}th{color:var(--mut);font-weight:600;font-size:12px;position:sticky;top:0;background:var(--card)}
+td.l,th.l{text-align:left;white-space:normal}.scroll{overflow-x:auto}
+.seg{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:99px;padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--mut);padding:7px 16px;border-radius:99px;font:600 13px Inter;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:#111}
+.seg button[aria-pressed=true].slow{background:var(--slow)}.seg button[aria-pressed=true].medium{background:var(--med)}.seg button[aria-pressed=true].extreme{background:var(--ext)}
+.ctrl{margin-bottom:12px}.ctrl label{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:500}.ctrl output{font-weight:700}
+.ctrl input[type=range]{width:100%;accent-color:var(--id)}.ctrl .h{font-size:11.5px;color:var(--faint);margin-top:1px}
+.tag{font-size:10px;font-weight:600;padding:1px 6px;border-radius:99px;margin-left:5px;color:#111;vertical-align:1px}.tag.obs{background:#b6d7a8}.tag.asm{background:#ffe599}.tag.need{background:#ea9999}
+.bar{height:8px;background:var(--bg2);border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--id)}
+.score{display:flex;gap:3px}.score i{width:22px;height:6px;border-radius:2px;background:var(--line)}.score i.on{background:var(--id)}
+.mgrid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:600px){.branch text{font-size:25px}.branch .s{font-size:20px}.branch .hm{display:none}}
+@media(max-width:900px){.mgrid{grid-template-columns:1fr}.wrap{padding:0 18px}section{padding:52px 0}}
+td input{width:100%;min-width:76px;background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:4px 6px;font:inherit;text-align:right}
+textarea{width:100%;min-height:64px;background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px;font:12px/1.4 ui-monospace,monospace}
+.hyp{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px}.hyp .k{font-family:Fraunces,serif;font-size:34px;color:var(--id);line-height:1}
+.hyp ul{margin:6px 0 10px;padding-left:18px;color:var(--mut);font-size:14px}.hyp li{margin-bottom:3px}
+.mc{display:flex;flex-direction:column;gap:8px}
+.mc .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.rng{position:relative;height:8px;background:var(--bg2);border-radius:99px}.rng i{position:absolute;top:0;bottom:0;background:var(--line);border-radius:99px}.rng b{position:absolute;top:-3px;width:3px;height:14px;background:var(--id);border-radius:2px}
+footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);font-size:13px}
+.note{font-size:13px;color:var(--faint)}
+.hide{display:none}
+@media(prefers-reduced-motion:no-preference){.branch .draw{stroke-dasharray:1200;stroke-dashoffset:1200;animation:d 2.2s ease-out forwards}@keyframes d{to{stroke-dashoffset:0}}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>SPAR Indonesia</b>
+<a href="#adoption">Adoption</a><a href="#labour">Job market</a><a href="#shock">What shock</a><a href="#scenarios">Scenarios</a><a href="#model">Model</a><a href="#adjust">Adjustments</a><a href="#sources">Sources</a><a href="atlas.html" style="color:var(--id)">Atlas: ecosystem and policy</a></div></nav>
+
+<header class="hero"><div class="wrap">
+<div class="eyebrow">SPAR Indonesia, AI economic shock research</div>
+<h1>What kind of AI shock is coming for Indonesia's banks?</h1>
+<p class="lead">A stress test of large-bank employment under three adoption speeds, with probabilities adapted from Moody's Analytics' five US scenarios and adjusted for Indonesia. Draft v0.2, 28 November 2026. Not a forecast.</p>
+<a class="btn" href="#scenarios">Explore the futures</a>
+<svg class="branch" viewBox="0 0 880 250" role="img" aria-label="Three paths from 2026: slow, medium and extreme adoption, with line width showing probability">
+<g id="bsvg"></g></svg>
+</div></header>
+
+<section id="adoption"><div class="wrap">
+<div class="num">1</div><h2>Indonesia adopts AI more slowly than ASEAN peers and the US and UK</h2>
+<p class="lead">Measured by people using AI, Indonesia is slow. Measured by firms, it is mid-table. Banks are ahead of both.</p>
+<div class="grid g2">
+ <div class="card"><h3>Share of working-age people using AI, Q2 2026</h3><div class="chart tall"><canvas id="cAd" role="img" aria-label="Bar chart of AI use by country"></canvas></div>
+ <div class="src">Source: <a href="https://report-ai.org/indexes/geography-of-ai/ai-use-by-country-2026/">report-ai.org</a>, from the <a href="https://blogs.microsoft.com/on-the-issues/2026/09/21/the-continued-state-of-global-ai-diffusion-in-2026/">Microsoft AI Diffusion Report</a>. US and UK are shown as the baseline because most AI studies are done there.</div></div>
+ <div class="grid" style="align-content:start">
+  <div class="card kpi"><div class="v">14.8%</div><div class="l">Indonesia, rank 76 of 147 countries</div><div class="n">Global average 18.8%. United States 33.0%, United Kingdom 43.7%.</div></div>
+  <div class="card kpi"><div class="v" id="gapv">+3.1 vs +6.7</div><div class="l">Points gained since H1 2025: Indonesia vs United States</div><div class="n">The gap is widening, not closing (UK +7.3, Vietnam +6.7, Malaysia +4.3).</div></div>
+ </div>
+</div>
+<div class="grid g2" style="margin-top:18px">
+ <div class="card"><h3>Firms: share using AI</h3><div class="chart"><canvas id="cBiz" role="img" aria-label="Business AI adoption in ASEAN"></canvas></div><div class="src">Secondary: AWS/Strand 2025 as reported by <a href="https://www.dhawalshah.net/research/sea-ai-adoption-numbers/">dhawalshah.net</a>. Check the primary before citing in the paper.</div></div>
+ <div class="card"><h3>Jobs exposed to generative AI</h3><div class="chart"><canvas id="cExp" role="img" aria-label="Share of employment exposed"></canvas></div><div class="src">Source: <a href="https://www.ilo.org/resource/article/navigating-generative-ai%E2%80%99s-transformations-asean-labour-markets">ILO</a>. ASEAN average 22.9%. In Indonesia 93.9% of clerical workers are exposed, but clerical workers are 4.2% of employment. The <a href="https://www.ilo.org/sites/default/files/2026-07/ILO%20Brief%20ASEAN%20AI%20v11%20clean.pdf">ILO brief</a> finds little disruption so far and weaker outcomes for young entry-level workers.</div></div>
+</div>
+<div class="verdict"><b>Reading.</b> Slow on people, medium on firms, ahead in banks (52% of 91 surveyed institutions piloting or running AI, <span class="note">ID-05, PERBANAS</span>). The shock, if it comes through 2030, starts in banks and similar back-office employers, not across the economy.</div>
+</div></section>
+
+<section id="labour"><div class="wrap">
+<div class="num">2</div><h2>Five years of job growth, and formalisation has stalled</h2>
+<p class="lead">Employment rose 16.9m between August 2021 and August 2026, 54% of it formal. Since August 2024, 57% of new jobs have been informal. Banking is a small share of jobs and a larger share of output.</p>
+<div class="grid g2">
+ <div class="card"><h3>Employed people by type, August each year (million)</h3><div class="chart tall"><canvas id="cLab" role="img" aria-label="Stacked bars of formal and informal employment 2021 to 2026"></canvas></div>
+ <div class="src">Source: BPS Sakernas, August rounds: <a href="https://www.scribd.com/document/909737155/BPS-Press-Release-ILFS-August-2023">2021 to 2023</a>, <a href="https://www.bps.go.id/id/pressrelease/2024/11/05/2373/tingkat-pengangguran-terbuka--tpt--sebesar-4-91-persen-.html">2024</a>, <a href="https://informasi.com/data/infrms-29662/bps-85-juta-wni-bekerja-di-sektor-informal-pekerja-formal-masih-di-bawah-50-persen">2025 and 2026</a>. BPS counts 57.9% as informal; the <a href="https://www.wiego.org/research-library-publications/indonesia-informal-workers-statistics-2019-2024/">WIEGO/ILO definition gives 75.4%</a>.</div></div>
+ <div class="card"><h3>Change from August 2021 to August 2026</h3><div class="scroll"><table id="tLab"></table></div>
+ <p class="note" style="margin-top:12px">Formal share of employment rose from 40.55% (Aug 2021) to 42.05% (Aug 2024) and has not moved since (42.07% in Aug 2026). Open unemployment is 4.75% (7.38m people), but 17.50% among youth and 12.84m people are underemployed. <a href="https://www.bps.go.id/id/pressrelease/2026/11/05/169961/tingkat-pengangguran-terbuka--tpt--sebesar-4-75-persen---rata-rata-upah-buruh-sebesar-3-42-juta-rupiah.html">BPS</a>.</p></div>
+</div>
+<h3 style="margin:34px 0 14px">How much banking matters</h3>
+<div class="grid g3">
+ <div class="card kpi"><div class="v">1.62m</div><div class="l">Jobs in finance and insurance, Aug 2026 (1.09% of employed)</div><div class="n">Down from 1.65m (Aug 2025) and 1.71m (Aug 2024) while total jobs grew 2.3%. 2025 and 2026 values are from secondary reports of BPS tables. <a href="https://databoks.katadata.co.id/en/employment/statistics/690c110930ed9/indonesias-business-sector-with-the-largest-workforce-august-2025" style="color:inherit">Databoks / BPS</a></div></div>
+ <div class="card kpi"><div class="v">4.11%</div><div class="l">Share of 2025 GDP from financial and insurance activities</div><div class="n">Rp979.70tn of Rp23,821tn; lowest since 2016. <a href="https://databoks.katadata.co.id/en/economics-macro/statistics/69840d2a0c4dc/business-sectors-with-the-largest-gdp-in-indonesia-in-2025" style="color:inherit">Databoks / BPS</a></div></div>
+ <div class="card kpi"><div class="v">3.8x</div><div class="l">GDP share relative to job share (derived: 4.11 / 1.09)</div><div class="n">Finance wages are about Rp5.1m a month against a national average of Rp3.42m (dates differ).</div></div>
+ <div class="card kpi"><div class="v">57.7%</div><div class="l">Bank assets as a share of GDP (2022)</div><div class="n">Financial system 73% of GDP; private credit 31.4% (2023). <a href="https://www.imf.org/-/media/files/publications/cr/2025/english/1idnea2025003-print-pdf.pdf" style="color:inherit">IMF</a></div></div>
+ <div class="card kpi"><div class="v">2.75%</div><div class="l">Financial intermediation share of Q1 2026 GDP (derived)</div><div class="n">Rp170.1tn of Rp6,187.6tn. <a href="https://www.bps.go.id/en/statistics-table/2/NjUjMg==/gdp-by-industry-2010-100.html" style="color:inherit">BPS</a></div></div>
+ <div class="card kpi"><div class="v">151,340</div><div class="l">Staff at five large banks in our panel</div><div class="n">BRI, BNI, BCA, CIMB Niaga, KB Bank; dates mixed 2024 to Mar 2026. About 9% of finance and insurance jobs.</div></div>
+</div>
+<div class="verdict"><b>Reading.</b> Banking is small in jobs (about 1 in 90) but central in credit and payments. Its employees are formal, and formal workers are the ones JKP covers. A bank job loss therefore moves a worker out of the protected 42% of the labour market, usually into the informal 58%.</div>
+</div></section>
+
+<section id="shock"><div class="wrap">
+<div class="num">3</div><h2>If there is an AI economic shock, what kind would it be?</h2>
+<p class="lead">Five explanations, each with evidence and a test that would prove it wrong. Ranked by how well current data supports them. These are hypotheses for SPAR to test, not findings.</p>
+<div class="grid" id="hyps"></div>
+<div class="verdict"><b>Working view.</b> Through 2030 the evidence points more to a preparedness shock than a speed shock. Adoption inside banks is unplanned (pilots without governance or redesign) and lands on people entering the labour market. It would arrive as quiet adjustment: leavers not replaced, fewer entry-level hires, more informal work. Open layoffs and a jump in the unemployment rate are the less likely signs. An external financial bust is the exception: it could hit without adoption and is the least measured.</div>
+</div></section>
+
+<section id="scenarios"><div class="wrap">
+<div class="num">4</div><h2>Five Moody's scenarios, three Indonesian speeds</h2>
+<p class="lead">Moody's Analytics gives five US scenarios with probabilities (the rounded average of seven economists and an AI model). We map them to Slow, Medium and Extreme, flag where they do not fit Indonesia, and let you set your own probabilities.</p>
+<div class="grid g3" id="mcards"></div>
+<p class="src">Source: Moody's Analytics, The Macroeconomic Consequences of AI (Redux), August 2026, endnote 3 and scenario sections. US figures; probabilities are subjective, not estimated. Bars show the range across authors.</p>
+
+<h3 style="margin:36px 0 12px">Set the probabilities for Indonesia</h3>
+<div class="mgrid">
+ <div class="card">
+  <div class="seg" role="group" aria-label="Probability preset" id="presetSeg"><button data-p="indo" aria-pressed="true">Indonesia prior</button><button data-p="moody" aria-pressed="false">Moody's-implied</button><button data-p="custom" aria-pressed="false">Custom</button></div>
+  <div style="height:14px"></div>
+  <div id="pctrls"></div>
+  <p class="note">Weights are normalised to 100%. The Indonesia prior is our judgement: 5 points moved out of Extreme and 10 out of Medium into Slow, because usage is 14.8% against 33.0% and Extreme needs adoption to rise from 18% to 85% in two years. Replace it with expert elicitation.</p>
+ </div>
+ <div class="card"><h3>Probability-weighted outcome for the five-bank panel, 2030</h3>
+  <div class="grid g3" id="ev"></div>
+  <p class="note" style="margin-top:12px">The expected value mixes central and tail cases. Read the three scenarios first, then the weighted line.</p>
+ </div>
+</div>
+</div></section>
+
+<section id="model"><div class="wrap">
+<div class="num">5</div><h2>Run the bank model</h2>
+<p class="lead">Headcount follows the AI target. Staff who leave normally absorb the change first; only the excess becomes layoffs. Labour saving is built as task exposure e times pass-through phi, after Moody's Box 4. Everything here mirrors the workbook.</p>
+<div class="seg" role="group" aria-label="Scenario" id="scSeg"><button class="slow" data-s="slow" aria-pressed="false">Slow</button><button class="medium" data-s="medium" aria-pressed="true">Medium</button><button class="extreme" data-s="extreme" aria-pressed="false">Extreme</button></div>
+<div style="height:18px"></div>
+<div class="mgrid">
+ <aside class="card" id="ctrls"></aside>
+ <div style="min-width:0">
+  <div class="grid g3" id="kpis" style="margin-bottom:18px"></div>
+  <div class="grid g2">
+   <div class="card"><h3>Headcount, all three scenarios</h3><div class="chart"><canvas id="cHc" role="img" aria-label="Headcount lines by scenario"></canvas></div></div>
+   <div class="card"><h3 id="hlTitle">Hires and layoffs</h3><div class="chart"><canvas id="cHL" role="img" aria-label="Hires and layoffs by year"></canvas></div></div>
+  </div>
+  <div class="card" style="margin-top:18px"><h3>Compare the three speeds</h3><div class="scroll"><table id="tCmp"></table></div></div>
+  <div class="card" style="margin-top:18px"><h3>Cross-check with Moody's US financial activities employment, 2025 to 2030</h3>
+   <div class="chart"><canvas id="cX" role="img" aria-label="Our panel change versus Moody's US series"></canvas></div>
+   <p class="note">US series is BLS financial activities (includes real estate), Moody's Table 7. Our panel is five banks, so it is more exposed. Pairing of cases is judgemental; this shows plausibility, not validation.</p></div>
+ </div>
+</div>
+<div class="card" style="margin-top:18px"><h3>Bank panel (feed these as data arrive)</h3>
+ <p class="note">Blank leavers or exposed share use the global assumptions. Status: <span class="tag obs">Observed</span> <span class="tag need">Needs feed</span></p>
+ <div class="scroll"><table id="tBank"></table></div>
+ <p style="margin:14px 0 6px;font-size:13px;color:var(--mut)">Paste rows as bank, headcount, leavers per year, exposed share (tab or comma separated):</p>
+ <textarea id="paste" placeholder="BRI, 84949, 2900, 0.35"></textarea>
+ <p><button class="btn ghost" id="bImp">Import rows</button><button class="btn ghost" id="bRst">Reset defaults</button></p>
+</div>
+</div></section>
+
+<section id="adjust"><div class="wrap">
+<div class="num">6</div><h2>Where we adjusted Moody's, and why</h2>
+<p class="lead">Moody's models the United States. These are the points where Indonesian evidence made us change or drop something.</p>
+<div class="card scroll"><table id="tAdj"></table></div>
+<div class="verdict"><b>Does not fit us.</b> The stock-wealth channel (two-thirds of AI's contribution to US growth in 2025), the US labour supply story, unemployment as the shock gauge, and the assumption that gains stay with domestic firms. We left these out or replaced them with a flagged gap rather than invent numbers.</div>
+</div></section>
+
+<section id="sources"><div class="wrap">
+<div class="num">7</div><h2>Caveats, sources and what to feed next</h2>
+<div class="grid g2">
+ <div class="card"><h3>Caveats</h3><ul style="color:var(--mut);font-size:14px;padding-left:18px;margin:0">
+ <li>Stress test, not a forecast. Moody's probabilities are US economists' judgement; ours are a prior to be replaced.</li>
+ <li>Bank panel dates are mixed (2024 to Mar 2026) and cover five banks, not the sector.</li>
+ <li>ID-05 shares are of 91 respondents from 35 institutions, not of banks.</li>
+ <li>Several inputs are placeholders: matching parameters, destination split, pass-through phi, JKP acceptance rate, wage.</li>
+ <li>Business adoption (AWS/Strand) and the Anthropic index are secondary; indicators ID-12, ID-14 and ID-20 are pending review.</li>
+ <li>Page and workbook do not sync automatically; model.js mirrors the Sheet.</li></ul></div>
+ <div class="card"><h3>Data to feed</h3><div class="scroll"><table id="tFeed"></table></div></div>
+</div>
+<div class="card" style="margin-top:18px"><h3>Sources</h3><ul id="srcs" style="color:var(--mut);font-size:13.5px;padding-left:18px;margin:0"></ul></div>
+</div></section>
+<footer><div class="wrap">SPAR Indonesia, bank AI-shock scenarios, draft v0.2. Page layout inspired by <a href="https://scenarios-2030.windfalltrust.org/">Windfall Trust, Scenarios 2030</a>; content and design are our own.</div></footer>
+
+<script src="data.js"></script>
+<script src="model.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+const fmt=(n,d=0)=>Number(n).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+const pc=(n,d=1)=>(n*100).toFixed(d)+'%';
+const COL={slow:'#5cc2a6',medium:'#e8b04a',extreme:'#ef6b5b'};
+const NAME={slow:'Slow',medium:'Medium',extreme:'Extreme'};
+const P0={baseYear:2026,q:.034,x:.30,g:0,A0:.18,wage:5.05,cap:5,rate:.6,months:6,acc:.83,chi:.5,theta:.6,iota:1,psi:.5,fi:1.65};
+const SC0={slow:{A:.30,year:2030,e:.24,phi:.625,m:0},medium:{A:.52,year:2029,e:.53,phi:.66,m:0},extreme:{A:.85,year:2028,e:.82,phi:.73,m:0}};
+const BANK0=[{n:"BRI",hc:84949,leavers:0,exp:0},{n:"BNI",hc:26935,leavers:0,exp:0},{n:"BCA",hc:26532,leavers:0,exp:0},{n:"CIMB Niaga",hc:10659,leavers:0,exp:0},{n:"KB Bank",hc:2265,leavers:0,exp:0},{n:"Bank Mandiri",hc:0,leavers:0,exp:0},{n:"BTN",hc:0,leavers:0,exp:0},{n:"BSI",hc:0,leavers:0,exp:0}];
+let P={...P0},SC=JSON.parse(JSON.stringify(SC0)),BANKS=JSON.parse(JSON.stringify(BANK0)),sel='medium',preset='indo',W={...PRIORS.indo};
+Chart.defaults.color='#9aa3b2';Chart.defaults.borderColor='#2a3140';Chart.defaults.font.family='Inter';
+const charts={};
+function mk(id,cfg){ if(charts[id]) charts[id].destroy(); charts[id]=new Chart($('#'+id),cfg); }
+function weights(){const s=W.slow+W.medium+W.extreme||1;return{slow:W.slow/s,medium:W.medium/s,extreme:W.extreme/s};}
+
+/* ---- hero branches */
+function drawBranch(){
+  const w=weights(),y={slow:60,medium:125,extreme:195};
+  let h=`<text x="0" y="132">2026</text><text class="s hm" x="0" y="150">Today: 18% of surveyed</text><text class="s hm" x="0" y="165">institutions run AI</text>`;
+  ['slow','medium','extreme'].forEach(k=>{
+    const sw=3+w[k]*34;
+    h+=`<path class="draw" d="M95 125 C 300 125, 330 ${y[k]}, 560 ${y[k]} L 700 ${y[k]}" fill="none" stroke="${COL[k]}" stroke-width="${sw.toFixed(1)}" stroke-linecap="round" opacity=".9"/>`;
+    h+=`<text x="715" y="${y[k]+4}">${NAME[k]} ${Math.round(w[k]*100)}%</text><text class="s" x="715" y="${y[k]+20}">${k==='slow'?'30% by 2030':k==='medium'?'52% by 2029':'85% by 2028'}</text>`;
+  });
+  $('#bsvg').innerHTML=h;
+}
+
+/* ---- section 1 */
+function s1(){
+  const d=[...ADOPT].sort((a,b)=>b.q2-a.q2);
+  const colr=g=>g==='id'?'#e8b04a':g==='base'?'#7aa7e8':'#5b6578';
+  mk('cAd',{type:'bar',data:{labels:d.map(x=>x.c),datasets:[{label:'Q2 2026',data:d.map(x=>x.q2),backgroundColor:d.map(x=>colr(x.g))},{label:'H1 2025',data:d.map(x=>x.h1),backgroundColor:'rgba(255,255,255,.14)'}]},
+   options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.raw+'%'}}},scales:{x:{max:70,ticks:{callback:v=>v+'%'}}}}});
+  const bar=(id,d,u)=>mk(id,{type:'bar',data:{labels:d.map(x=>x.c),datasets:[{data:d.map(x=>x.v),backgroundColor:d.map(x=>x.c==='Indonesia'?'#e8b04a':'#5b6578')}]},options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw+u}}},scales:{x:{ticks:{callback:v=>v+u}}}}});
+  bar('cBiz',BIZ,'%');bar('cExp',EXPO,'%');
+}
+/* ---- section 2 */
+function s2(){
+  mk('cLab',{type:'bar',data:{labels:LABOUR.map(r=>r.y),datasets:[
+   {label:'Formal',data:LABOUR.map(r=>+r.formal.toFixed(2)),backgroundColor:LABOUR.map(r=>r.derived?'rgba(122,167,232,.45)':'#7aa7e8')},
+   {label:'Informal',data:LABOUR.map(r=>r.inf),backgroundColor:'#e8b04a'}]},
+   options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'},tooltip:{callbacks:{afterBody:i=>{const r=LABOUR[i[0].dataIndex];return 'Informal share '+r.sh+'%'+(r.derived?' (formal derived)':'');}}}},scales:{x:{stacked:true},y:{stacked:true,ticks:{callback:v=>v+'m'}}}}});
+  const a=LABOUR[0],b=LABOUR[5];
+  $('#tLab').innerHTML=`<thead><tr><th></th><th>Aug 2021</th><th>Aug 2026</th><th>Change</th></tr></thead><tbody>
+  <tr><td>Informal (m)</td><td>${fmt(a.inf,2)}</td><td>${fmt(b.inf,2)}</td><td>+${fmt(b.inf-a.inf,2)}</td></tr>
+  <tr><td>Formal (m)</td><td>${fmt(a.formal,2)}</td><td>${fmt(b.formal,2)}</td><td>+${fmt(b.formal-a.formal,2)}</td></tr>
+  <tr><td>Total employed (m)</td><td>${fmt(a.total,2)}</td><td>${fmt(b.total,2)}</td><td>+${fmt(b.total-a.total,2)}</td></tr>
+  <tr><td>Informal share</td><td>${a.sh}%</td><td>${b.sh}%</td><td>${(b.sh-a.sh).toFixed(2)} pp</td></tr>
+  <tr><td>Informal share of net new jobs</td><td></td><td></td><td>${Math.round((b.inf-a.inf)/(b.total-a.total)*100)}%</td></tr></tbody>`;
+}
+/* ---- section 3 */
+function s3(){
+  $('#hyps').innerHTML=HYP.map(h=>`<div class="card hyp"><div class="k">${h.k}</div><div><h3>${h.t}</h3>
+   <div class="score" aria-label="Evidence strength ${h.score} of 5">${[1,2,3,4,5].map(i=>`<i class="${i<=h.score?'on':''}"></i>`).join('')}</div>
+   <ul>${h.ev.map(e=>`<li>${e}</li>`).join('')}</ul>
+   <p><b style="color:var(--ink)">Test:</b> ${h.test}</p><p><b style="color:var(--id)">Verdict:</b> ${h.verdict}</p></div></div>`).join('');
+}
+/* ---- section 4 */
+function s4(){
+  $('#mcards').innerHTML=MOODY.map(m=>`<div class="card mc"><div class="row"><h3 style="font-size:17px">${m.n}</h3><span style="font-family:Fraunces,serif;font-size:28px">${m.p}%</span></div>
+   <div class="rng" aria-label="Author range ${m.lo} to ${m.hi} percent"><i style="left:${m.lo*2}%;width:${(m.hi-m.lo)*2}%"></i><b style="left:${m.p*2}%"></b></div>
+   <div class="note">Author range ${m.lo} to ${m.hi}%, average ${m.avg}%</div>
+   <div><span class="chip ${m.map}">Maps to ${NAME[m.map]}</span> <span class="chip ${m.fit==='Partly'||m.fit.startsWith('Mechanism')?'warn':m.fit==='Tail only'?'':'bad'}">${m.fit}</span></div>
+   <div class="note">US: ${m.ur?'unemployment up to +'+m.ur+' pp vs baseline;':'baseline path;'} jobs ${m.emp}. Finance: ${m.fin}.</div>
+   <p style="margin:0">${m.why}</p></div>`).join('');
+  drawPctrls(); renderEV();
+}
+function drawPctrls(){
+  $('#pctrls').innerHTML=['slow','medium','extreme'].map(k=>`<div class="ctrl"><label for="p_${k}"><span style="color:${COL[k]}">${NAME[k]}</span><output id="po_${k}">${Math.round(weights()[k]*100)}%</output></label>
+   <input type="range" id="p_${k}" min="0" max="100" step="1" value="${W[k]}"></div>`).join('');
+  ['slow','medium','extreme'].forEach(k=>$('#p_'+k).addEventListener('input',e=>{W[k]=+e.target.value;setPreset('custom',true);refreshW();}));
+}
+function setPreset(p,keep){preset=p;document.querySelectorAll('#presetSeg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.p===p));if(!keep&&PRIORS[p]){W={...PRIORS[p]};drawPctrls();}}
+function refreshW(){const w=weights();['slow','medium','extreme'].forEach(k=>$('#po_'+k).textContent=Math.round(w[k]*100)+'%');drawBranch();renderEV();}
+function results(){const R={};for(const k in SC)R[k]=runScenario(P,SC[k],BANKS);return R;}
+function renderEV(){
+  const R=results(),e=expected(R,weights());
+  const c=(l,v,n)=>`<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div><div class="n">${n||''}</div></div>`;
+  $('#ev').innerHTML=c('Headcount change to 2030',pc(e.chg),'Slow '+pc(R.slow.sum.chg)+', Medium '+pc(R.medium.sum.chg)+', Extreme '+pc(R.extreme.sum.chg))+
+   c('Entry hiring cut vs no AI',pc(e.avgCut,0),'Average over years')+
+   c('Layoffs (panel, cumulative)',fmt(e.cum),'Extreme alone: '+fmt(R.extreme.sum.cum))+
+   c('JKP cost, Rp billion',fmt(e.cost,1),'Extreme alone: '+fmt(R.extreme.sum.cost,1));
+}
+/* ---- section 5 */
+const CT=[ // [scope,key,label,min,max,step,fmt,status,hint]
+ ['P','q','Attrition q (leavers per year)',0.01,0.10,0.001,v=>pc(v),'obs','BCA turnover 3.4% (ID-14); feed per bank'],
+ ['P','x','Exposed share x of headcount',0.05,0.60,0.01,v=>pc(v,0),'asm','No official split yet; feed GRI 2-7'],
+ ['P','A0','Operational adoption today A0',0.05,0.40,0.01,v=>pc(v,0),'obs','ID-05: 18% of respondents'],
+ ['P','g','Baseline headcount growth without AI',-0.03,0.05,0.001,v=>pc(v),'asm','Finance jobs flat to falling'],
+ ['P','theta','Job vacancies per displaced searcher',0.1,2,0.05,v=>v.toFixed(2),'need','Placeholder; Pasker ID'],
+ ['P','psi','Non-finders going informal',0,1,0.05,v=>pc(v,0),'need','Placeholder; Sakernas transitions'],
+ ['S','A','Target adoption A_T',0.2,1,0.01,v=>pc(v,0),'asm','Scenario input'],
+ ['S','year','Year target reached',2027,2032,1,v=>v,'asm','Speed of roll-out'],
+ ['S','e','Task exposure e',0.1,1,0.01,v=>pc(v,0),'asm','ILO clerical tasks: 24% high, 58% medium'],
+ ['S','phi','Pass-through phi',0.2,1,0.01,v=>v.toFixed(2),'need','Moody\'s Box 4 friction; to be calibrated'],
+ ['S','m','Macro bust overlay m (all staff, 2 yrs)',0,0.10,0.005,v=>pc(v),'asm','Falls-Flat style bust; 0 by default']
+];
+function drawCtrls(){
+  $('#ctrls').innerHTML='<h3>Controls</h3><p class="note">Scenario sliders change the selected speed only.</p>'+CT.map(c=>{
+   const obj=c[0]==='P'?P:SC[sel];const v=obj[c[1]];
+   return `<div class="ctrl"><label for="c_${c[1]}"><span>${c[2]}<span class="tag ${c[7]}">${{obs:'Observed',asm:'Assumption',need:'Needs feed'}[c[7]]}</span></span><output id="o_${c[1]}">${c[6](v)}</output></label>
+   <input type="range" id="c_${c[1]}" min="${c[3]}" max="${c[4]}" step="${c[5]}" value="${v}"><div class="h">${c[8]}</div></div>`;}).join('')+
+   `<div class="ctrl"><label><span>Labour saving r = e x phi</span><output id="o_r">${pc(rOf(SC[sel]))}</output></label></div><button class="btn ghost" id="bR">Reset all</button>`;
+  CT.forEach(c=>$('#c_'+c[1]).addEventListener('input',e=>{const obj=c[0]==='P'?P:SC[sel];obj[c[1]]=+e.target.value;$('#o_'+c[1]).textContent=c[6](+e.target.value);$('#o_r').textContent=pc(rOf(SC[sel]));renderModel();renderEV();}));
+  $('#bR').onclick=()=>{P={...P0};SC=JSON.parse(JSON.stringify(SC0));BANKS=JSON.parse(JSON.stringify(BANK0));drawCtrls();drawBank();renderModel();renderEV();};
+}
+function renderModel(){
+  const R=results(),m=R[sel],s=m.sum;
+  const k=(l,v,n,col)=>`<div class="card kpi"><div class="v" style="color:${col||'inherit'}">${v}</div><div class="l">${l}</div><div class="n">${n||''}</div></div>`;
+  $('#kpis').innerHTML=k('Headcount change to 2030',pc(s.chg),fmt(m.hc0)+' to '+fmt(s.E),COL[sel])+k('Average cut in hiring vs no-AI world',pc(s.avgCut,0),'Where attrition-led adjustment lands')+
+   k('Cumulative layoffs',fmt(s.cum),s.cum===0?'Attrition ('+pc(m.q)+' a year) absorbs it':'Exceeds attrition')+k('Largest one-year fall',pc(s.maxFall),'Compare with attrition '+pc(m.q))+
+   k('JKP cost, Rp billion',fmt(s.cost,1),'Formal layoffs only')+k('Layoffs into informal work',fmt(s.inf),'Open unemployed '+fmt(s.unemp)+'; placeholder split');
+  const yrs=m.rows.map(r=>r.yr);
+  mk('cHc',{type:'line',data:{labels:yrs,datasets:[{label:'No AI',data:m.rows.map(r=>r.noai),borderColor:'#6d7685',borderDash:[5,4],pointRadius:0},...['slow','medium','extreme'].map(q=>({label:NAME[q],data:R[q].rows.map(r=>r.E),borderColor:COL[q],backgroundColor:COL[q],borderWidth:q===sel?3.5:1.8,pointRadius:2}))]},
+   options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:v=>fmt(v/1000)+'k'},suggestedMin:m.hc0*0.85,suggestedMax:m.hc0*1.02}}}});
+  $('#hlTitle').textContent='Hires and layoffs, '+NAME[sel];
+  const rr=m.rows.slice(1);
+  mk('cHL',{type:'bar',data:{labels:rr.map(r=>r.yr),datasets:[{label:'Hires',data:rr.map(r=>r.H),backgroundColor:'#7aa7e8'},{label:'Hires in a no-AI world',data:rr.map(r=>r.H0),backgroundColor:'rgba(255,255,255,.14)'},{label:'Layoffs',data:rr.map(r=>r.L),backgroundColor:'#ef6b5b'}]},
+   options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:v=>fmt(v)}}}}});
+  const rows=[['Adoption in 2030',x=>pc(x.sum.A,0)],['Labour saving r',x=>pc(x.r,1)],['Headcount change',x=>pc(x.sum.chg)],['Largest one-year fall',x=>pc(x.sum.maxFall)],['Hiring cut',x=>pc(x.sum.avgCut,0)],['Layoffs (cumulative)',x=>fmt(x.sum.cum)],['JKP cost (Rp bn)',x=>fmt(x.sum.cost,1)],['To informal work',x=>fmt(x.sum.inf)],['Open unemployed',x=>fmt(x.sum.unemp)],['Layoffs if panel were whole finance sector (illustrative)',x=>fmt(x.sum.sector)]];
+  const w=weights(),e=expected(R,w);const ev={'Adoption in 2030':pc(e.A,0),'Headcount change':pc(e.chg),'Hiring cut':pc(e.avgCut,0),'Layoffs (cumulative)':fmt(e.cum),'JKP cost (Rp bn)':fmt(e.cost,1),'To informal work':fmt(e.inf),'Open unemployed':fmt(e.unemp),'Largest one-year fall':pc(e.maxFall),'Layoffs if panel were whole finance sector (illustrative)':fmt(e.sector),'Labour saving r':'-'};
+  $('#tCmp').innerHTML=`<thead><tr><th></th><th style="color:${COL.slow}">Slow</th><th style="color:${COL.medium}">Medium</th><th style="color:${COL.extreme}">Extreme</th><th>Weighted</th></tr></thead><tbody>`+rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1](R.slow)}</td><td>${r[1](R.medium)}</td><td>${r[1](R.extreme)}</td><td>${ev[r[0]]}</td></tr>`).join('')+`<tr><td>Probability weight</td><td>${pc(w.slow,0)}</td><td>${pc(w.medium,0)}</td><td>${pc(w.extreme,0)}</td><td>100%</td></tr></tbody>`;
+  const us=[['Moody baseline',(9.38/9.20-1)*100],['Upheaval',(9.18/9.20-1)*100],['Dystopia',(8.61/9.20-1)*100]];
+  mk('cX',{type:'bar',data:{labels:['Slow vs US baseline','Medium vs US Upheaval','Extreme vs US Dystopia'],datasets:[{label:'US financial activities, 2025 to 2030',data:us.map(x=>+x[1].toFixed(1)),backgroundColor:'#7aa7e8'},{label:'Our five-bank panel, to 2030',data:['slow','medium','extreme'].map(q=>+(R[q].sum.chg*100).toFixed(1)),backgroundColor:['slow','medium','extreme'].map(q=>COL[q])}]},
+   options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:v=>v+'%'}}}}});
+}
+function drawBank(){
+  $('#tBank').innerHTML=`<thead><tr><th>Bank</th><th>Headcount</th><th>Leavers per year</th><th>Exposed share</th><th>Status</th></tr></thead><tbody>`+BANKS.map((b,i)=>`<tr><td>${b.n}</td>
+   <td><input aria-label="${b.n} headcount" data-i="${i}" data-f="hc" value="${b.hc||''}"></td><td><input aria-label="${b.n} leavers" data-i="${i}" data-f="leavers" value="${b.leavers||''}" placeholder="feed"></td><td><input aria-label="${b.n} exposed share" data-i="${i}" data-f="exp" value="${b.exp||''}" placeholder="feed"></td>
+   <td><span class="tag ${b.hc?'obs':'need'}">${b.hc?'Observed':'Needs feed'}</span></td></tr>`).join('')+`<tr><td><b>Panel</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.hc||0),0))}</b></td><td></td><td></td><td></td></tr></tbody>`;
+  document.querySelectorAll('#tBank input').forEach(inp=>inp.addEventListener('change',e=>{BANKS[+e.target.dataset.i][e.target.dataset.f]=parseFloat(String(e.target.value).replace(/,/g,''))||0;drawBank();renderModel();renderEV();}));
+}
+/* ---- 6,7 */
+function s67(){
+  $('#tAdj').innerHTML='<thead><tr><th>Item</th><th class="l">Moody\'s treatment</th><th class="l">Indonesian evidence</th><th class="l">Our adjustment</th><th>Confidence</th></tr></thead><tbody>'+ADJ.map(a=>`<tr><td class="l"><b>${a[0]}</b></td><td class="l">${a[1]}</td><td class="l">${a[2]}</td><td class="l">${a[3]}</td><td>${a[4]}</td></tr>`).join('')+'</tbody>';
+  $('#tFeed').innerHTML='<thead><tr><th>Data</th><th class="l">Where</th><th class="l">Changes</th></tr></thead><tbody>'+FEEDS.map(f=>`<tr><td class="l">${f[0]}</td><td class="l">${f[1]}</td><td class="l">${f[2]}</td></tr>`).join('')+'</tbody>';
+  $('#srcs').innerHTML=Object.values(SRC).map(s=>`<li>${s.u?`<a href="${s.u}">${s.t}</a>`:s.t+' (supplied PDF)'}</li>`).join('');
+}
+/* ---- wire */
+document.querySelectorAll('#presetSeg button').forEach(b=>b.addEventListener('click',()=>{setPreset(b.dataset.p);refreshW();}));
+document.querySelectorAll('#scSeg button').forEach(b=>b.addEventListener('click',()=>{sel=b.dataset.s;document.querySelectorAll('#scSeg button').forEach(x=>x.setAttribute('aria-pressed',x===b));drawCtrls();renderModel();}));
+$('#bImp').onclick=()=>{String($('#paste').value).split(/\n/).forEach(l=>{const p=l.split(/[\t,;]/).map(s=>s.trim());if(p.length<2)return;const n=p[0].toLowerCase();let b=BANKS.find(x=>x.n.toLowerCase()===n);if(!b){b={n:p[0],hc:0,leavers:0,exp:0};BANKS.push(b);}b.hc=parseFloat(p[1])||0;b.leavers=parseFloat(p[2])||0;b.exp=parseFloat(p[3])||0;});drawBank();renderModel();renderEV();};
+$('#bRst').onclick=()=>{BANKS=JSON.parse(JSON.stringify(BANK0));drawBank();renderModel();renderEV();};
+drawBranch();s1();s2();s3();s4();drawCtrls();drawBank();renderModel();s67();
+</script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  const DEFAULT_LINE_HEIGHT = 16;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  const PICK_CAPABILITIES = ["pick"];
+  const PICK_CHAIN_LENGTH = 4;
+  const PICK_MAX_TEXT_CHARS = 120;
+  const PICK_MAX_HTML_CHARS = 300;
+
+  function truncate(value, maxChars) {
+    return value.length > maxChars ? value.slice(0, maxChars - 1) + "…" : value;
+  }
+
+  function isPickableElement(element) {
+    return (
+      element instanceof Element &&
+      element !== document.documentElement &&
+      element !== document.body
+    );
+  }
+
+  function resolvePickTarget(x, y) {
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+    const element = document.elementFromPoint(x, y);
+    return isPickableElement(element) ? element.closest("svg") || element : null;
+  }
+
+  function pickLabel(element) {
+    if (element.id) return element.localName + "#" + element.id;
+    return [element.localName].concat(Array.from(element.classList).slice(0, 2)).join(".");
+  }
+
+  // Only attributes that help find the element in source. data-* values and URL
+  // query strings or fragments can carry tokens.
+  const PICK_ATTRIBUTES = new Set([
+    "id",
+    "class",
+    "name",
+    "type",
+    "role",
+    "alt",
+    "aria-label",
+    "href",
+    "src",
+  ]);
+
+  function pickAttributeValue(attribute) {
+    return attribute.name === "href" || attribute.name === "src"
+      ? attribute.value.split(/[?#]/)[0]
+      : attribute.value;
+  }
+
+  function describePickElement(element) {
+    const chain = [];
+    for (
+      let current = element;
+      isPickableElement(current) && chain.length < PICK_CHAIN_LENGTH;
+      current = current.parentElement
+    ) {
+      chain.unshift(current);
+    }
+    const attributes = Array.from(element.attributes)
+      .filter((attribute) => PICK_ATTRIBUTES.has(attribute.name))
+      .map((attribute) => ` ${attribute.name}="${pickAttributeValue(attribute).replace(/"/g, "&quot;")}"`)
+      .join("");
+    const text = (element.innerText || element.textContent || "").replace(/\s+/g, " ").trim();
+    return {
+      chain: chain.map(pickLabel),
+      html: truncate(`<${element.localName}${attributes}>`, PICK_MAX_HTML_CHARS),
+      text: text ? truncate(text, PICK_MAX_TEXT_CHARS) : undefined,
+    };
+  }
+
+  // Hover asks once per frame, and innerText on a large section forces layout,
+  // so only the rect is re-read while the pointer stays on the same element.
+  // Clicks ask for fresh details since the page may have changed the element.
+  let lastPick = null;
+
+  function describePickTarget(element, fresh) {
+    if (fresh || lastPick?.element !== element) {
+      lastPick = { element, details: describePickElement(element) };
+    }
+    const rect = element.getBoundingClientRect();
+    return {
+      rect: { x: rect.left, y: rect.top, width: rect.width, height: rect.height },
+      ...lastPick.details,
+    };
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+      capabilities: PICK_CAPABILITIES,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_PICK") {
+      const element = resolvePickTarget(event.data.x, event.data.y);
+      postToTrustedTop({
+        type: "INLINE_EDIT_PICK_RESULT",
+        seq: event.data.seq,
+        target: element ? describePickTarget(element, event.data.fresh === true) : null,
+      });
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_BY") {
+      const { deltaX, deltaY, deltaMode } = event.data;
+      if (!scrollForwarding || !Number.isFinite(deltaX) || !Number.isFinite(deltaY)) return;
+      if (deltaMode !== 0 && deltaMode !== 1 && deltaMode !== 2) return;
+      const lineHeight =
+        parseFloat(getComputedStyle(document.documentElement).lineHeight) || DEFAULT_LINE_HEIGHT;
+      const scaleX = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerWidth : 1;
+      const scaleY = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerHeight : 1;
+      // The selection overlay receives the wheel event instead of this iframe.
+      // Instant scrolling preserves trackpad deltas even on smooth-scroll sites.
+      window.scrollBy({ left: deltaX * scaleX, top: deltaY * scaleY, behavior: "instant" });
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body></html>

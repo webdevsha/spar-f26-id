@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPAR Indonesia | Ecosystem, policy and readiness atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<style>
+:root{--bg:#0f1115;--bg2:#161a21;--card:#1b2029;--line:#2a3140;--ink:#eceae4;--mut:#9aa3b2;--faint:#6d7685;--teal:#5cc2a6;--amb:#e8b04a;--coral:#ef6b5b;--blue:#7aa7e8;--r:12px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;font-variant-numeric:tabular-nums lining-nums}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.15;margin:0}
+a{color:var(--blue)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+nav{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:6px 22px;align-items:center;overflow-x:auto;padding-top:10px;padding-bottom:10px;white-space:nowrap}
+nav b{font-family:Fraunces,serif;margin-right:auto;font-size:15px}
+nav a{color:var(--mut);text-decoration:none;font-size:13px;font-weight:500}nav a:hover{color:var(--ink)}
+header{padding:64px 0 36px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amb);margin-bottom:14px}
+h1{font-size:clamp(30px,4.4vw,48px);max-width:900px}
+.lead{color:var(--mut);max-width:760px;margin:14px 0 0}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(24px,3vw,32px);max-width:820px}
+.num{font-family:Fraunces,serif;color:var(--amb);font-size:15px;margin-bottom:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.grid{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.kpi .v{font-family:Fraunces,serif;font-size:34px;color:var(--amb);line-height:1}.kpi .l{margin-top:8px;font-size:14px}.kpi .n{color:var(--mut);font-size:13px;margin-top:4px}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:20px 0 14px;font-size:14px;color:var(--mut)}
+.chip{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);background:var(--bg2);color:var(--ink);border-radius:99px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer}
+.chip[aria-pressed=true]{border-color:var(--amb);color:var(--amb)}
+.chip:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible,th[tabindex]:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+input[type=search],select{background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font:inherit;font-size:14px}
+.net{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px}
+.net svg{width:100%;height:auto;aspect-ratio:1.25/1;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);display:block}
+.panel{font-size:14px;max-height:640px;overflow:auto}
+.panel h3{font-size:18px;margin-bottom:6px}.panel .k{color:var(--faint);font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-top:12px}
+.panel ul{padding-left:18px;margin:4px 0}.panel li{margin-bottom:3px;color:var(--mut)}.panel li b{color:var(--ink);font-weight:500}
+.tag{display:inline-block;font-size:12px;border-radius:6px;padding:1px 8px;border:1px solid var(--line);color:var(--mut)}
+.tag.warn{border-color:var(--amb);color:var(--amb)}.tag.ok{border-color:var(--teal);color:var(--teal)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--mut);margin-top:12px}
+.legend i{display:inline-block;width:12px;height:12px;vertical-align:-1px;margin-right:6px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--bg2);color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em;position:sticky;top:0;white-space:nowrap}
+th[tabindex]{cursor:pointer}
+tr:last-child td{border-bottom:0}
+td.n{text-align:center}
+.heat td.c{width:78px;text-align:center;font-weight:600;color:#0f1115}
+.heat td.c.z{background:#232a36;color:var(--faint)}.heat td.c.h{background:#3f8f7d}.heat td.c.f{background:var(--teal)}
+.heat th.q{white-space:normal;min-width:110px;text-transform:none;letter-spacing:0;font-size:12px}
+.note{font-size:13px;color:var(--faint);margin-top:12px;max-width:880px}
+.verdict{border-left:3px solid var(--amb);padding:10px 16px;margin-top:20px;background:var(--bg2);border-radius:0 8px 8px 0;color:var(--ink)}
+.ladder{display:grid;gap:12px}
+.rung{display:grid;grid-template-columns:150px repeat(4,minmax(0,1fr));gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;font-size:13.5px}
+.rung .lv{font-family:Fraunces,serif;font-size:19px;color:var(--teal)}
+.rung.gap .lv{color:var(--coral)}.rung .h{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);margin-bottom:2px}
+.rung small{display:block;grid-column:2/-1;color:var(--faint);font-size:12px}
+.cov{display:inline-flex;gap:2px;vertical-align:middle}.cov i{display:inline-block;width:14px;height:14px;border-radius:3px;font-style:normal;font-size:9px;line-height:14px;text-align:center;color:#0f1115}
+.cov .H{background:var(--teal)}.cov .M{background:#8fd3c0}.cov .L{background:#3a4352;color:var(--mut)}.cov .G{background:var(--coral)}
+.gaps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gaps .card h3{font-size:17px;color:var(--ink)}.gaps .card p{margin:6px 0 8px;font-size:14px;color:var(--mut)}
+.btn{display:inline-block;background:var(--amb);color:#0f1115;font-weight:600;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px}
+footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);font-size:13px}
+@media(max-width:900px){.net{grid-template-columns:1fr}.g3,.gaps{grid-template-columns:1fr}.wrap{padding:0 18px}section{padding:44px 0}.rung{grid-template-columns:1fr}.rung small{grid-column:1}.net svg{aspect-ratio:1/1.1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>SPAR Indonesia | Atlas</b>
+<a href="index.html">Scenario model</a><a href="#map">Ecosystem</a><a href="#inv">Policy inventory</a><a href="#ready">Readiness</a><a href="#signals">Signals</a><a href="#ladder">Trigger ladder</a><a href="#gaps">Gaps</a><a href="files/The_Empty_Chair_SPAR_Indonesia_report.pdf">Report (PDF)</a></div></nav>
+
+<header><div class="wrap">
+<div class="eyebrow">Companion to the report "The Empty Chair" | Draft v0.3, 28 November 2026</div>
+<h1>Who can act, with what, and where the gaps are</h1>
+<p class="lead">An interactive map of 15 actors and 24 policies that touch Indonesia's banking workforce in an AI transition, how ready each policy is, and how signals connect to triggers and instruments. Provisional: scores and several rows await team review.</p>
+<div class="grid g3" style="margin-top:28px">
+ <div class="card kpi"><div class="v" id="k1">73</div><div class="l">relationships mapped</div><div class="n">65 stated in a source, 8 inferred by us</div></div>
+ <div class="card kpi"><div class="v">4 of 24</div><div class="l">policies state how they are funded</div><div class="n">None is AI-specific</div></div>
+ <div class="card kpi"><div class="v">0 of 24</div><div class="l">policies tie an AI trigger to a worker response</div><div class="n">Worker support starts at dismissal</div></div>
+</div>
+</div></header>
+
+<section id="map"><div class="wrap">
+<div class="num">1</div><h2>Ecosystem map: the delivery routes exist, the AI ones are disconnected from them</h2>
+<p class="lead">Squares are policies, circles are actors, small diamonds are external laws and bodies the policies refer to. Click any node for its links. Dashed amber lines are links we inferred and the source does not state. Amber-ringed circles are entry points we have not verified.</p>
+<div class="ctrl" role="group" aria-label="Map filters">
+ <span>Show:</span>
+ <button class="chip" aria-pressed="true" data-layer="actor-policy">Actor to policy</button>
+ <button class="chip" aria-pressed="true" data-layer="policy-policy">Policy to policy</button>
+ <button class="chip" aria-pressed="true" data-layer="actor-actor">Actor to actor</button>
+ <button class="chip" aria-pressed="false" id="onlyInf">Only inferred links</button>
+ <button class="chip" aria-pressed="false" id="aiOnly">AI-specific policies</button>
+ <input type="search" id="nodeSearch" placeholder="Find a node" aria-label="Find a node">
+</div>
+<div class="net">
+ <svg id="netsvg" viewBox="0 0 900 720" role="img" aria-label="Network of actors and policies"></svg>
+ <aside class="card panel" id="panel" aria-live="polite"><h3>Select a node</h3><p style="color:var(--mut)">Click an actor or policy to see its relationships, owner, funding and monitoring.</p></aside>
+</div>
+<div class="legend"><span><i style="background:#7aa7e8;border-radius:50%"></i>Actor</span><span><i style="background:#5cc2a6"></i>Policy with a stated funding source</span><span><i style="background:#3a4352"></i>Policy, funding to be confirmed</span><span><i style="background:#ef6b5b"></i>AI-specific policy</span><span><i style="border:2px dashed #e8b04a;border-radius:50%"></i>Unverified door</span></div>
+</div></section>
+
+<section id="inv"><div class="wrap">
+<div class="num">2</div><h2>Policy inventory: 24 instruments, almost none with a budget or an AI clause</h2>
+<div class="ctrl">
+ <input type="search" id="q" placeholder="Search policies, owners" aria-label="Search policies">
+ <label>Type <select id="ftype"><option value="">All</option></select></label>
+ <label>Owner <select id="fowner"><option value="">All</option></select></label>
+ <button class="chip" aria-pressed="false" id="fFund">Funding stated</button>
+ <button class="chip" aria-pressed="false" id="fAI">AI-specific</button>
+ <span id="cnt"></span>
+</div>
+<div class="scroll"><table id="tInv"><thead><tr><th tabindex="0" data-k="name">Policy</th><th tabindex="0" data-k="type">Type</th><th tabindex="0" data-k="owner">Owner</th><th>Covers</th><th>Funding</th><th>Status</th><th tabindex="0" data-k="total">Score (of 6)</th></tr></thead><tbody></tbody></table></div>
+<p class="note">Click a column header to sort. Funding shows "to be confirmed" where the source does not say. Review status per row is shown in the node panel on the map.</p>
+</div></section>
+
+<section id="ready"><div class="wrap">
+<div class="num">3</div><h2>Readiness: strongest on reaching bank workers, thinnest on funding and informal workers</h2>
+<p class="lead">Six tests, scored 0, 0.5 or 1 from the inventory fields. This is a provisional analyst rubric: the Core file's own readiness questions (q1 to q6) are not yet defined, so these can be swapped when the team defines them.</p>
+<div class="scroll" style="margin-top:18px"><table class="heat" id="tHeat"></table></div>
+<p class="verdict"><b>Reading.</b> The best-prepared instruments (JKP, PP 6/2025) are built for dismissals. The AI-specific ones score lowest. No instrument clearly links AI to a worker response.</p>
+</div></section>
+
+<section id="signals"><div class="wrap">
+<div class="num">4</div><h2>Signals: every one has an indicator, four of ten have no finance-specific cut</h2>
+<div class="scroll" style="margin-top:18px"><table id="tSig"><thead><tr><th>Signal</th><th>Indicators (H high, M medium, L low, G gap)</th><th>Finance-specific?</th><th>Main gap</th></tr></thead><tbody></tbody></table></div>
+</div></section>
+
+<section id="ladder"><div class="wrap">
+<div class="num">5</div><h2>Trigger ladder: it works for layoffs, not yet for empty chairs</h2>
+<p class="lead">Signal to indicator to trigger to actor to instrument. The Alert and Act rungs are the draft trigger in our Core file. Watch and the Gap rung are our proposals.</p>
+<div class="ladder" id="ladderBox" style="margin-top:20px"></div>
+</div></section>
+
+<section id="gaps"><div class="wrap">
+<div class="num">6</div><h2>Where the gaps are</h2>
+<div class="gaps" id="gapBox" style="margin-top:20px"></div>
+<p style="margin-top:30px"><a class="btn" href="index.html#scenarios">See how the gaps play out in the scenarios</a></p>
+</div></section>
+<footer><div class="wrap">SPAR Indonesia atlas, draft v0.3. Data from the SPAR Core file (policy inventory, who-can-act, relationships) and indicator table (ID-PH draft, 26 Nov 2026). Several rows are web-checked and await human review. Readiness scores are a provisional analyst rubric. <a href="files/charts/">Chart files</a> are listed in the report.</div></footer>
+
+<script src="atlas_data.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+const AIIDS=new Set(['ind-ojk-ai-guide-2025','ind-stranas-ka-2020-2045','ind-ai-perpres-drafts-2026','ind-se-menkominfo-9-2023']);
+const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const POL={};ATLAS.policies.forEach(p=>POL[p.id]=p);
+const ACT={};ATLAS.actors.forEach(a=>ACT[a.id]=a);
+const funded=p=>p.budget&&p.budget!=='tbc';
+/* ---------- network */
+const names={};ATLAS.rel.forEach(r=>{names[r.s]=r.sn;names[r.t]=r.tn});
+const nodes=Object.keys(names).map(id=>({id,name:(POL[id]?POL[id].name:names[id]),kind:ACT[id]?'actor':POL[id]?'policy':'ext'}));
+const nmap={};nodes.forEach(n=>nmap[n.id]=n);
+const edges=ATLAS.rel.map(r=>({...r,source:r.s,target:r.t,inferred:r.conf.startsWith('inferred')}));
+const W=900,H=720;
+const svg=d3.select('#netsvg');
+const gE=svg.append('g'),gN=svg.append('g');
+const state={layers:new Set(['actor-policy','policy-policy','actor-actor']),inf:false,ai:false,sel:null,q:''};
+const sim=d3.forceSimulation(nodes).force('link',d3.forceLink(edges).id(d=>d.id).distance(d=>d.layer==='actor-actor'?90:70).strength(.5)).force('charge',d3.forceManyBody().strength(-210)).force('center',d3.forceCenter(W/2,H/2)).force('x',d3.forceX(W/2).strength(.05)).force('y',d3.forceY(H/2).strength(.07)).force('collide',d3.forceCollide(26));
+const col=n=>n.kind==='actor'?'#7aa7e8':n.kind==='ext'?'#4a5262':AIIDS.has(n.id)?'#ef6b5b':funded(POL[n.id])?'#5cc2a6':'#3a4352';
+const link=gE.selectAll('line').data(edges).join('line').attr('stroke',d=>d.inferred?'#e8b04a':'#4b5567').attr('stroke-width',d=>d.inferred?1.6:1).attr('stroke-dasharray',d=>d.inferred?'5 4':null).attr('opacity',.8);
+const node=gN.selectAll('g').data(nodes).join('g').attr('tabindex',0).attr('role','button').attr('aria-label',d=>d.name).style('cursor','pointer')
+ .call(d3.drag().on('start',(e,d)=>{if(!e.active)sim.alphaTarget(.2).restart();d.fx=d.x;d.fy=d.y}).on('drag',(e,d)=>{d.fx=e.x;d.fy=e.y}).on('end',(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null}))
+ .on('click',(e,d)=>select(d.id)).on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(d.id)}});
+node.each(function(d){const g=d3.select(this);
+ if(d.kind==='actor'){g.append('circle').attr('r',11).attr('fill',col(d)).attr('stroke',ACT[d.id].unverified?'#e8b04a':'#0f1115').attr('stroke-width',ACT[d.id].unverified?2.5:1.5).attr('stroke-dasharray',ACT[d.id].unverified?'3 2':null)}
+ else if(d.kind==='policy'){g.append('rect').attr('x',-9).attr('y',-9).attr('width',18).attr('height',18).attr('rx',3).attr('fill',col(d)).attr('stroke','#0f1115').attr('stroke-width',1.5)}
+ else g.append('path').attr('d','M0,-7L7,0L0,7L-7,0Z').attr('fill',col(d));
+ g.append('text').attr('class','lab').attr('y',d.kind==='ext'?-11:-15).attr('text-anchor','middle').attr('font-size',d.kind==='ext'?10:11.5).attr('fill',d.kind==='ext'?'#6d7685':'#cfd3da').text(d.name.length>22?d.name.slice(0,21)+'...':d.name).style('paint-order','stroke').attr('stroke','#161a21').attr('stroke-width',3)});
+sim.on('tick',()=>{nodes.forEach(n=>{n.x=Math.max(30,Math.min(W-30,n.x));n.y=Math.max(24,Math.min(H-14,n.y))});
+ link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);node.attr('transform',d=>`translate(${d.x},${d.y})`)});
+function visibleEdge(e){return state.layers.has(e.layer)&&(!state.inf||e.inferred)}
+function refresh(){
+ const vis=edges.filter(visibleEdge);const live=new Set();vis.forEach(e=>{live.add(e.s);live.add(e.t)});
+ const nb=new Set();if(state.sel){nb.add(state.sel);edges.forEach(e=>{if(e.s===state.sel)nb.add(e.t);if(e.t===state.sel)nb.add(e.s)})}
+ const q=state.q.toLowerCase();
+ link.attr('display',d=>visibleEdge(d)?null:'none').attr('opacity',d=>state.sel?((d.s===state.sel||d.t===state.sel)?1:.08):.8).attr('stroke-width',d=>state.sel&&(d.s===state.sel||d.t===state.sel)?2.2:d.inferred?1.6:1);
+ node.attr('display',d=>live.has(d.id)||d.id===state.sel?null:'none').attr('opacity',d=>{if(state.ai&&!AIIDS.has(d.id)&&!(state.sel&&nb.has(d.id)))return .18;if(state.sel)return nb.has(d.id)?1:.2;if(q)return d.name.toLowerCase().includes(q)?1:.2;return 1});
+ node.select('.lab').attr('display',d=>d.kind==='ext'&&!(state.sel&&nb.has(d.id))?'none':null);
+ if(state.ai){edges.forEach(e=>{})}
+}
+function select(id){state.sel=id;refresh();const n=nmap[id];const p=POL[id],a=ACT[id];
+ const inc=edges.filter(e=>e.s===id||e.t===id);
+ let h=`<h3>${esc(n.name)}</h3>`;
+ if(p){h+=`<span class="tag">${esc(p.type)}</span> <span class="tag ${funded(p)?'ok':'warn'}">${funded(p)?'funding stated':'funding to be confirmed'}</span>
+ <div class="k">Owner</div>${esc(p.owner)}<div class="k">Covers</div>${esc(p.covers)}<div class="k">Funding</div>${esc(funded(p)?p.budget:'To be confirmed')}<div class="k">Monitoring</div>${esc(p.monitoring||'To be confirmed')}<div class="k">Status</div>${esc(p.status)}<div class="k">Readiness (provisional)</div>${p.total} of 6<div class="k">Review</div>${esc(p.review)}${p.link?`<div class="k">Source</div><a href="${esc(p.link)}" rel="noopener">Open source</a>`:''}`}
+ else if(a){h+=`<span class="tag">${esc(a.type)}</span> ${a.unverified?'<span class="tag warn">entry point unverified</span>':''}<div class="k">Data or programme</div>${esc(a.data)}<div class="k">Proposed entry point</div>${esc(a.door)}<div class="k">Review</div>${esc(a.review)}`}
+ else h+='<span class="tag">External reference</span>';
+ h+=`<div class="k">Links (${inc.length})</div><ul>`+inc.map(e=>{const o=e.s===id?e.t:e.s,arrow=e.s===id;return `<li><b>${esc(arrow?e.rel.replace(/_/g,' '):'is '+e.rel.replace(/_/g,' ')+' by')}</b> ${esc(names[o])} ${e.inferred?'<span class="tag warn">inferred</span>':''}</li>`}).join('')+'</ul><button class="chip" id="clr">Clear selection</button>';
+ $('#panel').innerHTML=h;$('#clr').onclick=()=>{state.sel=null;refresh();$('#panel').innerHTML='<h3>Select a node</h3><p style="color:var(--mut)">Click an actor or policy to see its relationships.</p>'}}
+document.querySelectorAll('[data-layer]').forEach(b=>b.onclick=()=>{const l=b.dataset.layer;const on=b.getAttribute('aria-pressed')==='true';b.setAttribute('aria-pressed',!on);on?state.layers.delete(l):state.layers.add(l);refresh()});
+$('#onlyInf').onclick=e=>{state.inf=!state.inf;e.currentTarget.setAttribute('aria-pressed',state.inf);refresh()};
+$('#aiOnly').onclick=e=>{state.ai=!state.ai;e.currentTarget.setAttribute('aria-pressed',state.ai);refresh()};
+$('#nodeSearch').oninput=e=>{state.q=e.target.value;refresh()};
+$('#k1').textContent=edges.length;
+refresh();
+/* ---------- inventory */
+let sortK='total',sortDir=-1,fFund=false,fAI=false;
+[...new Set(ATLAS.policies.map(p=>p.type))].sort().forEach(t=>$('#ftype').insertAdjacentHTML('beforeend',`<option>${esc(t)}</option>`));
+[...new Set(ATLAS.policies.map(p=>p.owner.split(' (')[0].split(',')[0]))].sort().forEach(t=>$('#fowner').insertAdjacentHTML('beforeend',`<option>${esc(t)}</option>`));
+function inv(){const q=$('#q').value.toLowerCase(),t=$('#ftype').value,o=$('#fowner').value;
+ let rows=ATLAS.policies.filter(p=>(!q||(p.name+p.doc+p.owner+p.covers).toLowerCase().includes(q))&&(!t||p.type===t)&&(!o||p.owner.startsWith(o)||p.owner.includes(o))&&(!fFund||funded(p))&&(!fAI||AIIDS.has(p.id)));
+ rows.sort((a,b)=>{const x=a[sortK],y=b[sortK];return (typeof x==='number'?x-y:String(x).localeCompare(String(y)))*sortDir});
+ $('#tInv tbody').innerHTML=rows.map(p=>`<tr><td><b>${p.link?`<a href="${esc(p.link)}" rel="noopener">${esc(p.name)}</a>`:esc(p.name)}</b></td><td>${esc(p.type)}</td><td>${esc(p.owner.length>46?p.owner.slice(0,45)+'...':p.owner)}</td><td>${esc(p.covers.length>80?p.covers.slice(0,79)+'...':p.covers)}</td><td>${funded(p)?esc(p.budget.length>70?p.budget.slice(0,69)+'...':p.budget):'<span class="tag warn">to be confirmed</span>'}</td><td>${esc(p.status.length>70?p.status.slice(0,69)+'...':p.status)}</td><td class="n">${p.total}</td></tr>`).join('')||'<tr><td colspan="7" style="color:var(--mut)">No policies match these filters.</td></tr>';
+ $('#cnt').textContent=rows.length+' of '+ATLAS.policies.length+' shown'}
+['q','ftype','fowner'].forEach(i=>$('#'+i).addEventListener('input',inv));
+$('#fFund').onclick=e=>{fFund=!fFund;e.currentTarget.setAttribute('aria-pressed',fFund);inv()};
+$('#fAI').onclick=e=>{fAI=!fAI;e.currentTarget.setAttribute('aria-pressed',fAI);inv()};
+document.querySelectorAll('#tInv th[data-k]').forEach(th=>{const go=()=>{const k=th.dataset.k;sortDir=sortK===k?-sortDir:(k==='total'?-1:1);sortK=k;inv()};th.onclick=go;th.onkeydown=e=>{if(e.key==='Enter')go()}});
+inv();
+/* ---------- readiness */
+const heat=[...ATLAS.policies].sort((a,b)=>b.total-a.total);
+$('#tHeat').innerHTML='<thead><tr><th>Policy</th>'+ATLAS.Q.map((q,i)=>`<th class="q">Q${i+1} ${esc(q)}</th>`).join('')+'<th>Total</th></tr></thead><tbody>'+heat.map(p=>`<tr><td><b>${esc(p.name)}</b></td>${p.scores.map(s=>`<td class="c ${s===1?'f':s===.5?'h':'z'}" title="${s===1?'Yes':s===.5?'Partly':'No'}">${s===1?'1':s===.5?'0.5':'0'}</td>`).join('')}<td class="n">${p.total}</td></tr>`).join('')+'</tbody><tfoot><tr><td><b>Policies scoring 1</b></td>'+ATLAS.Q.map((q,i)=>`<td class="n"><b>${ATLAS.policies.filter(p=>p.scores[i]===1).length}</b></td>`).join('')+'<td></td></tr></tfoot>';
+/* ---------- signals */
+$('#tSig tbody').innerHTML=ATLAS.signals.map(s=>`<tr><td><b>${s.code}</b> ${esc(s.name)}</td><td><span class="cov">${['H','M','L','G'].map(k=>Array(s.counts[k]||0).fill(`<i class="${k}">${k}</i>`).join('')).join('')}</span></td><td>${s.finance==='Yes'?'<span class="tag ok">Yes</span>':s.finance==='Partly'?'<span class="tag">Partly</span>':'<span class="tag warn">No</span>'}</td><td>${esc(s.gap)}</td></tr>`).join('');
+/* ---------- ladder + gaps */
+$('#ladderBox').innerHTML=ATLAS.ladder.map(r=>`<div class="rung ${r.level==='Gap'?'gap':''}"><div class="lv">${esc(r.level)}</div><div><span class="h">Signal</span>${esc(r.signal)}</div><div><span class="h">Trigger</span>${esc(r.trigger)}</div><div><span class="h">Who acts</span>${esc(r.who)}</div><div><span class="h">Instrument already in place</span>${esc(r.instr)}</div><small>${esc(r.status)}</small></div>`).join('');
+$('#gapBox').innerHTML=ATLAS.gaps.map(g=>`<div class="card"><h3>${esc(g.t)}</h3><p>${esc(g.d)}</p><span class="tag">${esc(g.where)}</span></div>`).join('');
+</script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  const DEFAULT_LINE_HEIGHT = 16;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  const PICK_CAPABILITIES = ["pick"];
+  const PICK_CHAIN_LENGTH = 4;
+  const PICK_MAX_TEXT_CHARS = 120;
+  const PICK_MAX_HTML_CHARS = 300;
+
+  function truncate(value, maxChars) {
+    return value.length > maxChars ? value.slice(0, maxChars - 1) + "…" : value;
+  }
+
+  function isPickableElement(element) {
+    return (
+      element instanceof Element &&
+      element !== document.documentElement &&
+      element !== document.body
+    );
+  }
+
+  function resolvePickTarget(x, y) {
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+    const element = document.elementFromPoint(x, y);
+    return isPickableElement(element) ? element.closest("svg") || element : null;
+  }
+
+  function pickLabel(element) {
+    if (element.id) return element.localName + "#" + element.id;
+    return [element.localName].concat(Array.from(element.classList).slice(0, 2)).join(".");
+  }
+
+  // Only attributes that help find the element in source. data-* values and URL
+  // query strings or fragments can carry tokens.
+  const PICK_ATTRIBUTES = new Set([
+    "id",
+    "class",
+    "name",
+    "type",
+    "role",
+    "alt",
+    "aria-label",
+    "href",
+    "src",
+  ]);
+
+  function pickAttributeValue(attribute) {
+    return attribute.name === "href" || attribute.name === "src"
+      ? attribute.value.split(/[?#]/)[0]
+      : attribute.value;
+  }
+
+  function describePickElement(element) {
+    const chain = [];
+    for (
+      let current = element;
+      isPickableElement(current) && chain.length < PICK_CHAIN_LENGTH;
+      current = current.parentElement
+    ) {
+      chain.unshift(current);
+    }
+    const attributes = Array.from(element.attributes)
+      .filter((attribute) => PICK_ATTRIBUTES.has(attribute.name))
+      .map((attribute) => ` ${attribute.name}="${pickAttributeValue(attribute).replace(/"/g, "&quot;")}"`)
+      .join("");
+    const text = (element.innerText || element.textContent || "").replace(/\s+/g, " ").trim();
+    return {
+      chain: chain.map(pickLabel),
+      html: truncate(`<${element.localName}${attributes}>`, PICK_MAX_HTML_CHARS),
+      text: text ? truncate(text, PICK_MAX_TEXT_CHARS) : undefined,
+    };
+  }
+
+  // Hover asks once per frame, and innerText on a large section forces layout,
+  // so only the rect is re-read while the pointer stays on the same element.
+  // Clicks ask for fresh details since the page may have changed the element.
+  let lastPick = null;
+
+  function describePickTarget(element, fresh) {
+    if (fresh || lastPick?.element !== element) {
+      lastPick = { element, details: describePickElement(element) };
+    }
+    const rect = element.getBoundingClientRect();
+    return {
+      rect: { x: rect.left, y: rect.top, width: rect.width, height: rect.height },
+      ...lastPick.details,
+    };
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+      capabilities: PICK_CAPABILITIES,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_PICK") {
+      const element = resolvePickTarget(event.data.x, event.data.y);
+      postToTrustedTop({
+        type: "INLINE_EDIT_PICK_RESULT",
+        seq: event.data.seq,
+        target: element ? describePickTarget(element, event.data.fresh === true) : null,
+      });
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_BY") {
+      const { deltaX, deltaY, deltaMode } = event.data;
+      if (!scrollForwarding || !Number.isFinite(deltaX) || !Number.isFinite(deltaY)) return;
+      if (deltaMode !== 0 && deltaMode !== 1 && deltaMode !== 2) return;
+      const lineHeight =
+        parseFloat(getComputedStyle(document.documentElement).lineHeight) || DEFAULT_LINE_HEIGHT;
+      const scaleX = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerWidth : 1;
+      const scaleY = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerHeight : 1;
+      // The selection overlay receives the wheel event instead of this iframe.
+      // Instant scrolling preserves trackpad deltas even on smooth-scroll sites.
+      window.scrollBy({ left: deltaX * scaleX, top: deltaY * scaleY, behavior: "instant" });
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>
