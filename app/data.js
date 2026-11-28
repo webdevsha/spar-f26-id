@@ -96,3 +96,12 @@ const FEEDS = [
  ["Vacancies for teller, customer service, back office","Pasker ID / Karirhub; Core file","Job-finding rate f(theta)"],
  ["FED as of v0.3b: hires and leavers for all 8 banks; Mandiri, BTN, BSI headcount","GRI 401-1 in bank sustainability reports","Done — attrition is now per bank, 6.11% weighted, not the flat 3.4%"]
 ];
+
+// BoxCompute postings corpus (Indonesia only). Source: docs/DRIVE-JOBPOSTINGS-CORPUS.md
+const POSTINGS={
+  corpus:{ads:1035176,jd:192898,cards:842278,platforms:13,span:"2024-01 to 2026-11",
+          id_cards:532583,id_jd:152641,crosswalk:396,crosswalk_mapped:392,conf_c:47},
+  validation:{month:"2025-09",est:0.4127,census:0.4144,diff:0.57},
+  monthly:[['2024-01', 37155, 0.4124, 53.54, 0], ['2024-02', 43976, 0.417, 55.43, 0], ['2024-03', 45709, 0.4123, 53.45, 0], ['2024-04', 42785, 0.4094, 52.73, 0], ['2024-05', 32906, 0.4177, 54.99, 0], ['2024-06', 50239, 0.41, 51.64, 0], ['2024-07', 53780, 0.4076, 51.36, 0], ['2024-08', 51983, 0.4043, 50.07, 0], ['2024-09', 51471, 0.4149, 54.32, 0], ['2024-10', 41056, 0.4115, 54.15, 0], ['2024-11', 42198, 0.416, 55.46, 0], ['2024-12', 22191, 0.3651, 30.31, 0], ['2025-01', 798, 0.4139, 43.52, 0], ['2025-02', 40440, 0.4185, 56.83, 0], ['2025-03', 27618, 0.4257, 52.64, 0], ['2025-04', 51332, 0.4157, 55.31, 0], ['2025-05', 51163, 0.4135, 54.65, 0], ['2025-06', 41806, 0.41, 56.86, 0], ['2025-07', 54872, 0.4167, 55.5, 0], ['2025-08', 56517, 0.4153, 55.37, 0], ['2025-09', 56787, 0.4138, 55.08, 0], ['2025-10', 53559, 0.4137, 54.75, 0], ['2025-11', 18479, 0.4448, 71.36, 0], ['2025-12', 57699, 0.4116, 53.93, 0], ['2026-01', 33758, 0.4726, 73.85, 0], ['2026-02', 33759, 0.4093, 55.09, 0], ['2026-03', 38839, 0.4116, 53.6, 0], ['2026-04', 49310, 0.4153, 55.42, 0], ['2026-05', 58028, 0.4147, 54.91, 0], ['2026-07', 60122, 0.4148, 55.2, 0]],
+  exposure:[['Banking & Financial Services', 0.582, 94.3, 20088], ['Administration & Office Support', 0.569, 99.4, 29752], ['Insurance & Superannuation', 0.544, 100.0, 1291], ['Call Centre & Customer Service', 0.54, 100.0, 9125], ['Accounting', 0.522, 96.6, 38282], ['Information & Communication Technology', 0.511, 98.6, 24874], ['Marketing & Communications', 0.502, 97.2, 39211], ['Sales', 0.491, 100.0, 64191], ['Advertising, Arts & Media', 0.452, 55.1, 8465], ['Human Resources & Recruitment', 0.439, 91.1, 18442]]
+};

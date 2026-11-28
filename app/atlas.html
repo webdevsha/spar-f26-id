@@ -8,7 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <style>
-:root{--bg:#0f1115;--bg2:#161a21;--card:#1b2029;--line:#2a3140;--ink:#eceae4;--mut:#9aa3b2;--faint:#6d7685;--teal:#5cc2a6;--amb:#e8b04a;--coral:#ef6b5b;--blue:#7aa7e8;--r:12px}
+:root{--bg:#ffffff;--bg2:#f7f6f3;--card:#ffffff;--line:#e2ded6;--ink:#1a1a1a;--mut:#5d6169;--faint:#8a8f98;
+--slow:#2f7d63;--med:#a8741a;--ext:#b3122a;--id:#b3122a;--blue:#2f5d8a;--r:12px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;font-variant-numeric:tabular-nums lining-nums}
 h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.15;margin:0}
@@ -129,18 +130,31 @@ footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);f
 <div class="scroll" style="margin-top:18px"><table id="tSig"><thead><tr><th>Signal</th><th>Indicators (H high, M medium, L low, G gap)</th><th>Finance-specific?</th><th>Main gap</th></tr></thead><tbody></tbody></table></div>
 </div></section>
 
+
+<section id="postings"><div class="wrap">
+<div class="num">5</div><h2>What the ads measure: exposure is high, but a posting is not a hire</h2>
+<p class="lead">1,035,176 advertisements across 35 months, scored occupation by occupation. Banking comes out most exposed of any category — 0.582 — and the crawler estimate agrees with an official census to within 0.57 of a point. What it cannot show is whether anyone was hired.</p>
+<div class="scroll" style="margin-top:18px"><table id="tExpo"><thead><tr><th>Job category</th><th>Mean AI exposure (0–1)</th><th>Share of ads in exposed groups</th><th>Ads scored</th><th>What it feeds</th></tr></thead><tbody></tbody></table></div>
+<div class="grid g3" style="margin-top:22px">
+ <div class="card kpi"><div class="v">0.582</div><div class="l">Banking &amp; financial services</div><div class="n">Now in the model's exposed-share column for all eight banks, replacing a 30% placeholder.</div></div>
+ <div class="card kpi"><div class="v">0.57 pt</div><div class="l">Crawl vs same-month census</div><div class="n">September 2025, Indonesia. The only external validation of a series in this study.</div></div>
+ <div class="card kpi"><div class="v">80 / 256</div><div class="l">Platform-months under 100 ads</div><div class="n">Flagged, not dropped. Half the platform series is too thin to trend on its own.</div></div>
+</div>
+<div class="verdict"><b>Why this matters for the ladder.</b> S5 (hiring rate) and S6 (layoffs) are the two signals a shock would move first, and the corpus strengthens S5's supply side: we can now measure advertised demand monthly and know how exposed each occupation is. It still cannot tell us whether an ad was filled — which is the measurement the trigger ladder is waiting on, and the reason the Watch rung sits where it does.</div>
+</div></section>
+
 <section id="ladder"><div class="wrap">
-<div class="num">5</div><h2>Trigger ladder: it works for layoffs, not yet for empty chairs</h2>
+<div class="num">6</div><h2>Trigger ladder: it works for layoffs, not yet for empty chairs</h2>
 <p class="lead">Signal to indicator to trigger to actor to instrument. The Alert and Act rungs are the draft trigger in our Core file. Watch and the Gap rung are our proposals.</p>
 <div class="ladder" id="ladderBox" style="margin-top:20px"></div>
 </div></section>
 
 <section id="gaps"><div class="wrap">
-<div class="num">6</div><h2>Where the gaps are</h2>
+<div class="num">7</div><h2>Where the gaps are</h2>
 <div class="gaps" id="gapBox" style="margin-top:20px"></div>
 <p style="margin-top:30px"><a class="btn" href="index.html#scenarios">See how the gaps play out in the scenarios</a></p>
 </div></section>
-<footer><div class="wrap">SPAR Indonesia atlas, draft v0.3. Data from the SPAR Core file (policy inventory, who-can-act, relationships) and indicator table (ID-PH draft, 26 Nov 2026). Several rows are web-checked and await human review. Readiness scores are a provisional analyst rubric. <a href="files/charts/">Chart files</a> are listed in the report.</div></footer>
+<footer><div class="wrap">SPAR Indonesia atlas, draft v0.4 — model v0.4. Data from the SPAR Core file (policy inventory, who-can-act, relationships) and indicator table (ID-PH draft, 26 Nov 2026). Several rows are web-checked and await human review. Readiness scores are a provisional analyst rubric. <a href="files/charts/">Chart files</a> are listed in the report.</div></footer>
 
 <script src="atlas_data.js"></script>
 <script>
@@ -660,5 +674,16 @@ $('#gapBox').innerHTML=ATLAS.gaps.map(g=>`<div class="card"><h3>${esc(g.t)}</h3>
 })();
 
 
+
+(function(){
+  const EXPO = [['Banking & Financial Services', 0.582, 94.3, 20088], ['Administration & Office Support', 0.569, 99.4, 29752], ['Insurance & Superannuation', 0.544, 100.0, 1291], ['Call Centre & Customer Service', 0.54, 100.0, 9125], ['Accounting', 0.522, 96.6, 38282], ['Information & Communication Technology', 0.511, 98.6, 24874], ['Marketing & Communications', 0.502, 97.2, 39211], ['Sales', 0.491, 100.0, 64191], ['Advertising, Arts & Media', 0.452, 55.1, 8465]];
+  const FEEDS = ["S5 hiring rate — exposed share","S5 hiring rate","S6 layoffs and closures","S5 hiring rate",
+                 "S5 hiring rate","S5 hiring rate","S5 hiring rate","S5 hiring rate","S5 hiring rate"];
+  const tb = document.querySelector('#tExpo tbody');
+  if(!tb) return;
+  tb.innerHTML = EXPO.map((r,i)=>`<tr><td><b>${r[0]}</b></td><td>${r[1].toFixed(3)}</td>
+    <td>${r[2]}%</td><td>${r[3].toLocaleString()}</td>
+    <td style="color:var(--mut);font-size:12.5px">${FEEDS[i]||""}</td></tr>`).join('');
+})();
 </script></body>
 </html>

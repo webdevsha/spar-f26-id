@@ -8,8 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <style>
-:root{--bg:#0f1115;--bg2:#161a21;--card:#1b2029;--line:#2a3140;--ink:#eceae4;--mut:#9aa3b2;--faint:#6d7685;
---slow:#5cc2a6;--med:#e8b04a;--ext:#ef6b5b;--id:#e8b04a;--blue:#7aa7e8;--r:12px}
+:root{--bg:#ffffff;--bg2:#f7f6f3;--card:#ffffff;--line:#e2ded6;--ink:#1a1a1a;--mut:#5d6169;--faint:#8a8f98;
+--slow:#2f7d63;--med:#a8741a;--ext:#b3122a;--id:#b3122a;--blue:#2f5d8a;--r:12px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;font-variant-numeric:tabular-nums lining-nums}
 h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.15;margin:0}
@@ -119,8 +119,26 @@ footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);f
  <div class="card kpi"><div class="v">3.8x</div><div class="l">GDP share relative to job share (derived: 4.11 / 1.09)</div><div class="n">Finance wages are about Rp5.1m a month against a national average of Rp3.42m (dates differ).</div></div>
  <div class="card kpi"><div class="v">57.7%</div><div class="l">Bank assets as a share of GDP (2022)</div><div class="n">Financial system 73% of GDP; private credit 31.4% (2023). <a href="https://www.imf.org/-/media/files/publications/cr/2025/english/1idnea2025003-print-pdf.pdf" style="color:inherit">IMF</a></div></div>
  <div class="card kpi"><div class="v">2.75%</div><div class="l">Financial intermediation share of Q1 2026 GDP (derived)</div><div class="n">Rp170.1tn of Rp6,187.6tn. <a href="https://www.bps.go.id/en/statistics-table/2/NjUjMg==/gdp-by-industry-2010-100.html" style="color:inherit">BPS</a></div></div>
- <div class="card kpi"><div class="v">151,340</div><div class="l">Staff at five large banks in our panel</div><div class="n">BRI, BNI, BCA, CIMB Niaga, KB Bank; dates mixed 2024 to Mar 2026. About 9% of finance and insurance jobs.</div></div>
+ <div class="card kpi"><div class="v">218,129</div><div class="l">Staff at eight large banks in our panel</div><div class="n">BRI, BNI, BCA, CIMB Niaga, KB Bank, Mandiri, BTN, BSI — all Dec 2025. About 13% of finance and insurance jobs. <span class="note">Feed_Panel v0.3b</span></div></div>
 </div>
+
+<h3 style="margin:40px 0 14px">What 1.03 million job ads show</h3>
+<p class="lead">A separate harvest of Indonesian and Philippine job boards — 1,035,176 advertisements over 35 months — scores every occupation for AI exposure. It gives banking a measured exposure of 0.582 where the model previously assumed 0.30, and it validates the method against an official census.</p>
+<div class="grid g2">
+ <div class="card"><h3>Open ads per month, Indonesia (amber = platform panel broke)</h3>
+  <div class="chart tall"><canvas id="cAds" role="img" aria-label="Monthly open job advertisements in Indonesia"></canvas></div>
+  <div class="src">Source: BoxCompute corpus, <code>exposure_monthly.csv</code>. 30 Indonesia months, 9 platforms. A month is flagged when its platform coverage drops below 100 ads — <b>80 of 256</b> platform-months carry that flag, so the line measures demand <i>and</i> the crawler. Banking goes in as 0.582 from <code>exposure_class.csv</code>: 20,088 Indonesian banking ads, 94.3% of them in high-exposure groups.</div></div>
+ <div class="card"><h3>AI exposure by job category, Indonesia</h3>
+  <div class="chart tall"><canvas id="cExpo" role="img" aria-label="Mean AI exposure by job category"></canvas></div>
+  <div class="src">Source: <code>exposure_class.csv</code>. Task-based exposure score (0–1), not measured displacement. Banking sits first, ahead of administration, insurance and call centres. The crawler estimate was checked against a same-month census: <b>0.4127 vs 0.4144, a 0.57-point difference</b>.</div></div>
+</div>
+<div class="grid g3" style="margin-top:18px">
+ <div class="card kpi"><div class="v">0.582</div><div class="l">Banking &amp; financial services AI exposure</div><div class="n">vs 0.30 previously assumed. Wired into the model, it moves the extreme case from 602 to 25,826 dismissals.</div></div>
+ <div class="card kpi"><div class="v">0.57 pt</div><div class="l">Crawl estimate vs same-month census</div><div class="n">The only external validation of a series in this study. Indonesia, September 2025.</div></div>
+ <div class="card kpi"><div class="v">80 / 256</div><div class="l">Platform-months too thin to trend</div><div class="n">Advertised demand is observable; hires are not. A posting is not a hire.</div></div>
+</div>
+<div class="verdict"><b>Reading.</b> The corpus confirms the sector choice and sharpens the model, but it cannot answer the question the report is about. It shows what employers <i>advertised</i> and how exposed those occupations are; it never shows whether anyone was hired. Every figure above is demand-side, and the one series that would close the gap — fill status — is still unpublished.</div>
+
 <div class="verdict"><b>Reading.</b> Banking is small in jobs (about 1 in 90) but central in credit and payments. Its employees are formal, and formal workers are the ones JKP covers. A bank job loss therefore moves a worker out of the protected 42% of the labour market, usually into the informal 58%.</div>
 </div></section>
 
@@ -168,7 +186,7 @@ footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);f
   <div class="card" style="margin-top:18px"><h3>Compare the three speeds</h3><div class="scroll"><table id="tCmp"></table></div></div>
   <div class="card" style="margin-top:18px"><h3>Cross-check with Moody's US financial activities employment, 2025 to 2030</h3>
    <div class="chart"><canvas id="cX" role="img" aria-label="Our panel change versus Moody's US series"></canvas></div>
-   <p class="note">US series is BLS financial activities (includes real estate), Moody's Table 7. Our panel is five banks, so it is more exposed. Pairing of cases is judgemental; this shows plausibility, not validation.</p></div>
+   <p class="note">US series is BLS financial activities (includes real estate), Moody's Table 7. Our panel is eight banks (218,129 staff), so it is more exposed. Pairing of cases is judgemental; this shows plausibility, not validation.</p></div>
  </div>
 </div>
 <div class="card" style="margin-top:18px"><h3>Bank panel (feed these as data arrive)</h3>
@@ -192,7 +210,9 @@ footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);f
 <div class="grid g2">
  <div class="card"><h3>Caveats</h3><ul style="color:var(--mut);font-size:14px;padding-left:18px;margin:0">
  <li>Stress test, not a forecast. Moody's probabilities are US economists' judgement; ours are a prior to be replaced.</li>
- <li>Bank panel dates are mixed (2024 to Mar 2026) and cover five banks, not the sector.</li>
+  <li>Attrition is the model's biggest lever, not adoption: all reported leavers (6.11% weighted) gives 602 dismissals in the extreme case, voluntary-only leavers (4.38%) gives 7,718. Both bases are published; neither is the answer.</li>
+  <li>Exposed share is 0.582, measured from 20,088 Indonesian banking ads — a task-based score transferred by title, not observed displacement.</li>
+ <li>Bank panel: eight banks, 218,129 staff, all December 2025 — about 13% of finance and insurance employment, not the sector.</li>
  <li>ID-05 shares are of 91 respondents from 35 institutions, not of banks.</li>
  <li>Several inputs are placeholders: matching parameters, destination split, pass-through phi, JKP acceptance rate, wage.</li>
  <li>Business adoption (AWS/Strand) and the Anthropic index are secondary; indicators ID-12, ID-14 and ID-20 are pending review.</li>
@@ -201,7 +221,7 @@ footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);f
 </div>
 <div class="card" style="margin-top:18px"><h3>Sources</h3><ul id="srcs" style="color:var(--mut);font-size:13.5px;padding-left:18px;margin:0"></ul></div>
 </div></section>
-<footer><div class="wrap">SPAR Indonesia, bank AI-shock scenarios, draft v0.3b. Page layout inspired by <a href="https://scenarios-2030.windfalltrust.org/">Windfall Trust, Scenarios 2030</a>; content and design are our own.</div></footer>
+<footer><div class="wrap">SPAR Indonesia, bank AI-shock scenarios, v0.3b panel with measured exposure, draft v0.4. Page layout inspired by <a href="https://scenarios-2030.windfalltrust.org/">Windfall Trust, Scenarios 2030</a>; content and design are our own.</div></footer>
 
 <script src="data.js"></script>
 <script src="model.js"></script>
@@ -213,9 +233,9 @@ const COL={slow:'#5cc2a6',medium:'#e8b04a',extreme:'#ef6b5b'};
 const NAME={slow:'Slow',medium:'Medium',extreme:'Extreme'};
 const P0={baseYear:2026,q:.034,x:.30,g:0,A0:.18,wage:5.05,cap:5,rate:.6,months:6,acc:.83,chi:.5,theta:.6,iota:1,psi:.5,fi:1.65};
 const SC0={slow:{A:.30,year:2030,e:.24,phi:.625,m:0},medium:{A:.52,year:2029,e:.53,phi:.66,m:0},extreme:{A:.85,year:2028,e:.82,phi:.73,m:0}};
-const BANK0=[{n:"BRI",hc:84949,hires:12070,leavers:3323,exp:0},{n:"BNI",hc:27201,hires:1596,leavers:2254,exp:0},{n:"BCA",hc:26435,hires:2330,leavers:860,exp:0},{n:"CIMB Niaga",hc:10775,hires:1446,leavers:1729,exp:0},{n:"KB Bank",hc:2334,hires:499,leavers:1063,exp:0},{n:"Bank Mandiri",hc:38732,hires:2717,leavers:2868,exp:0},{n:"BTN",hc:11429,hires:802,leavers:224,exp:0},{n:"BSI",hc:16274,hires:352,leavers:1001,exp:0}];
+const BANK0=[{n:"BRI",hc:84949,hires:12070,leavers:3323,exp:0.582},{n:"BNI",hc:27201,hires:1596,leavers:2254,exp:0.582},{n:"BCA",hc:26435,hires:2330,leavers:860,exp:0.582},{n:"CIMB Niaga",hc:10775,hires:1446,leavers:1729,exp:0.582},{n:"KB Bank",hc:2334,hires:499,leavers:1063,exp:0.582},{n:"Bank Mandiri",hc:38732,hires:2717,leavers:2868,exp:0.582},{n:"BTN",hc:11429,hires:802,leavers:224,exp:0.582},{n:"BSI",hc:16274,hires:352,leavers:1001,exp:0.582}];
 let P={...P0},SC=JSON.parse(JSON.stringify(SC0)),BANKS=JSON.parse(JSON.stringify(BANK0)),sel='medium',preset='indo',W={...PRIORS.indo};
-Chart.defaults.color='#9aa3b2';Chart.defaults.borderColor='#2a3140';Chart.defaults.font.family='Inter';
+Chart.defaults.color='#5d6169';Chart.defaults.borderColor='#e2ded6';Chart.defaults.font.family='Inter';
 const charts={};
 function mk(id,cfg){ if(charts[id]) charts[id].destroy(); charts[id]=new Chart($('#'+id),cfg); }
 function weights(){const s=W.slow+W.medium+W.extreme||1;return{slow:W.slow/s,medium:W.medium/s,extreme:W.extreme/s};}
@@ -278,7 +298,8 @@ function drawPctrls(){
   ['slow','medium','extreme'].forEach(k=>$('#p_'+k).addEventListener('input',e=>{W[k]=+e.target.value;setPreset('custom',true);refreshW();}));
 }
 function setPreset(p,keep){preset=p;document.querySelectorAll('#presetSeg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.p===p));if(!keep&&PRIORS[p]){W={...PRIORS[p]};drawPctrls();}}
-function refreshW(){const w=weights();['slow','medium','extreme'].forEach(k=>$('#po_'+k).textContent=Math.round(w[k]*100)+'%');drawBranch();renderEV();}
+function refreshW(){const w=weights();['slow','medium','extreme'].forEach(k=>$('#po_'+k).textContent=Math.round(w[k]*100)+'%');drawBranch();
+drawPostings();renderEV();}
 function results(){const R={};for(const k in SC)R[k]=runScenario(P,SC[k],BANKS);return R;}
 function renderEV(){
   const R=results(),e=expected(R,weights());
@@ -331,10 +352,22 @@ function renderModel(){
   mk('cX',{type:'bar',data:{labels:['Slow vs US baseline','Medium vs US Upheaval','Extreme vs US Dystopia'],datasets:[{label:'US financial activities, 2025 to 2030',data:us.map(x=>+x[1].toFixed(1)),backgroundColor:'#7aa7e8'},{label:'Our five-bank panel, to 2030',data:['slow','medium','extreme'].map(q=>+(R[q].sum.chg*100).toFixed(1)),backgroundColor:['slow','medium','extreme'].map(q=>COL[q])}]},
    options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{ticks:{callback:v=>v+'%'}}}}});
 }
+
+function drawPostings(){
+  const m=POSTINGS.monthly;
+  mk('cAds',{type:'bar',data:{labels:m.map(r=>r[0]),datasets:[{label:'open ads',data:m.map(r=>r[1]),
+    backgroundColor:m.map(r=>r[4]?'#a8741a':'#2f5d8a'),borderRadius:2}]},
+    options:{maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{callback:v=>v>=1000?(v/1000)+'k':v}}}}});
+  const e=POSTINGS.exposure.slice(0,8);
+  mk('cExpo',{type:'bar',data:{labels:e.map(r=>r[0].length>26?r[0].slice(0,25)+'…':r[0]),
+    datasets:[{label:'mean exposure',data:e.map(r=>r[1]),backgroundColor:'#b3122a',borderRadius:2}]},
+    options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{x:{min:.3,max:.6,ticks:{callback:v=>v.toFixed(2)}}}}});
+}
 function drawBank(){
   $('#tBank').innerHTML=`<thead><tr><th>Bank</th><th>Headcount</th><th>Hires / yr</th><th>Leavers / yr</th><th>Net</th><th>Exposed share</th><th>Status</th></tr></thead><tbody>`+BANKS.map((b,i)=>{const net=(+b.hires||0)-(+b.leavers||0);return `<tr><td>${b.n}</td>
    <td><input aria-label="${b.n} headcount" data-i="${i}" data-f="hc" value="${b.hc||''}"></td><td>${b.hires?fmt(b.hires):'—'}</td><td><input aria-label="${b.n} leavers" data-i="${i}" data-f="leavers" value="${b.leavers||''}" placeholder="feed"></td><td style="font-weight:600;color:${net>=0?'var(--ok,#3f9d6b)':'#c0392b'}">${b.hires?((net>=0?'+':'')+fmt(net)):'—'}</td><td><input aria-label="${b.n} exposed share" data-i="${i}" data-f="exp" value="${b.exp||''}" placeholder="feed"></td>
-   <td><span class="tag ${b.hc?'obs':'need'}">${b.hc?'Observed':'Needs feed'}</span></td></tr>`}).join('')+`<tr><td><b>Panel</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.hc||0),0))}</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.hires||0),0))}</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.leavers||0),0))}</b></td><td><b>${(()=>{const n=BANKS.reduce((a,b)=>a+(+b.hires||0)-(+b.leavers||0),0);return (n>=0?'+':'')+fmt(n)})()}</b></td><td></td><td></td></tr><tr><td colspan="7" style="font-size:12.5px;color:var(--mut);padding-top:10px">Net flow is reported hires minus reported leavers. Across the eight banks it is <b>positive</b>: the panel is still growing, so on today's disclosures an AI shock would appear as a <b>hiring slowdown</b>, not a fall in headcount. KB Bank (1,063 leavers on 2,334 staff) drives the 6.11% weighted attrition on its own.</td></tr></tbody>`;
+   <td><span class="tag ${b.hc?'obs':'need'}">${b.hc?'Observed':'Needs feed'}</span></td></tr>`}).join('')+`<tr><td><b>Panel</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.hc||0),0))}</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.hires||0),0))}</b></td><td><b>${fmt(BANKS.reduce((a,b)=>a+(+b.leavers||0),0))}</b></td><td><b>${(()=>{const n=BANKS.reduce((a,b)=>a+(+b.hires||0)-(+b.leavers||0),0);return (n>=0?'+':'')+fmt(n)})()}</b></td><td></td><td></td></tr><tr><td colspan="7" style="font-size:12.5px;color:var(--mut);padding-top:10px">Net flow is reported hires minus reported leavers. Across the eight banks it is <b>positive</b>: the panel is still growing, so on today's disclosures an AI shock would appear as a <b>hiring slowdown</b>, not a fall in headcount. KB Bank (1,063 leavers on 2,334 staff) drives the 6.11% weighted attrition on its own. Voluntary-only leavers would put the panel at 4.38% — and that single change multiplies extreme-case dismissals by 12.8.</td></tr></tbody>`;
   document.querySelectorAll('#tBank input').forEach(inp=>inp.addEventListener('change',e=>{BANKS[+e.target.dataset.i][e.target.dataset.f]=parseFloat(String(e.target.value).replace(/,/g,''))||0;drawBank();renderModel();renderEV();}));
 }
 /* ---- 6,7 */

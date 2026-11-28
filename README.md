@@ -420,15 +420,15 @@ wrangler pages secret put SITE_PASSWORD --project-name spar-f26-id
 > Supersedes the 2026-11-26 tally.
 
 ```
-Data spine        ███████████████████████░   97%  22 signals + 16 policies + 6 levers; id-shock-data now holds 38 evidence rows (ID-12 ×33, ID-17 ×5)
+Data spine        ███████████████████████░   97%  22 signals + 16 policies + 6 levers; id-shock-data 48 evidence rows (ID-12 x33, ID-17 x5, run-1 x10)
 Data list (lead)  ███████████████████████░   95%  public source + verbatim + H/M/L on all rows; sources compiled per shared indicator; duplicates cleared
-Part 3 (signals)  █████████████████░░░░░░░   70%  678-word draft written from the sourced base; needs Shafira's read-through, not a rewrite
-Part 4 (policy)   ████████████████████░░░░   85%  v1 written and reframed to the shock question; its data is in the register; waiting on Ian's read + the word trim
-Shared sheet/repo ██████████████████████░░   92%  register, model sheet and app now agree to zero delta; sync job still failing, so the freeze is not safe
-Section 5 (SPAR)  ██░░░░░░░░░░░░░░░░░░░░░░   10%  2,500w Indonesia chapter; data underpinning ready
-Section 8 (Limits)██████████████░░░░░░░░░░   60%  draft ready to read with Napat; tracker says 60%
-Interview (BPS)   █████░░░░░░░░░░░░░░░░░░░   20%  question reframed as a data-availability enquiry; candidate question found (see the emp.csv flag)
-Atlas site        █████████████░░░░░░░░░░░   55%  8-bank panel with reported flows and net flows; five pages built, proposal written, deploy still not done
+Part 3 (signals)  ███████████████████░░░░░   80%  country report v0.4 drafted end to end on the sourced base - shocks, ads, backtest, asks; needs Shafira's read
+Part 4 (policy)   ████████████████████░░░░   85%  v1 written and reframed; its data is in the register; waiting on Ian's read + the word trim
+Shared sheet/repo ██████████████████████░░   93%  register, model, app and postings tabs agree; sync job still failing, so the freeze is not safe
+Section 5 (SPAR)  ██░░░░░░░░░░░░░░░░░░░░░░   10%  2,500w Indonesia chapter; report v0.4 is the raw material
+Section 8 (Limits)██████████████░░░░░░░░░░   60%  draft ready to read with Napat
+Interview (BPS)   █████░░░░░░░░░░░░░░░░░░░   20%  question reframed as a data-availability enquiry
+Atlas site        ████████████████░░░░░░░░   65%  postings evidence added, light theme, 8-bank panel, net flows; deploy still not done
 ```
 
 **Backfilled from the Hermes logs — Thu 26 and Fri 27 Nov.** Work that happened in the sessions but did
@@ -515,6 +515,16 @@ and the sheet was deleted, which is exactly the gap that makes a progress bar li
   now including the register export, plus the six collection targets in
   [DATA-FEED-GAPS-28NOV](docs/DATA-FEED-GAPS-28NOV.md) and the shareable summary in
   [TEAM-SHARE-28NOV](docs/TEAM-SHARE-28NOV.md).
+- **The 1.03m-advertisement corpus is in, analysed and reconciled.** Banking exposure **0.582** (20,088 ads,
+  94.3% in G2-G4), the crawl validated against a same-month census within **0.57 pt**, and only **Dealls**
+  reconciles against our own `id-postings` (ratio **0.84**, median month **0.97**, monthly spread
+  **0.30-1.67**) - which sets the noise floor for any postings claim. Two new tabs (`postings-monthly`,
+  `postings-exposure`) plus `postings-recon`; Glints and Kalibrr are truncated and must never be trended.
+- **The country report is drafted as v0.4** - eight-bank panel, measured exposure, the backtest verdict, the
+  attrition sensitivity, the four asks: `docs/COUNTRY-REPORT-v0.4.md` (HTML rendered alongside).
+- **The app and atlas were refined and moved to a light theme**: a postings section with the monthly panel
+  and exposure by category, the corrected panel KPI (218,129 across eight banks, not 151,340 across five),
+  and a postings section in the atlas that gives S5 its supply side.
 
 **Pull requests:** [#35](https://github.com/webdevsha/spar-f26-id/pull/35) the first progress tally ·
 [#36](https://github.com/webdevsha/spar-f26-id/pull/36) Part 4 v1 + the register and map work ·
