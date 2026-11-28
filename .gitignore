@@ -22,8 +22,5 @@ __pycache__/
 # as the committed snapshot
 dist/build/
 
-# Third-party documents: cited in docs/REFERENCE-LIBRARY.md, never committed (public repo)
-docs/Data feed/
-docs/2026-08-Macroeconomic-Consequences-of-AI-Redux.pdf
-docs/SPAR_Model_Proposal_V1 (1).pdf
-docs/The Empty Chair - SPAR Indonesia country report and policy brief_draft.pdf
+# Source documents ARE tracked (public disclosures, committed so the analysis pipeline can read them)
+# - see docs/REFERENCE-LIBRARY.md. Nothing under docs/ is ignored; add large binaries deliberately.
