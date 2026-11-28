@@ -225,7 +225,27 @@ footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--faint);f
  <div class="card"><h3>Data to feed</h3><div class="scroll"><table id="tFeed"></table></div></div>
 </div>
 <div class="card" style="margin-top:18px"><h3>Sources</h3><ul id="srcs" style="color:var(--mut);font-size:13.5px;padding-left:18px;margin:0"></ul></div>
-</div></section>
+</div>
+<h3 style="margin:36px 0 12px">What we cannot see, and why it is structural</h3>
+<div class="grid g2">
+ <div class="card"><h3>Six job boards, zero usable sector totals</h3>
+  <div class="scroll"><table>
+   <thead><tr><th>Channel</th><th>Result</th><th>Kind of block</th></tr></thead>
+   <tbody>
+    <tr><td>Jobstreet</td><td>—</td><td>HTTP 403 plus robots disallow</td></tr>
+    <tr><td>Indeed</td><td>—</td><td>403 Cloudflare challenge (was 503 in the first run)</td></tr>
+    <tr><td>Karir.com</td><td>—</td><td>200, but a 3.8 KB JavaScript shell</td></tr>
+    <tr><td>LinkedIn</td><td>—</td><td>robots.txt disallows <code>/jobs/search</code></td></tr>
+    <tr><td>KitaLulus</td><td>0 results</td><td>parameter mismatch, not an empty market</td></tr>
+    <tr><td>Pintarnya</td><td>27,376</td><td>reachable, but the bank filter is client-side</td></tr>
+   </tbody></table></div>
+  <div class="src">Every block carries a status code and a date in the register (<code>ind-ev-0136</code> to <code>0142</code>). A documented block is a result.</div></div>
+ <div class="card"><h3>No one publishes fill status</h3>
+  <p class="note">Not the six channels we cannot reach, and not the ones we can. No Indonesian board exposes a close-with-hire flag, so <b>an advertisement that disappears is indistinguishable from one that was filled</b>. Pasker ID publishes aggregate placements, not vacancy outcomes.</p>
+  <p class="note" style="margin-top:10px">That is the measurement this whole study waits on: a posting measures what an employer <i>published</i>. It never says anyone was hired. Every postings figure here is demand-side, and the trigger ladder's Watch rung sits where it does because of it.</p>
+  <div class="src">BPS, by contrast, has a working door: <code>webapi.bps.go.id</code> answers 400 (no key), not 403. A free self-service key lifts every BPS figure from medium to high confidence without a browser.</div></div>
+</div>
+</section>
 <footer><div class="wrap">SPAR Indonesia, bank AI-shock scenarios, v0.3b panel with measured exposure, draft v0.4. Page layout inspired by <a href="https://scenarios-2030.windfalltrust.org/">Windfall Trust, Scenarios 2030</a>; content and design are our own.</div></footer>
 
 <script src="data.js"></script>
@@ -238,7 +258,7 @@ const COL={slow:'#5cc2a6',medium:'#e8b04a',extreme:'#ef6b5b'};
 const NAME={slow:'Slow',medium:'Medium',extreme:'Extreme'};
 const P0={baseYear:2026,q:.034,x:.30,g:0,A0:.18,wage:5.05,cap:5,rate:.6,months:6,acc:.83,chi:.5,theta:.6,iota:1,psi:.5,fi:1.65};
 const SC0={slow:{A:.30,year:2030,e:.24,phi:.625,m:0},medium:{A:.52,year:2029,e:.53,phi:.66,m:0},extreme:{A:.85,year:2028,e:.82,phi:.73,m:0}};
-const BANK0=[{n:"BRI",hc:84949,hires:12070,leavers:3323,exp:0.582},{n:"BNI",hc:27201,hires:1596,leavers:2254,exp:0.582},{n:"BCA",hc:26435,hires:2330,leavers:860,exp:0.582},{n:"CIMB Niaga",hc:10775,hires:1446,leavers:1729,exp:0.582},{n:"KB Bank",hc:2334,hires:499,leavers:1063,exp:0.582},{n:"Bank Mandiri",hc:38732,hires:2717,leavers:2868,exp:0.582},{n:"BTN",hc:11429,hires:802,leavers:224,exp:0.582},{n:"BSI",hc:16274,hires:352,leavers:1001,exp:0.582}];
+const BANK0=[{n:"BRI",hc:84949,hires:12070,leavers:3323,exp:0.582},{n:"BNI",hc:27201,hires:1596,leavers:1324,exp:0.582},{n:"BCA",hc:26435,hires:2330,leavers:860,exp:0.582},{n:"CIMB Niaga",hc:10775,hires:1446,leavers:1729,exp:0.582},{n:"KB Bank",hc:2334,hires:499,leavers:1063,exp:0.582},{n:"Bank Mandiri",hc:38732,hires:2717,leavers:2868,exp:0.582},{n:"BTN",hc:11429,hires:802,leavers:224,exp:0.582},{n:"BSI",hc:16274,hires:352,leavers:1001,exp:0.582}];
 let P={...P0},SC=JSON.parse(JSON.stringify(SC0)),BANKS=JSON.parse(JSON.stringify(BANK0)),sel='medium',preset='indo',W={...PRIORS.indo};
 Chart.defaults.color='#5d6169';Chart.defaults.borderColor='#e2ded6';Chart.defaults.font.family='Inter';
 const charts={};

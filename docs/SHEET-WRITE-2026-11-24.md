@@ -488,3 +488,12 @@ New coverage: ID-09 x7 (job boards, all blocked, every block dated), ID-05 x5 (l
 gate), ID-12 x4 (BNI arithmetic, BRI definition, history block), ID-22 and ID-13 x1 each (access log).
 Revert: clear `id-shock-data!A69:AE86`.
 
+### BNI correction absorbed into the model, 28 Nov
+Model sheet `Feed_Panel` **F6** changed 2,254 -> **1,324** (BNI SR 2025 GRI 401-1). **O6** appended with the
+proof and the provenance of the rejected figure: 1,324/27,201 = 4.87%; the published 1.9% is a voluntary-exit
+rate (515 non-retirement exits / 27,201 = 1.89%); the old 2,254 is a p.145 training-participant count, now
+register row `ind-ev-0144` marked Contradicted. Nothing deleted - the rejected number stays visible in the note.
+Effect: weighted attrition 6.11% -> **5.68%**; extreme dismissals 25,826 -> **27,578**; JKP Rp 385.8 -> **412.0
+bn**; 2030 headcount unchanged.
+Revert: set `Feed_Panel!F6` back to 2254 and remove the appended sentence in `O6`.
+
