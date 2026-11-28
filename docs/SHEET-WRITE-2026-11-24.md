@@ -472,3 +472,11 @@ Neither touches `id-postings`, `signals`, `id-shock-data` or any existing tab.
 - Core file: new tab **`signals-evidence`** (62 rows x 18 columns) joining `id-shock-data` to `signals` on
   the signal code. Generated, not hand-written. Revert: delete the tab.
 
+### S3 row + m_code columns, 28 Nov
+- `signals`: appended the missing **S3** row (`ind-sig-ai-adoption-rate`, status `gap`); added **column X
+  `m_code`** for 52 rows. Revert: delete the S3 row; clear `signals!X1:X53`.
+- `id-shock-data`: **column AF `m_code`** for 62 rows (grid widened 31 -> 34 columns). Revert: clear
+  `id-shock-data!AF1:AF63`.
+- `signals-evidence`: rebuilt on `signal_code` + `m_code` — 62 rows, 0 unlinked, 25 exact matches.
+  Revert: delete the tab.
+

@@ -38,3 +38,24 @@ list: the signal was never registered.
    team indicator table), or `id-shock-data` gains an `m_code` column. My recommendation: add `m_code` to the
    evidence register — it preserves both schemes and breaks nothing.
 3. **Then rebuild `signals-evidence`** — it is generated, so re-running is one command.
+
+
+---
+
+## Fixed, 28 Nov — both items closed additively
+
+**1 · `S3` now exists in `signals`** as `ind-sig-ai-adoption-rate` — type `dataset`, status **`gap`**,
+confidence `H (stages) / M (trend)`, indicator `M2 AI deployment and workforce change`, next step naming the
+three moves (paper, OJK series, cross-check against the 8-bank survey). All ten codes S1–S10 are now defined.
+
+**2 · `m_code` added to both registers.** `signals` gains column **X** (52 rows, extracted from the
+`indicator_no` prefix); `id-shock-data` gains column **AF** (62 rows, the measure). The evidence register's
+grid was widened to 34 columns to hold it.
+
+**3 · `signals-evidence` rebuilt** on `signal_code` + `m_code`: **62 rows, 0 unlinked, 25 exact m_code
+matches.** The 37 that do not match are not errors — a signal routinely spans more than one measure (S8 runs
+across M4 and M5), which is exactly why the code alone could never be the join key.
+
+What remains open is the deeper one: `signals.indicator_no` still holds measure names where the evidence
+register holds indicator codes. `m_code` makes the measure join possible; an **indicator** join still needs a
+deliberate renumbering, and that is a team decision, not a lane one.
