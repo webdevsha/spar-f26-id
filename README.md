@@ -37,6 +37,9 @@ README is wrong — fix it in the same commit as the file.
 
 What the lane hands in, mirroring the team tracker so the repo and the spreadsheet never disagree. Live tracker: **[IND team progress](https://docs.google.com/spreadsheets/d/1EhtGDNQjZSM9_BoFw1V2F90rKN69_V7IUPTqKgHOcWQ/edit)** — tab `Sheet1` is the team view, the `Shafira's tasks` tab is her own work with due dates.
 
+> **What has actually been built, and when:** [the work log](#work-log--everything-built-2428-november-2026)
+> at the end of this file — one row per artefact, with the PR or the audit note that carries it.
+
 ### A. Measures and signals — reviewed
 
 | Work | What it covers | Progress | Owner | Evidence |
@@ -136,7 +139,11 @@ deployed · `blocked` = waiting on infrastructure · `superseded` = kept for pro
 |---|---|---|---|
 | [ID-PENDING-24NOV.md](docs/ID-PENDING-24NOV.md) | The open/closed task ledger, with what "done" looks like per item | Shafira (ID lane) | repo |
 | [ID-SIGNAL-SOURCE-MATRIX.md](docs/ID-SIGNAL-SOURCE-MATRIX.md) | Source matrix v2 — the 22-row verified source line, 5 status corrections, 2 attribution traps, 3 denominator traps | Shafira + CRO | repo |
-| [ID-PART3-DRAFT.md](docs/ID-PART3-DRAFT.md) | Country Report Part 3 draft, 678 words, every figure traced; unverified figures left bracketed | Shafira | repo (untracked) |
+| [ID-PART3-DRAFT.md](docs/ID-PART3-DRAFT.md) | Country Report Part 3 draft, 678 words, every figure traced; unverified figures left bracketed | Shafira | repo |
+| [ID-PART4-DRAFT.md](docs/ID-PART4-DRAFT.md) | Country Report Part 4 v1 — who can act and the policies in place, reframed to the AI shock question: each instrument carries its verdict, three flags for Ian, word count stated honestly | Shafira + Ian | repo |
+| [ID-PART8-LIMITS-DRAFT.md](docs/ID-PART8-LIMITS-DRAFT.md) | Report section 8 — limits, stated on the record | Shafira + Napat | repo |
+| [ID-POLICY-SITE-PROPOSAL.md](docs/ID-POLICY-SITE-PROPOSAL.md) | **The design proposal** — ten patterns from the Windfall scenarios site that work for a policy reader, what we must not copy, the seven-route product, the two evidenceable scenario axes, the evidence grammar, the build plan and the five gates | CRO for Shafira | repo |
+| [ID-CALL-RUNSHEET-26NOV.md](docs/ID-CALL-RUNSHEET-26NOV.md) | One-page run sheet for the SPAR call: six do-now items, six raise-on-call items, the numbers to have at hand, the two decisions needed | CRO for Shafira | repo |
 | [ID-READINESS-WORKSHEET.md](docs/ID-READINESS-WORKSHEET.md) | 3 policy documents × 6 readiness questions, pre-loaded with the evidence each question answers from | Shafira | repo (untracked) |
 | [ID-HANDOFF-HANNACHAN.md](docs/ID-HANDOFF-HANNACHAN.md) | Continuity handoff: truth map, boundaries, blockers, order of work | CRO | repo (untracked) |
 | [ID-SIGNALS-PERPLEXITY-PACK.md](docs/ID-SIGNALS-PERPLEXITY-PACK.md) | The verification brief sent to Perplexity (blocks A–E, rules, output contract) | CRO | repo |
@@ -208,6 +215,7 @@ to. All four are public CSV downloads from `paskerid.kemnaker.go.id/documents/`,
 | [build/spar-id-model-demo.html](build/spar-id-model-demo.html) | Interactive scenario-model demo (current-data vs with-more-data) | see `dist/build/` | repo |
 | [build/spar-signal-feasibility.html](build/spar-signal-feasibility.html) | The S5 vacancy feasibility test write-up | see `dist/build/` | repo |
 | [build/model_section.html](build/model_section.html) | Partial markup embedded into the dashboard build | — | repo |
+| [build/proposal-wireframe.html](build/proposal-wireframe.html) | The one-page light-theme wireframe for the proposed report site — hero, four findings tiered, the 2×2 with its undrawn quadrant, the outlook strip and the compare strip. Uses only figures already verified in the register; unsigned scenario bands print `bracket pending` | — | repo (not deployed) |
 | [build/eco_theme.css](build/eco_theme.css) | Shared light-theme tokens for the map and overview pages | — | repo |
 | [build/spar-id-eco.svg](build/spar-id-eco.svg), [spar-id-bridge.svg](build/spar-id-bridge.svg), [spar-id-policy.svg](build/spar-id-policy.svg), [spar-id-ecosystem-map.svg](build/spar-id-ecosystem-map.svg) | The SVG sources behind the ecosystem page | — | repo |
 | [dist/index.html](dist/index.html), `dist/build/*` | Generated output — **never hand-edit**; what Cloudflare Pages serves | [spar-f26-id.pages.dev](https://spar-f26-id.pages.dev) (dashboard is gated, HTTP 401) | generated |
@@ -446,14 +454,18 @@ Atlas site        ██████████░░░░░░░░░░�
   step with the register (9 → **22 nodes**), which is why the map page now shows `UU 27/2026`,
   `PP 6/2025`, `POJK 11`, `Stranas KA`, `RP3I` and the six levers.
 
-**Open pull requests (neither merged):** [#35](https://github.com/webdevsha/spar-f26-id/pull/35) this
-progress section · [#36](https://github.com/webdevsha/spar-f26-id/pull/36) Part 4 v1 + the register and
-map work above · Part 4 itself: [docs/ID-PART4-DRAFT.md](docs/ID-PART4-DRAFT.md) (the section has no
-Google Doc; the repo draft is its only home).
+**Pull requests:** [#35](https://github.com/webdevsha/spar-f26-id/pull/35) this progress section ·
+[#36](https://github.com/webdevsha/spar-f26-id/pull/36) Part 4 v1 + the register and map work ·
+[#37](https://github.com/webdevsha/spar-f26-id/pull/37) the tab links and the link graph — **all three
+merged**. [#38](https://github.com/webdevsha/spar-f26-id/pull/38) carries the policy-site proposal, the
+wireframe and this work log, and is **open**. Part 4 itself:
+[docs/ID-PART4-DRAFT.md](docs/ID-PART4-DRAFT.md) (the section has no Google Doc; the repo draft is its
+only home).
 
 **Evidence behind the bars:** `SIGNALS_ID` — 18 indicator rows across S1–S10, verdict + capability on
 every row, 10 full readings, 9 of 10 signals flagged for float-up · Core file `signals` — 22 rows ·
-`triggers` 1 · `who-can-act` 6 · policy inventory 3 · readiness 3 (all `tbc`) · instruments 1 (DEMO) ·
+`triggers` 1 · `who-can-act` 6 · policy inventory **16** · readiness 3 (all `tbc`) · instruments **6 real
+levers** (the DEMO placeholder is gone) ·
 postings 2,618 rows (2024→Oct 2026) · Kemnaker portal counts 2022–24 in `data/kemnaker/` ·
 [docs/ID-SIGNAL-SOURCE-MATRIX.md](docs/ID-SIGNAL-SOURCE-MATRIX.md),
 [docs/ID-PART3-DRAFT.md](docs/ID-PART3-DRAFT.md), [docs/ID-READINESS-WORKSHEET.md](docs/ID-READINESS-WORKSHEET.md), [docs/ID-PENDING-24NOV.md](docs/ID-PENDING-24NOV.md),
@@ -572,3 +584,64 @@ not a preference — it is the only route that works and the only one that respe
 - **Never fabricate.** Unverified figures stay marked `[unverified — confirm]` or "not verified".
 - **Light theme only** in any deliverable UI.
 - **Not a CMS.** No write-back to Drive or Sheets.
+
+---
+
+## Work log — everything built, 24–28 November 2026
+
+One row per artefact. Every row is a file in this repo, a PR, or an entry in
+[docs/SHEET-WRITE-2026-11-24.md](docs/SHEET-WRITE-2026-11-24.md) — nothing here is a claim without an artefact.
+
+### 24 November — the ground work
+
+| What | Where it landed |
+|---|---|
+| **First shared-sheet writes**: signal layer + evidence columns in the Core file (`signals` O–T), the skeleton (`SIGNALS` H–K), and `IND team progress` G | Core file + skeleton · audit and revert ranges in [SHEET-WRITE](docs/SHEET-WRITE-2026-11-24.md) |
+| **README header made true and readable by policymakers** — claims narrowed to what the data carries | PR [#33](https://github.com/webdevsha/spar-f26-id/pull/33) |
+| **Live intake made always-on** — sandbox collector publishing to the Worker | PR [#34](https://github.com/webdevsha/spar-f26-id/pull/34) |
+| **Source verification**: 22-row source matrix (5 status corrections, 2 attribution traps, 3 denominator traps), the Perplexity verification pack, and the BoxCompute collection briefs | [ID-SIGNAL-SOURCE-MATRIX](docs/ID-SIGNAL-SOURCE-MATRIX.md) · [ID-SIGNALS-PERPLEXITY-PACK](docs/ID-SIGNALS-PERPLEXITY-PACK.md) · [PROMPTS-BOXCOMPUTE-V2](docs/PROMPTS-BOXCOMPUTE-V2.md) |
+| **Kemnaker's own portal counts, 2022–24** — the only free vacancy series that needs no scrape | [data/kemnaker/](data/kemnaker/) |
+| **Postings at scale**: Karirhub 13,308 and Dealls 44,417 distinct URLs proven collectable; 2,618 rows in the team schema (2024 → Oct 2026) | [data/id-postings/](data/id-postings/) · [build/spar-id-postings.html](build/spar-id-postings.html) |
+
+### 26 November — the indicator table, and the register made navigable
+
+| What | Where it landed |
+|---|---|
+| **`SIGNALS_ID` built**: S1–S10 each mapped to an Indonesia indicator, the name linked to the exact register row it came from, the source compiled once per shared indicator so the same indicator reads identically everywhere | Skeleton `SIGNALS_ID` · [SHEET-WRITE](docs/SHEET-WRITE-2026-11-24.md) |
+| **Policy de-coded**: every instrument named in full with its acronym (`UU 27/2026`, `POJK 11/POJK.03/2022 and PADK OJK 1/2026`, `JKP (PP 37/2021)`, `Stranas KA 2020-2045`), hyperlinked, with titles and status in the tab's own `README` | Skeleton `README` + `SIGNALS_ID` G |
+| **The one long review column split three ways** — *Verdict · Capability · Details*; full reading on the first row of each signal, one-line pointer on the rest; the broken S8 pointer rebuilt; duplicates and dead weight cleared | Skeleton `SIGNALS_ID` H–J |
+| **Every reading reframed to the team's question** — each Details line closes on what the row cannot tell us about an AI economic shock | Skeleton `SIGNALS_ID` H–J |
+| **Float-up highlighting**: rose = the shock would be invisible (S1, S3, S4); amber = the number exists but cannot be read as an AI shock alone (S5–S10); plain = S2 — with the key stated once on the tab `README` | Skeleton `SIGNALS_ID` A–M + `README` |
+| **Task progress re-tallied** from the indicator table | PR [#35](https://github.com/webdevsha/spar-f26-id/pull/35) |
+| **Part 4 v1 written** — who can act and the policies in place, reframed to the shock question, three flags for Ian, word count stated honestly against the 600-word target | [ID-PART4-DRAFT](docs/ID-PART4-DRAFT.md) · PR [#36](https://github.com/webdevsha/spar-f26-id/pull/36) |
+| **Part 4's data into the register**: `Indonesia policy inventory` 3 → **16 rows**; `instruments` DEMO placeholder → **6 real levers**, one per actor's door, each citing the row it rests on | Core file · PR [#36](https://github.com/webdevsha/spar-f26-id/pull/36) |
+| **Cross-tab navigation**: 134 hyperlinks so a policy name opens its register row, a signal code its definition, an actor its lever and a lever back to the actor; `SIGNALS_ID` column G re-linked **per instrument** (18 cells / 55 spans, wording untouched) | Three sheets · PRs [#36](https://github.com/webdevsha/spar-f26-id/pull/36), [#37](https://github.com/webdevsha/spar-f26-id/pull/37) |
+| **The register now generates the map**: `build/sync_map_from_register.py` (`--check` = drift report) rebuilt the map's policy nodes 9 → **22** — 8 hand-written nodes kept with their detail, 8 added, 6 lever nodes replacing the stale placeholder; bands, edges, marks and the responsibility map untouched | PR [#36](https://github.com/webdevsha/spar-f26-id/pull/36) |
+| **README given the tab directory**: every tab's deep link, plus the cross-tab link graph | PR [#37](https://github.com/webdevsha/spar-f26-id/pull/37) |
+| **Call run sheet** for the 22:00 SPAR call — six do-now items, six raise-on-call items, the numbers at hand, the two decisions needed | [ID-CALL-RUNSHEET-26NOV](docs/ID-CALL-RUNSHEET-26NOV.md) |
+
+### 28 November — the product proposal
+
+| What | Where it landed |
+|---|---|
+| **Studied `scenarios-2030.windfalltrust.org`** (home, a scenario page, compare, methodology) and distilled ten communication patterns that work for a policy reader — the load-bearing ones: a quadrant deliberately left empty *with its reason*, a scenario range always printed next to a real number, and gaps drawn as dotted segments rather than footnoted | [ID-POLICY-SITE-PROPOSAL](docs/ID-POLICY-SITE-PROPOSAL.md) §1 |
+| **Refused what we cannot honestly copy**: signed workshop ranges, monthly official series, status-quo policy | §2 |
+| **Proposed one product, seven routes** — five of which already have a built artefact in this repo; the genuinely new page is `/compare` | §3 |
+| **Scenario axes our evidence can carry**: pace of AI deployment in banking (S1–S3) × strength of the adjustment buffer (S8, S10, readiness) — four worlds, one deliberately undrawn, three variants that each break one assumption | §4 |
+| **Evidence grammar per number**: real / team-reported / gap / demo, with H–M–L confidence and a checked-on date; unsigned bands print `bracket pending`, never a midpoint | §5 |
+| **Wireframe** — one light-theme page showing the hero, the four tiered findings, the 2×2 with its hatched "not covered" quadrant, the outlook strip and the compare strip | [build/proposal-wireframe.html](build/proposal-wireframe.html) |
+| **Five gates named**, each a question for a person rather than for the drafting lane | §8 |
+| **This work log**, the file-index corrections and the PR status fixes | PR [#38](https://github.com/webdevsha/spar-f26-id/pull/38) |
+
+### Still open, stated plainly
+
+| Item | State |
+|---|---|
+| `sync-sheets` hourly job | **failing** — the repo CSVs were mirrored by hand; the 29 Nov freeze depends on this |
+| Cloudflare deploy of the overview and the new pages | not deployed; `dist/` is generated output and deploy needs an explicit go-ahead |
+| `Read Me_Methods` tab in the team indicator workbook | **empty** — the methodology page has nothing to render from |
+| Every indicator threshold | `Deferred` — the compare page cannot draw a line it does not have |
+| Readiness questions `q1`–`q6` | not recorded anywhere, so the buffer axis is half-blind |
+| `M6` in the measure register | has no row in `SIGNALS_ID` |
+| Scenario bands | unsigned — they belong to the team, not to the drafting lane |
+| Last three items to verify with Ian, Napat and Akbar | needs the SPAR call |
