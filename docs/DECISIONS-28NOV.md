@@ -28,9 +28,29 @@ others unused.
 **2,254** | carried in our own `Feed_Panel` from the v0.3b load | **DECLARED UNUSED** | cannot be reproduced from the GRI table; origin unclear |
 **1.9%** | BNI SR 2025 turnover rate | **DECLARED UNUSED** | implies ~4.9% on 27,201 staff, so it does not describe the same population as the count |
 
+**BoxCompute then resolved the arithmetic (run of 28 Nov).** 1,324 / 27,201 = 4.87%, so 1.9% cannot be a
+separations rate — but **515 non-retirement exits / 27,201 = 1.89%**, and BNI's own footnote says *"there is a
+difference in calculation for employees whose employment relationship has ended for certain reasons."* So
+**1.9% is a voluntary-exit rate published under a total-turnover label.**
+
+And the 2,254 now has a provenance: it appears **once in the whole report, on p.145, as a training-participant
+count** ("Digital & Social Selling … 2,254"). No GRI 401-1 row matches it. That is the exact near-miss that
+gets copied into a panel by accident, and it inflated BNI's leaver input by up to 930 people. The register now
+carries it as **`ind-ev-0144`, marked Contradicted**.
+
 Consequence: BNI's attrition moves from 8.3% to **4.87%**, which lowers panel attrition slightly. The row in
 `Feed_Panel` is *not* overwritten — the unsupported 2,254 stays visible with a note, because a register that
 deletes its own mistakes cannot be audited.
+
+## 2b · What the ID-05 source actually contains
+
+BoxCompute checked the landing page and found the **34 / 18 / 4 / 12% stage split absent** from it — correct,
+and worth recording, because our rows came from **IBM's newsroom release**, not the landing page. The split is
+in the release; the landing page carries the governance figures instead (2.74 vs 3.98, 9% registry, 32% none).
+The gated PDF remains the only route to a per-institution breakdown, and `go.kiantara.com` returns 404.
+
+One line for the report's "no AI instrument carries a labour clause" claim: **no survey item in the published
+summary concerns workforce, headcount or roles at all.**
 
 ## 3 · Exposure — both 0.30 and 0.582 travel, with their evidence
 
