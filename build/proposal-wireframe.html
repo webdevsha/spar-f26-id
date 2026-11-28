@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indonesia Banking &amp; AI Jobs Monitor — design wireframe</title>
+<style>
+  :root{
+    --ink:#1c1a17; --mid:#5b544c; --faint:#8b8378;
+    --rule:#d9d2c7; --paper:#fdfcf9; --tint:#f6f1ea;
+    --accent:#b3122a; --rose:#fce8e6; --amber:#fff2cc; --grey:#f0eeea;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);
+       font:16px/1.62 Arial,Helvetica,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 28px}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;font-weight:normal;letter-spacing:-.01em}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(179,18,42,.25)}
+  a:hover{border-bottom-color:var(--accent)}
+  .kicker{font:11px/1 Arial;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 14px}
+  .rule{height:1px;background:var(--rule);border:0;margin:0}
+
+  /* nav */
+  nav{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:5}
+  nav .wrap{display:flex;align-items:baseline;gap:22px;padding:14px 28px;flex-wrap:wrap}
+  nav .brand{font-family:Georgia;font-size:15px;color:var(--ink)}
+  nav a{font-size:13px;color:var(--mid);border:0}
+  nav a.on{color:var(--accent)}
+
+  /* hero */
+  header.hero{padding:64px 0 34px;border-bottom:1px solid var(--rule)}
+  .hero h1{font-size:clamp(30px,4.4vw,48px);line-height:1.12;margin:0 0 18px;max-width:20ch}
+  .hero p.lede{font-size:19px;color:var(--mid);max-width:62ch;margin:0 0 26px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-block;padding:11px 20px;border:1px solid var(--ink);border-radius:2px;
+       font-size:14px;color:var(--ink);background:transparent;border-bottom:1px solid var(--ink)}
+  .btn.solid{background:var(--ink);color:#fff}
+  .btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+  .devline{font-size:12.5px;color:var(--faint);margin-top:26px}
+
+  /* findings */
+  section{padding:46px 0}
+  section + section{border-top:1px solid var(--rule)}
+  h2.sec{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+         font-family:Arial;margin:0 0 6px}
+  h2.title{font-size:26px;margin:0 0 26px;max-width:30ch}
+  ol.findings{list-style:none;counter-reset:f;margin:0;padding:0}
+  ol.findings li{counter-increment:f;position:relative;padding:18px 0 18px 54px;border-top:1px solid var(--rule)}
+  ol.findings li:first-child{border-top:0}
+  ol.findings li:before{content:counter(f,decimal-leading-zero);position:absolute;left:0;top:18px;
+    font:12px/1 Arial;color:var(--accent);letter-spacing:.08em}
+  ol.findings b{display:block;font-family:Georgia;font-size:18px;font-weight:normal;margin-bottom:5px}
+  ol.findings span{color:var(--mid);font-size:15px}
+  .tier{display:inline-block;font:10.5px/1 Arial;letter-spacing:.1em;text-transform:uppercase;
+        padding:4px 7px;border-radius:2px;margin-left:8px;vertical-align:middle}
+  .t-rose{background:var(--rose);color:#7a1020}
+  .t-amber{background:var(--amber);color:#7a5a00}
+
+  /* matrix */
+  .matrix{display:grid;grid-template-columns:34px 1fr 1fr;gap:10px;font-size:14px}
+  .axis-y{writing-mode:vertical-rl;transform:rotate(180deg);align-self:center;justify-self:center;
+          font:10.5px/1 Arial;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);height:100%}
+  .axis-x{grid-column:2/4;display:flex;justify-content:space-between;
+          font:10.5px/1 Arial;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:4px}
+  .q{border:1px solid var(--rule);background:var(--paper);padding:18px 18px 16px;min-height:150px}
+  .q h4{margin:0 0 4px;font-size:17px}
+  .q .set{font:10.5px/1.5 Arial;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+  .q p{margin:0 0 10px;font-size:13.5px;color:var(--mid);line-height:1.5}
+  .q .go{font-size:13px}
+  .q.empty{background:
+      repeating-linear-gradient(135deg,#fbfaf7,#fbfaf7 7px,#f4f1ec 7px,#f4f1ec 8px);
+      border-style:dashed}
+  .q.empty h4{color:var(--mid)}
+  .glyph{display:flex;gap:3px;align-items:flex-end;height:16px;margin-bottom:10px}
+  .glyph i{display:block;background:var(--accent);border-radius:50%;opacity:.75}
+  .glyph.conc i:first-child{width:14px;height:14px}
+  .glyph.conc i:not(:first-child){width:6px;height:6px;opacity:.35}
+  .glyph.spread i{width:8px;height:8px;opacity:.6}
+
+  /* outlook strip */
+  table.strip{width:100%;border-collapse:collapse;font-size:14px}
+  table.strip th{text-align:left;font:10.5px/1 Arial;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--faint);padding:8px 10px;border-bottom:1px solid var(--rule);font-weight:normal}
+  table.strip td{padding:11px 10px;border-bottom:1px solid #eee9e1;vertical-align:top}
+  table.strip td.num{font-family:Georgia;font-size:16px;white-space:nowrap}
+  .chip{font:10px/1 Arial;letter-spacing:.06em;padding:3px 6px;border-radius:2px;white-space:nowrap}
+  .c-real{background:var(--grey);color:#3d3a34}
+  .c-team{background:var(--amber);color:#7a5a00}
+  .c-gap{background:var(--rose);color:#7a1020}
+  .c-pend{border:1px dashed #b9b1a4;color:var(--faint)}
+  .pend{color:var(--faint);font-style:italic}
+
+  /* compare strip */
+  .cmp{border:1px solid var(--rule);background:var(--paper);padding:20px}
+  .cmp .head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .cmp h4{margin:0;font-size:17px}
+  .cmp p.def{font-size:13px;color:var(--mid);margin:0 0 16px;max-width:70ch}
+  .track{position:relative;height:64px;border-bottom:1px solid var(--rule);margin-bottom:8px}
+  .track .band{position:absolute;left:38%;right:18%;top:16px;bottom:0;
+    border:1px dashed #c0392b;border-bottom:0;background:rgba(179,18,42,.03)}
+  .track .band span{position:absolute;top:-18px;left:0;font:10px/1 Arial;letter-spacing:.08em;
+    text-transform:uppercase;color:#a03a2a}
+  .track .dot{position:absolute;top:8px;width:1px;height:44px;background:var(--ink)}
+  .track .dot span{position:absolute;top:-16px;left:-14px;font:11px/1 Arial;color:var(--ink);white-space:nowrap}
+  .track .dot.unv{border-left:2px dotted #8b8378}
+  .track .tick{position:absolute;bottom:-20px;font:10px/1 Arial;color:var(--faint)}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--mid);margin-top:34px}
+
+  /* ecosystem strip */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);
+    border:1px solid var(--rule)}
+  .cards div{background:var(--paper);padding:16px}
+  .cards b{display:block;font-family:Georgia;font-size:26px;margin-bottom:2px}
+  .cards span{font-size:12.5px;color:var(--mid)}
+  .cards em{font-style:normal;color:var(--accent);font-size:12.5px}
+
+  footer{border-top:1px solid var(--rule);background:var(--paper);padding:26px 0 40px;margin-top:10px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12.5px;color:var(--faint)}
+  .note{font-size:12.5px;color:var(--faint);margin-top:18px;max-width:72ch}
+  @media print{nav{display:none}section{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <span class="brand">Indonesia Banking &amp; AI Jobs Monitor</span>
+  <a class="on" href="#">Overview</a>
+  <a href="#">Adoption</a>
+  <a href="#">Indicators</a>
+  <a href="#">Scenarios</a>
+  <a href="#">Compare</a>
+  <a href="#">Ecosystem</a>
+  <a href="#">Method</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="kicker">SPAR Fall 2026 · Economic Shock Team · Indonesia lane</p>
+  <h1>How AI deployment and Indonesia's adjustment buffer could reshape bank employment by 2030</h1>
+  <p class="lede">Ten signals, twenty-five verified indicators, sixteen policy instruments — and a
+  measurement system that would not show the shock arriving. This monitor sets out what Indonesia can
+  see, what it cannot, and what each of the four possible worlds would require of the six bodies that
+  can act.</p>
+  <div class="cta">
+    <a class="btn solid" href="#">Explore the four worlds ↓</a>
+    <a class="btn" href="#">Download the country report</a>
+  </div>
+  <p class="devline">Design wireframe · every figure below is already sourced in the register ·
+  scenario brackets are <b>bracket pending</b>, unsigned by the team · light theme only</p>
+</div></header>
+
+<section><div class="wrap">
+  <h2 class="sec">Key findings</h2>
+  <h2 class="title">Four things stand out — and three of them are about what cannot be seen</h2>
+  <ol class="findings">
+    <li><b>No instrument in Indonesia requires anyone to report an AI adoption rate.<span class="tier t-rose">invisible</span></b>
+      <span>OJK holds financial and technology-risk reporting; Kemnaker holds vacancy data. Neither publishes
+      adoption. The best number available is a voluntary survey of 91 banks: 34% piloting, 18% operational,
+      4% across functions (Oct 2026).</span></li>
+    <li><b>No AI-linked outlook exists anywhere in the system.<span class="tier t-rose">invisible</span></b>
+      <span>No ministry, regulator or industry body publishes a jobs or revenue forecast that names AI —
+      so every such forecast in Indonesia today is voluntary or foreign.</span></li>
+    <li><b>The claims series carries two legal breaks inside twenty months.<span class="tier t-amber">broken series</span></b>
+      <span>PP 6/2025 moved the scheme on 7 Feb 2025; UU 27/2026 landed 28 Oct 2026 with no transition period
+      and implementing rules not due until 28 Oct 2027. Any 2025-to-2026 comparison carries that break.</span></li>
+    <li><b>Nothing follows a worker after they are dismissed.<span class="tier t-amber">trail stops</span></b>
+      <span>JKK and JKM pay out whether a person resigned or retired; Kartu Prakerja records who joined
+      training, not where they ended up. Displacement can be counted at the point of dismissal, not traced.</span></li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">The four worlds</h2>
+  <h2 class="title">Two axes we can evidence; one quadrant we deliberately do not draw</h2>
+  <div class="matrix">
+    <div class="axis-y">pace of AI deployment in banking →</div>
+    <div class="q">
+      <div class="glyph spread"><i></i><i></i><i></i><i></i><i></i></div>
+      <h4>Managed Adjustment</h4>
+      <div class="set">Slow deployment · buffer holds</div>
+      <p>Hiring thins rather than collapses. Exits and turnover absorb the change; JKP claims rise gently
+      and stay inside the scheme's own standard.</p>
+      <a class="go" href="#">Read scenario →</a>
+    </div>
+    <div class="q">
+      <div class="glyph conc"><i></i><i></i><i></i><i></i></div>
+      <h4>Quiet Squeeze</h4>
+      <div class="set">Slow deployment · buffer thin</div>
+      <p>Entry-level hiring falls first and quietly. Nothing catches it: vacancies are counted, filling is
+      not; no destination is tracked. The pressure shows up late, in other sectors.</p>
+      <a class="go" href="#">Read scenario →</a>
+    </div>
+    <div class="q">
+      <div class="glyph spread"><i></i><i></i><i></i><i></i><i></i></div>
+      <h4>Absorbed Shock</h4>
+      <div class="set">Fast deployment · buffer holds</div>
+      <p>Displacement is real and visible, and JKP, Prakerja and PEKA are visibly load-bearing. The question
+      becomes adequacy — 60% of wage for six months, paid within three working days.</p>
+      <a class="go" href="#">Read scenario →</a>
+    </div>
+    <div class="q">
+      <div class="glyph conc"><i></i><i></i><i></i><i></i></div>
+      <h4>Few Winners, Many Leavers</h4>
+      <div class="set">Fast deployment · buffer thin</div>
+      <p>Whole clerical functions go. 23,538 bank offices (Jun 2025, −2.6% in a year) and 53,490 layoffs
+      recorded Jan–Aug 2026 are the leading edge — with the series breaking exactly when they matter most.</p>
+      <a class="go" href="#">Read scenario →</a>
+    </div>
+    <div class="axis-x"><span>← buffer thin</span><span>buffer holds →</span></div>
+    <div class="q empty" style="grid-column:2/4">
+      <h4>Not covered: fast deployment with an untested buffer</h4>
+      <p>Not drawn as a fifth world, because our buffer evidence cannot separate “the buffer worked” from
+      “we stopped looking”. JKP's own timing is never measured; no destination is tracked. Drawing it would
+      imply a resolution our data does not have.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Scenario outlook</h2>
+  <h2 class="title">Few Winners, Many Leavers — what we would be looking at</h2>
+  <table class="strip">
+    <tr><th>Indicator</th><th>Latest actual</th><th>2030 in this world</th><th>Evidence</th></tr>
+    <tr><td>Finance &amp; insurance employment</td><td class="num">1.65 m</td>
+        <td class="pend">bracket pending</td><td><span class="chip c-team">◐ team-reported</span></td></tr>
+    <tr><td>Commercial bank offices</td><td class="num">23,538 <small>Jun 2025</small></td>
+        <td class="pend">bracket pending</td><td><span class="chip c-real">● checked</span></td></tr>
+    <tr><td>Layoffs (PHK) recorded</td><td class="num">53,490 <small>Jan–Aug 2026</small></td>
+        <td class="pend">bracket pending</td><td><span class="chip c-real">● checked</span></td></tr>
+    <tr><td>JKP recipients &amp; payout</td><td class="num">90,513 <small>· Rp1.01 tn</small></td>
+        <td class="pend">bracket pending</td><td><span class="chip c-real">● checked</span></td></tr>
+    <tr><td>Stage of AI adoption in banks</td><td class="num">34 / 18 / 4 %</td>
+        <td class="pend">bracket pending</td><td><span class="chip c-real">● checked</span></td></tr>
+    <tr><td>Official AI-linked outlook</td><td class="num">none</td>
+        <td class="pend">—</td><td><span class="chip c-gap">○ gap</span></td></tr>
+  </table>
+  <p class="note">The right-hand column is empty on purpose. Windfall could fill it from a two-day workshop;
+  we cannot, because no band has been signed by the team. A monitor that prints an unsigned bracket is worse
+  than one that shows the slot.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Compare</h2>
+  <h2 class="title">Latest actual against an unsigned band — with the gap drawn in</h2>
+  <div class="cmp">
+    <div class="head"><h4>Layoffs (PHK) recorded for JKP members</h4>
+      <span class="chip c-real">● checked 26 Nov 2026</span></div>
+    <p class="def">Workers recorded as laid off and registered for job-loss insurance. Monthly, from
+    Kemnaker Satudata. The count is national and is not published with a banking split, so a bank-specific
+    wave is inside a number that also moves for ordinary commercial reasons.</p>
+    <div class="track">
+      <div class="dot" style="left:30%"><span>88,519 · 2025</span></div>
+      <div class="dot unv" style="left:52%"><span>53,490 · Jan–Aug 2026</span></div>
+      <div class="band"><span>bracket pending — unsigned</span></div>
+      <div class="tick" style="left:30%">2025</div><div class="tick" style="left:52%">Aug 2026</div>
+      <div class="tick" style="left:78%">2030</div>
+    </div>
+    <p class="def" style="margin-top:22px;margin-bottom:0">Dotted mark = partial year, not comparable to a
+    full-year total. The dashed region is the space a scenario would occupy once the team signs a band —
+    it is not an estimate, and no midpoint is drawn.</p>
+  </div>
+  <div class="legend">
+    <span><span class="chip c-real">● real</span> checked against the source, dated</span>
+    <span><span class="chip c-team">◐ team-reported</span> not independently verified</span>
+    <span><span class="chip c-gap">○ gap</span> nothing exists to measure</span>
+    <span><span class="chip c-pend">bracket pending</span> unsigned, drawn as a slot</span>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Ecosystem, policy &amp; readiness</h2>
+  <h2 class="title">The same register that draws the map produces the ask list</h2>
+  <div class="cards">
+    <div><b>16</b><span>policy instruments, each linked to its row</span></div>
+    <div><b>6</b><span>bodies that can act, each with its door</span></div>
+    <div><b>6</b><span>levers, with cost and speed where known</span></div>
+    <div><b>22</b><span>nodes in the generated policy map</span></div>
+    <div><b>0 / 6</b><span><em>readiness questions answered</em> — the hole we draw</span></div>
+  </div>
+  <p class="note">Every cell in these tabs is clickable across the sheets: a policy name opens its register
+  row, an actor opens its lever, a lever opens the actor. The site reads the same register, so the map and
+  the ask list can never drift apart.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Indonesia Banking &amp; AI Jobs Monitor · wireframe, not a published page</span>
+  <span><a href="#">Methodology</a> · <a href="#">Country report</a> · <a href="#">Sources &amp; check log</a></span>
+</div></footer>
+
+</body>
+</html>
