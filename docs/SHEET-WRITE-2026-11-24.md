@@ -425,3 +425,13 @@ Effect: panel headcount 150,523 -> 218,129; 2030 headcount under the three scena
 `Feed_Panel!L5:L12`, `Data_Feed!D4:E4`, `Data_Feed!D7:E7`, `Data_Feed!D14:E14` from the v0.2 export;
 the formula columns recalculate on their own.
 
+### Model sheet rename + id-shock-data p6 append, 28 Nov
+- **Renamed** the model spreadsheet: title `SPAR Indonesia - Bank AI shock model v0.2` -> `... v0.3b`.
+  Revert: set the title back.
+- **Appended** `id-shock-p6-new.tsv` (27 rows, 31 columns) to Core file `id-shock-data` at
+  **A13:AE39**, after checking the header matched the existing schema column for column and that no
+  `id` or `match_key` already existed. The tab now holds 38 evidence rows (run3: 11, p6: 27).
+  All 27 are M1 / S6 / ID-12 - bank-level hires, leavers and turnover - and they agree with the panel
+  now in `Feed_Panel`: BRI 12,070 new hires and 3,323 leavers appear in both.
+  Revert: clear `id-shock-data!A13:AE39`.
+
