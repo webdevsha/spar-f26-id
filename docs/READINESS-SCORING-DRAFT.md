@@ -13,7 +13,7 @@ to a supervisory instrument. Scores grade **documents, never a government**.
 | **q4 Funding** | **n/a** — supervisory, unfunded by design | **1** — 0.36% of wage contribution; adequacy under a surge unpublished | **n/a** — no benefit paid |
 | **q5 Delivery latency** | **1** — issued Apr 2025; 43 of 91 respondents know it | **1** — 3 working days promised, achieved latency unpublished; 17% of claims rejected | **1** — postings published; whether filled is never recorded |
 | **q6 Monitoring and revision** | **0** — no named owner for an AI-uptake signal | **0** — no AI link, no revision commitment | **0** — no monitoring of outcomes |
-| **Provisional total** | **3** | **4** | **2** |
+| **Provisional total** | **2** | **4** | **2** |
 
 **The pattern, which is the finding:** every instrument scores 0 on q2 (who is missed) and 0 on q6
 (monitoring). Those two columns are where a hiring-side shock lives — and both are empty in all three
