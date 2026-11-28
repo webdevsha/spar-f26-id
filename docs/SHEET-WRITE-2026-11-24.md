@@ -435,3 +435,12 @@ the formula columns recalculate on their own.
   now in `Feed_Panel`: BRI 12,070 new hires and 3,323 leavers appear in both.
   Revert: clear `id-shock-data!A13:AE39`.
 
+### Feed_Panel turnover columns (model sheet), 28 Nov
+Instruction: wire voluntary turnover alongside total turnover for what the model does not use yet.
+
+Added **M4:O12** - `Total turnover rate (feed)`, `Voluntary turnover rate (feed)`, `Turnover basis /
+note` - filled from the p6 rows in Core `id-shock-data` (BRI 5.58% / 1.24%; BNI 1.9%; BCA 3.4%;
+Mandiri 3.53%) with the counts-only banks left blank and the calc stated in the note column.
+Nothing existing was changed; the checked-empty guard refused to write if M:O had held data.
+Revert: clear `Feed_Panel!M4:O12` (model sheet `1GdULcdyhkJRwzTLH7xcFP4xnLC5tYFHnk-5vaGduTSE`).
+
